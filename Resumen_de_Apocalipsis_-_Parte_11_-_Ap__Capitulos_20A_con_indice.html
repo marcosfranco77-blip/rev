@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 11</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Starfield */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 15%, rgba(201,168,76,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 72%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 33%, rgba(201,168,76,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 57% 88%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 71% 22%, rgba(201,168,76,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 83% 55%, rgba(255,255,255,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 10%, rgba(201,168,76,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 6%  60%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 45%, rgba(201,168,76,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 78%, rgba(255,255,255,0.5) 0%, transparent 100%);
+}
+
+/* Layout wrapper */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* ==================== HEADER ==================== */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(100,10,10,0.55) 0%, rgba(10,8,6,0) 70%);
+  text-align: center;
+  padding: 56px 24px 48px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  margin-bottom: 52px;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ornament::before, .ornament::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim));
+}
+.ornament::after {
+  background: linear-gradient(90deg, var(--gold-dim), transparent);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.meta-item::before {
+  content: '✦';
+  color: var(--gold-dim);
+  font-size: 10px;
+}
+
+/* ==================== SECTIONS ==================== */
+.section {
+  margin-bottom: 52px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* ==================== CARDS ==================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+
+/* ==================== BULLETS ==================== */
+ul.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+
+.bullet-icon {
+  font-size: 15px;
+  line-height: 1.6;
+  flex-shrink: 0;
+  color: var(--gold-dim);
+}
+
+.bullet-content { flex: 1; }
+
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* ==================== SCRIPTURE BOX ==================== */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 28px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+
+.scripture::before {
+  content: '\201C';
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  font-size: 56px;
+  font-family: var(--f-display);
+  color: rgba(139,26,26,0.3);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.scripture p {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold-dim), transparent);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+}
+
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* ==================== INFO PANEL ==================== */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--sky-light);
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+/* ==================== TABLES ==================== */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(201,168,76,.2);
+}
+
+.styled-table td {
+  font-size: 15px;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  line-height: 1.55;
+  vertical-align: top;
+}
+
+.styled-table tr:last-child td { border-bottom: none; }
+
+/* ==================== TWO COL ==================== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* ==================== HIGHLIGHT ==================== */
+.hl {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* ==================== DIVIDER ==================== */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0;
+  color: var(--gold-dim);
+  font-size: 14px;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+
+/* ==================== SUMMARY BOX ==================== */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* ==================== FOOTNOTE ==================== */
+footer {
+  border-top: 1px solid rgba(201,168,76,.1);
+  margin-top: 56px;
+  padding-top: 24px;
+  text-align: center;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+footer a {
+  color: var(--gold-dim);
+  text-decoration: none;
+}
+footer a:hover { color: var(--gold); }
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 780px) {
+  .cards, .two-col { grid-template-columns: 1fr; }
+  .card.full { grid-column: 1; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed; top: 0; left: 0; width: 270px; height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000; display: flex; flex-direction: column; overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex; align-items: center; gap: 10px; padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12); flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-dim); white-space: nowrap;
+}
+.toc-links {
+  flex: 1; overflow-y: auto; padding: 10px 0 20px;
+  scrollbar-width: thin; scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 18px;
+  text-decoration: none; color: var(--text-dim); font-family: var(--f-body);
+  font-size: 13px; line-height: 1.4; border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover { color: var(--gold-light); border-left-color: var(--gold); background: rgba(201,168,76,.06); }
+.toc-item.active { color: var(--gold); border-left-color: var(--gold); background: rgba(201,168,76,.1); }
+.toc-num { flex-shrink: 0; font-size: 11px; font-family: var(--f-heading); color: var(--crimson-light); padding-top: 1px; min-width: 22px; }
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute; bottom: 20px; right: 12px;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold); border-radius: 50%; width: 30px; height: 30px;
+  cursor: pointer; font-size: 18px; display: flex; align-items: center;
+  justify-content: center; transition: background .2s; line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed; top: 50%; left: 0; transform: translateY(-50%);
+  z-index: 999; background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3); border-left: none;
+  color: var(--gold); border-radius: 0 6px 6px 0; width: 22px; height: 54px;
+  cursor: pointer; font-size: 18px; display: none; align-items: center;
+  justify-content: center; transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-open .page-wrap { margin-left: 270px; }
+body.toc-closed .page-wrap { margin-left: 0; }
+@media (max-width: 900px) { #sidebar-toc { width: 240px; } body.toc-open .page-wrap { margin-left: 240px; } }
+@media (max-width: 600px) { body.toc-open .page-wrap { margin-left: 0; } }
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Table of Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#toc-1" class="toc-item"><span class="toc-num">I</span><span class="toc-title">Global Perspective: The Interval Between the Tribulation and the Kingdom</span></a>
+<a href="#toc-2" class="toc-item"><span class="toc-num">II</span><span class="toc-title">Daniel’s Timeline: Prophetic Anchors</span></a>
+<a href="#toc-3" class="toc-item"><span class="toc-num">III</span><span class="toc-title">The First Period: 30 Days of Earth Restoration</span></a>
+<a href="#toc-4" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">The Second Period: 45 Days of Judgment and Blessing</span></a>
+<a href="#toc-5" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Five Groups of Kingdom Citizens</span></a>
+<a href="#toc-6" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">Group #2: Resurrection of Old Testament Saints</span></a>
+<a href="#toc-7" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">Group #3: Resurrection of Tribulation Martyrs</span></a>
+<a href="#toc-8" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">Group #4: Jews Alive at Christ’s Return — Will They Be Resurrected?</span></a>
+<a href="#toc-9" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">The First and Second Resurrection</span></a>
+<a href="#toc-10" class="toc-item"><span class="toc-num">X</span><span class="toc-title">Group #5: Living Gentiles — Sheep and Goats (Matthew 25)</span></a>
+<a href="#toc-11" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">Entry into the Kingdom: Children Born During the Millennium</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+
+<div class="starfield"></div>
+
+<div class="wrapper page-wrap">
+
+<!-- ==================== HEADER ==================== -->
+<header>
+  <div class="ornament">Verse by Verse Ministry International</div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 11 · Chapter 20A</h2>
+  <div class="meta-bar">
+    <span class="meta-item">Chapter covered: Revelation 20 (first part)</span>
+    <span class="meta-item">Cross references: Daniel 9, 12 · Isaiah 2, 26, 65 · Matthew 25 · 1 Corinthians 13, 15 · Jeremiah 24, 31, 50 · Ezekiel 11, 44 · Zephaniah 3</span>
+    <span class="meta-item">Historical period: The 75-Day Interval Between the Tribulation and the Millennial Kingdom</span>
+  </div>
+</header>
+
+<!-- ==================== SECCIÓN I ==================== -->
+<section class="section" id="toc-1">
+  <div class="section-header">
+    <div class="section-num">I</div>
+    <h3 class="section-title">Global Perspective: The Interval Between the Tribulation and the Kingdom</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Long-Awaited Moment</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Fulfillment of the promise</span><span class="bullet-desc">The world has waited for the Lord’s return since <span class="hl">Genesis 3:15</span>. The ancient world, the patriarchs, the prophets and kings of Israel, the apostles, and the Church have eagerly awaited this coming day.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The timeline culminates</span><span class="bullet-desc">Christ returns to the earth, ending the Tribulation and the <span class="hl">Age of the Gentiles</span>. The world is silent and the enemy defeated.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The promised inheritance</span><span class="bullet-desc">Believers will join Jesus on a land free of wars, injustice, and pandemics to enjoy the promised inheritance.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Time Interval</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">What is the interval?</span><span class="bullet-desc">There is a <span class="hl">brief interval of time</span> between the Tribulation and the Kingdom. It is not part of the Tribulation nor part of the Kingdom time, but links one to the other and accommodates certain events that must take place in preparation for the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Total duration</span><span class="bullet-desc">The interval lasts <span class="hl">75 days</span> in total: two distinct periods of 30 days and 45 days, each with specific purposes.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN II ==================== -->
+<section class="section" id="toc-2">
+  <div class="section-header">
+    <div class="section-num">II</div>
+    <h3 class="section-title">Daniel’s Timeline: Prophetic Anchors</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Daniel 9:27</span>
+        <p>"Then he shall confirm a covenant with many for one week; But in the middle of the week He shall bring an end to sacrifice and offering. And on the wing of abominations shall be one who makes desolate, Even until the consummation, which is determined, Is poured out on the desolate."</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Three Anchors of the Tribulation</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">The beginning</span><span class="bullet-desc">The signing of a covenant between the Antichrist and Israel, which will allow the Jews to restart sacrifice in a newly built temple on the Temple Mount. This event begins the seven years.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">The middle — 3.5 years (1,260 days)</span><span class="bullet-desc">The Antichrist ends the sacrifice in the temple and assumes a new and dangerous role in the world. The abomination of desolation — the image of the Antichrist — is installed in the temple.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">The end — 7 years</span><span class="bullet-desc">Complete destruction upon the Antichrist and the return of Christ. The Tribulation consists of <span class="hl">two periods of 1,260 days</span> (two times 3.5 years using the Jewish 360-day calendar).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Daniel 12: Extension of the Timeline</div>
+      <div class="scripture" style="margin-bottom:12px;">
+        <span class="scripture-ref">Daniel 12:11–12</span>
+        <p>"And from the time that the daily sacrifice is taken away, and the abomination of desolation is set up, there shall be one thousand two hundred and ninety days. Blessed is he who waits, and comes to the one thousand three hundred and thirty-five days."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The 1,290 days</span><span class="bullet-desc">30 additional days after the Second Coming of Jesus to <span class="hl">remove the abomination</span> from the temple and cleanse the temple. The image remains standing for a time until it is removed.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The 1,335 days</span><span class="bullet-desc">Another 45 additional days. The <span class="hl">"blessed of the Lord"</span> are those who wait and reach this day: a period to identify who can enter the Kingdom and give them eternal bodies.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN III ==================== -->
+<section class="section" id="toc-3">
+  <div class="section-header">
+    <div class="section-num">III</div>
+    <h3 class="section-title">The First Period: 30 Days of Earth Restoration</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The State of the Earth</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Global disaster</span><span class="bullet-desc">The judgments of the Tribulation have resulted in a global natural disaster of biblical proportions. Mountains leveled, cities destroyed, water turned to blood, no sun, moon, or stars. <span class="hl">The earth has very little left.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Kingdom earth</span><span class="bullet-desc">Yet this same damaged earth is the 1,000-year Kingdom earth. If we are to enjoy the world with Christ during the Kingdom, this disaster must be supernaturally cleaned.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Isaiah 65: Renewal, Not New Creation</div>
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 65:17–19</span>
+        <p>"For behold, I create new heavens and a new earth; And the former shall not be remembered or come to mind. But be glad and rejoice forever in what I create; For behold, I create Jerusalem as a rejoicing, And her people a joy. I will rejoice in Jerusalem, And joy in My people; The voice of weeping shall no longer be heard in her, Nor the voice of crying."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Correct sense of “new”</span><span class="bullet-desc">The original Hebrew indicates <span class="hl">re-creation</span>, not creation from nothing. The best sense is “creating the heavens again and the earth again” — renewing something that has been ruined, not a “brand new start.”</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Difference with Revelation 21</span><span class="bullet-desc">Do not confuse with Revelation 21, where John describes a radically different world (in Greek “fresh new”): no seas, no darkness, no physical sky, no moon. The world of Isaiah 65 still has sin and death.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Meaning of the 30 Days</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Purpose of the time</span><span class="bullet-desc">God could have restored the earth instantly, but He takes 30 days as He did with the 6 days of creation: numbers and everything God does have purpose and multiple levels of revelation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The number 3 (Deity)</span><span class="bullet-desc">The number 3 is the number of the <span class="hl">Deity</span>, reminding us that God is at the center of this work and the coming world.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The number 10 (Testimony)</span><span class="bullet-desc">The number 10 is the number of <span class="hl">testimony</span> in the Bible. The entire Kingdom is a testimony to the righteous government of Jesus and His right to the inheritance the Father has given Him. (30 = 3×10)</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Other Events of the 30 Days</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">The Antichrist and the False Prophet</span><span class="bullet-desc">They die immediately at the Second Coming of Jesus. Their souls descend to hell where the kings mock them. Then they are cast into the Lake of Fire eternally — <span class="hl">the first two in that place</span>, alone for 1,000 years.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">Removal of the bodies</span><span class="bullet-desc">The armies that fought against Jesus were killed with His sword at His return. Their bodies must be removed with the help of the birds, a process that takes time within these 30 days.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">The New Temple of the Kingdom</span><span class="bullet-desc">According to Daniel 12 and Ezekiel, a new and majestic temple will be built for the opening of the Kingdom. The topography itself will change: new mountains and rivers around Jerusalem (Isaiah 2:2–3).</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN IV ==================== -->
+<section class="section" id="toc-4">
+  <div class="section-header">
+    <div class="section-num">IV</div>
+    <h3 class="section-title">The Second Period: 45 Days of Judgment and Blessing</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Numerical Significance</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The number 9 (Judgment)</span><span class="bullet-desc">The number 9 is the number of <span class="hl">judgment</span>. This period is a time of judging hearts to determine who enters the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The number 5 (Grace)</span><span class="bullet-desc">The number 5 is the number of <span class="hl">grace</span>. In the midst of judgment, there will be grace for some. (45 = 9×5) — Judgment and grace simultaneous.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Binding of Satan (Rev. 20:1–3)</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 20:1–3</span>
+        <p>"Then I saw an angel coming down from heaven, having the key to the bottomless pit and a great chain in his hand. He laid hold of the dragon, that serpent of old, who is the Devil and Satan, and bound him for a thousand years; and he cast him into the bottomless pit, and shut him up, and set a seal on him, so that he should deceive the nations no more till the thousand years were finished. But after these things he must be released for a little while."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Father remains in heaven</span><span class="bullet-desc">During the entire 1,000-year reign of Christ, the Father remains separate from the Son, out of reach of Creation. Only through His Son can anyone approach the Father, for there will still be sin on the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan bound</span><span class="bullet-desc">God could have bound Satan at any time, but chose to do it this way for His own glory and purposes. He will be released at the end of the kingdom for a short time (v.7).</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Three Destinies: Abyss, Hell, and Lake of Fire</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">The Abyss</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.65;">A place in the depths of the earth where God holds the <span class="hl">spirits of demons</span> until the day of their judgment. It is not hell. Satan will remain here during the 1,000 years of the Kingdom. At a future time it will be emptied for final judgment.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">Hell (Sheol/Hades)</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.65;">A place of detention for <span class="hl">sinful humans</span> in the depths of the earth. It is not the final state. The Antichrist and the False Prophet will pass here while waiting to be cast into the Lake of Fire.</p>
+        </div>
+        <div class="info-panel" style="grid-column:1/-1;">
+          <div class="info-panel-title">The Lake of Fire — Permanent Destiny</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.65;">The permanent and final residence for both demons and unbelieving humanity. The Antichrist and the False Prophet will be the <span class="hl">first two to arrive</span>, alone during the first 1,000 years of the Kingdom. Neither the Abyss nor Hell are final states — both precede this final judgment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN V ==================== -->
+<section class="section" id="toc-5">
+  <div class="section-header">
+    <div class="section-num">V</div>
+    <h3 class="section-title">The Five Groups of Kingdom Citizens</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Overview of the Five Groups</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Description</th>
+            <th>Body Status</th>
+            <th>Resurrection</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="hl">#1 Church Saints</span></td>
+            <td>Believers of the Church Age, including the reader</td>
+            <td>Glorified (Rapture)</td>
+            <td>At the Rapture, before the Tribulation</td>
+          </tr>
+          <tr>
+            <td><span class="hl">#2 O.T. Saints</span></td>
+            <td>Adam, Noah, Abraham, Moses, David, John the Baptist…</td>
+            <td>Glorified (interval)</td>
+            <td>During the 45 days of the interval</td>
+          </tr>
+          <tr>
+            <td><span class="hl">#3 Tribulation Martyrs</span></td>
+            <td>Souls under the altar (Rev. 6), beheaded for their faith</td>
+            <td>Glorified (interval)</td>
+            <td>During the 45 days of the interval</td>
+          </tr>
+          <tr>
+            <td><span class="hl">#4 Jews Alive at Christ’s Return</span></td>
+            <td>Remnant of Petra + Jews in Israel who confessed Jesus</td>
+            <td>Natural (possibly mixed)</td>
+            <td>Debate: possibly glorified or in natural bodies</td>
+          </tr>
+          <tr>
+            <td><span class="hl">#5 Living Gentile Believers</span></td>
+            <td>"The sheep" — Gentiles who protected the Jewish people</td>
+            <td>Natural</td>
+            <td>Not dead; enter the Kingdom in natural bodies</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Implication: Two Natures in the Kingdom</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Glorified bodies</span><span class="bullet-desc">Do not sin, do not marry, do not have children, do not die. They are like the resurrected Jesus. <span class="hl">Called to rule</span> the natural world of sinners.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Natural bodies</span><span class="bullet-desc">Still carry sin in their bodies, marry and have children. Their descendants will be unbelievers and sinners who need to be ruled.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Fascinating coexistence</span><span class="bullet-desc">The coexistence of these two distinct natures leads to fascinating consequences for life in the Kingdom that will be studied next.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Marriage in Glorified Bodies</div>
+      <div class="scripture">
+        <span class="scripture-ref">Mark 12:24–25</span>
+        <p>"Jesus answered and said to them, “Are you not therefore mistaken, because you do not know the Scriptures nor the power of God? For when they rise from the dead, they neither marry nor are given in marriage, but are like angels in heaven."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Why marriage is no longer needed</span><span class="bullet-desc">Marriage was instituted because it was not good for the man to be alone in the face of sin. As resurrected ones, we will be married to Christ and will not need a partner. Multiplication to populate the earth is no longer required.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN VI ==================== -->
+<section class="section" id="toc-6">
+  <div class="section-header">
+    <div class="section-num">VI</div>
+    <h3 class="section-title">Group #2: Resurrection of Old Testament Saints</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Daniel 12:1–2</span>
+        <p>"At that time Michael shall stand up, The great prince who stands watch over the sons of your people; And there shall be a time of trouble, Such as never was since there was a nation, Even to that time. And at that time your people shall be delivered, Every one who is found written in the book. And many of those who sleep in the dust of the earth shall awake, Some to everlasting life, Some to shame and everlasting contempt."</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Resurrection Described</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The context of Daniel 12:1</span><span class="bullet-desc">The salvation of Israel at the end of the Tribulation triggers the resurrection of the O.T. saints. “At that time” Daniel’s people will be saved and many of those who “sleep” will awake to everlasting life.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Unbelievers do not resurrect here</span><span class="bullet-desc">Unbelieving Jews are promised disgrace, although their resurrection does not take place at this point. Their time will come after the Kingdom (second resurrection).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Isaiah 26 Confirms It</div>
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 26:19</span>
+        <p>"Your dead shall live; Together with my dead body they shall arise. Awake and sing, you who dwell in dust; For your dew is like the dew of herbs, And the earth shall cast out the dead."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A wonderful moment</span><span class="bullet-desc">For the first time we will see Adam, Noah, Abraham, Moses, David and even John the Baptist in the flesh. We will be able to walk and interact with the men and women of the Bible stories. <span class="hl">We can ask Adam good questions!</span></span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">1 Corinthians 13:12</span>
+        <p>"For now we see in a mirror, dimly, but then face to face. Now I know in part, but then I shall know just as I also am known."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN VII ==================== -->
+<section class="section" id="toc-7">
+  <div class="section-header">
+    <div class="section-num">VII</div>
+    <h3 class="section-title">Group #3: Resurrection of Tribulation Martyrs</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 20:4</span>
+        <p>"And I saw thrones, and they sat on them, and judgment was committed to them. Then I saw the souls of those who had been beheaded for their witness to Jesus and for the word of God, who had not worshiped the beast or his image, and had not received his mark on their foreheads or on their hands. And they lived and reigned with Christ for a thousand years."</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Their Prior State and Resurrection</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Souls under the altar</span><span class="bullet-desc">These are the Tribulation saints martyred for their faith, seen in Revelation 6 under the altar. Until now they have lived in Heaven <span class="hl">only as souls</span>, without physical bodies.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">"Came to life"</span><span class="bullet-desc">Souls never cease to exist, but they were “dead” in the sense of lacking physical bodies. “Came to life” is a description of resurrection — their moment of receiving new bodies, analogous to the Rapture for the Church saints.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Thrones of Government</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Authority to judge</span><span class="bullet-desc">After binding Satan, John sees thrones established for ruling. This confirms that these events are part of the 45-day period of judgment and blessing described by Daniel.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Millennial reign</span><span class="bullet-desc">These martyrs “lived and reigned with Christ a thousand years” — their resurrection and enthronement occur within the 75-day interval as preparation for the Kingdom.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN VIII ==================== -->
+<section class="section" id="toc-8">
+  <div class="section-header">
+    <div class="section-num">VIII</div>
+    <h3 class="section-title">Group #4: Jews Alive at Christ’s Return — Will They Be Resurrected?</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Promises for Israel in the Kingdom</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Jeremiah 31:31–34 — The New Covenant</span><span class="bullet-desc">Made with Israel (not originally with the Gentiles). The promise: <span class="hl">all Israel will know the Lord perfectly</span>, with no need to teach, sins forgiven, and hearts transformed.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Jeremiah 24:7 and 50:19–20</span><span class="bullet-desc">Israel will receive a heart to know the Lord and will turn to Him with all their heart. Even if one searches for sin in Israel, <span class="hl">it will not be found</span>. 100% of the nation will be 100% obedient.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Ezekiel 11:19–20 and Zephaniah 3:9–13</span><span class="bullet-desc">God gives Israel a new heart and a new spirit, perfectly obedient. The remnant of Israel will do no injustice, nor speak lies, nor will a deceitful tongue be found in their mouth.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Problem: There Are Marriages, Deaths, and Teaching in Israel</div>
+      <div class="scripture">
+        <span class="scripture-ref">Ezekiel 44:21–26</span>
+        <p>"No priest shall drink wine when he enters the inner court… Neither a widow nor a divorced woman shall they take as wife… They shall teach My people the difference between the holy and the unholy…"</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Apparent contradiction</span><span class="bullet-desc">If Israel were completely glorified, there would be no marriages, no death, no need for teaching. But Ezekiel 44 describes priests who marry, have families, and teach the people — inconsistent with full glorification.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The best answer: both groups</span><span class="bullet-desc">Some Jews will be glorified (the resurrected O.T. Saints). But other Jews will enter the Kingdom in natural form, marry, have offspring, and possess sin. Kingdom Israel will be a <span class="hl">combined</span> group.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN IX ==================== -->
+<section class="section" id="toc-9">
+  <div class="section-header">
+    <div class="section-num">IX</div>
+    <h3 class="section-title">The First and Second Resurrection</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The First Resurrection: Judgment of Believers</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 20:6</span>
+        <p>"Blessed and holy is he who has part in the first resurrection. Over such the second death has no power, but they shall be priests of God and of Christ, and shall reign with Him a thousand years."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">First and second = time of judgment</span><span class="bullet-desc">The terms “first” and “second” resurrection do not refer to the <em>time</em> of the resurrection, but to the <span class="hl">time of judgment</span>. Two judgments: first for believers, second for unbelievers.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Resurrection in parts</span><span class="bullet-desc">“Having part” reflects that the first resurrection occurs in stages over time, not in a single event.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Five Parts of the First Resurrection</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">① The Resurrection of Christ</div>
+          <div class="timeline-desc">Christ was the <span class="hl">firstfruits</span> of the resurrection (1 Cor. 15:20), the first to receive a new body. The basis and guarantee of all subsequent resurrections.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">② Church Saints — The Rapture</div>
+          <div class="timeline-desc">The believers of the Church Age, including the reader, receive new bodies at the Rapture, <em>before</em> the start of the Tribulation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">③ The Two Witnesses</div>
+          <div class="timeline-desc">The Two Witnesses resurrect in the middle of the Tribulation, being seen by the whole world (Rev. 11).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">④ Old Testament Saints</div>
+          <div class="timeline-desc">They resurrect during the 45-day period of the interval, at the end of the Tribulation, according to Daniel 12.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">⑤ Tribulation Martyrs</div>
+          <div class="timeline-desc">They resurrect after the Tribulation during the 75-day interval, according to Revelation 20:4.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Second Resurrection: Judgment of Unbelievers</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 20:5</span>
+        <p>"But the rest of the dead did not live again until the thousand years were finished. This is the first resurrection."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The “rest of the dead”</span><span class="bullet-desc">By process of elimination, this can only refer to the unbelieving dead. All unbelievers will be resurrected in a second event <span class="hl">at the end of the 1,000 years</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">No blessing</span><span class="bullet-desc">The second resurrection is not a blessed event. It is not for reward but for final judgment by works, for perdition. The unbelievers were not saved from sin by rejecting Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Judgment Seat of Christ</span><span class="bullet-desc">The judgment for believers (first resurrection) is a judgment of <span class="hl">reward</span> — the “Judgment Seat of Christ” (2 Cor. 5:10). To receive reward in the Kingdom, the believer must obtain his “heavenly ticket” — his new body — before the Kingdom begins.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN X ==================== -->
+<section class="section" id="toc-10">
+  <div class="section-header">
+    <div class="section-num">X</div>
+    <h3 class="section-title">Group #5: The Living Gentiles — Sheep and Goats (Matthew 25)</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Separation of the Nations</div>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 25:31–33</span>
+        <p>"When the Son of Man comes in His glory, and all the holy angels with Him, then He will sit on the throne of His glory. All the nations will be gathered before Him, and He will separate them one from another, as a shepherd divides his sheep from the goats."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Greek “ethnos”</span><span class="bullet-desc">The Greek word <em>ethnos</em> is commonly used for <span class="hl">Gentiles</span>. It makes sense because the Jews are already with Jesus. This is the judgment of the Gentile survivors of the Tribulation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The place of judgment</span><span class="bullet-desc">Jesus waited 30 days for the temple to be cleansed and rebuilt. Perhaps the throne will be in the new temple, which would explain why the judgment waits until the 45-day period.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Right and left</span><span class="bullet-desc">In Eastern culture, the right was the place of honor (sheep = believers) and the left was dishonor (goats = unbelievers). The judgment of dignity will be based on <span class="hl">faith</span>, not works (Habakkuk 2:4).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Sheep: Gentile Believers</div>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 25:34–36</span>
+        <p>"Then the King will say to those on His right hand, ‘Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world: for I was hungry and you gave Me food; I was thirsty and you gave Me drink; I was a stranger and you took Me in; I was naked and you clothed Me; I was sick and you visited Me; I was in prison and you came to Me.’"</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The fruit, not the salvation</span><span class="bullet-desc">Jesus does not say that social works <em>caused</em> salvation — He describes the <span class="hl">fruit</span> of the Spirit visible in believers during the Tribulation. They will be known by their fruit, not saved by it.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The unique fruit of the Tribulation</span><span class="bullet-desc">In that period there can be no church services, missionaries, or worship albums on the internet — the Antichrist would come and behead them. But the fruit will be visible in another way.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Works of Mercy: For Whom?</div>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 25:40</span>
+        <p>"And the King will answer and say to them, ‘Assuredly, I say to you, inasmuch as you did it to one of the least of these My brethren, you did it to Me.’"</p>
+      </div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">Who are “these My brethren”?</div>
+          <ul class="bullets" style="margin-top:8px;">
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">By elimination</span><span class="bullet-desc">They cannot be Gentiles (they are the ones doing the works). They cannot be believing Jews (they are protected under the Lord’s care). The only remaining group: <span class="hl">the persecuted unbelieving Jews</span> during the Tribulation.</span></div></li>
+          </ul>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">Suicidal Acts of Mercy</div>
+          <ul class="bullets" style="margin-top:8px;">
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Extreme danger</span><span class="bullet-desc">Caring for the sick, delivering precious water, clothing, visiting imprisoned Jews during the Antichrist’s reign of terror was <span class="hl">potentially suicidal</span>. Only faith in Christ would motivate them to take such risks.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Surprise of the Sheep</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">New believers without instruction</span><span class="bullet-desc">These sheep will be so absent from all discipleship during the Tribulation that they will be <span class="hl">surprised</span> to learn they are to be rewarded. They did not know they were serving Jesus.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Faith does not depend on maturity</span><span class="bullet-desc">The book of Acts is full of such people. The Spirit brings life and faith does not depend on spiritual maturity. They simply lived in the Spirit and were led — and that produced fruit.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Every act was service to Jesus</span><span class="bullet-desc">They did not realize they were serving Jesus until the moment He Himself told them. They were motivated to protect Israel — that is the fruit of the Spirit.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Goats: Unbelieving Gentiles</div>
+      <div class="scripture">
+        <span class="scripture-ref">Matthew 25:41, 46</span>
+        <p>"Then He will also say to those on the left hand, ‘Depart from Me, you cursed, into the everlasting fire prepared for the devil and his angels… And these will go away into everlasting punishment, but the righteous into eternal life."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">No fruit of the Spirit</span><span class="bullet-desc">The goats lack the fruit of the Spirit because they had no faith. They die instantly and enter hell to await the Second Resurrection. Later they will enter the Lake of Fire.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Final outcome</span><span class="bullet-desc">The believing Gentiles (sheep) will live and be welcomed into the Kingdom in natural bodies. The unbelieving Gentiles (goats) die immediately and enter hell to await the Second Resurrection.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SECCIÓN XI ==================== -->
+<section class="section" id="toc-11">
+  <div class="section-header">
+    <div class="section-num">XI</div>
+    <h3 class="section-title">Entry into the Kingdom: Children Born During the Millennium</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">A Fascinating Fact</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Natural men and women</span><span class="bullet-desc">There will be men and women with <span class="hl">natural bodies</span> who enter the Kingdom — both Jews (possibly) and Gentiles. These natural human beings still carry sin in their bodies.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Reproduction in the Kingdom</span><span class="bullet-desc">Those with natural bodies will be able to marry and have children. When they reproduce, they will produce natural children like us: unbelievers and sinners who need to be ruled.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The calling of the resurrected saints</span><span class="bullet-desc">The resurrected saints are called to <span class="hl">rule the natural world</span> of sinners and the sin offering they produce. We are called to be part of this government.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Upcoming Study Topics</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">The purposes of the Kingdom</span><span class="bullet-desc">Now that the citizens of the Kingdom have been established, the study will advance to the Kingdom period itself, beginning with its purposes.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">The coexistence of the two natures</span><span class="bullet-desc">How the group of glorified bodies and the group of natural bodies coexist and interact harmoniously within the Millennial Kingdom.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">The Kingdom Temple</span><span class="bullet-desc">The new temple described by Ezekiel will become the centerpiece of life in the Kingdom. The dwelling place of Jesus during the 1,000 years and the place from which He will rule.</span></div></li>
+        <li><span class="bullet-icon">❹</span><div class="bullet-content"><span class="bullet-label">The reunion of the Deity</span><span class="bullet-desc">Eventually the Father will join the Son. This extraordinary event will be studied in Revelation 21.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DIVIDER ==================== -->
+<div class="divider">✦</div>
+
+<!-- ==================== RESUMEN FINAL ==================== -->
+<div class="summary-box">
+  <em>The 75-day interval between the Tribulation and the Kingdom is not a simple historical parenthesis, but the moment when God fulfills with mathematical precision everything promised to His saints. In 30 days He renews the shattered earth to make it worthy of the presence of His Son; in 45 days He resurrects, judges, and positions every group of believers to rule or inhabit the Kingdom. The First Resurrection, completed in five stages from the resurrection of Christ to the martyrs of the Tribulation, reveals that God never forgets any of His own. And the Gentile sheep — nameless, uninstructed believers who risked their lives to protect the persecuted Jewish people — demonstrate that true faith always produces fruit, even if the believer himself does not know it.</em>
+</div>
+
+<!-- ==================== FOOTNOTE ==================== -->
+<footer>
+  Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br>
+  Art by <strong>Pat Marvenko Smith</strong> © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a><br>
+  <span style="color:var(--text-muted);font-size:12px;">The biblical interpretations and conclusions presented are based on the original VBVMI teaching used with permission. The author's views do not necessarily represent those of VBVMI, its directors or staff.</span>
+</footer>
+
+</div><!-- /wrapper -->
+
+<script>
+// Staggered animation of sections
+document.querySelectorAll('.section').forEach((sec, i) => {
+  sec.style.animationDelay = (0.08 + i * 0.08) + 's';
+});
+</script>
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

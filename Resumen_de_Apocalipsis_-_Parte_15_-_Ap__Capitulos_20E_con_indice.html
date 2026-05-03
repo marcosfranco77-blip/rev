@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation – Part 15 · Chapter 20E</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 72%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 9%,  rgba(201,168,76,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 43%, rgba(255,255,255,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 6%  90%, rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 27%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 55%, rgba(201,168,76,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67% 83%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 36%, rgba(201,168,76,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 64%, rgba(255,255,255,.45) 0%, transparent 100%);
+}
+
+/* LAYOUT */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 0 0 0;
+  padding: 0 24px 60px;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1), max-width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* HEADER */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(100,10,10,.85) 0%, rgba(10,8,6,.0) 70%);
+  text-align: center;
+  padding: 64px 32px 52px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.ornament-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.ornament-text {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+}
+
+/* MAIN CONTENT */
+main { padding-top: 52px; }
+
+/* SECTION */
+.section {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp .6s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full { grid-column: 1 / -1; }
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,.1);
+}
+
+/* BULLETS */
+ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+li.bullet-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+.bullet-icon {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.bullet-content { flex: 1; }
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 3px;
+}
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE BOX */
+.scripture-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 32px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.scripture-box::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+.scripture-text {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 18px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201,168,76,.5);
+}
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  color: var(--sky-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.styled-table td {
+  font-size: 16px;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+.styled-table tr:last-child td { border-bottom: none; }
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 52px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.divider-sym {
+  color: var(--gold-dim);
+  font-size: 14px;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.summary-box p {
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* FOOTNOTE */
+footer {
+  border-top: 1px solid rgba(201,168,76,.1);
+  padding: 24px 0;
+  text-align: center;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+footer a {
+  color: var(--gold-dim);
+  text-decoration: none;
+}
+footer a:hover { color: var(--gold); }
+
+/* ANIMATION DELAYS */
+.section:nth-child(1)  { animation-delay: .08s; }
+.section:nth-child(2)  { animation-delay: .16s; }
+.section:nth-child(3)  { animation-delay: .24s; }
+.section:nth-child(4)  { animation-delay: .32s; }
+.section:nth-child(5)  { animation-delay: .40s; }
+.section:nth-child(6)  { animation-delay: .48s; }
+.section:nth-child(7)  { animation-delay: .56s; }
+.section:nth-child(8)  { animation-delay: .64s; }
+.section:nth-child(9)  { animation-delay: .72s; }
+.section:nth-child(10) { animation-delay: .80s; }
+.section:nth-child(11) { animation-delay: .88s; }
+
+/* RESPONSIVE */
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .card.full { grid-column: 1; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+body.toc-open .page-wrap {
+  margin-left: 270px;
+  max-width: calc(1100px + 270px);
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-closed .page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+  body.toc-open .page-wrap { margin-left: 240px; }
+}
+@media (max-width: 600px) {
+  body.toc-open .page-wrap { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Table of Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">Context: Timeline of the Kingdom</span></a>
+    <a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">The Text of Revelation 20 — The Final War</span></a>
+    <a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">The Role of Satan: Why He Was Bound and Released</span></a>
+    <a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">The True Purpose of the 1,000-Year Kingdom</span></a>
+    <a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">Ezekiel 38–39: Framework and Structure</span></a>
+    <a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">Identity of Gog and Magog (Ezekiel 38:1–8)</span></a>
+    <a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">Details of the Invasion (Ezekiel 38:9–16)</span></a>
+    <a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">The Purpose of the Invasion: God Demonstrates His Covenant Faithfulness</span></a>
+    <a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">The Supernatural Destruction and Its Aftermath (Ezekiel 39)</span></a>
+    <a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">The Final Sacrifice: Inversion of the Created Order (Ezekiel 39:17–21)</span></a>
+    <a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">Comparative Table: Ezekiel 38–39 vs. Revelation 20</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+
+<div class="starfield"></div>
+
+<header>
+  <div class="ornament">
+    <span class="ornament-line"></span>
+    <span class="ornament-text">Verse by Verse Ministry International</span>
+    <span class="ornament-line"></span>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 15 · Chapter 20 (E) — The Final War</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapters Covered</span>
+      <span class="meta-value">Revelation 20 · Ezekiel 38–39</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pages Covered</span>
+      <span class="meta-value">30 pages</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Primary Historical Period</span>
+      <span class="meta-value">Post-Millennium — War of Gog and Magog</span>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+<main>
+
+<!-- SECCIÓN I -->
+<div class="section" id="sec-I">
+  <div class="section-header">
+    <div class="section-num">I</div>
+    <h3 class="section-title">Context: Timeline of the Kingdom</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Location in the Study</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Four Areas of the Kingdom Studied</span>
+            <span class="bullet-desc">Order of Creation / geography / government — daily life and death — temple, worship and law — <span class="hl">the Final War</span> (current topic).</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Millennium (Revelation 20:6)</span>
+            <span class="bullet-desc">Jesus rules with the saints for exactly <span class="hl">one thousand years</span>. This period was the focus of the previous study.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">75-Day Interval</span>
+            <span class="bullet-desc">Transition period between the 7-year Tribulation and the beginning of the Millennial Kingdom, according to <span class="hl">Daniel 12</span>. The 1,000-year clock does not begin until these 75 days are completed.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Calculation of the Total Kingdom Period</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">75 days</div>
+          <div class="timeline-desc">Post-Tribulation transition interval. Preparation events and judgment of the nations.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">1,000 years</div>
+          <div class="timeline-desc">The Millennium proper: Christ’s perfect government with a rod of iron. Satan bound.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">+7 years (minimum)</div>
+          <div class="timeline-desc">Post-Millennium interval for the War of Gog and Magog, burial of the dead (7 months) and burning of weapons (7 years). The final events <span class="hl">after</span> the 1,000-year clock.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Total: ≥ 1,007 years</div>
+          <div class="timeline-desc">The complete Kingdom period before the beginning of the New Heavens and New Earth.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">Why Does This Distinction Matter?</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">Reason 1 — Purpose of the Millennium</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">Separating the 1,000-year period from the War of Gog and Magog allows us to clearly understand the <span class="hl">specific purpose</span> of the Kingdom: to demonstrate Christ’s perfect government over humanity without interference from the enemy.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">Reason 2 — Identification of the War</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">The chronological detail confirms that the war in <span class="hl">Revelation 20:7</span> and the war in <span class="hl">Ezekiel 38–39</span> are the same event: the last war in human history.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN II -->
+<div class="section" id="sec-II">
+  <div class="section-header">
+    <div class="section-num">II</div>
+    <h3 class="section-title">The Text of Revelation 20 — The Final War</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Key Text — Revelation 20:7–9</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 20:7–9</span>
+        <span class="scripture-text">“Now when the thousand years have expired, Satan will be released from his prison and will go out to deceive the nations which are in the four corners of the earth, Gog and Magog, to gather them together to battle, whose number is as the sand of the sea. They went up on the breadth of the earth and surrounded the camp of the saints and the beloved city. And fire came down from God out of heaven and devoured them.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Clearly Post-Millennial Start</span>
+            <span class="bullet-desc">Verse 7 explicitly states “when the thousand years have expired.” The Millennium clock has already ended before the war begins.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Innumerable Army</span>
+            <span class="bullet-desc">The invading army is “as the sand of the sea” — multitudes from all Gentile nations, coming from every direction toward the plain surrounding Jerusalem.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Target: Jerusalem and the Temple</span>
+            <span class="bullet-desc">They surround “the camp of the saints and the beloved city” — Jerusalem. The wide plain formed before the Millennium (Zech. 14:10) surrounds the only mountain: Mount Zion with the Temple.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Instant Supernatural Destruction</span>
+            <span class="bullet-desc">God sends fire from heaven and devours them. The battle ends before it really begins. Israel does not participate in the combat.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Plain of Zechariah 14</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Zechariah 14:9–10</span>
+        <span class="scripture-text">“And the LORD shall be King over all the earth... All the land shall be turned into a plain from Geba to Rimmon south of Jerusalem...”</span>
+      </div>
+      <p style="font-size:16px;color:var(--text-dim);margin-top:10px;">This topography confirms the setting: a wide plain formed prior to the Millennium, in whose center rises the Temple Mount — the exact place where the army surrounds Israel.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Three Questions Answered by Ezekiel</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">①</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Why Was Satan Bound?</span>
+            <span class="bullet-desc">To make possible Christ’s perfect government during the Millennium without interference or deception.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">②</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Why Is He Later Released?</span>
+            <span class="bullet-desc">To be definitively defeated according to the eternal plan, putting an end to all enemy authority (1 Cor. 15:24–28).</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">③</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Who Are Gog and Magog?</span>
+            <span class="bullet-desc">Ezekiel 38–39 provides the complete details of their identity, motivations, and the development of the final battle.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN III -->
+<div class="section" id="sec-III">
+  <div class="section-header">
+    <div class="section-num">III</div>
+    <h3 class="section-title">The Role of Satan: Why He Was Bound and Released</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Two Ways Satan Provokes Sin</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Great Deceiver</span>
+            <span class="bullet-desc">Satan is the author of every lie. Jesus is the Truth; every lie in the world has its origin in Satan. John 8 says he is the “father of lies” from the Garden of Eden.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Tempter of the Flesh</span>
+            <span class="bullet-desc">He tempts the carnal nature inherited from Adam to act against the Word of God. Paul in Romans 7 describes this internal conflict. Even so, God always provides a way of escape (1 Cor. 10:13).</span>
+          </div>
+        </li>
+      </ul>
+      <div class="scripture-box" style="margin-top:12px;">
+        <span class="scripture-ref">Revelation 12:9</span>
+        <span class="scripture-text">“So the great dragon was cast out, that serpent of old, called the Devil and Satan, who deceives the whole world; he was cast to the earth, and his angels were cast out with him.”</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Postmodernism as an Example of Deception</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Cancellation of Truth</span>
+            <span class="bullet-desc">Postmodernism promotes “your truth” instead of absolute “the truth” — a tool of satanic deception on a cultural and national scale.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Consequences of a World Without Truth</span>
+            <span class="bullet-desc">Narcissism — relative ethics — tribal identity — disdain for effort and moral values — substitution of thinking (I think → I feel).</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Believer’s Response</span>
+            <span class="bullet-desc"><span class="hl">Do not withdraw</span>. “You are the salt of the earth” (Matt. 5:13). “I am the light of the world” (Matt. 5:14). The believer must remain present as a witness.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">Why Was Satan Bound During the Millennium?</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Romans 7:18–19</span>
+        <span class="scripture-text">“For I know that in me (that is, in my flesh) nothing good dwells; for to will is present with me, but how to perform what is good I do not find. For the good that I will to do, I do not do; but the evil I will not to do, that I practice.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Sinful nature remains in the Millennium</span>
+            <span class="bullet-desc">Natural (unglorified) people born during the Millennium possess a sinful nature. If Satan were loose, he would deceive and tempt these people, <span class="hl">undermining Jesus’ perfect government</span>.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The rod of iron is sufficient without external catalyst</span>
+            <span class="bullet-desc">Christ judges sin instantly and perfectly. Without Satan’s deception as a catalyst, the peace of the Millennium remains intact for a thousand years.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The demons were probably also bound</span>
+            <span class="bullet-desc">Although Scripture does not state it explicitly, it would not make sense for the king of demons to be imprisoned while his troops roamed freely. The Scriptures confirm that peace will not be disturbed.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">Why Is Satan Released? — The Answer from 1 Corinthians 15</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">1 Corinthians 15:24–25</span>
+        <span class="scripture-text">“Then comes the end, when He delivers the kingdom to God the Father, when He puts an end to all rule and all authority and power. For He must reign till He has put all enemies under His feet.”</span>
+      </div>
+      <div class="scripture-box">
+        <span class="scripture-ref">1 Corinthians 15:28</span>
+        <span class="scripture-text">“Now when all things are made subject to Him, then the Son Himself will also be subject to Him who put all things under Him, that God may be all in all.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The last enemy to defeat: Death</span>
+            <span class="bullet-desc">Death is personified in Satan, because he introduced sin and death into existence. Defeating him is defeating death itself.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Without a final enemy, all authority ends</span>
+            <span class="bullet-desc">Once Satan is defeated, there will be nothing left to rule. A 100% sinless world needs no government. Christ will then deliver all authority to the Father.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Why wasn’t he destroyed before the Millennium?</span>
+            <span class="bullet-desc">If Satan had been cast into the lake of fire along with the Antichrist and the False Prophet, there would have been no Millennial Kingdom — because in abolishing the last enemy, Christ would have immediately returned all authority to the Father.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN IV -->
+<div class="section" id="sec-IV">
+  <div class="section-header">
+    <div class="section-num">IV</div>
+    <h3 class="section-title">The True Purpose of the 1,000-Year Kingdom</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">6,000 Years of Human Failure</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Jeremiah 17:5–6, 9</span>
+        <span class="scripture-text">“Cursed is the man who trusts in man and makes flesh his strength... The heart is deceitful above all things, and desperately wicked; who can know it?”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">6,000 years of human government</span>
+            <span class="bullet-desc">The accumulated testimony is: death, war, misery, destruction. Humanity has proven it cannot govern itself since the day of the Fall.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The number 6 = the number of fallen man</span>
+            <span class="bullet-desc">It is no coincidence: in the Bible the number 6 represents sinful and fallen man. Six thousand years of human government demonstrate the need for a divine King.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">1,000 Years: The Definitive Contrast</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The number 7 = Perfection and completeness</span>
+            <span class="bullet-desc">6,000 years + 1,000 years = <span class="hl">7,000 years</span>. Seven is the biblical number of perfection and completeness. The complete history of the earth culminates in a perfect number.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The purpose of the Kingdom</span>
+            <span class="bullet-desc">To be the <span class="hl">cornerstone</span> of the earth’s existence: to demonstrate that only through the Messiah come righteousness and justice, even in a world with a sinful nature.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Promise of Psalm 8</span>
+            <span class="bullet-desc">Until there is no opposition at all, this world will continue. The moment the last enemy is put under Christ’s authority, this age will end and all authority will be abolished.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN V -->
+<div class="section" id="sec-V">
+  <div class="section-header">
+    <div class="section-num">V</div>
+    <h3 class="section-title">Ezekiel 38–39: Framework and Structure</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Structure of Ezekiel 33–48 (The 16 Kingdom Chapters)</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">General purpose</span>
+            <span class="bullet-desc">The last 16 chapters of Ezekiel (33–48) are <span class="hl">entirely dedicated</span> to Kingdom prophecies. They are the fulfillment of the Abrahamic Covenant given to Israel.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Thematic rather than chronological organization</span>
+            <span class="bullet-desc">The chapters are not arranged chronologically — they are organized according to the four promises God made to Abraham. Each pair of chapters corresponds to one promise.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Ezekiel 38–39 in the whole</span>
+            <span class="bullet-desc">They narrate the war that guarantees the <span class="hl">security of the land</span> and demonstrates God’s glory to the nations — two of the four Abrahamic promises.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The 4 Promises of the Abrahamic / Davidic Covenant</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Inheritance of land</span>
+            <span class="bullet-desc">A land in Canaan with great prosperity — milk and honey.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Long line of secure descendants</span>
+            <span class="bullet-desc">Even though Abraham had no son at the time, his descendants would live securely in this land.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">God’s presence</span>
+            <span class="bullet-desc">God would dwell among His people in glory.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">An eternal King (Davidic Covenant)</span>
+            <span class="bullet-desc">A king to rule the earth with perfect justice — the Messiah, the Lord Jesus Christ.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">When Does the War of Ezekiel 38–39 Occur? — Common Error vs. Correct Position</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">❌ Incorrect Position — Before the Tribulation</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">Many teachers place the War of Gog and Magog <span class="hl">before the Tribulation</span>, in our current time: Russia and Iran invading Israel for oil or natural gas. They argue that God intervenes supernaturally in our days to defend Israel.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">✅ Correct Position — Post-Millennial</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">A careful study of Ezekiel 38–39 compared with Revelation 20 reveals that <span class="hl">all the details</span> point to the end of the Millennium: Israel fully regathered, the formerly desolate land now prosperous, without walls, without military technology, weapons of wood.</p>
+        </div>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Gog–Gog connection is definitive</span>
+            <span class="bullet-desc">There are only <span class="hl">two mentions</span> in the entire Bible of “Gog and Magog” in relation to a war against the people of God: Ezekiel 38 and Revelation 20. This connection alone requires that they be the same event.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">John did not explain Gog because it was already known</span>
+            <span class="bullet-desc">By mentioning Gog in Revelation 20 without further explanation, John expected his readers to know Ezekiel and recognize the reference.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN VI -->
+<div class="section" id="sec-VI">
+  <div class="section-header">
+    <div class="section-num">VI</div>
+    <h3 class="section-title">Identity of Gog and Magog (Ezekiel 38:1–8)</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Foundational Text — Ezekiel 38:1–8</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 38:1–6</span>
+        <span class="scripture-text">“Son of man, set your face against Gog, of the land of Magog, the prince of Rosh, Meshech, and Tubal, and prophesy against him... Persia, Ethiopia, and Libya are with them, all of them with shield and helmet; Gomer and all its troops; the house of Togarmah from the far north and all its troops...”</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Who Is Gog?</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">A title, not a personal name</span>
+            <span class="bullet-desc"><span class="hl">Gog</span> is a title similar to “Pharaoh” or “Caesar.” It indicates the supreme leader, not his personal name. It changes from person to person in each era but designates the same function.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Magog: the region of origin</span>
+            <span class="bullet-desc">From the Table of Nations in Genesis 10, Magog corresponds approximately to <span class="hl">Eastern Europe</span>, including present-day Turkey. Noah’s grandsons (Magog, Meshech, Tubal) settled in that region north of Israel.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Key Details of When It Occurs (Ezekiel 38:8)</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“In the latter years”</span>
+            <span class="bullet-desc">It occurs after God has called Israel back to their land to live in peace — at the end of the Time of the Gentiles, which concludes with the Tribulation.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“All Israel” regathered</span>
+            <span class="bullet-desc">At the end of verse 8 it says “all.” Not just some Jews — <span class="hl">all</span> the Jews inhabit that land that was previously a desolation.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Defenseless land — without walls</span>
+            <span class="bullet-desc">Israel will have laid aside the sword. Without military armament, without walls, without bars or gates. They live in total confidence — only possible under Christ’s government.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN VII -->
+<div class="section" id="sec-VII">
+  <div class="section-header">
+    <div class="section-num">VII</div>
+    <h3 class="section-title">Details of the Invasion (Ezekiel 38:9–16)</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Text — Ezekiel 38:9–16</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 38:9–13</span>
+        <span class="scripture-text">“You will ascend, coming like a storm, covering the land like a cloud, you and all your troops and many peoples with you... You will say, ‘I will go up against a land of unwalled villages; I will go to a peaceful people, who dwell safely, all of them dwelling without walls, and having neither bars nor gates’ — to take plunder and to take booty...”</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Motivations of Gog: Opportunity and Greed</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">An evil thought</span>
+            <span class="bullet-desc">An evil thought enters Gog’s mind — Revelation 20 reveals that the true instigator is <span class="hl">Satan</span>, although Ezekiel does not mention him.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The opportunity: defenseless land</span>
+            <span class="bullet-desc">Gog sees that the land is in total rest, without walls or gates — like a house without a front door. A perceived opportunity for an easy attack.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The greed: Israel’s abundance</span>
+            <span class="bullet-desc">Israel in the Kingdom will be blessed above all nations. Gog sees the livestock, possessions, and accumulated goods and desires to take them for himself.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Satan’s Role as the Real Instigator</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Satan deceives Gog</span>
+            <span class="bullet-desc">Satan convinces Gog that he can win the battle and that God was wrong in blessing Israel so much. He exploits Gog’s lust and greed to provoke the attack.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The neighbors: surprised and incredulous</span>
+            <span class="bullet-desc">In verse 13 Israel’s neighbors are <span class="hl">bewildered</span> by the invaders. After 1,000 years without wars or conflicts, no one has even seen an army form. They are literally stunned.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">God Himself summons Gog</span>
+            <span class="bullet-desc">Ezekiel 38:4 says it is God who brings them to battle — He uses Satan as an instrument to provoke the planned end of rebellion and demonstrate His faithfulness to Israel.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">The Art of War Was Lost in the Millennium</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Isaiah 2:4</span>
+        <span class="scripture-text">“He shall judge between the nations, and rebuke many people; they shall beat their swords into plowshares, and their spears into pruning hooks; nation shall not lift up sword against nation, neither shall they learn war anymore.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Rudimentary war equipment</span>
+            <span class="bullet-desc">Gog’s army uses <span class="hl">exclusively wood</span>: sticks, spears, shields, helmets, bows and arrows — all wooden, no metal. War technology has completely disappeared during the Millennium.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Horses as means of transport</span>
+            <span class="bullet-desc">The Hebrew word “horse” literally means horse — no symbolic reference. This only makes sense in the post-industrial era of the Kingdom where war technology has disappeared.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Generations that never knew war</span>
+            <span class="bullet-desc">No one even knows how to make war. They were born and raised during 1,000 years of perfect peace. War knowledge was lost generationally.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Why do they think they can win?</span>
+            <span class="bullet-desc">They were deceived by Satan. Israel is completely defenseless, without walls or army, so these simple wooden weapons are a real threat to the peace. The deception is total.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN VIII -->
+<div class="section" id="sec-VIII">
+  <div class="section-header">
+    <div class="section-num">VIII</div>
+    <h3 class="section-title">The Purpose of the Invasion: God Demonstrates His Covenant Faithfulness</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">How Would God Demonstrate That He Protects Israel Without a Threat?</div>
+      <div class="info-panel">
+        <div class="info-panel-title">The Cancer Analogy</div>
+        <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">It is as if God promised to cure someone of cancer, but until they contract it, that person cannot know that God fulfilled His promise. Without the threat of Gog, there is no way for Israel to experience and confirm God’s faithfulness in protecting them.</p>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Double purpose of Gog’s invasion</span>
+            <span class="bullet-desc">First: it provokes the definitive end of Satan, fulfilling Paul’s eternal plan in 1 Corinthians 15. Second: it gives the Lord the opportunity to show Himself faithful to the <span class="hl">covenant of peace</span> promised to Israel in the Kingdom.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">God uses Satan for His own purposes</span>
+            <span class="bullet-desc">Although Satan tries to destroy Israel’s peace, the Lord uses him as an instrument to demonstrate His glory and faithfulness — and to put an end to the last enemy as planned from before creation.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN IX -->
+<div class="section" id="sec-IX">
+  <div class="section-header">
+    <div class="section-num">IX</div>
+    <h3 class="section-title">The Supernatural Destruction and Its Aftermath (Ezekiel 39)</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Text — Ezekiel 39:1–6: God Destroys Gog</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 39:1–6</span>
+        <span class="scripture-text">“And you, son of man, prophesy against Gog... I will turn you around and lead you on, and bring you up from the far north, and bring you against the mountains of Israel... You shall fall on the mountains of Israel, you and all your troops and the peoples who are with you... And I will send fire on Magog and on those who live in security in the coastlands.”</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">God’s Supernatural Act</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Lord removes the weapons from their hands</span>
+            <span class="bullet-desc">In verse 3, the Lord takes the bow and arrows from Gog’s hands — instantly disabling the entire invading army before it can attack.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Israel does not participate at all</span>
+            <span class="bullet-desc">Israel remains safe in their unwalled villages. The Lord fights for them in the plain. The people remain safe while God supernaturally destroys the army.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Fire from heaven — perfect parallel</span>
+            <span class="bullet-desc">The fire from heaven in Ezekiel 39:6 is the same fire from heaven in Revelation 20:9 — definitive confirmation that both passages describe the same event.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Aftermath: Burning of Weapons (Ezekiel 39:9–10)</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 39:9–10</span>
+        <span class="scripture-text">“Then those who dwell in the cities of Israel will go out and make fires of the weapons and burn them... They will make fires with them for seven years. They will not take wood from the field nor cut down any from the forests, because they will make fires with the weapons...”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">7 years of fuel</span>
+            <span class="bullet-desc">All the weapons are wooden. Israel collects them and uses them as fuel for <span class="hl">seven years</span> — so vast was the army that no one will need to gather wood from the field during that period.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Wood: the main fuel of the Kingdom</span>
+            <span class="bullet-desc">This detail confirms that the Kingdom era uses wood as the primary energy source — modern technology completely absent.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">The Burial of the Dead (Ezekiel 39:11–16)</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 39:11–14</span>
+        <span class="scripture-text">“It will come to pass in that day that I will give Gog a burial place there in Israel... And the house of Israel will be burying them for seven months, in order to cleanse the land... At the end of seven months they will make a search.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">7 months of burial</span>
+            <span class="bullet-desc">The bodies are so numerous that the burial process requires <span class="hl">seven months</span>. All the people of Israel will participate in this task to purify the land.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Valley of Hamon Gog</span>
+            <span class="bullet-desc">The burial place — probably the Jordan River valley, east of the Mediterranean — will be called “Hamon Gog”: the multitude of Gog.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Meticulous search for bones</span>
+            <span class="bullet-desc">Teams of people scour the entire land looking for unburied bones. When they find one, they place a marker so a Jew does not stumble over it and become ritually unclean. Then the buriers entomb them in the valley.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Israel makes a name for itself among the nations</span>
+            <span class="bullet-desc">In verse 13, the Lord says that Israel will become famous among all the nations for the way they respectfully bury even their enemies.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❺</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Confirmation of the post-millennial interval</span>
+            <span class="bullet-desc">7 months of burial + 7 years of burning weapons demonstrate that there is an interval of <span class="hl">at least 7 years</span> after the 1,000-year clock, before the New Heavens and New Earth.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN X -->
+<div class="section" id="sec-X">
+  <div class="section-header">
+    <div class="section-num">X</div>
+    <h3 class="section-title">The Final Sacrifice: Inversion of the Created Order (Ezekiel 39:17–21)</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Text — The Great Inverted Sacrifice</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 39:17–20</span>
+        <span class="scripture-text">“Speak to every sort of bird and to every beast of the field: ‘Assemble yourselves and come; gather together from all sides to My sacrificial meal... You shall eat the flesh of the mighty, drink the blood of the princes of the earth... You shall be filled at My table with horses and riders, with mighty men and with all the men of war,’ says the Lord GOD.”</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Inversion of Sacrifices</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">In the Bible: humans sacrifice animals</span>
+            <span class="bullet-desc">Throughout all history, the Lord directed people to sacrifice animals as a reminder of sin and the need for a blood covering (pointing to Christ).</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">In the final act: humanity is the sacrifice</span>
+            <span class="bullet-desc">At this culminating moment, the Lord completely inverts the order: He makes rebellious humanity a sacrifice for the animals. The animals receive the benefit; man pays the price; God is the One making the sacrifice.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Symmetry from the Fall</span>
+            <span class="bullet-desc">The first act at the beginning of the Fall was the sacrifice of an animal (in the Garden, to cover Adam and Eve). The last and final act of this age, God reverses it: the animal is the beneficiary and rebellious man is the sacrifice.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Final Theological Message</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Ezekiel 39:21</span>
+        <span class="scripture-text">“I will set My glory among the nations; all the nations shall see My judgment which I have executed, and My hand which I have laid on them.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Sacrifices have come to an end</span>
+            <span class="bullet-desc">The Lord Himself carries out the <span class="hl">final and definitive</span> sacrifice. The offering is those who oppose Him — the unbelievers. The need for any kind of sacrifices ceases forever.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Unbelief disappears from Creation</span>
+            <span class="bullet-desc">With the destruction of Gog’s army, all militant unbelief in Creation has been eliminated — although the final judgment of the souls of all unbelievers throughout history is yet to come.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">What follows: The Final Judgment</span>
+            <span class="bullet-desc">The next study will cover the moment of final judgment for the souls of all unbelievers who have ever lived. After that moment, the earth and its works will be burned and the new world will appear.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XI -->
+<div class="section" id="sec-XI">
+  <div class="section-header">
+    <div class="section-num">XI</div>
+    <h3 class="section-title">Comparative Table: Ezekiel 38–39 vs. Revelation 20</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Parallels That Confirm a Single Event</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Ezekiel 38–39</th>
+            <th>Revelation 20</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--gold)">Name of the leader</strong></td>
+            <td>Gog, of the land of Magog</td>
+            <td>Gog and Magog</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Size of the army</strong></td>
+            <td>“like a cloud covering the land”</td>
+            <td>“like the sand of the sea”</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Objective</strong></td>
+            <td>Defenseless Israel, without walls</td>
+            <td>Camp of the saints and the beloved city</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Method of destruction</strong></td>
+            <td>Fire from heaven (39:6)</td>
+            <td>Fire came down from God out of heaven (20:9)</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Israel’s participation</strong></td>
+            <td>None — God fights for them</td>
+            <td>None mentioned</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Chronology</strong></td>
+            <td>Post-Millennium (context of Ezek. 33–48)</td>
+            <td>Explicitly “when the thousand years have expired”</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Real instigator</strong></td>
+            <td>God summons / Satan deceives (inferred)</td>
+            <td>Satan released to deceive the nations</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<div class="divider">
+  <span class="divider-line"></span>
+  <span class="divider-sym">✦</span>
+  <span class="divider-line"></span>
+</div>
+
+<div class="summary-box">
+  <p>The War of Gog and Magog is not an immediate future or pre-tribulational event: it is the culminating act of human history, occurring at the end of the thousand years of the Millennial Kingdom. Satan is released not by chance, but by divine design — to be definitively defeated and to allow Christ to deliver all authority to the Father. Through the failure of Gog’s army, God fulfills His promise to protect Israel, inverts the sacrificial order of the fallen world, and closes this era of Creation forever. The final judgment of unbelievers throughout history and the New Heavens and New Earth await in the final chapters of Revelation.</p>
+</div>
+
+<footer>
+  <p>Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a></p>
+  <p>Art by Pat Marvenko Smith © 1992 · <a href="http://revelationillustrated.com" target="_blank">revelationillustrated.com</a></p>
+</footer>
+
+</div><!-- .page-wrap -->
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 06 · Chapters 16–17</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 9%  11%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 29% 27%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 51% 6%,  rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 73% 19%, rgba(255,255,255,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 38%, rgba(201,168,76,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 6%  71%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 41% 84%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 59%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 76%, rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 19% 93%, rgba(255,255,255,.5) 0%, transparent 100%);
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* HEADER */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(139,26,26,.45) 0%, rgba(10,8,6,0) 70%);
+  text-align: center;
+  padding: 64px 24px 48px;
+  margin-bottom: 56px;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ornament-line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim));
+}
+.ornament-line.right {
+  background: linear-gradient(to left, transparent, var(--gold-dim));
+}
+.ornament-text {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.meta-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 52px;
+  animation: fadeUp .6s ease both;
+}
+.section:nth-child(1)  { animation-delay: .00s; }
+.section:nth-child(2)  { animation-delay: .08s; }
+.section:nth-child(3)  { animation-delay: .16s; }
+.section:nth-child(4)  { animation-delay: .24s; }
+.section:nth-child(5)  { animation-delay: .32s; }
+.section:nth-child(6)  { animation-delay: .40s; }
+.section:nth-child(7)  { animation-delay: .48s; }
+.section:nth-child(8)  { animation-delay: .56s; }
+.section:nth-child(9)  { animation-delay: .64s; }
+.section:nth-child(10) { animation-delay: .72s; }
+.section:nth-child(11) { animation-delay: .80s; }
+.section:nth-child(12) { animation-delay: .88s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full { grid-column: 1 / -1; }
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+
+/* BULLETS */
+ul.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+.bullet-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  color: var(--gold);
+  margin-top: 2px;
+}
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 2px;
+}
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 32px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.scripture::before {
+  content: '"';
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  display: block;
+}
+.scripture-text {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201,168,76,.5);
+}
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--sky-light);
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+}
+
+/* TWO COL */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 12px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.styled-table td {
+  color: var(--text-dim);
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+}
+.divider-sym { color: var(--gold-dim); font-size: 14px; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+/* FOOTNOTE */
+footer {
+  border-top: 1px solid rgba(201,168,76,.12);
+  padding-top: 24px;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.9;
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+p.card-body {
+  font-size: 17px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed; top: 0; left: 0; width: 270px; height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000; display: flex; flex-direction: column; overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex; align-items: center; gap: 10px; padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12); flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-dim); white-space: nowrap;
+}
+.toc-links {
+  flex: 1; overflow-y: auto; padding: 10px 0 20px;
+  scrollbar-width: thin; scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 18px;
+  text-decoration: none; color: var(--text-dim); font-family: var(--f-body);
+  font-size: 13px; line-height: 1.4; border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover { color: var(--gold-light); border-left-color: var(--gold); background: rgba(201,168,76,.06); }
+.toc-item.active { color: var(--gold); border-left-color: var(--gold); background: rgba(201,168,76,.1); }
+.toc-num { flex-shrink: 0; font-size: 11px; font-family: var(--f-heading); color: var(--crimson-light); padding-top: 1px; min-width: 22px; }
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute; bottom: 20px; right: 12px;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold); border-radius: 50%; width: 30px; height: 30px;
+  cursor: pointer; font-size: 18px; display: flex; align-items: center;
+  justify-content: center; transition: background .2s; line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed; top: 50%; left: 0; transform: translateY(-50%);
+  z-index: 999; background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3); border-left: none;
+  color: var(--gold); border-radius: 0 6px 6px 0; width: 22px; height: 54px;
+  cursor: pointer; font-size: 18px; display: none; align-items: center;
+  justify-content: center; transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.wrapper { transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
+@media (max-width: 900px) { #sidebar-toc { width: 240px; } }
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#toc-1" class="toc-item"><span class="toc-num">XIV</span><span class="toc-title">Babylon and the Redemption of Christ — The Two Great Themes of the Bible</span></a>
+<a href="#toc-2" class="toc-item"><span class="toc-num">XV</span><span class="toc-title">Babylon Dimension 1 — House of Sin: The Home of Satan</span></a>
+<a href="#toc-3" class="toc-item"><span class="toc-num">XVI</span><span class="toc-title">Babylon Dimension 2 — Source of All Idolatry: The Tower of Babel</span></a>
+<a href="#toc-4" class="toc-item"><span class="toc-num">XVII</span><span class="toc-title">Babylon Dimension 3 — First Gentile Kingdom to Conquer Israel and Jerusalem</span></a>
+<a href="#toc-5" class="toc-item"><span class="toc-num">XVIII</span><span class="toc-title">Babylon Dimension 4 — Central Headquarters of the Antichrist in the Last Days</span></a>
+<a href="#toc-6" class="toc-item"><span class="toc-num">XIX</span><span class="toc-title">Babylon Dimension 5 — Symbol of All False Religions</span></a>
+<a href="#toc-7" class="toc-item"><span class="toc-num">XX</span><span class="toc-title">The Cardinal Directions as Spiritual Symbol — East vs. West</span></a>
+<a href="#toc-8" class="toc-item"><span class="toc-num">XXI</span><span class="toc-title">Chapter 17: The Judgment of Spiritual Babylon — The Great Harlot</span></a>
+<a href="#toc-9" class="toc-item"><span class="toc-num">XXII</span><span class="toc-title">The Harlot Rides the Beast — Babylon and the Antichrist United</span></a>
+<a href="#toc-10" class="toc-item"><span class="toc-num">XXIII</span><span class="toc-title">The Seven Heads — Seven Mountains, Seven Kings: The Times of the Gentiles</span></a>
+<a href="#toc-11" class="toc-item"><span class="toc-num">XXIV</span><span class="toc-title">The Seven Historical Kings Who Controlled Babylon and Jerusalem</span></a>
+<a href="#toc-12" class="toc-item"><span class="toc-num">XXV</span><span class="toc-title">Destruction of the Harlot — The End of Spiritual Babylon</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide contents">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show contents">&#8250;</button>
+
+
+<div class="starfield"></div>
+
+<div class="wrapper">
+
+<!-- ══════════════════════════ HEADER ══════════════════════════ -->
+<header>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <span class="ornament-text">Verse by Verse Ministry International</span>
+    <div class="ornament-line right"></div>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 06 · Chapters 16 – 17</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapters covered</span>
+      <span class="meta-value">Revelation 16:19 – 17:18</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main themes</span>
+      <span class="meta-value">Babylon in its 5 dimensions · The Great Harlot · The 7 Kings</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Historical period</span>
+      <span class="meta-value">Times of the Gentiles → End of the Tribulation</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════ SECTION XIV ══════════════════════════ -->
+<div class="section" id="toc-1">
+  <div class="section-header">
+    <div class="section-num">XIV</div>
+    <h2 class="section-title">Babylon and the Redemption of Christ — The Two Great Themes of the Bible</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 16:19</span>
+        <span class="scripture-text">Now the great city was divided into three parts… and great Babylon was remembered before God, to give her the cup of the wine of the fierceness of His wrath.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Two Themes That Run Through All of Scripture</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Redemption vs. Babylon</span><span class="bullet-desc">The destruction of Babylon is <span class="hl">one of the two main themes of the Bible</span>. The other is redemption through Christ. Both themes play against each other throughout all of Scripture.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Babylon as the antagonist</span><span class="bullet-desc">Babylon serves as the opposite of the protagonist, who is Christ. Just as the identity of Jesus was slowly revealed throughout Scripture, Babylon is also unveiled in stages.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The bowls as vessels of wrath</span><span class="bullet-desc">Bowls are used as symbols in Scripture that store God's wrath for a later time, when it will be poured out upon those objects deserving of that wrath.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Five Dimensions of Babylon</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">House of sin</span><span class="bullet-desc">The territory where sin began on earth and where Satan's dominion was established.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">Origin of all idolatry</span><span class="bullet-desc">The primary source of false worship and religious rebellion.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">First Gentile nation to conquer Israel and Jerusalem</span><span class="bullet-desc">God's first instrument for disciplining His people.</span></div></li>
+        <li><span class="bullet-icon">❹</span><div class="bullet-content"><span class="bullet-label">Central headquarters of the Antichrist's power</span><span class="bullet-desc">The physical and spiritual capital of the last days.</span></div></li>
+        <li><span class="bullet-icon">❺</span><div class="bullet-content"><span class="bullet-label">Symbol of all false religion</span><span class="bullet-desc">The mother of all harlots and abominations of the earth.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XV ══════════════════════════ -->
+<div class="section" id="toc-2">
+  <div class="section-header">
+    <div class="section-num">XV</div>
+    <h2 class="section-title">Babylon Dimension 1 — House of Sin: The Home of Satan</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Garden of Eden and the Fall</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan loses his heavenly place</span><span class="bullet-desc">After Satan's fall from heaven and his removal from the heavenly Eden (Ezek 28:13), he sought his place in the earthly Eden, which is an image of the heavenly one (Genesis 2:8). The earthly Eden was located in what is today Iraq, in the region of Babylon.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan's jealousy of humanity</span><span class="bullet-desc">Satan's jealousy over the creation of man and woman — who rivaled his beauty and wisdom — led him to attack them and bring humanity into sin.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan gains dominion over the earth</span><span class="bullet-desc">When Adam disobeyed God and obeyed Satan, he handed over the dominion God had given him. Satan thus gained dominion over the earth.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Babylon: Ground Zero of Spiritual Warfare</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The first area surrendered to Satan</span><span class="bullet-desc">Babylon is <span class="hl">ground zero</span> — the first area of land surrendered to Satan, the beginning of sin, and the start of his battle with God for control of the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan's eternal stronghold</span><span class="bullet-desc">Forever, Babylon has been Satan's homeland, his stronghold. Today this region continues to be heavily guarded by his dark forces, with an especially intense demonic activity.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Rule of association</span><span class="bullet-desc">Whenever we hear the word Babylon, we must associate it with <span class="hl">the home of Satan and sin</span>.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XVI ══════════════════════════ -->
+<div class="section" id="toc-3">
+  <div class="section-header">
+    <div class="section-num">XVI</div>
+    <h2 class="section-title">Babylon Dimension 2 — Source of All Idolatry: The Tower of Babel</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Nimrod and the Tower of Babel</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Nimrod: the antichrist of his age</span><span class="bullet-desc">Genesis 11 records how men gathered in Babel under the leadership of Nimrod, an all-powerful world leader for all the tribes of those days. His story serves as a foreshadowing of the Antichrist.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The first false religion</span><span class="bullet-desc">Nimrod demanded a new kind of worship and a construction project of a tower that would reach to heaven. The tower was the <span class="hl">first false religion</span>: it attempted to replace obedience to God with a man-made way to reach heaven.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The idea Satan planted</span><span class="bullet-desc">Behind the tower were hearts that believed for the first time that it was possible to work their way to God through their own efforts. Satan used Nimrod to establish this idea: men could define their own way to reach heaven. God placed eternity in man's heart to seek Him, but Satan corrupted it.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">God Responds: The Confusion of Languages</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord scatters mankind</span><span class="bullet-desc">The Lord responded by confusing language to ensure that such worldwide rebellion would be more difficult in the future. No government functions if people do not share a common language. Since then, languages have kept men separated rather than organizing against God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The global language of the internet</span><span class="bullet-desc">Western culture and the internet have increasingly brought the world together under a common language: English. Automatic translators integrate a large population into global unity. This has caused the Tower of Babel to grow in population. Every person integrated can be easily influenced and directed toward specific objectives.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A new rebellion against God</span><span class="bullet-desc">As the world rapidly overcomes the language barrier, a new worldwide rebellion against God becomes possible. Our minds are manipulated by algorithms designed to make us buy distorted ideas about the world and especially against a genuine relationship with God.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XVII ══════════════════════════ -->
+<div class="section" id="toc-4">
+  <div class="section-header">
+    <div class="section-num">XVII</div>
+    <h2 class="section-title">Babylon Dimension 3 — First Gentile Kingdom to Conquer Israel and Jerusalem</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Nebuchadnezzar and the Beginning of the Times of the Gentiles</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The first Gentile conquest</span><span class="bullet-desc">Before Nebuchadnezzar, no Gentile nation had succeeded in dominating God's people. God allowed Babylon to conquer Israel as part of His plan to <span class="hl">discipline His people</span> for their sins.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Nebuchadnezzar as a foreshadowing of the Antichrist</span><span class="bullet-desc">As studied in Daniel, the man at the head of Babylon is also a foreshadowing of the Antichrist. Babylon becomes the first of the nations to control Israel during the Times of the Gentiles.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Judgment promised to Babylon</span><span class="bullet-desc">God allowed the conquest but also promised, in Jeremiah, to eventually punish Babylon for its cruelty against Israel: <em>"And I will repay Babylon and all the inhabitants of Chaldea for all the evil they have done in Zion"</em> (Jer 51:24).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Pattern Repeats at the End</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A final Gentile ruler</span><span class="bullet-desc">The Times of the Gentiles will end in a similar way to how they began: a single Gentile ruler controlling the entire world and persecuting Israel, controlling both Jerusalem and Babylon. This will be the kingdom of the Antichrist.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Discipline, not destruction</span><span class="bullet-desc">Like the first Babylon, this last one will be used by God to discipline His people. However, as God promised, the discipline will not be for the destruction of Israel.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Rule of association</span><span class="bullet-desc">Whenever we hear Babylon, we must think of <span class="hl">"God's instrument for disciplining Israel."</span></span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XVIII ══════════════════════════ -->
+<div class="section" id="toc-5">
+  <div class="section-header">
+    <div class="section-num">XVIII</div>
+    <h2 class="section-title">Babylon Dimension 4 — Central Headquarters of the Antichrist in the Last Days</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Babylon: Physical and Spiritual at the Same Time</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Literal and symbolic simultaneously</span><span class="bullet-desc">Scripture makes clear that Babylon in Revelation is <span class="hl">both the literal place and the biblical symbol</span>. It is like creation: the seven days are literal, yet the number seven also carries symbolic meaning.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Antichrist resides in geographic Babylon</span><span class="bullet-desc">Already in Revelation 16, the Antichrist resides in geographic Babylon, near the Euphrates River. When the Euphrates dries up, it provides the opportunity to march his armies toward Israel (from east to west).</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan's home explains the choice</span><span class="bullet-desc">The Antichrist moves the seat of world power to Babylon at the moment Satan takes up residence in him. It makes sense: Satan's home has always been in Mesopotamia; he will naturally locate the seat of world government there.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">A City That Rises Again Only to Be Destroyed</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Gradual destruction befitting its purpose</span><span class="bullet-desc">The destruction of the city of Babylon stands out precisely because the city has once again become a center of power. It will be destroyed just before the Antichrist himself is destroyed.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Center of political, military, and financial power</span><span class="bullet-desc">In the last days of the Tribulation, the Antichrist makes Babylon the seat of his military and financial power. Chapter 18 will describe the judgment of this physical city, ruining its wealth, power, and prestige.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Rule of association</span><span class="bullet-desc">Whenever we hear Babylon, we must think of <span class="hl">"the seat of power in the last days."</span></span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XIX ══════════════════════════ -->
+<div class="section" id="toc-6">
+  <div class="section-header">
+    <div class="section-num">XIX</div>
+    <h2 class="section-title">Babylon Dimension 5 — Symbol of All False Religions</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Only Two Religious Systems on Earth</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">God's way</span><span class="bullet-desc">God's way, made available through His promises in His Word and through our faith in the work of Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Everything else: Babylon</span><span class="bullet-desc">The enemy's false religion that began in the Garden, took shape in Babel, and gave birth to a countless number of derivative religions. The heterogeneous mixture of religious options today is testimony to the proliferation of the enemy's lies.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Does not represent a single false religion</span><span class="bullet-desc">Babylon does not represent one specific false system, but rather <span class="hl">all the false religious systems</span> that Satan has invented.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">How the Multiplicity of False Religions Benefits Satan</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">①</span><div class="bullet-content"><span class="bullet-label">Camouflages the truth</span><span class="bullet-desc">Many religions generate confusion and make it difficult for anyone to find the truth amid so much noise.</span></div></li>
+        <li><span class="bullet-icon">②</span><div class="bullet-content"><span class="bullet-label">Perpetuates the myth of many paths</span><span class="bullet-desc">It makes it seem as though there are many paths to heaven, so all religions appear equally valid. This dilutes the exclusivity of Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Rule of association</span><span class="bullet-desc">Whenever we hear Babylon, we must think of <span class="hl">"all false religion."</span></span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Summary: Babylon Is and Represents — Two Antagonistic Cities</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">🔴 Babylon — Dwelling Place of Satan</div>
+          <p class="bullet-desc">It is a physical place where sin began, the spiritual seat of Satan and rebellion. Starting point of idolatry. Source of all hatred and oppression against the people of God. Symbol of everything Satan is and does to undermine truth and oppose God. To the east of Jerusalem: the direction of evil.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">✨ Jerusalem — Dwelling Place of God</div>
+          <p class="bullet-desc">It is the city of God and a place of redemption. Capital of His people and the place of Christ's sacrifice. It will be the seat of Christ's government and the center of the world in the Kingdom. Just as Babylon is for Satan, Jerusalem is for Jesus. To the west: the direction of good.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XX ══════════════════════════ -->
+<div class="section" id="toc-7">
+  <div class="section-header">
+    <div class="section-num">XX</div>
+    <h2 class="section-title">The Cardinal Directions as Spiritual Symbol — East vs. West</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">East = Evil · West = Good</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A consistent biblical pattern</span><span class="bullet-desc">Babylon is to the east of Jerusalem and therefore the eastern direction represents evil. Jerusalem is to the west, so moving westward is a picture of turning away from evil and drawing near to the Lord.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">After creation</span><span class="bullet-desc">After the creation of Adam, the Lord placed him in a garden <em>to the east</em>, representing Adam moving toward sin.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Cain sent to the east</span><span class="bullet-desc">Cain is sent to the east after murdering Abel — a movement toward sin and separation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Abraham from east to west</span><span class="bullet-desc">Abraham was sent from Ur in the east to the Promised Land in the west, representing his passage from paganism to faith.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Jesus and the temptations</span><span class="bullet-desc">Even Jesus moved from the west side of the Jordan to the east to confront Satan in His temptations in the wilderness.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Figurative Becomes Literal at the End</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The final battlefield</span><span class="bullet-desc">Where before Babylon and Jerusalem figuratively represented evil against good, they have now become the <span class="hl">literal battlefield</span>. The only two cities still standing at the end of the age are Babylon and Jerusalem.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord narrows the focus</span><span class="bullet-desc">The Lord has narrowed the world's focus to these two places. Through the Bowl judgments He drives Satan from the east (Babylon) toward the west (Jerusalem) for a final battle.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The global plan of destruction</span><span class="bullet-desc">Physically: the Antichrist and his power base, the city of Babylon, must be destroyed. Spiritually: all false religion must come to an end, as must all rebellion and idolatry. Babylon seeking to destroy Jerusalem, but in the end Jerusalem destroys Babylon.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XXI ══════════════════════════ -->
+<div class="section" id="toc-8">
+  <div class="section-header">
+    <div class="section-num">XXI</div>
+    <h2 class="section-title">Chapter 17: The Judgment of Spiritual Babylon — The Great Harlot</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:1–6</span>
+        <span class="scripture-text">Then one of the seven angels who had the seven bowls came and talked with me, saying to me, "Come, I will show you the judgment of the great harlot who sits on many waters, with whom the kings of the earth committed fornication… So he carried me away in the Spirit into the wilderness. And I saw a woman sitting on a scarlet beast which was full of names of blasphemy… BABYLON THE GREAT, THE MOTHER OF HARLOTS AND OF THE ABOMINATIONS OF THE EARTH. I saw the woman, drunk with the blood of the saints…</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Woman as a Symbol of False Religion</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Women symbolize religious systems</span><span class="bullet-desc">In Scripture, women are commonly used to symbolize religious systems. Israel is called the wife of Jehovah, and the Church is called the Bride and Wife of Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The harlot: an illegitimate wife</span><span class="bullet-desc">A harlot is an illegitimate and false wife, who gives the illusion of marriage without substance or reality. In that sense she is an apt image of idolatry: a false religious relationship that pretends to be true, substituting the place of a covenant with the true God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Mother of all harlots</span><span class="bullet-desc">This woman is not simply one of the many false religions; she is the <span class="hl">Mother of all false religion</span>. Babylon is where it all began. The source of false religion is Satan, father of all lies, personified in his hometown.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Sitting on Many Waters — Global Dominion</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The waters = all nations</span><span class="bullet-desc">The waters represent the multitude of nations and peoples of the world (v.15). The harlot sitting on them suggests that she dominates and deceives all of humanity under the false religion that finds its origin in Babylon.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">World leaders commit fornication with her</span><span class="bullet-desc">Throughout history, world leaders have used religion to build a power base, to enrich themselves, and to control their subjects. They commit fornication with the harlot in the sense that they use her for their own pleasure and become her partners.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">False religion: sedative and stimulant</span><span class="bullet-desc"><span class="hl">Stimulant:</span> it awakens the lust for greater power and other desires. It becomes worship of oneself — a god I design to satisfy my addiction. <span class="hl">Sedative:</span> it numbs the person into a spiritual stupor, inoculating them against the truth (2 Corinthians 4:3–4).</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XXII ══════════════════════════ -->
+<div class="section" id="toc-9">
+  <div class="section-header">
+    <div class="section-num">XXII</div>
+    <h2 class="section-title">The Harlot Rides the Beast — Babylon and the Antichrist United</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:3, 8</span>
+        <span class="scripture-text">So he carried me away in the Spirit into the wilderness. And I saw a woman sitting on a scarlet beast which was full of names of blasphemy, having seven heads and ten horns… The beast that you saw was, and is not, and will ascend out of the bottomless pit and go to perdition.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Beast is the Antichrist</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The same beast from Chapter 13</span><span class="bullet-desc">This beast is the same one John saw in Revelation 13: seven heads and ten horns. It is the Antichrist, confirmed in v.17:8: the one who was, is not, and is about to come out of the abyss — a reference to his <span class="hl">death and resurrection</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The harlot existed before the Antichrist</span><span class="bullet-desc">Spiritual Babylon has existed long before the Antichrist. We just saw her sitting on many waters, which represent the kings of the earth throughout all of history. Satan has been using false religion to control world leaders across the centuries.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">A Crucial Shift: The Harlot Now Rides the Beast</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The union at the end of the Tribulation</span><span class="bullet-desc">In Chapter 17, Babylon the harlot rides upon the beast (the Antichrist) who rules the world. While Satan dwells in this man, spiritual Babylon and the beast have merged into one.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">One religion: the worst</span><span class="bullet-desc">At the end of the Tribulation, all the world's religion is invested in a single man, the Antichrist. There will no longer be many false religions. The harlot now rides the beast because only one remains: not Buddha, not the virgin, not Muhammad, etc. <span class="hl">Only the Antichrist.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Adorned with riches to honor Satan</span><span class="bullet-desc">The woman dressed as royalty represents that Satan demands worship with great sacrifices. Dan 11:36–38: the Antichrist will exalt himself above every god and honor the god of fortresses with gold, silver, and precious stones.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Drunk with the Blood of the Saints — Judgment Assured</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Cup of abominations</span><span class="bullet-desc">The harlot holds a cup of abominations and immorality (v.4), promoting these two things that go hand in hand. She revels in them as though addicted.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Drunk with the blood of martyrs</span><span class="bullet-desc">Verse 6 reveals that she is drunk with the blood of the saints, representing both the martyrdom of the Tribulation and that of earlier times. This scene tells the story of religion in all ages, used to persecute the saints.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The worst enemy: false Christian denominations</span><span class="bullet-desc">The worst examples are the so-called false Christian religions that Satan uses to discredit Jesus and the true Church. In the last days of the Times of the Gentiles, all his plans are invested in one man: the Antichrist.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XXIII ══════════════════════════ -->
+<div class="section" id="toc-10">
+  <div class="section-header">
+    <div class="section-num">XXIII</div>
+    <h2 class="section-title">The Seven Heads — Seven Mountains, Seven Kings: The Times of the Gentiles</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:9–11</span>
+        <span class="scripture-text">"Here is the mind which has wisdom: The seven heads are seven mountains on which the woman sits. There are also seven kings. Five have fallen, one is, and the other has not yet come. And when he comes, he must continue a short time. The beast that was, and is not, is himself also the eighth, and is of the seven, and is going to perdition."</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Symbolic Chain: Heads → Mountains → Kings</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Having wisdom = knowing the O.T.</span><span class="bullet-desc">"Here is the mind which has wisdom" means we must know history and the Old Testament, specifically the context of Daniel.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Mountains represent supreme kings</span><span class="bullet-desc">When the Bible uses mountains to represent kings, it means kings of the highest authority. No one is higher than they are — they have no other human authority above them. They do not have the Antichrist over them.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Key distinction: not the 7 of the end times</span><span class="bullet-desc">These seven kings must be distinguished from the seven leaders who will rule under the Antichrist during the Tribulation (who will not be the supreme authority). The seven historical kings rule in sequence throughout history, not simultaneously.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Horns of the Beast vs. Heads — Dragon vs. Antichrist</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The dragon (Satan) in Rev. 12:3</span><span class="bullet-desc">He had ten horns and seven heads <em>with crowns</em>. This indicates that Satan holds control over the entire world: all ten of its kingdoms and all seven of its rulers including the Antichrist.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The beast (Antichrist) in Rev. 13:1</span><span class="bullet-desc">He had ten horns with ten crowns, but only seven heads with blasphemous names. And one of those seven heads was slain and then rose again. The seven heads are supreme world leaders who ruled throughout the Times of the Gentiles.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Beast incorporates the four beasts of Daniel</span><span class="bullet-desc">The beast of Rev. 13:2 (leopard, bear, mouth of a lion, ten horns) represents the entire Gentile age, culminating in the Antichrist's rule over the world. It had parts of the lion, bear, leopard, and the fourth beast of Daniel 7.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XXIV ══════════════════════════ -->
+<div class="section" id="toc-11">
+  <div class="section-header">
+    <div class="section-num">XXIV</div>
+    <h2 class="section-title">The Seven Historical Kings Who Controlled Babylon and Jerusalem</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Rule for Identifying the Seven Kings</div>
+      <p class="card-body" style="margin-bottom:14px;">To be counted among the seven kings, rulers had to have controlled <span class="hl">both Babylon and Jerusalem</span> at the same time. Israel has remained under Gentile authority from Babylon until the return of Christ. The theme has always been Babylon against Jerusalem.</p>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Seven Kings Throughout the Times of the Gentiles</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">King I — Nebuchadnezzar (Babylon)</div>
+          <div class="timeline-desc">First Gentile dynasty to control both Babylon and Jerusalem. Foreshadowing of the Antichrist. Beginning of the Times of the Gentiles.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King II — Cyrus (Persia)</div>
+          <div class="timeline-desc">The Persian Empire succeeds Babylon and controls both cities under the dynasty of Cyrus.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King III — Alexander the Great (Greece)</div>
+          <div class="timeline-desc">Alexander's brief rule over the entire known world. He died without heirs; his Empire was divided into four (like the four wings of Daniel's leopard).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King IV — Ptolemy III (246 B.C.)</div>
+          <div class="timeline-desc">From the Ptolemaic Empire, he attacked the Seleucid Empire and temporarily gained control of both Babylon and Jerusalem.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King V — Antiochus IV Epiphanes (170 B.C.)</div>
+          <div class="timeline-desc">From the Seleucid Greek Empire, he attacked the Ptolemaic Kingdom and gained control of both cities. By John's day, these five kings had already fallen.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King VI — Titus / Roman Empire (John's era)</div>
+          <div class="timeline-desc">General Titus conquered Jerusalem in A.D. 70 and ruled Babylon when he ascended to Emperor of Rome. The Roman Empire and its successors continued control over both cities until 1923. This is the king who "is" in John's era.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">King VII — The Antichrist (Tribulation)</div>
+          <div class="timeline-desc">The last world leader to seize control of both places. He reigns for a short time (3½ years, the second half of the Tribulation). He had not yet come in John's day. The harlot finally establishes herself upon him.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Seventh King Who Rises Again as the Eighth</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Death and resurrection of the Antichrist</span><span class="bullet-desc">In verse 17:11 the beast is said to be <span class="hl">the seventh and also the eighth</span>. John said he was and is not, and then returns. This refers to the death and resurrection of the Antichrist. He was the seventh until he dies; upon rising again he is back in charge, as if he were an "eighth" king.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The harlot rides the kings throughout history</span><span class="bullet-desc">Just as the harlot sat upon each of the five previous kings in their time, she sits upon the current one (the VI) during John's era, and will finally sit upon the seventh/Antichrist during the Tribulation. She is the facilitator; the kings are her benefactor.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Ten Horns — The Ten Kings of the Tribulation</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:12–13</span>
+        <span class="scripture-text">"The ten horns which you saw are ten kings who have received no kingdom as yet, but they receive authority for one hour as kings with the beast. These are of one mind, and they will give their power and authority to the beast."</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Sole purpose: support the Antichrist</span><span class="bullet-desc">The only purpose of these ten kings is to support God's program for bringing the Antichrist to power, consolidating world government under 10 rulers. It is easier for one man to rule over 10 nations than over 190+.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">They had not yet come in John's day</span><span class="bullet-desc">It would be 2,000 or more years before they come to power. They will rule for a short time (one "hour"). Ultimately, they and their kingdoms end with the coming of Christ.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECTION XXV ══════════════════════════ -->
+<div class="section" id="toc-12">
+  <div class="section-header">
+    <div class="section-num">XXV</div>
+    <h2 class="section-title">Destruction of the Harlot — The End of Spiritual Babylon</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:15–18</span>
+        <span class="scripture-text">"The waters which you saw, where the harlot sits, are peoples, multitudes, nations, and tongues. And the ten horns which you saw on the beast, these will hate the harlot, make her desolate and naked, eat her flesh and burn her with fire. For God has put it into their hearts to fulfill His purpose… And the woman whom you saw is that great city which reigns over the kings of the earth."</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Antichrist Destroys False Religion</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">At the midpoint of the Tribulation</span><span class="bullet-desc">When Satan indwells the Antichrist, he commands that <span class="hl">all worship</span> be directed to himself. He therefore puts an end to every form of worship and religious practice. The ten horns come to hate the harlot.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Destruction of all religious institutions</span><span class="bullet-desc">All religious institutions, temples, churches, mosques, and other places of worship are destroyed. These physical structures and the relics within them are burned with fire (v.16). These things constitute the "flesh" of the harlot.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Desolate and naked</span><span class="bullet-desc">All religious institutions are stripped of their wealth, so the harlot is left desolate and naked. The angel says in verse 17 that these kings are working to fulfill God's purposes, even though they believe it is their own idea.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">God's Sovereign Plan — Only One Man Remains</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The world goes from many gods to one</span><span class="bullet-desc">After the seventh Bowl is poured out, the only false religious worship that will remain is the worship of Satan. One god. Which has always been the goal of spiritual Babylon.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">God used Satan to destroy his own system</span><span class="bullet-desc">During the Times of the Gentiles, God put Satan's false religious system to work for His own purposes in disciplining Israel. Now the seventh judgment brings this corrupt system to an end by using Satan himself to complete that destruction.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">In the end: only one man</span><span class="bullet-desc">The Lord used the seventh judgment to vastly simplify the problem of cleansing the world of false religion. At His Second Coming He needs only to destroy one man to put an end to all idolatry. The battle comes down to God against a single man: <span class="hl">the 666 against the one true God</span>.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Lamb Will Overcome</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 17:14</span>
+        <span class="scripture-text">"These will make war with the Lamb, and the Lamb will overcome them, for He is Lord of lords and King of kings; and those who are with Him are called, chosen, and faithful."</span>
+      </div>
+      <p class="card-body" style="margin-top:12px;">In the end, the entire structure that has been governing the world throughout all of history — multiple governments and religions — will be destroyed. Only one man will remain ruling the world as political and religious leader. And that man will face the Lamb. Next comes the physical destruction of the city of Babylon (Chapter 18).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ DIVIDER ══════════════════════════ -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-sym">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ══════════════════════════ FINAL SUMMARY ══════════════════════════ -->
+<div class="summary-box">
+  Chapters 16 and 17 reveal that the history of the world is not the chaos it appears to be, but rather the unfolding of two great themes that have stood opposed since Eden: the redemption of Christ and the rebellion of Babylon. Satan, from his stronghold in Mesopotamia, has woven across millennia a web of false religions, corrupt governments, and deceptions to counter God's plan — but at the culminating moment, the Lord Himself turns every piece on the board to His advantage: He uses the seventh Bowl to cause the Antichrist to destroy all false religions except his own, reducing the problem of evil to a single man, and He positions the armies of the world at the precise location where the Lamb will meet them. The outcome is inevitable: the Lord of lords and King of kings prevails, and Babylon, in all its forms, receives the cup of burning wine that has borne its name since eternity.
+</div>
+
+<!-- ══════════════════════════ FOOTNOTE ══════════════════════════ -->
+<footer>
+  Based on the original teaching of Verse By Verse Ministry International (VBVMI) · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br>
+  Art by Pat Marvenko Smith © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a>
+</footer>
+
+</div><!-- /wrapper -->
+
+<script>
+(function(){
+  const sidebar   = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn   = document.getElementById('toc-show');
+  const pageWrap  = document.querySelector('.wrapper');
+
+  function getSidebarWidth() {
+    return window.innerWidth <= 600 ? 0 :
+           window.innerWidth <= 900 ? 240 : 270;
+  }
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    pageWrap.style.marginLeft = getSidebarWidth() + 'px';
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    pageWrap.style.marginLeft = '0px';
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

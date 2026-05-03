@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 08 · Chapter 19A</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 9%  15%, rgba(201,168,76,0.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 68%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52% 7%,  rgba(201,168,76,0.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 74% 41%, rgba(255,255,255,0.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 89% 80%, rgba(201,168,76,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 19% 53%, rgba(255,255,255,0.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 26%, rgba(201,168,76,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 41% 88%, rgba(255,255,255,0.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 6%  60%, rgba(201,168,76,0.6)   0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 12%, rgba(255,255,255,0.3)  0%, transparent 100%);
+}
+
+/* HEADER */
+header {
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(ellipse at 50% 0%, rgba(139,26,26,0.35) 0%, rgba(10,8,6,0) 70%),
+              linear-gradient(to bottom, rgba(18,14,9,0.95), rgba(10,8,6,1));
+  text-align: center;
+  padding: 70px 40px 60px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+
+.header-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.header-ornament .line      { flex:1; max-width:120px; height:1px; background:linear-gradient(to right,transparent,var(--gold-dim)); }
+.header-ornament .line.right{ background:linear-gradient(to left,transparent,var(--gold-dim)); }
+.header-ornament span       { font-family:var(--f-heading); font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold-dim); }
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px,5vw,54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 30px rgba(201,168,76,0.2);
+}
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px,2.5vw,21px);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.meta-item { text-align: center; }
+.meta-label { font-family:var(--f-heading); font-size:11px; text-transform:uppercase; letter-spacing:1.8px; color:var(--text-muted); display:block; margin-bottom:4px; }
+.meta-value { font-family:var(--f-heading); font-size:14px; color:var(--gold); font-weight:700; }
+
+/* MAIN */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.section:nth-child(1)  { animation-delay: 0.08s; }
+.section:nth-child(2)  { animation-delay: 0.16s; }
+.section:nth-child(3)  { animation-delay: 0.24s; }
+.section:nth-child(4)  { animation-delay: 0.32s; }
+.section:nth-child(5)  { animation-delay: 0.40s; }
+.section:nth-child(6)  { animation-delay: 0.48s; }
+.section:nth-child(7)  { animation-delay: 0.56s; }
+.section:nth-child(8)  { animation-delay: 0.64s; }
+.section:nth-child(9)  { animation-delay: 0.72s; }
+.section:nth-child(10) { animation-delay: 0.80s; }
+.section:nth-child(11) { animation-delay: 0.88s; }
+.section:nth-child(12) { animation-delay: 0.96s; }
+.section:nth-child(13) { animation-delay: 1.04s; }
+
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.section-number {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px,2.5vw,23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 16px;
+  align-items: start;
+}
+.card {
+  background: linear-gradient(135deg,rgba(30,23,16,.95) 0%,rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover { border-left-color:var(--gold); transform:translateX(3px); }
+.card.full  { grid-column: 1 / -1; }
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+
+/* BULLETS */
+ul.bullets { list-style:none; display:flex; flex-direction:column; gap:10px; }
+ul.bullets li {
+  display:flex; gap:12px; align-items:flex-start;
+  padding:12px 16px;
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.1);
+  border-radius:3px;
+}
+.bullet-icon  { flex-shrink:0; font-size:15px; line-height:1.8; color:var(--gold); }
+.bullet-body  { flex:1; }
+.bullet-label { font-family:var(--f-heading); font-size:14px; font-weight:700; color:var(--gold-light); display:block; margin-bottom:2px; }
+.bullet-desc  { font-size:16px; color:var(--text-dim); line-height:1.72; }
+
+/* SCRIPTURE */
+.scripture {
+  position:relative;
+  background:linear-gradient(135deg,rgba(139,26,26,.12) 0%,rgba(10,8,6,.8) 100%);
+  border:1px solid rgba(139,26,26,.3);
+  border-left:4px solid var(--crimson);
+  border-radius:4px;
+  padding:18px 22px 18px 34px;
+  margin-top:10px;
+  overflow:hidden;
+}
+.scripture::before {
+  content:'\201C';
+  position:absolute; top:-4px; left:10px;
+  font-size:56px; color:rgba(139,26,26,0.3);
+  font-family:Georgia,serif; line-height:1; pointer-events:none;
+}
+.scripture-ref { font-family:var(--f-heading); font-size:12px; text-transform:uppercase; color:var(--crimson-light); letter-spacing:1px; display:block; margin-bottom:8px; }
+.scripture p   { font-style:italic; font-size:16px; color:var(--text); line-height:1.75; }
+
+/* TIMELINE */
+.timeline {
+  display:flex; flex-direction:column; gap:0;
+  padding-left:20px;
+  border-left:1px solid;
+  border-image:linear-gradient(to bottom,var(--gold),transparent) 1;
+}
+.timeline-item { position:relative; padding:0 0 22px 28px; }
+.timeline-item::before {
+  content:'';
+  position:absolute; left:-5px; top:7px;
+  width:9px; height:9px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 8px rgba(201,168,76,0.5);
+}
+.timeline-period { font-family:var(--f-heading); font-size:14px; color:var(--gold); font-weight:700; display:block; margin-bottom:4px; }
+.timeline-desc   { font-size:16px; color:var(--text-dim); line-height:1.7; }
+
+/* INFO PANEL */
+.info-panel {
+  background:linear-gradient(135deg,rgba(74,127,168,.08) 0%,rgba(10,8,6,.9) 100%);
+  border:1px solid rgba(74,127,168,.2);
+  border-radius:4px;
+  padding:16px 20px;
+}
+.info-panel-title { font-family:var(--f-heading); font-size:12px; text-transform:uppercase; color:var(--sky-light); letter-spacing:1.5px; margin-bottom:12px; font-weight:700; }
+
+/* TABLE */
+.styled-table { width:100%; border-collapse:collapse; margin-top:8px; }
+.styled-table th { font-family:var(--f-heading); font-size:12px; text-transform:uppercase; color:var(--gold); background:rgba(201,168,76,.05); padding:10px 14px; text-align:left; letter-spacing:1px; border-bottom:1px solid rgba(201,168,76,.2); }
+.styled-table td { font-size:16px; color:var(--text-dim); padding:10px 14px; border-bottom:1px solid rgba(201,168,76,.08); vertical-align:top; }
+.styled-table tr:last-child td { border-bottom:none; }
+
+/* TWO-COL */
+.two-col-compare { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:10px; }
+
+/* HIGHLIGHT */
+.hl { color:var(--gold-light); font-weight:600; }
+
+/* DIVIDER */
+.divider { display:flex; align-items:center; gap:18px; margin:50px 0; }
+.divider::before,.divider::after { content:''; flex:1; height:1px; background:linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent); }
+.divider-sym { color:var(--gold-dim); font-size:14px; }
+
+/* SUMMARY */
+.summary-box {
+  background:linear-gradient(135deg,rgba(201,168,76,.07) 0%,rgba(10,8,6,.95) 100%);
+  border:1px solid rgba(201,168,76,.25);
+  border-radius:6px;
+  padding:26px 30px;
+  text-align:center;
+  margin-bottom:50px;
+}
+.summary-box p { font-style:italic; font-size:18px; color:var(--text); line-height:1.85; }
+
+/* FOOTNOTE */
+footer {
+  position:relative; z-index:1;
+  text-align:center;
+  padding:30px 30px 50px;
+  border-top:1px solid rgba(201,168,76,0.1);
+}
+footer p { font-family:var(--f-heading); font-size:13px; color:var(--text-muted); line-height:1.9; }
+footer a { color:var(--gold-dim); text-decoration:none; }
+footer a:hover { color:var(--gold); }
+
+/* STAGE BADGE */
+.stage-badge {
+  display:inline-block;
+  font-family:var(--f-heading);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:var(--crimson-light);
+  border:1px solid rgba(192,57,43,0.4);
+  border-radius:3px;
+  padding:2px 9px;
+  margin-bottom:8px;
+}
+
+@media (max-width:780px) {
+  .cards { grid-template-columns:1fr; }
+  .two-col-compare { grid-template-columns:1fr; }
+  .meta-bar { gap:20px; }
+  main { padding:40px 16px; }
+  header { padding:50px 20px 40px; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-open .page-wrap {
+  margin-left: 270px;
+}
+body.toc-closed .page-wrap {
+  margin-left: 0;
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+  body.toc-open .page-wrap { margin-left: 240px; }
+}
+@media (max-width: 600px) {
+  body.toc-open .page-wrap { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">Overview: The Tribulation and Its Three Great Periods</span></a>
+<a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">Situation at the Opening of Chapter 19: The Antichrist Cornered</span></a>
+<a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">Praises in Heaven: Hallelujah! (Rev. 19:1–5)</span></a>
+<a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">The Marriage of the Lamb (Rev. 19:6–9)</span></a>
+<a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Jewish Wedding as a Metaphor for the Rapture and the Second Coming</span></a>
+<a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">John Worships the Angel: The Correction (Rev. 19:10)</span></a>
+<a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">Review of Stages I and II — The Background</span></a>
+<a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">The Antichrist According to Daniel 11: His Character and His Movements</span></a>
+<a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">Stage III: The Antichrist's Forces at Bozrah and Jerusalem</span></a>
+<a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">The Siege of Jerusalem: O.T. Prophets Supply the Details</span></a>
+<a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">Zechariah: God's Plan to Press Israel (Zech. 13–12)</span></a>
+<a href="#sec-XII" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">The Assyrian Siege: A Historical Picture of the Tribulation</span></a>
+<a href="#sec-XIII" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">What Is Coming: Why Satan Wants to Destroy All the Jews</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide contents">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show contents">&#8250;</button>
+
+
+<div class="starfield" aria-hidden="true"></div>
+
+<div class="page-wrap">
+<!-- HEADER -->
+<header>
+  <div class="header-ornament">
+    <span class="line"></span>
+    <span>Verse by Verse Ministry International</span>
+    <span class="line right"></span>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 08 · Chapter 19 — First Part</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapter covered</span>
+      <span class="meta-value">Revelation 19:1–11</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pages covered</span>
+      <span class="meta-value">35 pages</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main theme</span>
+      <span class="meta-value">Second Coming — Preparation</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- SECCIÓN I -->
+  <section class="section" id="sec-I">
+    <div class="section-header">
+      <div class="section-number">I</div>
+      <h3 class="section-title">Visión General: La Tribulación y sus Tres Grandes Períodos</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">Map of Revelation Chapters 6–19</div>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Period</th>
+              <th>Chapters</th>
+              <th>Key Events</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="hl">First Half</span> (3.5 years)</td>
+              <td>Revelation 6–9</td>
+              <td>7 Seals: war, famine, earthquakes. ¼ of the Earth dies (seal 4). 6 Trumpets, 2 Woe judgments (trumpets 5 and 6). ⅓ of mankind dies (trumpet 6).</td>
+            </tr>
+            <tr>
+              <td><span class="hl">Midpoint / Great Tribulation</span> (3.5 years)</td>
+              <td>Revelation 10–15</td>
+              <td>144,000 sealed. Multitude from the nations in heaven. Satan cast out. Remnant of Israel persecuted but protected. Antichrist dies and rises. Abomination of Desolation. End of sacrifices. Mark of the Beast 666. Death of the 2 Witnesses. 144,000 martyrs in heaven.</td>
+            </tr>
+            <tr>
+              <td><span class="hl">Second Half — Final</span></td>
+              <td>Revelation 16–19</td>
+              <td>Trumpet 7, third Woe. 7 Bowls. Destiny sealed. Mark and worship of the beast. Martyrs. War of Armageddon. 2nd Coming of Christ.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card full">
+        <div class="card-title">Summary of Chapters 16–19: The Stages of Armageddon</div>
+        <div class="two-col-compare">
+          <div class="info-panel">
+            <div class="info-panel-title">Ch. 16–18 → Stages I and II</div>
+            <p style="font-size:15px;color:var(--text-dim);line-height:1.7;">Bowl 6 dries the Euphrates (Stage I). The Antichrist's armies move out of Babylon toward northern Israel. Stage II: destruction of Babylon by human hands and then supernaturally by God.</p>
+          </div>
+          <div class="info-panel">
+            <div class="info-panel-title">Ch. 19 → Stages III, IV, and V</div>
+            <p style="font-size:15px;color:var(--text-dim);line-height:1.7;">Stage III: Antichrist's forces at Bozrah and Jerusalem. Stage IV: Christ's return, supernatural defeat of the armies. Stage V: conclusion of the war and establishment of the Kingdom.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN II -->
+  <section class="section" id="sec-II">
+    <div class="section-header">
+      <div class="section-number">II</div>
+      <h3 class="section-title">Situación al Inicio del Capítulo 19: El Anticristo Acorralado</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">The Antichrist's Situation</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Driven by Satan, He Has Lost Everything</span>
+              <span class="bullet-desc">His headquarters Babylon was destroyed in an instant. His allies turned against him and invaded the city. He now sits in northern Israel with what remains of his army.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Only Jerusalem Remains</span>
+              <span class="bullet-desc">All that remains is Jerusalem and the last group of Jews on earth still resisting his reign. Since his headquarters is gone, he has no choice but to make Jerusalem his new capital.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Final Objective: Destroy the Jewish Resistance</span>
+              <span class="bullet-desc">The plan becomes to kill that final resistance and, in the process, <span class="hl">prevent the return of Christ</span>. Destroying all the Jews is the enemy's last hope of saving himself.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Second Coming: A Process, Not a Moment</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Not a Single Instant</span>
+              <span class="bullet-desc">The Lord's return is not a simple matter or a single moment. It is a <span class="hl">series of events spread over several days</span>, whose climax is Chapter 19.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Details Outside of Revelation</span>
+              <span class="bullet-desc">Chapter 19 reports on Christ's return, but the details surrounding His return are found outside of Revelation — in the Old Testament prophets: Isaiah, Jeremiah, Joel, Zechariah, Micah, and Daniel.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Heavenly → Earthly Pattern</span>
+              <span class="bullet-desc">Characteristically, Revelation moves from a discussion of heavenly events followed by their impact on earth. Chapter 19 follows this same pattern.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN III -->
+  <section class="section" id="sec-III">
+    <div class="section-header">
+      <div class="section-number">III</div>
+      <h3 class="section-title">Alabanzas en el Cielo: ¡Aleluya! (Ap. 19:1–5)</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Heavenly Song — Rev. 19:1–5</div>
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:1–5</span>
+          <p>Alleluia! Salvation and glory and honor and power belong to the Lord our God! For true and righteous are His judgments, because He has judged the great harlot who corrupted the earth with her fornication; and He has avenged on her the blood of His servants. Again they said, "Alleluia!" And her smoke rises up forever and ever! And the twenty-four elders and the four living creatures fell down and worshiped God…</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">"After These Things" — Cause and Effect</span>
+              <span class="bullet-desc">The chapter opens with "After these things," implying a cause-and-effect sequence. The events of Chapters 17 and 18 are precipitating these events in heaven.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Hallelujah! — Sung 3 Times</span>
+              <span class="bullet-desc">All of human history has been pointing to this moment for thousands of years. The drama is undeniable. The great heavenly host acknowledges the significance of this moment — and we are part of that multitude, singing our own future in advance.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">What They Declare</span>
+              <span class="bullet-desc">They declare that salvation, honor, glory, and power belong to God. He has brought His righteous judgment. He has avenged the persecuted and martyred as He promised the souls under the altar. He has brought an end to the chief adversary: spiritual Babylon in all its forms.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Worship: A Necessary Christian Discipline</span>
+              <span class="bullet-desc">Worship is not merely an internal feeling — it only fulfills its purpose of glorifying God through <span class="hl">outward expression</span>: words, songs, postures. It is a proper and necessary Christian discipline to express devotion both individually and collectively.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Church in Heaven — Irrefutable Evidence</div>
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:5</span>
+          <p>Praise our God, all you His servants and those who fear Him, both small and great!</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Servant = Church Saints</span>
+              <span class="bullet-desc">The term "servant" is a specific reference to Church saints. Their presence in heaven <span class="hl">refutes any post-Tribulation claim</span> that the Church remains on earth until the Second Coming.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Leaders = Worship Leaders</span>
+              <span class="bullet-desc">The leaders in the heavenly kingdom are also the worship leaders in that kingdom. The elders and four living creatures fall down and worship.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Seventh Bowl Judgment Precipitated the Second Coming</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">❶</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Stage I Accomplished</span>
+              <span class="bullet-desc">The seventh bowl judgment made it possible for the Antichrist to move his forces out of Babylon toward northern Israel.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❷</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Stage II Accomplished</span>
+              <span class="bullet-desc">This resulted in the destruction of Babylon, the great harlot, by rebel forces and then by God Himself.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❸</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Way Made Clear</span>
+              <span class="bullet-desc">With the disappearance of Babylon, the <span class="hl">way has been cleared for Christ's return</span> because opposition to His rule is rapidly fading away.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN IV -->
+  <section class="section" id="sec-IV">
+    <div class="section-header">
+      <div class="section-number">IV</div>
+      <h3 class="section-title">Las Bodas del Cordero (Ap. 19:6–9)</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Great Proclamation: Christ Reigns — Rev. 19:6–9</div>
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:6–9</span>
+          <p>Alleluia! For the Lord God Omnipotent reigns! Let us be glad and rejoice and give Him glory, for the marriage of the Lamb has come, and His wife has made herself ready. And to her it was granted to be arrayed in fine linen, clean and bright, for the fine linen is the righteous acts of the saints. Blessed are those who are called to the marriage supper of the Lamb!</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">An Innumerable Great Multitude Declares</span>
+              <span class="bullet-desc">Like the voice of many waters and thunderings — the greatest possible number. What this great multitude says becomes the focus of the next verses: <span class="hl">the time to reign has come</span>.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Bride of Christ — The Church Alone</span>
+              <span class="bullet-desc">The "Bride of Christ" is a New Testament reference to the Church saints — those baptized in the Spirit through faith in Jesus, corresponding to a single dispensation: from Pentecost to the Rapture. John the Baptist and the 144,000 are not part of this body.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Church as Bride — Grounded in Paul (Eph. 5)</div>
+        <div class="scripture">
+          <span class="scripture-ref">Ephesians 5:25–27, 32</span>
+          <p>Just as Christ also loved the church and gave Himself for her, that He might sanctify and cleanse her… that He might present her to Himself a glorious church, not having spot or wrinkle… This is a great mystery, but I speak concerning Christ and the church.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Only With the Indwelling Holy Spirit</span>
+              <span class="bullet-desc">Paul defines the "Church" as all who have the indwelling of the Holy Spirit (Rom. 8:11). The Church age is the only period where the Spirit indwells people, not a building as in the O.T.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">A Mystery to Be Revealed in Its Day</span>
+              <span class="bullet-desc">The concept of being the "bride" is metaphorical, not literal like a husband-wife relationship. Paul himself calls it a mystery in Ephesians. We assume it will be revealed to us on that day.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Fine Linen: The Righteous Acts of the Saints</div>
+        <div class="scripture">
+          <span class="scripture-ref">2 Corinthians 5:10 — The Judgment Seat of Christ</span>
+          <p>For we must all appear before the judgment seat of Christ, that each one may receive the things done in the body, according to what he has done, whether good or bad.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Only Truly Righteous Works</span>
+              <span class="bullet-desc">We will do many works "for" Jesus, but not all are righteous. Those done with selfish motives, for human attention or praise, or without the Spirit's direction — <span class="hl">do not count toward reward</span>.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Preparing for Our Inheritance</span>
+              <span class="bullet-desc">The Church is preparing to go to the earth and receive our inheritance and the rewards for our service in the Kingdom. The linen represents those righteous works done in genuine faith.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN V -->
+  <section class="section" id="sec-V">
+    <div class="section-header">
+      <div class="section-number">V</div>
+      <h3 class="section-title">La Boda Judía como Metáfora del Rapto y la Segunda Venida</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Jewish Wedding Process — A Mirror of God's Plan</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-period">The Betrothal — Without Meeting Face to Face</span>
+            <span class="timeline-desc">The betrothal occurs before the bride and groom have met face to face — just as we enter into a covenant with Jesus without knowing Him physically. It is a faith that precedes the encounter.</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-period">The Waiting Period — The Church on Earth Today</span>
+            <span class="timeline-desc">There is a waiting period before the groom claims the bride. This is the period in which the Church currently finds itself on earth — waiting for her Bridegroom.</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-period">The Bridegroom Comes for the Bride — The Rapture</span>
+            <span class="timeline-desc">The Bridegroom will come for His Bride in the resurrection (the Rapture) and we will return to the Bridegroom's house for a time in Heaven. It is equivalent to God's presence leaving the earth — exactly as when God's presence departed the temple before Nebuchadnezzar invaded Jerusalem.</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-period">The Wedding Banquet — In the Father's House (Rev. 19)</span>
+            <span class="timeline-desc">After a time with the Bridegroom, the wedding and a celebration take place in the Bridegroom's house. This is what we see in Revelation 19:7 — the marriage supper of the Lamb in heaven.</span>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-period">The Return Journey — The Second Coming</span>
+            <span class="timeline-desc">The groom and bride travel back to the bride's house for another celebration. This will take place after the Second Coming of Christ — the inauguration of the Kingdom on earth.</span>
+          </div>
+        </div>
+        <div class="scripture" style="margin-top:18px;">
+          <span class="scripture-ref">Matthew 26:29 — Jesus Promised This Cup</span>
+          <p>But I say to you, I will not drink of this fruit of the vine from now on until that day when I drink it new with you in My Father's kingdom.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Cup Left in Waiting</span>
+              <span class="bullet-desc">The Lord concluded the Passover meal with a cup of wine that He left in waiting, promising that the next would await the celebration of the Kingdom. That celebration <span class="hl">begins with the marriage supper</span>.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Guests at the Marriage Supper of the Lamb</div>
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:9</span>
+          <p>Blessed are those who are called (Greek: invited) to the marriage supper of the Lamb!</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">They Are Not the Bride — They Are the Guests</span>
+              <span class="bullet-desc">The Bride is not a guest at her own wedding. These are <span class="hl">other saints apart from the Church saints</span>: every believer from Abel to John the Baptist, and all those who died in the Tribulation after the Rapture.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Only in Spirit Form</span>
+              <span class="bullet-desc">They remain there without bodies, awaiting their turn for resurrection. They watch from their spirit form as the Bride — believers in physical bodies — participates in the marriage supper.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Rapture as a Parallel to the Departure from the Temple</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Before Babylon: The Presence Departs the Temple</span>
+              <span class="bullet-desc">Before Babylon invaded Jerusalem, God's presence departed the temple leaving it desolate, surrendering power to Nebuchadnezzar — the beginning of Old Covenant judgment.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Rapture: The Presence Departs the Earth</span>
+              <span class="bullet-desc">In the same way, the Rapture represents the same thing — God's presence departs the earth (He who dwells in the Bride of Christ) <span class="hl">immediately before the Tribulation judgment begins</span>.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN VI -->
+  <section class="section" id="sec-VI">
+    <div class="section-header">
+      <div class="section-number">VI</div>
+      <h3 class="section-title">Juan Adora al Ángel: La Corrección (Ap. 19:10)</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Worship God Alone — Jesus Is the Spirit of Prophecy</div>
+        <div class="scripture">
+          <span class="scripture-ref">Revelation 19:10</span>
+          <p>And I fell at his feet to worship him. But he said to me, "See that you do not do that! I am your fellow servant, and of your brethren who have the testimony of Jesus. Worship God! For the testimony of Jesus is the spirit of prophecy."</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Angel Refuses Worship</span>
+              <span class="bullet-desc">John marvels at the spectacle and falls to worship the angel. Recall that the last time an angel received worship he was called Satan — so anyone would be unnerved by this. The angel immediately stops John.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Only a Messenger, Not the Author</span>
+              <span class="bullet-desc">The angel says: he is only a servant, a messenger. Jesus by His Spirit is the <span class="hl">source of all revelation</span>. The author of the message deserves glory, not the conduit. Like water in pipes: we praise the water, not the pipes.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">A Correction to False Worship</span>
+              <span class="bullet-desc">This corrects much false worship of angels, saints, the virgin, animals, and creation. God alone is worthy of worship — Jesus Himself, the author of the plan of redemption.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">From the Heavenly to the Earthly: Pending Events</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">A Pause Before Verse 11</span>
+              <span class="bullet-desc">In verse 11, John moves to describe the Lord's return, but we are not yet ready for that step. There are several events on earth that were left pending — we need to know how they conclude before returning to Chapter 19.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Situation on Earth</span>
+              <span class="bullet-desc">Satan's kingdom has been annihilated, but the Antichrist continues ruling and pursuing the remaining Jews in Jerusalem. His army is moving to take the only city still standing: Jerusalem.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN VII -->
+  <section class="section" id="sec-VII">
+    <div class="section-header">
+      <div class="section-number">VII</div>
+      <h3 class="section-title">Repaso de las Etapas I y II — El Telón de Fondo</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Three Stages of Armageddon to This Point</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="stage-badge">Stage I</div>
+            <span class="timeline-period">Movement East → West from Babylon to the Valley of Jezreel</span>
+            <span class="timeline-desc">Prompted by the Lord drying up the Euphrates River (blood) with the sixth bowl, preparing the Antichrist's mind to attack Jerusalem from northern Israel in Judea.</span>
+          </div>
+          <div class="timeline-item">
+            <div class="stage-badge">Stage II</div>
+            <span class="timeline-period">Destruction of Babylon — Human and Supernatural</span>
+            <span class="timeline-desc">Armies of the kings of the north razed Babylon (human hand). Shortly after, the Lord destroyed the entire city with the final judgment of the seventh bowl (supernatural hand of God). Both stages orchestrated from heaven.</span>
+          </div>
+          <div class="timeline-item">
+            <div class="stage-badge">Stage III — Ongoing</div>
+            <span class="timeline-period">The Antichrist Moves Toward Bozrah and Jerusalem</span>
+            <span class="timeline-desc">The attack on Babylon motivated the Antichrist to move toward Jerusalem. The three focal points of this war are: Jerusalem, the Mount of Olives, and Bozrah / Petra. The action will move back and forth among these three places.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN VIII -->
+  <section class="section" id="sec-VIII">
+    <div class="section-header">
+      <div class="section-number">VIII</div>
+      <h3 class="section-title">El Anticristo según Daniel 11: Su Carácter y Sus Movimientos</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">The Profile of the Antichrist — Daniel 11:36–39</div>
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 11:36–39</span>
+          <p>Then the king shall do according to his own will: he shall exalt and magnify himself above every god, shall speak blasphemies against the God of gods, and shall prosper till the wrath has been accomplished… But in their place he shall honor a god of fortresses; and a god which his fathers did not know…</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">He Exalts Himself Above Every God</span>
+              <span class="bullet-desc">The Antichrist will do according to his own will and magnify himself above every god. He speaks blasphemies against the God of gods, prospering until God's wrath is accomplished — the timing marked by divine purpose.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">He Worships the God of Fortresses</span>
+              <span class="bullet-desc">He honors the "god of fortresses" — a god his fathers did not know. With a foreign god he takes control of fortresses and divides the land among his allies.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Two Kings Press the Antichrist — Dan. 11:40–41</div>
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 11:40–41</span>
+          <p>At the time of the end the king of the South shall attack him; and the king of the North shall come against him like a whirlwind, with chariots, horsemen, and with many ships; and he shall enter the countries, overwhelm them, and pass through. He shall also enter the Glorious Land…</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">"At the End" — End of the 7 Years</span>
+              <span class="bullet-desc">Daniel says "at the time of the end" — that is, at the end of the seven years. These events are parallel to those of Revelation Chapter 18, confirming the destruction of Babylon.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">North (chariots) + South (ships)</span>
+              <span class="bullet-desc">A king of the north attacks with chariots and horsemen; one from the south with ships. The Hebrew word for "attack" means to push as in a press — they press him toward Israel, which is all he has left.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Edom, Moab, and Ammon Escape</span>
+              <span class="bullet-desc">Three areas will escape the Antichrist's hand: Edom, Moab, and Ammon — ancient names for present-day Jordan, east of the Jordan River. This is the region that includes <span class="hl">Petra / Bozrah</span>.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card full">
+        <div class="card-title">The Antichrist Troubled by Reports — Dan. 11:42–45</div>
+        <div class="scripture">
+          <span class="scripture-ref">Daniel 11:44–45</span>
+          <p>But news from the east and the north shall trouble him; therefore he shall go out with great fury to destroy and annihilate many. And he shall plant the tents of his palace between the seas and the glorious holy mountain; yet he shall come to his end, and no one will help him.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The News of Babylon's Destruction</span>
+              <span class="bullet-desc">Reports from the east and north trouble him. Just like Isaiah's report — he learns of Babylon's destruction, which fills him with great fury and drives him to annihilate many.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Location of the Camp: Between Two Points</span>
+              <span class="bullet-desc"><span class="hl">The glorious holy mountain</span> = Mount Moriah with the temple in Jerusalem (to the east). <span class="hl">The seas</span> = the Mediterranean Sea (to the west). He pitches his palace tents between the two — a moving military camp on the western side of Jerusalem, in the Shephelah.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">He Will Come to His End with No Help</span>
+              <span class="bullet-desc">Daniel 11:45 declares: he shall come to his end and no one will help him. No allies or forces to support him — and nothing could oppose Christ anyway.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN IX -->
+  <section class="section" id="sec-IX">
+    <div class="section-header">
+      <div class="section-number">IX</div>
+      <h3 class="section-title">Etapa III: Las Fuerzas del Anticristo en Bosra y Jerusalén</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Bozrah (Petra): Second Attack on the Protected Jews</div>
+        <div class="scripture">
+          <span class="scripture-ref">Jeremiah 49:13–16, 21–22</span>
+          <p>Bozrah shall become a desolation, a reproach, a waste, and a curse. And all its cities shall be perpetual wastes… Behold, he shall come up and fly like the eagle, and spread his wings over Bozrah; the heart of the mighty men of Edom in that day shall be like the heart of a woman in birth pangs.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Bozrah = Petra = "sheepfold or enclosure"</span>
+              <span class="bullet-desc">At the midpoint of the Tribulation, the Lord escorted the believing Jews to a rocky canyon in southern Jordan (Petra). In Hebrew, Bozrah means <span class="hl">sheepfold or enclosure</span> — the Jews will be protected there like sheep.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Antichrist's Second Attempt</span>
+              <span class="bullet-desc">The Antichrist already tried to destroy them at the mid-Trib when the woman fled to the wilderness on eagle's wings. Now he tries again. Jeremiah says the Antichrist's forces there will be ruined.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Lord Swoops Down Like an Eagle</span>
+              <span class="bullet-desc">Jeremiah says the Lord Himself will swoop down like an eagle to defend His people. <span class="hl">Bozrah is the first place the Lord visits in His Second Coming</span>.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">The Distribution of the Antichrist's Forces</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Forces at Bozrah</span>
+              <span class="bullet-desc">Remnants who escaped the destruction of Babylon and watched its fall from afar. Jeremiah says the Antichrist sends messengers (probably on horseback) to these forces to instruct them to attack the Jews at Bozrah.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Forces in the Valley of Jezreel → Shephelah</span>
+              <span class="bullet-desc">The bulk of his army concentrates in the Valley of Jezreel in northern Israel. It then moves toward the Shephelah (the hills on Jerusalem's western side) where he pitches his tent.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Army Surrounds the City on All Sides</span>
+              <span class="bullet-desc">The forces concentrate in two places: <span class="hl">Bozrah and Jerusalem</span>. In Jerusalem, the armies advance from the west and finally surround the city from the east as well — positioned on every side.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN X -->
+  <section class="section" id="sec-X">
+    <div class="section-header">
+      <div class="section-number">X</div>
+      <h3 class="section-title">El Asedio de Jerusalén: Profetas del A.T. dan los Detalles</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">Joel: The Attack in the Valley of Jehoshaphat (Joel 3:9–12)</div>
+        <div class="scripture">
+          <span class="scripture-ref">Joel 3:9–12</span>
+          <p>Proclaim this among the nations: "Prepare for war! Wake up the mighty men…" Beat your plowshares into swords and your pruning hooks into spears; let the weak say, "I am strong." Assemble and come, all you nations from all around… for there I will sit to judge all the surrounding nations.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Improvised Weapons — Agriculture Turned to War</span>
+              <span class="bullet-desc">The warriors will come having converted agricultural implements into improvised weapons. The Tribulation has reduced men to attacking on horseback with ancient armaments. Stone walls now become effective defenses. <span class="hl">This is not a symbolic description</span> — by this point, only this type of weaponry will be available.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Valley of Jehoshaphat = Kidron Valley</span>
+              <span class="bullet-desc">They arrive at the Valley of Jehoshaphat — another name for the Kidron Valley along the eastern side of the city. The armies advance from the west and also surround the city from the east. Joel 3:12 says that is where God will judge them.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Orchestrated by the Lord</span>
+              <span class="bullet-desc">They come because the Lord has brought them here, in the sense that He has orchestrated the events that led to this battle. The Lord has set His enemies in this trap.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Isaiah: The Siege of Ariel (Isa. 29:1–7)</div>
+        <div class="scripture">
+          <span class="scripture-ref">Isaiah 29:1–7 — Ariel = Jerusalem</span>
+          <p>Woe to Ariel, to Ariel, the city where David dwelt!… For I will encamp against you all around, I will lay siege against you with a mound, and I will raise siegeworks against you. You shall be brought down… The multitude of your enemies shall be like fine dust… It shall happen instantly, suddenly.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Ariel — Place of Sacrifice / Lion of God</span>
+              <span class="bullet-desc">Ariel literally means "altar or place of sacrifice" in Hebrew, and also "Lion of God" — the emblem of the tribe of Judah. It suggests the Lord will make a sacrifice of the people who die in the battle, as an atoning sacrifice for the sins of the nation.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Nation Prostrate, Speaking From the Dust</span>
+              <span class="bullet-desc">During the siege the inhabitants faint, expecting to die. In verse 4, the nation will bow with its face to the ground — a posture of humility and worship. Their voice will rise like a spirit from the dust. They are Jews who do not believe in Christ, but neither did they receive the mark.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Supernatural and Instantaneous Defeat</span>
+              <span class="bullet-desc">Isaiah 29:5 says the enemies will be struck down <span class="hl">instantly, suddenly</span>. Like chaff carried by the wind, or dust that vanishes. Isaiah 29:7 compares it to a dream — as if that army had never been there.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Micah: God's Trap (Mic. 4:9–12)</div>
+        <div class="scripture">
+          <span class="scripture-ref">Micah 4:11–12</span>
+          <p>Now also many nations have gathered against you… But they do not know the thoughts of the Lord, nor do they understand His counsel; for He will gather them like sheaves to the threshing floor.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Why Does Israel Cry Out? — A Pointed Question</span>
+              <span class="bullet-desc">Micah asks why Israel cries out and why there is no king. These are somewhat pointed questions — God indicates they turned their backs on their king in times past, and now they suffer for it.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Trap Is About to Spring</span>
+              <span class="bullet-desc">The nations rejoice at the opportunity to possess the city, but they do not know the Lord has set this trap for them. The Lord's purpose: to destroy all the Antichrist's forces. <span class="hl">Neither party (Israel nor the nations) understands the Lord's purpose</span> at that moment.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN XI -->
+  <section class="section" id="sec-XI">
+    <div class="section-header">
+      <div class="section-number">XI</div>
+      <h3 class="section-title">Zacarías: El Plan de Dios para Presionar a Israel (Zac. 13–12)</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">My Shepherd and My Associate — Jesus and the Antichrist (Zech. 13:7–9)</div>
+        <div class="scripture">
+          <span class="scripture-ref">Zechariah 13:7–9</span>
+          <p>"Awake, O sword, against My Shepherd, against the Man who is My Companion," says the Lord of hosts. "Strike the Shepherd, and the sheep will be scattered…" And it shall come to pass in all the land, says the Lord, that two-thirds in it shall be cut off and die, but one-third shall be left in it: I will bring the one-third through the fire, will refine them as silver is refined, and test them as gold is tested. They will call on My name, and I will answer them. I will say, 'This is My people'; and each one will say, 'The Lord is my God.'</p>
+        </div>
+        <div class="two-col-compare" style="margin-top:14px;">
+          <div class="info-panel">
+            <div class="info-panel-title">The Shepherd = Jesus / My Associate = The Antichrist</div>
+            <ul class="bullets">
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-label">Reference to the First Coming</span>
+                  <span class="bullet-desc">The Shepherd would be struck down in His day and Israel would be scattered — a clear reference to the Lord's first coming. After Jesus' death, the Lord scattered the Jews in 70 A.D. as punishment for rejecting their Messiah.</span>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-label">Connection to Genesis 3:15</span>
+                  <span class="bullet-desc">Zech. 13:7 is a clear reference to Genesis 3:15: "And I will put enmity between you and the woman, and between your seed and her Seed; He shall bruise your head, and you shall bruise His heel." The conflict between the Messiah and the Antichrist/Satan was promised since Eden.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="info-panel">
+            <div class="info-panel-title">The Two-Thirds and the Refined Third</div>
+            <ul class="bullets">
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-label">Two-Thirds Cut Off</span>
+                  <span class="bullet-desc">The two parts of northern and southern Israel will be cut off and perish. The Jews living there will die when the Antichrist enters the land.</span>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-label">One-Third Survives and Is Refined</span>
+                  <span class="bullet-desc">Only the Jews remaining in the middle of the nation — in Jerusalem and also in Bozrah — will be left alive. They will be put through a furnace of testing to refine them like silver and gold. This will lead them to call on the Lord.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card full">
+        <div class="card-title">The Deliverance of Jerusalem — Zechariah 12:1–9</div>
+        <div class="scripture">
+          <span class="scripture-ref">Zechariah 12:2–9</span>
+          <p>Behold, I will make Jerusalem a cup of drunkenness to all the surrounding peoples… And it shall happen in that day that I will make Jerusalem a very heavy stone for all peoples; all who would heave it away will surely be cut in pieces… In that day I will make the governors of Judah like a firepan in the woodpile… and they shall devour all the surrounding peoples on the right hand and on the left… In that day I will seek to destroy all the nations that come against Jerusalem.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Jerusalem: A Cup That Reels and a Stone Too Heavy to Lift</span>
+              <span class="bullet-desc">The Lord will turn the city into a <span class="hl">stone too heavy to lift</span>. When the nations try to carry it or do what they wish with it, they will injure themselves in the attempt. It is a supernatural defense.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Horses and Riders in Panic and Madness</span>
+              <span class="bullet-desc">The horses will be struck with panic and blindness, and their riders with madness. The attackers and their animals will become confused and disorganized — this is supernatural. The people of the city will recognize that the Lord is coming to their defense (Zech. 12:5).</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Defended Inside and Outside the Walls</span>
+              <span class="bullet-desc">The Lord will defend not only those in the city but also the Jews camped outside the walls' protection (Zech. 12:7 — "tents of Judah"). <span class="hl">Judah is the one-third God would refine</span>. Even the weakest among them will be like David before Goliath.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN XII -->
+  <section class="section" id="sec-XII">
+    <div class="section-header">
+      <div class="section-number">XII</div>
+      <h3 class="section-title">El Asedio de Asiria: Imagen Histórica de la Tribulación</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">The Historical Parallel: Hezekiah and the Assyrians (Isa. 37 / 2 Kings 19)</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">❶</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Assyria: Sent to Destroy the North</span>
+              <span class="bullet-desc">Assyria was sent by God to destroy the Northern Kingdom of Israel as punishment for its sins. But Assyria became proud and thought it also had the right to conquer Judah.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❷</span>
+            <div class="bullet-body">
+              <span class="bullet-label">She Overstepped — Besieged Jerusalem</span>
+              <span class="bullet-desc">The king of Assyria was greedy and decided to attack the south (Judah). The Assyrians invaded and camped around Jerusalem. They had a massive army and it seemed as though the city was defeated.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❸</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Surrender Letter — The People Were Faint</span>
+              <span class="bullet-desc">The Assyrian commander sends a letter to King Hezekiah demanding surrender or annihilation. The people were faint with fear, waiting to be crushed.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❹</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Hezekiah Spreads the Letter Before the Lord</span>
+              <span class="bullet-desc">King Hezekiah took the commander's letter and spread it before the Lord and prayed: <em>"Save us… that all the kingdoms of the earth may know that You are the Lord God, You alone"</em> (2 Kings 19:19).</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">God's Supernatural Response — 185,000 Dead in the Night</div>
+        <div class="scripture">
+          <span class="scripture-ref">2 Kings 19:28, 34–35</span>
+          <p>I will put My hook in your nose and My bridle in your lips, and I will turn you back by the way which you came… For I will defend this city, to save it for My own sake and for My servant David's sake. And it came to pass on a certain night that the angel of the Lord went out, and killed in the camp of the Assyrians one hundred and eighty-five thousand; and when people arose early in the morning, there were the corpses — all dead.</p>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">185,000 Dead in a Single Night</span>
+              <span class="bullet-desc">The Lord entered the Assyrian camp as the angel of the Lord and destroyed the entire army. <span class="hl">There was no battle</span> — the Lord Himself destroyed them all in one night.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">A Picture of the Tribulation</span>
+              <span class="bullet-desc">This story is a picture of what will happen in the Tribulation with Jerusalem and the Antichrist. Israel will feel the pressure, fear for their lives, and finally turn to their Lord. When they bow and cry out for rescue, He will rescue them — just as He Himself destroyed the Assyrian army.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">There Will Be No Real Battle</span>
+              <span class="bullet-desc">In the Tribulation there will be battle preparation and troop movements, but it is Jesus Himself who fights and destroys them. <span class="hl">Beginning at Bozrah, then with the army at Jerusalem</span>.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN XIII -->
+  <section class="section" id="sec-XIII">
+    <div class="section-header">
+      <div class="section-number">XIII</div>
+      <h3 class="section-title">Lo que Viene: Por qué Satanás Quiere Destruir a Todos los Judíos</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Open Questions for the Next Part</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Why Is It So Important to Destroy All the Jews?</span>
+              <span class="bullet-desc">The Antichrist wants to kill every living Jew. We have not yet examined why. The reason has to do with Satan's plan to prevent the return of Christ and his own destruction.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Why Is It So Important That Israel Survive?</span>
+              <span class="bullet-desc">Likewise, we will study why it is so important to God that the Jewish people survive — and the unbreakable promise God has made to Israel.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Moment When Israel Calls on Jesus</span>
+              <span class="bullet-desc">We will look closely at the moment when Israel calls on the name of the Lord — the turning point that triggers the physical return of Christ. We will also see the Lord's return beginning at Bozrah and then arriving at Jerusalem.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Mount of Olives — Second Place Visited</span>
+              <span class="bullet-desc">The Mount of Olives is the second place Christ will visit in His Second Coming. This scene will be addressed later along with the full description of Revelation 19:11 and beyond.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <span class="divider-sym">✦</span>
+  </div>
+
+  <!-- RESUMEN FINAL -->
+  <div class="summary-box">
+    <p>Part 08 brings us to the threshold of the most climactic moment in all of redemptive history: the Second Coming of Christ. In heaven, the Hallelujah! resounds three times because the Church is already present as the Bride, the marriage supper of the Lamb is celebrated, and God's perfectly orchestrated plan unfolds on earth — the Antichrist, cornered and out of options, advances toward Bozrah and Jerusalem; the prophets Isaiah, Jeremiah, Joel, Zechariah, Micah, and Daniel confirm each step in detail. The siege of the Assyrians under Hezekiah reveals the pattern: Israel humbles itself, calls on its Lord, and He Himself — with no real battle — supernaturally destroys their enemies. The stage is set for the King of kings to appear.</p>
+  </div>
+
+</main>
+
+<!-- FOOTNOTE -->
+<footer>
+  <p>
+    Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br>
+    Arte de Pat Marvenko Smith © 1992 · <a href="http://revelationillustrated.com" target="_blank">revelationillustrated.com</a>
+  </p>
+</footer>
+</div><!-- /.page-wrap -->
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation – Part 16 · Chapter 21</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 8%  15%, rgba(201,168,76,.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 29% 67%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 52% 11%, rgba(201,168,76,.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 74% 48%, rgba(255,255,255,.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 4%  88%, rgba(201,168,76,.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 93% 23%, rgba(255,255,255,.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 52%, rgba(201,168,76,.6)  0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 80%, rgba(255,255,255,.3)  0%, transparent 100%),
+    radial-gradient(1px 1px at 41% 33%, rgba(201,168,76,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 87% 61%, rgba(255,255,255,.45) 0%, transparent 100%);
+}
+
+/* LAYOUT */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0;
+  padding: 0 24px 60px;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1), max-width .35s cubic-bezier(.4,0,.2,1);
+}
+
+/* HEADER */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(100,10,10,.85) 0%, rgba(10,8,6,.0) 70%);
+  text-align: center;
+  padding: 64px 32px 52px;
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.ornament-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.ornament-text {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 2.5px;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+}
+
+/* MAIN */
+main { padding-top: 52px; }
+
+/* SECTION */
+.section {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp .6s ease forwards;
+}
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover { border-left-color: var(--gold); transform: translateX(3px); }
+.card.full { grid-column: 1 / -1; }
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,.1);
+}
+
+/* BULLETS */
+ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+li.bullet-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+.bullet-icon { flex-shrink: 0; font-size: 16px; line-height: 1.6; }
+.bullet-content { flex: 1; }
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 3px;
+}
+.bullet-desc { font-size: 16px; color: var(--text-dim); line-height: 1.72; }
+
+/* SCRIPTURE */
+.scripture-box {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 32px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+.scripture-box::before {
+  content: '\201C';
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+.scripture-text { font-style: italic; font-size: 16px; color: var(--text); line-height: 1.7; }
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+.timeline-item { position: relative; margin-bottom: 18px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px; top: 7px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201,168,76,.5);
+}
+.timeline-period { font-family: var(--f-heading); font-size: 14px; color: var(--gold); font-weight: 700; }
+.timeline-desc { font-size: 16px; color: var(--text-dim); line-height: 1.7; }
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  color: var(--sky-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* TABLE */
+.styled-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.styled-table td {
+  font-size: 16px;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+.styled-table tr:last-child td { border-bottom: none; }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* DIVIDER */
+.divider { display: flex; align-items: center; gap: 14px; margin: 52px 0; }
+.divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-dim), transparent); }
+.divider-sym { color: var(--gold-dim); font-size: 14px; }
+
+/* SUMMARY */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  margin-bottom: 48px;
+}
+.summary-box p { font-style: italic; font-size: 18px; color: var(--text); line-height: 1.8; }
+
+/* FOOTNOTE */
+footer {
+  border-top: 1px solid rgba(201,168,76,.1);
+  padding: 24px 0;
+  text-align: center;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* ANIMATION DELAYS */
+.section:nth-child(1)  { animation-delay: .08s; }
+.section:nth-child(2)  { animation-delay: .16s; }
+.section:nth-child(3)  { animation-delay: .24s; }
+.section:nth-child(4)  { animation-delay: .32s; }
+.section:nth-child(5)  { animation-delay: .40s; }
+.section:nth-child(6)  { animation-delay: .48s; }
+.section:nth-child(7)  { animation-delay: .56s; }
+.section:nth-child(8)  { animation-delay: .64s; }
+.section:nth-child(9)  { animation-delay: .72s; }
+.section:nth-child(10) { animation-delay: .80s; }
+.section:nth-child(11) { animation-delay: .88s; }
+.section:nth-child(12) { animation-delay: .96s; }
+
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .card.full { grid-column: 1; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed; top: 0; left: 0; width: 270px; height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000; display: flex; flex-direction: column; overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex; align-items: center; gap: 10px; padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12); flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-dim); white-space: nowrap;
+}
+.toc-links {
+  flex: 1; overflow-y: auto; padding: 10px 0 20px;
+  scrollbar-width: thin; scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 18px;
+  text-decoration: none; color: var(--text-dim); font-family: var(--f-body);
+  font-size: 13px; line-height: 1.4; border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover { color: var(--gold-light); border-left-color: var(--gold); background: rgba(201,168,76,.06); }
+.toc-item.active { color: var(--gold); border-left-color: var(--gold); background: rgba(201,168,76,.1); }
+.toc-num { flex-shrink: 0; font-size: 11px; font-family: var(--f-heading); color: var(--crimson-light); padding-top: 1px; min-width: 22px; }
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute; bottom: 20px; right: 12px;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold); border-radius: 50%; width: 30px; height: 30px;
+  cursor: pointer; font-size: 18px; display: flex; align-items: center;
+  justify-content: center; transition: background .2s; line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed; top: 50%; left: 0; transform: translateY(-50%);
+  z-index: 999; background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3); border-left: none;
+  color: var(--gold); border-radius: 0 6px 6px 0; width: 22px; height: 54px;
+  cursor: pointer; font-size: 18px; display: none; align-items: center;
+  justify-content: center; transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+body.toc-open .page-wrap { margin-left: 270px; max-width: calc(1100px + 270px); transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
+body.toc-closed .page-wrap { margin-left: 0; transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
+@media (max-width: 900px) { #sidebar-toc { width: 240px; } body.toc-open .page-wrap { margin-left: 240px; } }
+@media (max-width: 600px) { body.toc-open .page-wrap { margin-left: 0; } }
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Table of Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#toc-1" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">The Final Interval: 7 Unique Years in History</span></a>
+    <a href="#toc-2" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">The Lake of Fire and Brimstone</span></a>
+    <a href="#toc-3" class="toc-item"><span class="toc-num">XIV</span><span class="toc-title">The Second Resurrection</span></a>
+    <a href="#toc-4" class="toc-item"><span class="toc-num">XV</span><span class="toc-title">Journey of Souls According to Their Era</span></a>
+    <a href="#toc-5" class="toc-item"><span class="toc-num">XVI</span><span class="toc-title">The Great White Throne Judgment (Revelation 20:11–15)</span></a>
+    <a href="#toc-6" class="toc-item"><span class="toc-num">XVII</span><span class="toc-title">The Development of the Judgment — The Books Opened</span></a>
+    <a href="#toc-7" class="toc-item"><span class="toc-num">XVIII</span><span class="toc-title">The Next Era: Eternity and Progressive Revelation</span></a>
+    <a href="#toc-8" class="toc-item"><span class="toc-num">XIX</span><span class="toc-title">The New Heavens and the New Earth — Revelation 21:1–8</span></a>
+    <a href="#toc-9" class="toc-item"><span class="toc-num">XX</span><span class="toc-title">The New Jerusalem — The City That Descends</span></a>
+    <a href="#toc-10" class="toc-item"><span class="toc-num">XXI</span><span class="toc-title">The Call to Salvation — Revelation 21:8</span></a>
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+<div class="starfield"></div>
+
+<header>
+  <div class="ornament">
+    <span class="ornament-line"></span>
+    <span class="ornament-text">Verse by Verse Ministry International</span>
+    <span class="ornament-line"></span>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 16 · Chapter 21 — The Final Judgment and Eternity</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapters Covered</span>
+      <span class="meta-value">Revelation 20:10–15 · Revelation 21:1–8</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pages Covered</span>
+      <span class="meta-value">28 pages</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main Historical Period</span>
+      <span class="meta-value">Post-Millennium — Eternity</span>
+    </div>
+  </div>
+</header>
+
+<div class="page-wrap">
+<main>
+
+<!-- SECCIÓN XII -->
+<div class="section" id="toc-1">
+  <div class="section-header">
+    <div class="section-num">XII</div>
+    <h3 class="section-title">The Final Interval: 7 Unique Years in History</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">A Period Without Parallel</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">More than 7 years of post-war cleanup</span>
+            <span class="bullet-desc">After the war of Gog and Magog, the earth undergoes a period of cleanup — 7 months of burial and 7 years of burning weapons — before this creation is eliminated.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Testimony of faithfulness to Israel</span>
+            <span class="bullet-desc">This additional time at the end of the Kingdom is itself a testimony of God’s faithfulness to Israel: He fulfilled every promise of the Abrahamic covenant down to the last detail.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The period most similar to the Garden of Eden</span>
+            <span class="bullet-desc">It will be a unique time: <span class="hl">all humanity believes and is saved</span>, there will be no enemy of God operating on the earth. The closest thing to when Adam and Eve walked with God in a perfect world.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">What Still Remains to Be Done</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The judgment of Satan</span>
+            <span class="bullet-desc">Satan is cast into the lake of fire immediately after the war of Gog and Magog (Rev 20:10), reuniting the three members of the <span class="hl">False Trinity</span> in condemnation.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Second Resurrection</span>
+            <span class="bullet-desc">All the unbelieving dead throughout history are resurrected in new bodies to appear before the throne.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Great White Throne Judgment</span>
+            <span class="bullet-desc">The final judgment of all unbelieving humanity and the fallen angels before Christ.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The New Heavens and the New Earth</span>
+            <span class="bullet-desc">The creation of the new cosmos and the descent of the New Jerusalem — the era of eternity.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XIII -->
+<div class="section" id="toc-2">
+  <div class="section-header">
+    <div class="section-num">XIII</div>
+    <h3 class="section-title">The Lake of Fire and Brimstone</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">The Judgment of Satan — Revelation 20:10</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 20:10</span>
+        <span class="scripture-text">“The devil, who deceived them, was cast into the lake of fire and brimstone where the beast and the false prophet are. And they will be tormented day and night forever and ever.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">It is not the end of his existence but the beginning of a new one</span>
+            <span class="bullet-desc">Satan’s judgment does not annihilate him. It is the beginning of a new existence in eternal torment — <span class="hl">“forever and ever”</span>, an unequivocal statement confirmed by numerous passages in the Old and New Testaments.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The False Trinity reunited in condemnation</span>
+            <span class="bullet-desc">The Antichrist and the False Prophet entered the lake of fire at the beginning of the Kingdom. Satan joins them at the end — the three members of the False Trinity gathered in their eternal destiny.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Where does this place exist now?</span>
+            <span class="bullet-desc">According to Revelation 14:9–10, the lake exists in the heavenly realms out of our sight, “in the presence of the holy angels.” Currently empty — or containing only the Antichrist and the False Prophet during the Millennium.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Why Is the Torment Eternal?</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">2 Thessalonians 1:6–9</span>
+        <span class="scripture-text">“...since it is a righteous thing with God to repay with tribulation those who trouble you, and to give you who are troubled rest with us when the Lord Jesus is revealed from heaven with His mighty angels, in flaming fire taking vengeance on those who do not know God, and on those who do not obey the gospel of our Lord Jesus Christ. These shall be punished with everlasting destruction from the presence of the Lord and from the glory of His power.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">It is not a place of restitution</span>
+            <span class="bullet-desc">The Lake of Fire is not a prison where the wicked “pay their debt” and eventually go free. It is an eternal dwelling for those who <span class="hl">cannot enter the presence of God</span>.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The reason: their fallen nature is permanent</span>
+            <span class="bullet-desc">They are sinners forever — continually and eternally offending God — because they never had the opportunity to be born again. <span class="hl">It is not because of what they did, but because of what they are.</span></span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Spiritual Death and the Second Death</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Definition of spiritual death</span>
+            <span class="bullet-desc">To be eternally separated from the presence of God. Just as the future of the believer is “eternal” life, the future of the unbeliever is also eternal — eternal perdition.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Second Death</span>
+            <span class="bullet-desc">The Bible calls it the “Second Death” — spending eternity away from God. It is eternal because evil, the fallen nature of Satan, his demons, and all unbelieving humanity lasts forever.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Judgment without formality for the three</span>
+            <span class="bullet-desc">The Lord cast the Antichrist, the False Prophet, and Satan without formality. Their judgments are perfectly just. However, the <span class="hl">rest of humanity</span> will be granted a public hearing.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XIV -->
+<div class="section" id="toc-3">
+  <div class="section-header">
+    <div class="section-num">XIV</div>
+    <h3 class="section-title">The Second Resurrection</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">First vs. Second Resurrection — Revelation 20:5–6</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 20:5–6</span>
+        <span class="scripture-text">“But the rest of the dead did not live again until the thousand years were finished. This is the first resurrection. Blessed and holy is he who has part in the first resurrection. Over such the second death has no power, but they shall be priests of God and of Christ, and shall reign with Him a thousand years.”</span>
+      </div>
+      <div class="two-col" style="margin-top:14px;">
+        <div class="info-panel">
+          <div class="info-panel-title">First Resurrection — For Believers</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">At the end of the Tribulation, the Lord resurrected all the different groups of believers to reign with Him during the 1,000 years. It includes Old Testament saints, New Testament saints, and Tribulation saints. <span class="hl">Blessed</span> is the one who has part in it — the second death has no power over them.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">Second Resurrection — For Unbelievers</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">At the end of the Millennium, God resurrects <span class="hl">all the unbelievers of all history</span> for the final judgment. It is not an event of blessing. They receive new bodies to appear before Christ’s throne and then enter the Second Death.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Logic of the Timing of Judgment</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The parallelism with the First Resurrection</span>
+            <span class="bullet-desc">Just as the Kingdom could not begin until <span class="hl">all believers</span> were ready to enter together, the final judgment had to wait until all unbelievers had lived, died, and were ready to be judged.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">At the end of the Kingdom everyone is ready</span>
+            <span class="bullet-desc">The last unbeliever dies during the post-millennial period. Only then, when the complete set of unbelieving humanity throughout history is “available,” does the judgment arrive.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Nature of the Human Being — Two Components</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The eternal spirit (or soul)</span>
+            <span class="bullet-desc">It comes from the breath of God. It lives forever — it never ceases to exist — in one of two conditions: in the presence of God or separated from it.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The material body</span>
+            <span class="bullet-desc">Temporal, it came from the earth and returns to it. However, in the resurrection (first or second), the body is restored — new and permanent — for eternal existence.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XV -->
+<div class="section" id="toc-4">
+  <div class="section-header">
+    <div class="section-num">XV</div>
+    <h3 class="section-title">Journey of Souls According to Their Era</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Comparative Table — Destiny of the Soul According to the Historical Moment</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>When the body dies</th>
+            <th>Destiny of the spirit</th>
+            <th>Resurrection</th>
+            <th>Final Destiny</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong style="color:var(--gold)">Old Testament Saints</strong></td>
+            <td>Body to the grave</td>
+            <td>Abraham’s bosom (center of the earth). After the cross: Christ preaches, applies His blood, frees them → to heaven</td>
+            <td>First Resurrection (Second Coming of Christ)</td>
+            <td>With Jesus forever, in the Kingdom and in eternity</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">New Testament Saints</strong></td>
+            <td>Body to the grave</td>
+            <td>Directly to the throne of Jesus (2 Cor 5:8)</td>
+            <td>First Resurrection (at the Rapture). Return to heaven with body until the Second Coming</td>
+            <td>With Jesus in the Kingdom and in eternity</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Tribulation Saints</strong></td>
+            <td>Body to the grave</td>
+            <td>To the throne with Jesus along with the Old Testament saints</td>
+            <td>First Resurrection (Second Coming) — come to earth with Christ</td>
+            <td>Reign with Jesus in the Millennium and eternity (Rev 20:4)</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Unbelievers</strong></td>
+            <td>Body to the grave</td>
+            <td>Descend to Hades (Hell) — side of torment, separated from Abraham’s bosom by a great chasm (Luke 16:26)</td>
+            <td>Second Resurrection (end of the Millennium) — receive body for judgment</td>
+            <td>Lake of Fire — body and spirit — for all eternity</td>
+          </tr>
+          <tr>
+            <td><strong style="color:var(--gold)">Antichrist and False Prophet</strong></td>
+            <td>—</td>
+            <td>Hades → directly to the Lake of Fire at the Second Coming (before the Millennium)</td>
+            <td>The only two human beings with “special” treatment — resurrected body + Lake of Fire before the final judgment</td>
+            <td>Lake of Fire from the beginning of the Millennium</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XVI -->
+<div class="section" id="toc-5">
+  <div class="section-header">
+    <div class="section-num">XVI</div>
+    <h3 class="section-title">The Great White Throne Judgment (Revelation 20:11–15)</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Foundational Text — Revelation 20:11–15</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 20:11–15</span>
+        <span class="scripture-text">“Then I saw a great white throne and Him who sat on it, from whose face the earth and the heaven fled away. And there was found no place for them. And I saw the dead, small and great, standing before God, and books were opened. And another book was opened, which is the Book of Life. And the dead were judged according to their works, by the things which were written in the books. ... And anyone not found written in the Book of Life was cast into the lake of fire.”</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Judge: Jesus Christ</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">John 5:21–22</span>
+        <span class="scripture-text">“For as the Father raises the dead and gives life to them, even so the Son gives life to whom He will. For the Father judges no one, but has committed all judgment to the Son.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Jesus: Judge of the living and the dead</span>
+            <span class="bullet-desc">Previously Jesus judged the “living” (believers) at the Judgment Seat of Christ assigning eternal rewards. Now He judges the “dead” (unbelievers) at the Great White Throne.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Acts 10:42</span>
+            <span class="bullet-desc">Peter confirms: “He is the one God has appointed as Judge of the living and the dead” — explicit designation of the Father to Christ for this function.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Creation Disappears Instantly</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Luke 21:33</span>
+        <span class="scripture-text">“Heaven and earth will pass away, but My words will by no means pass away.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“Pheugo” — they fled</span>
+            <span class="bullet-desc">The Greek word <span class="hl">pheugo</span> means “to flee.” The same word Mark uses to describe himself running naked in Gethsemane. That is how quickly the entire physical universe will disappear in an instant.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">No earth, no sun, only the light of Jesus</span>
+            <span class="bullet-desc">All humanity of history — billions — will be present without any physical creation to sustain them. The only light will be Jesus Himself, since the sun will have gone.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">From Where the Dead Will Be Gathered — Three Places</div>
+      <div class="cards" style="margin-top:0; grid-template-columns: repeat(3,1fr);">
+        <div class="info-panel" style="margin-bottom:0;">
+          <div class="info-panel-title">① Hades (Hell)</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">For unbelieving humanity. Every unbeliever from Cain until the last one of the Kingdom is resurrected. Exception: the Antichrist and the False Prophet already went to the Lake of Fire before the Millennium — the only ones with special treatment.</p>
+        </div>
+        <div class="info-panel" style="margin-bottom:0;">
+          <div class="info-panel-title">② The Sea / Abyss (Tehom)</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">The “sea” in Hebrew <span class="hl">tehom</span> is a metaphor for the <span class="hl">Abyss</span>: place of confinement for demons and fallen angels. Satan was bound there during the Millennium. There is no evidence of connection between Hades and the Abyss nor of demons tormenting humans.</p>
+        </div>
+        <div class="info-panel" style="margin-bottom:0;">
+          <div class="info-panel-title">③ Death</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">It is not a place but a <span class="hl">state of being</span>. “Death gave up the dead” means the first death comes to an end — the bodies are resurrected and leave that state. Death and Hades are distinguished from the Abyss because they are for human beings with bodies.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XVII -->
+<div class="section" id="toc-6">
+  <div class="section-header">
+    <div class="section-num">XVII</div>
+    <h3 class="section-title">The Development of the Judgment — The Books Opened</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Every Knee Will Bow</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Philippians 2:9–11</span>
+        <span class="scripture-text">“that at the name of Jesus every knee should bow, of those in heaven, and of those on earth, and of those under the earth, and that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">A confession that does not save</span>
+            <span class="bullet-desc">For the unconverted this confession is no longer valid for salvation. It is not faith in action — it is the evident truth of having Jesus directly before them. Since it does not require faith, there is no salvation possible.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">No one will be able to accuse God</span>
+            <span class="bullet-desc">Every unrepented sin of the world will be exposed in a single moment. Every unrepented sin, every rebellion, along with all those responsible and the hearts behind it — no one will have anything to say in their defense.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Book of Life</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The register of the family of God</span>
+            <span class="bullet-desc">The Book of Life records the names of all who receive the Lord’s mercy. These names were written <span class="hl">before the foundation of the world</span> — the family of God perfectly defined before Adam and Eve.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Why is it present at the judgment of unbelievers?</span>
+            <span class="bullet-desc">To prove that none of the souls present is worthy of absolution. None confessed Christ, none is in the family of God. If they were, they would have participated in the First Resurrection.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“If anyone was not found written”</span>
+            <span class="bullet-desc">John says “if” — not as a real possibility, but to emphasize that the search does not intend to vindicate but to <span class="hl">confirm the condemnation</span>. None will be found.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">The “Other” Books — Two Interpretations</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">Interpretation 1 — Record of Personal Works</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">The books are a recorded history from birth to death of each person — all the sinful actions that make them deserving of judgment. The life of each person is a long history of sin without the grace of God. Duration of the judgment: potentially very long when reciting all the works of billions.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">Interpretation 2 — The Five Books of Moses (The Law)</div>
+          <p style="font-size:16px;color:var(--text-dim);line-height:1.7;">The books are the Law of Moses — the standards of justice. Each person is judged according to whether they meet the requirements of the Law. Duration of the judgment: much shorter, because <span class="hl">one single sin</span> is enough to condemn. Breaking one law makes someone a violator of the whole law.</p>
+        </div>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Identical result in both cases</span>
+            <span class="bullet-desc">All fail. All are cast “alive” into the lake of fire — conscious, with all their senses, perfectly aware of their situation. This confirms that the Second Death is not annihilation but a new eternal existence.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The final product of all Creation</span>
+            <span class="bullet-desc">What remained as the final result of 7,000 years? The family of God — the relationship with Him, the knowledge of His glory, love, mercy, and grace — known by each one of them. Of everything else nothing remained.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">A call to humility for believers</span>
+            <span class="bullet-desc">“We were born like them and if it were not for the grace of God, we would be in that place of judgment. Let us always remember that we were saved from this moment <span class="hl">only by the pure mercy of God</span>.”</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">The Demons Are Also Judged</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Matthew 8:28–29</span>
+        <span class="scripture-text">“What have we to do with You, Jesus, You Son of God? Have You come here to torment us before the time?”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The demons anticipate their judgment</span>
+            <span class="bullet-desc">The demons who interacted with Jesus knew that the time of judgment and the Lake of Fire was approaching — “before the time” implies they know their final destiny.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Great White Throne judgment is dual</span>
+            <span class="bullet-desc">The Great White Throne Judgment includes both <span class="hl">ungodly humanity</span> (from Hades) and <span class="hl">demons and disobedient angels</span> (from the Abyss). All appear before Christ.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XVIII -->
+<div class="section" id="toc-7">
+  <div class="section-header">
+    <div class="section-num">XVIII</div>
+    <h3 class="section-title">The Next Era: Eternity and Progressive Revelation</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">What Remains After the Judgment</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Only three elements persist</span>
+            <span class="bullet-desc">Once the judgment is concluded: saints in eternal bodies — the faithful angels — the Trinity of the Deity. Everything else has passed.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Only two chapters describe eternity</span>
+            <span class="bullet-desc">Everything we know about what follows the Kingdom is found in Revelation 21 and 22 — the last two chapters of the Bible. It raises more questions than it answers.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Pattern of Progressive Revelation</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Hebrews 1:1–2</span>
+        <span class="scripture-text">“God, who at various times and in various ways spoke in time past to the fathers by the prophets, has in these last days spoken to us by His Son.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">We stand before eternity as the Old Testament stood before Christ</span>
+            <span class="bullet-desc">The Old Testament saints had revelation, had the Word, prophesied about Christ — but they did not know Him as we know Him. So we stand before the New Heavens and the New Earth: we know only a little.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Perhaps in the Kingdom we will receive more understanding</span>
+            <span class="bullet-desc">The pattern of progressive revelation suggests that during the Millennium the Lord may grant us more understanding of what is to come — a mystery that has not yet been fully revealed.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XIX -->
+<div class="section" id="toc-8">
+  <div class="section-header">
+    <div class="section-num">XIX</div>
+    <h3 class="section-title">The New Heavens and the New Earth — Revelation 21:1–8</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Central Text — Revelation 21:1–8</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 21:1–4</span>
+        <span class="scripture-text">“Now I saw a new heaven and a new earth, for the first heaven and the first earth had passed away. Also there was no more sea. Then I, John, saw the holy city, New Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a loud voice from heaven saying, ‘Behold, the tabernacle of God is with men, and He will dwell with them, and they shall be His people. ... God will wipe away every tear from their eyes; there shall be no more death, nor sorrow, nor crying. There shall be no more pain, for the former things have passed away.’”</span>
+      </div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 21:5–6</span>
+        <span class="scripture-text">“Then He who sat on the throne said, ‘Behold, I make all things new.’ ... ‘It is done! I am the Alpha and the Omega, the Beginning and the End. I will give of the fountain of the water of life freely to him who thirsts.’”</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The Parallelism with Genesis — Revelation as Restoration</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Genesis 1:1 ↔ Revelation 21:1</span>
+            <span class="bullet-desc">“In the beginning God created the heavens and the earth” ↔ “Now I saw a new heaven and a new earth.” The parallelism will continue through chapters 21 and 22, revealing that all Creation is returning to the perfect state before Adam’s sin.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Not the same earth, but corrected</span>
+            <span class="bullet-desc">They are not the same heavens nor the same earth, but all imperfections have been corrected. All the consequences of Adam’s sin — losses, deaths, damages, destruction — have been rectified and restored.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Genesis 2:8 ↔ Revelation 21:2</span>
+            <span class="bullet-desc">In Genesis, God planted a garden and put man in it (Adam descended). In eternity, it is we who are on the earth and <span class="hl">the city descends toward us</span> — a beautiful inversion of the original pattern.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">The Mystery of the Absent Sea</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“There was no more sea”</span>
+            <span class="bullet-desc">The new earth will completely lack seas — in marked contrast to the current earth that is <span class="hl">more sea than land</span>. This detail will be explained later in chapter 22.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">It was not a design error</span>
+            <span class="bullet-desc">Scripture says God makes no mistakes nor changes His mind. The sea had a purpose in the first creation. There must be a reason why it is not necessary in the second — the text of Revelation 22 will reveal it.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">Five Restored Realities in the New Heavens and the New Earth</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Trinity dwells among men</span>
+            <span class="bullet-desc">For the first time since the Garden of Eden, the <span class="hl">Father Himself</span> will dwell on the earth — not only the Holy Spirit nor only Jesus. We will live with God as Adam once did.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">No sign of sin remains</span>
+            <span class="bullet-desc">No more tears, no more death, no more sorrow, no more crying, no more pain. Everything that exists because of sin — which corrupted humanity and brought curses upon all creation — will have disappeared forever.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Jesus makes all things new</span>
+            <span class="bullet-desc">“Behold, I make all things new” (Rev 21:5). He is the Alpha and the Omega — in the beginning the Word created the heavens and the earth; in the end, Jesus creates all things again. He truly is the Beginning and the End of Creation.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Jesus: source of all life and righteousness</span>
+            <span class="bullet-desc">“To him who thirsts, I will give of the fountain of the water of life freely” — allusion to the Spirit of life. Those who overcome sin, death, and the enemy are those who put their faith in Jesus the Alpha and Omega.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❺</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The overcomer inherits all things</span>
+            <span class="bullet-desc">“He who overcomes shall inherit all things, and I will be his God and he shall be My son” (Rev 21:7). The intimate relationship between God and His children — promised since Eden — completely restored and magnified.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XX -->
+<div class="section" id="toc-9">
+  <div class="section-header">
+    <div class="section-num">XX</div>
+    <h3 class="section-title">The New Jerusalem — The City That Descends</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">A City Prepared in Heaven</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Hebrews 11:15–16</span>
+        <span class="scripture-text">“But now they desire a better, that is, a heavenly country. Therefore God is not ashamed to be called their God, for He has prepared a city for them.”</span>
+      </div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Philippians 3:20</span>
+        <span class="scripture-text">“For our citizenship is in heaven, from which we also eagerly wait for the Savior, the Lord Jesus Christ.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:10px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">It already exists right now</span>
+            <span class="bullet-desc">Scripture teaches that the New Jerusalem <span class="hl">already exists now</span> in the heavenly realm, waiting for the day it will appear. It is not something that will be built — it is already prepared.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Not built with human hands</span>
+            <span class="bullet-desc">The Lord causes the city to descend to the new earth — made in heaven, not by human work. Its appearance will be witnessed from the earth.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Adorned Bride — A Dramatic Image</div>
+      <ul class="bullets">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">“Prepared as a bride adorned for her husband”</span>
+            <span class="bullet-desc">Imagine the moment when we turn to look down the aisle and see a bride walking — she has never looked better than at that moment. Dramatic, anticipated, and celebrated. That is how the appearance of the New Jerusalem will be.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">No one will have seen it before</span>
+            <span class="bullet-desc">We can safely assume that we will never have seen it before this moment — not even while we were present with Jesus in heaven. It will be a special moment, something to look forward to even during the Millennium.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">The Inhabitants of the New Jerusalem (Hebrews 12:22–24)</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Hebrews 12:22–24</span>
+        <span class="scripture-text">“But you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem, to an innumerable company of angels, to the general assembly and church of the firstborn who are registered in heaven, ... to God the Judge of all, to the spirits of just men made perfect, to Jesus the Mediator of the new covenant.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">❶</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Deity</span>
+            <span class="bullet-desc">The Father, the Son, and the Holy Spirit will dwell in the city — the full presence of the Trinity on earth.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❷</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The entire host of angels</span>
+            <span class="bullet-desc">“An innumerable company of angels” — the complete heavenly host will live in the New Jerusalem.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❸</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The Church of the Firstborn — The Bride of Christ</span>
+            <span class="bullet-desc">“General assembly and church of the firstborn who are registered in heaven” — the saints of the New Testament church, the Bride of Christ.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">❹</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The spirits of just men made perfect</span>
+            <span class="bullet-desc">All the other believers: Old Testament saints and Tribulation saints. “It will be a great neighborhood that far exceeds the most exclusive zip code of today.”</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SECCIÓN XXI -->
+<div class="section" id="toc-10">
+  <div class="section-header">
+    <div class="section-num">XXI</div>
+    <h3 class="section-title">The Call to Salvation — Revelation 21:8</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">A List of Sins That Characterize Unbelief</div>
+      <div class="scripture-box">
+        <span class="scripture-ref">Revelation 21:8</span>
+        <span class="scripture-text">“But the cowardly, unbelieving, abominable, murderers, sexually immoral, sorcerers, idolaters, and all liars shall have their part in the lake which burns with fire and brimstone, which is the second death.”</span>
+      </div>
+      <ul class="bullets" style="margin-top:14px;">
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">Not an exclusive list of today’s unbelievers</span>
+            <span class="bullet-desc">A believer may share one or more of these sins from their past or even present. The point is that they are the <span class="hl">natural fruit</span> of unbelief, while they are the unnatural fruit of believers.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">In the new era: exclusive to unbelievers</span>
+            <span class="bullet-desc">On the day of judgment these behaviors will be exclusive to unbelievers — all sin of the believer will have disappeared. Then it will be just to say that those who practice them go to eternal punishment.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The ultimate criterion: unbelief</span>
+            <span class="bullet-desc">The definitive criterion of exclusion is not the works themselves, but being an unbeliever — and therefore entering the Lake of Fire. The works are evidence of the nature, not the cause of the condemnation.</span>
+          </div>
+        </li>
+        <li class="bullet-item">
+          <span class="bullet-icon">✦</span>
+          <div class="bullet-content">
+            <span class="bullet-label">The evangelistic purpose of Revelation</span>
+            <span class="bullet-desc">As we reach the end of the Bible, we will find more and more calls to believe and receive salvation in Jesus. Revelation exists not only to encourage the believer — but to <span class="hl">persuade unbelievers</span> to seek Jesus while they can.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<div class="divider">
+  <span class="divider-line"></span>
+  <span class="divider-sym">✦</span>
+  <span class="divider-line"></span>
+</div>
+
+<div class="summary-box">
+  <p>Part 16 closes the arc of judgment and opens the door to eternity. Satan is finally cast into the lake of fire, completing the condemnation of the False Trinity. Every unbeliever in history — from Cain to the last one of the Kingdom — appears before the Great White Throne where Christ judges with perfect justice. Then, the entire universe flees in an instant, and in its place emerges something radically new: new heavens, a new earth without sea, and the New Jerusalem descending from heaven like a bride. All the consequences of Adam’s sin are rectified, the Father Himself will dwell among men, and eternity begins — still wrapped in the mysterious silence of progressive revelation, which promises more than we can yet comprehend.</p>
+</div>
+
+<footer>
+  <p>Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a></p>
+  <p>Art by Pat Marvenko Smith © 1992 · <a href="http://revelationillustrated.com" target="_blank">revelationillustrated.com</a></p>
+</footer>
+
+</div><!-- .page-wrap -->
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 12</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 8%  18%, rgba(201,168,76,0.5)  0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 65%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 41% 30%, rgba(201,168,76,0.4)  0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 82%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 12%, rgba(201,168,76,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 79% 50%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 89% 75%, rgba(201,168,76,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 42%, rgba(201,168,76,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 62% 57%, rgba(255,255,255,0.45) 0%, transparent 100%);
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* HEADER */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(100,10,10,0.55) 0%, rgba(10,8,6,0) 70%);
+  text-align: center;
+  padding: 56px 24px 48px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  margin-bottom: 52px;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ornament::before, .ornament::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+}
+.ornament::before { background: linear-gradient(90deg, transparent, var(--gold-dim)); }
+.ornament::after  { background: linear-gradient(90deg, var(--gold-dim), transparent); }
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.meta-item::before { content: '✦'; color: var(--gold-dim); font-size: 10px; }
+
+/* SECTION LABEL BADGE */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(139,26,26,0.1);
+  border: 1px solid rgba(139,26,26,0.25);
+  border-radius: 3px;
+  padding: 4px 12px;
+  font-family: var(--f-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--crimson-light);
+  margin-bottom: 28px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 52px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover { border-left-color: var(--gold); transform: translateX(3px); }
+.card.full { grid-column: 1 / -1; }
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+
+/* BULLETS */
+ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+.bullet-icon { font-size: 15px; line-height: 1.6; flex-shrink: 0; color: var(--gold-dim); }
+.bullet-content { flex: 1; }
+.bullet-label { font-family: var(--f-heading); font-size: 14px; font-weight: 700; color: var(--gold-light); display: block; margin-bottom: 2px; }
+.bullet-desc { font-size: 16px; color: var(--text-dim); line-height: 1.72; }
+
+/* SCRIPTURE */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 28px;
+  margin: 6px 0;
+  overflow: hidden;
+}
+.scripture::before {
+  content: '\201C';
+  position: absolute;
+  top: -4px; left: 10px;
+  font-size: 56px;
+  font-family: var(--f-display);
+  color: rgba(139,26,26,0.3);
+  line-height: 1;
+  pointer-events: none;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1.2px;
+  display: block;
+  margin-bottom: 8px;
+}
+.scripture p { font-style: italic; font-size: 16px; color: var(--text); line-height: 1.75; }
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold-dim), transparent);
+}
+.timeline-item { position: relative; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px; top: 7px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201,168,76,0.5);
+}
+.timeline-period { font-family: var(--f-heading); font-size: 14px; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+.timeline-desc { font-size: 16px; color: var(--text-dim); line-height: 1.6; }
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.info-panel-title { font-family: var(--f-heading); font-size: 12px; text-transform: uppercase; color: var(--sky-light); letter-spacing: 1.5px; margin-bottom: 10px; }
+
+/* TABLE */
+.styled-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.styled-table th {
+  font-family: var(--f-heading); font-size: 12px; text-transform: uppercase;
+  color: var(--gold); background: rgba(201,168,76,.05);
+  padding: 10px 14px; text-align: left; letter-spacing: 1px;
+  border-bottom: 1px solid rgba(201,168,76,.2);
+}
+.styled-table td {
+  font-size: 15px; color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  line-height: 1.55; vertical-align: top;
+}
+.styled-table tr:last-child td { border-bottom: none; }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* DIVIDER */
+.divider {
+  display: flex; align-items: center; gap: 16px;
+  margin: 48px 0; color: var(--gold-dim); font-size: 14px;
+}
+.divider::before, .divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px; padding: 26px 30px; text-align: center;
+  font-style: italic; font-size: 18px; color: var(--text); line-height: 1.75;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid rgba(201,168,76,.1);
+  margin-top: 56px; padding-top: 24px;
+  text-align: center;
+  font-family: var(--f-heading); font-size: 13px; color: var(--text-muted); line-height: 1.9;
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 780px) {
+  .cards, .two-col { grid-template-columns: 1fr; }
+  .card.full { grid-column: 1; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed; top: 0; left: 0; width: 270px; height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000; display: flex; flex-direction: column; overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex; align-items: center; gap: 10px; padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12); flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading); font-size: 11px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold-dim); white-space: nowrap;
+}
+.toc-links {
+  flex: 1; overflow-y: auto; padding: 10px 0 20px;
+  scrollbar-width: thin; scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 18px;
+  text-decoration: none; color: var(--text-dim); font-family: var(--f-body);
+  font-size: 13px; line-height: 1.4; border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover { color: var(--gold-light); border-left-color: var(--gold); background: rgba(201,168,76,.06); }
+.toc-item.active { color: var(--gold); border-left-color: var(--gold); background: rgba(201,168,76,.1); }
+.toc-num { flex-shrink: 0; font-size: 11px; font-family: var(--f-heading); color: var(--crimson-light); padding-top: 1px; min-width: 22px; }
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute; bottom: 20px; right: 12px;
+  background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold); border-radius: 50%; width: 30px; height: 30px;
+  cursor: pointer; font-size: 18px; display: flex; align-items: center;
+  justify-content: center; transition: background .2s; line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed; top: 50%; left: 0; transform: translateY(-50%);
+  z-index: 999; background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3); border-left: none;
+  color: var(--gold); border-radius: 0 6px 6px 0; width: 22px; height: 54px;
+  cursor: pointer; font-size: 18px; display: none; align-items: center;
+  justify-content: center; transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+body.toc-open .wrapper { margin-left: 270px; max-width: calc(1100px + 270px); transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
+body.toc-closed .wrapper { margin-left: 0; transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
+@media (max-width: 900px) { #sidebar-toc { width: 240px; } body.toc-open .wrapper { margin-left: 240px; } }
+@media (max-width: 600px) { body.toc-open .wrapper { margin-left: 0; } }
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Table of Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#toc-1" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">The Beginning of the Kingdom: What Revelation Says (and Does Not Say)</span></a>
+<a href="#toc-2" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">The Progressive Concept of the Kingdom: Four Stages</span></a>
+<a href="#toc-3" class="toc-item"><span class="toc-num">XIV</span><span class="toc-title">Changes in Creation: The Consequences of Adam’s Sin</span></a>
+<a href="#toc-4" class="toc-item"><span class="toc-num">XV</span><span class="toc-title">Animals in the Kingdom: Restoration of the Original Harmony</span></a>
+<a href="#toc-5" class="toc-item"><span class="toc-num">XVI</span><span class="toc-title">The Earth Will Produce: Reversal of the Agricultural Curse</span></a>
+<a href="#toc-6" class="toc-item"><span class="toc-num">XVII</span><span class="toc-title">Borders and Geography of the Kingdom</span></a>
+<a href="#toc-7" class="toc-item"><span class="toc-num">XVIII</span><span class="toc-title">Sin in the Millennium and Christ’s Perfect Government</span></a>
+<a href="#toc-8" class="toc-item"><span class="toc-num">XIX</span><span class="toc-title">The Structure of the Kingdom Government</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+<div class="starfield"></div>
+<div class="wrapper">
+
+<!-- HEADER -->
+<header>
+  <div class="ornament">Verse by Verse Ministry International</div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 12 · Chapter 20B</h2>
+  <div class="meta-bar">
+    <span class="meta-item">Chapter: Revelation 20 (second part)</span>
+    <span class="meta-item">References: Genesis 3, 9, 15 · Isaiah 9, 11, 14, 30, 54, 65 · Ezekiel 34, 36, 47 · Jeremiah 30 · Micah 4 · Zechariah 14 · Matthew 4, 19, 28 · Luke 19 · 2 Corinthians 5</span>
+    <span class="meta-item">Period: The Millennial Kingdom — Section 1: Changes in Creation, Nature, and Government</span>
+  </div>
+</header>
+
+<!-- I: INTRODUCTION TO THE KINGDOM -->
+<section class="section" id="toc-1">
+  <div class="section-header">
+    <div class="section-num">XII</div>
+    <h3 class="section-title">The Beginning of the Kingdom: What Revelation Says (and Does Not Say)</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The State at the Beginning of the Kingdom</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Everything ready in 75 days</span><span class="bullet-desc">The earth restored to its beauty. The temple cleansed and renewed. The wickedness of the world set aside for a time. The citizens of the Kingdom present and ready to receive their inheritance.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The citizens present</span><span class="bullet-desc">The resurrected saints of the O.T., the Church and the Tribulation entering the Kingdom. The surviving Gentile believers who lived through the Tribulation. <span class="hl">All living unbelievers</span> — only Gentiles at this point — have already been sent to Hades.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Silence of Revelation 20</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 20:6–7</span>
+        <p>"Blessed and holy is he who has part in the first resurrection… they shall reign with Him a thousand years. Now when the thousand years have expired, Satan will be released from his prison."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Between v.6 and v.7</span><span class="bullet-desc">The entire period of the Kingdom — <span class="hl">1,000 years of history</span> — takes place between these two verses. Revelation does not describe what happens during that time; it only gives its duration.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Why the silence</span><span class="bullet-desc">The rest of the Bible is literally full of those details. The Kingdom is described in the Torah, the minor and major prophets, the Psalms, Jesus’ parables, and the epistles. That is why Revelation omits it.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- II: THE PROGRESSIVE CONCEPT OF THE KINGDOM -->
+<section class="section" id="toc-2">
+  <div class="section-header">
+    <div class="section-num">XIII</div>
+    <h3 class="section-title">The Progressive Concept of the Kingdom: Four Stages</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">From “Hallmark” Theology to Biblical Reality</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The problem: simplistic understanding</span><span class="bullet-desc">Many Christians operate with a superficial understanding of their eternal future — the “Hallmark theology”: clouds, harps, pearly gates. As a result, our understanding lacks substance or meaning and <span class="hl">many live their entire lives with a wrong concept of the Kingdom</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The biblical reality</span><span class="bullet-desc">The Bible speaks extensively about the Kingdom using a variety of terms, descriptions, and images, <span class="hl">from Genesis to Malachi</span>. It is one of the most frequent themes in the O.T. after the theme of the Messiah. In the N.T. there are <span class="hl">160 mentions of the kingdom</span>, 125 in the Gospels.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Four Stages of the Kingdom Concept</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">Stage 1 — The Promise (Genesis → Malachi)</div>
+          <div class="timeline-desc">The theme of the Kingdom begins in Genesis as a promise to correct Adam’s sin. Articulated in the covenants with <span class="hl">Abraham and David</span>: one nation, one land, one perfect king, and infinite peace. Entire generations died without having received it, seeing it from afar (Hebrews 11:13).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Stage 2 — The Proposal (Jesus’ Ministry)</div>
+          <div class="timeline-desc">The Father sent Jesus to fulfill the promise. Jesus made a proposal to Israel: <em>"Repent, for the kingdom of heaven is at hand"</em> (Matthew 4:17). Israel rejected their King, and as a result <span class="hl">the Kingdom was taken from that generation</span>. The proposal was withdrawn temporarily.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Stage 3 — The Program (Church Age)</div>
+          <div class="timeline-desc">The withdrawn proposal gave way to a program of recruiting Gentiles: the Great Commission (Matthew 28:19–20). Whoever believes receives their “passport” and becomes part of a <span class="hl">spiritual kingdom</span> not yet physically established. This program lasts until the Rapture. <em>We are currently living in the final part of the Program.</em></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Stage 4 — A Place on Earth (Second Coming)</div>
+          <div class="timeline-desc">At the Second Coming, the Kingdom is established as promised: a <span class="hl">literal place on this same earth</span>, renewed, with Israel as a nation and people from all nations who participated by faith — also fulfilling the promise that all nations would be blessed through Abraham.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card full">
+      <div class="card-title">The True Kingdom: What Awaits Us</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A real home</span><span class="bullet-desc">Lands and possessions that can never be taken away. Absence of sickness and sorrow. Nothing will disturb the peace or joy.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Meaningful work</span><span class="bullet-desc">Work that has meaning, that is not difficult but enjoyable. Full relationships, natural beauty on the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Intimate communion with the Lord</span><span class="bullet-desc">To know, worship, and serve the Lord in intimate ways we cannot even imagine today. <span class="hl">The world of the Kingdom will be much more enjoyable than the current world.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Present preparation</span><span class="bullet-desc">All the transformation of this life is nothing more than preparation for our assignments and for our life in the coming Kingdom. As Hebrews 11 says, we are citizens of the Kingdom and strangers in this earth.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BADGE SECTION 1 -->
+<div class="section-badge">✦ Section 1 of the Kingdom Study ✦</div>
+
+<!-- III: CHANGES IN CREATION -->
+<section class="section" id="toc-3">
+  <div class="section-header">
+    <div class="section-num">XIV</div>
+    <h3 class="section-title">Changes in Creation: The Consequences of Adam’s Sin</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Before the Fall: The Original Eden</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The earth produced by itself</span><span class="bullet-desc">Without man’s labor, the earth produced everything that was good and healthy. It was only necessary to walk out the door to find all the food one wanted. No useless weeds or harmful plants sprang up.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Eternal bodies</span><span class="bullet-desc">The physical body was created to live forever. Without sin, as Paul says in Romans, <span class="hl">there would be no death</span>, neither for us nor for any other creature.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Animals without fear</span><span class="bullet-desc">Animals did not fear men nor each other. The predator-prey relationship did not exist. There was man’s dominion over the animal kingdom in peace.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Vegetarian diet</span><span class="bullet-desc">By God’s design, before the flood human beings ate only plants. Animals possibly did as well.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Changes after the Fall (Genesis 3)</div>
+      <div class="scripture">
+        <span class="scripture-ref">Genesis 3:17–19</span>
+        <p>"Cursed is the ground for your sake; in toil you shall eat of it all the days of your life. Both thorns and thistles it shall bring forth for you, and you shall eat the herb of the field. In the sweat of your face you shall eat bread till you return to the ground."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">The curse on the earth</span><span class="bullet-desc">God cursed the earth — not Adam — with an irreversible pronouncement of judgment. The curse comes from God and no human effort can reverse it. <span class="hl">The earth will one day be destroyed and replaced.</span></span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">Thorns, thistles, and sweat</span><span class="bullet-desc">The earth would naturally produce weeds. Only with the sweat of his brow could man produce the food he needed.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">The death of the body</span><span class="bullet-desc">Adam’s spirit died when he ate the fruit. God put the physical body on the same level: it too would die. <em>"Adam"</em> in Hebrew means “earth” — created from the cursed earth, to it he would return.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Additional Changes after the Flood (Genesis 9)</div>
+      <div class="scripture">
+        <span class="scripture-ref">Genesis 9:1–3</span>
+        <p>"Be fruitful and multiply, and fill the earth. The fear of you and the dread of you shall be on every beast of the earth… Every moving thing that lives shall be food for you. I have given you all things, even as the green herbs."</p>
+      </div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">Post-flood changes</div>
+          <ul class="bullets" style="margin-top:8px;">
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Meat as food</span><span class="bullet-desc">The Lord gave permission to eat animal meat. Necessary because vegetation was scarce weeks after the flood. Without meat, animals and humanity would have died of starvation.</span></div></li>
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Climate change</span><span class="bullet-desc">It is believed there was a post-flood climate change that made cultivation difficult, reinforcing the need for meat as a source of sustenance.</span></div></li>
+          </ul>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">The predator-prey relationship</div>
+          <ul class="bullets" style="margin-top:8px;">
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Fear in animals</span><span class="bullet-desc">To protect animals from rapid extinction, the Lord placed the fear of man in the animals. The predator-prey relationship was established: animals adversarial to each other and to man.</span></div></li>
+            <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A change from the beginning</span><span class="bullet-desc">All this represents a departure from the original intention of Creation, produced by man’s sin. In the future, the Lord will correct these consequences in stages.</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IV: ANIMALS IN THE KINGDOM -->
+<section class="section" id="toc-4">
+  <div class="section-header">
+    <div class="section-num">XV</div>
+    <h3 class="section-title">Animals in the Kingdom: Restoration of the Original Harmony</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 11:6–9</span>
+        <p>"The wolf also shall dwell with the lamb, the leopard shall lie down with the young goat, the calf and the young lion and the fatling together; and a little child shall lead them… The nursing child shall play by the cobra’s hole, and the weaned child shall put his hand in the viper’s den. They shall not hurt nor destroy in all My holy mountain."</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Restoration of the Animal Kingdom</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Predators and prey in peace</span><span class="bullet-desc">Wolves, leopards, and lions will live in peace alongside lambs, goats, and calves. The Lord <span class="hl">eliminates the predator-prey relationship</span>: there will no longer be hunters or hunted.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">No threat to man</span><span class="bullet-desc">Large and dangerous animals will not represent a threat to people. Without reason to fear men, they will instinctively cease attacking with their lethal defense mechanisms.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Restored dominion</span><span class="bullet-desc">A child will be able to tame or impose obedience on any animal. Even a cobra will not represent risk to a small child. <span class="hl">We will return to having dominion over the animal kingdom</span> as in the beginning.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A direct reversal</span><span class="bullet-desc">This is a direct reversal of the pronouncement given to Noah and a step back to the nature of the world in the beginning: all animals will obey the will of man.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Will There Be Pets in Heaven?</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Heaven is not a single place</span><span class="bullet-desc">Heaven is where Jesus is. Jesus moves, and we move too. It begins in the throne room of God after death or the Rapture — a temporary home, not permanent.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Animals and the soul</span><span class="bullet-desc">Animals do not have a soul that needs to be saved, therefore they will not be found in the temporary heavenly home. But <span class="hl">Isaiah confirms there will be animals in the Kingdom</span> when Jesus brings us back to the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">We are made for the earth</span><span class="bullet-desc">Just like the animals, human beings are made to live on a physical earth. Our permanent home is the earthly Kingdom, not the heavenly throne room.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Curse of the Serpent: What Does Not Change in the Kingdom</div>
+      <div class="scripture">
+        <span class="scripture-ref">Genesis 3:14 / Isaiah 65:25</span>
+        <p>"So the LORD God said to the serpent: On your belly you shall go, and you shall eat dust all the days of your life." / "The wolf and the lamb shall feed together… and dust shall be the serpent’s food."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The literal serpent and Satan</span><span class="bullet-desc">The serpent was a literal animal in which Satan dwelt to deceive Eve. As an involuntary participant, it was cursed to lose its legs and crawl. Before the fall, <span class="hl">the serpent had legs and its belly did not touch the ground.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A monument for humanity</span><span class="bullet-desc">The curse was not a punishment against the animal but a monument for men. Every time we see a serpent crawl it should remind us of the moment of the fall and our true adversary.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Not reversed in the Kingdom</span><span class="bullet-desc">Isaiah 65:25 says that in the Kingdom the serpent continues to eat dust, although it will not harm. Its cursed form <span class="hl">does not change because the conditions that produced it have not been reversed</span>: Satan still exists, although he is bound.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- V: AGRICULTURE AND THE EARTH -->
+<section class="section" id="toc-5">
+  <div class="section-header">
+    <div class="section-num">XVI</div>
+    <h3 class="section-title">The Earth Will Produce: Reversal of the Agricultural Curse</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Ezekiel 34: Covenant of Peace with Israel</div>
+      <div class="scripture">
+        <span class="scripture-ref">Ezekiel 34:25–27</span>
+        <p>"I will make a covenant of peace with them, and cause wild beasts to cease from the land… The trees of the field shall yield their fruit, and the earth shall yield her increase. They shall be safe in their land, and they shall know that I am the LORD."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Without tilling the soil</span><span class="bullet-desc">The tree of the field shall yield its fruit and the earth shall produce increase <span class="hl">without the need to cultivate the soil</span>. This is a direct reversal of the curse on the earth that made life difficult.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Sleeping safely in the forest</span><span class="bullet-desc">Sleeping safely in the forest without fear of enemies, men, or beasts. Showers of blessing in their season. A way of life that resembles that of Adam in the garden of Eden.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Ezekiel 36: The Earth Like Eden</div>
+      <div class="scripture">
+        <span class="scripture-ref">Ezekiel 36:29–30, 34–35</span>
+        <p>"I will call for the grain and multiply it, and bring no famine upon you. And I will multiply the fruit of your trees and the increase of your fields… This land that was desolate has become like the garden of Eden."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord does the work</span><span class="bullet-desc">Agriculture becomes easy when the Lord does all the work. The point is not that we will become a purely agricultural society — it is a <span class="hl">grand picture of grace</span>: the Lord does the work and we receive the blessing.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Never hunger on the earth</span><span class="bullet-desc">The Lord will provide fruit and grain at the call of His voice. How difficult will it be to cultivate a land that produces food at the voice of God? There will never again be hunger.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Isaiah 30: Rain, Sun, and Brighter Moon</div>
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 30:23–26</span>
+        <p>"Then He will give the rain for your seed with which you sow the ground, and bread of the increase of the earth… On every high mountain and on every high hill there shall be rivers and streams of waters… The light of the moon will be as the light of the sun, and the light of the sun will be sevenfold."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Abundant pastures and livestock</span><span class="bullet-desc">Perfect rains, wide and rich pastures for livestock with abundant food. A geography of rivers even on the tops of mountains.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The brightness of sun and moon</span><span class="bullet-desc">The sun seven times brighter and the moon as bright as today’s sun. It is not clear if it is literal or literary. If literal, it may be brighter without being hotter — with the purpose of <span class="hl">increasing the production of plants, fruits, and vegetables</span>. God will provide adaptation.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VI: BORDERS AND GEOGRAPHY -->
+<section class="section" id="toc-6">
+  <div class="section-header">
+    <div class="section-num">XVII</div>
+    <h3 class="section-title">Borders and Geography of the Kingdom</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">The Extent of Israel’s Territory</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Extent of Israel’s territory</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="hl">Current Israel</span></td>
+            <td>Small portion facing the Mediterranean Sea. Lebanon to the north, Egypt to the south, Jordan and Syria to the east.</td>
+          </tr>
+          <tr>
+            <td><span class="hl">Under Solomon (historical zenith)</span></td>
+            <td>As far north as Syria, all of Lebanon, land east of the Jordan, as far as Egypt and southern Jordan. Superpower of its time. Israel has never had as much since then.</td>
+          </tr>
+          <tr>
+            <td><span class="hl">Abrahamic Covenant (Gen. 15:18)</span></td>
+            <td>From the river of Egypt to the great river Euphrates. Territory of ten nations (Kenites, Kenezzites, Kadmonites, Hittites, Perizzites, Rephaim, Amorites, Canaanites, Girgashites, and Jebusites). Much more than under Solomon.</td>
+          </tr>
+          <tr>
+            <td><span class="hl">In the Kingdom (Ezekiel 47:15–20)</span></td>
+            <td>Specific borders described by Ezekiel: north to Hethlon and Hamath, east including Hauran and Damascus, south from Tamar to Kadesh, west the Great Sea. <span class="hl">Larger than anything seen before</span>, encompassing all nations historically hostile to Israel.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Israel and Its Historical Enemies</div>
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 14:1–2 / Isaiah 54:3</span>
+        <p>"The peoples shall take them and bring them to their place, and the house of Israel shall possess them as servants… They shall take captive those who were their captors, and rule over those who oppressed them."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Complete reversal</span><span class="bullet-desc">Israel will consume Moab, Ammon, Edom, Egypt, Assyria, Babylon, and others. The borders of the Kingdom fulfill God’s promises that <span class="hl">Israel would rule over its historical captors</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Israel’s path until now</span><span class="bullet-desc">Created as a nation by God. Received promises and violated them. Disciplined, scattered, suffered great losses. Endured the Tribulation. In the end came to faith and received their Messiah. <span class="hl">Now they receive their blessings.</span></span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Geographic Exceptions: Edom and Egypt</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Edom — completely empty</span><span class="bullet-desc">It will exist in the Kingdom but will remain <span class="hl">completely empty as a monument to its sin</span> against Israel. It will be the location of the entrance to the pit where Satan is held. Smoke will come out of the pit; no human or animal will be able to set foot there.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Egypt — empty for 40 years</span><span class="bullet-desc">It will exist, but the Egyptians of the Kingdom <span class="hl">will not be able to enter their land during the first 40 years</span>. In memory of how Egypt caused Israel to stumble with idols, which led Israel to wander 40 years in the wilderness. After 40 years they will be allowed to inhabit their land again.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Geographic Changes in Jerusalem and Its Surroundings</div>
+      <div class="scripture">
+        <span class="scripture-ref">Micah 4:1 / Zechariah 14:8–10</span>
+        <p>"Now it shall come to pass in the latter days that the mountain of the LORD’s house shall be established on the top of the mountains, and shall be exalted above the hills." / "And in that day it shall be that living waters shall flow from Jerusalem, half of them toward the eastern sea and half of them toward the western sea… All the land shall be turned as a plain."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The highest mountain in the world</span><span class="bullet-desc">The mountain on which Jerusalem sits (Mount Zion) will rise to become the <span class="hl">highest mountain in the world</span>. On its summit will be the temple, the house of the Lord where Christ dwells during the 1,000 years.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Two rivers from Jerusalem</span><span class="bullet-desc">New rivers will flow from the top of this mountain: one to the east ending in the Dead Sea, and one to the west ending in the Mediterranean Sea. The seasons will continue as today.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A great plain around</span><span class="bullet-desc">The land around Jerusalem, today mountainous, will be transformed into a <span class="hl">great flat plain</span> extending for miles. Result: the mountain of the Lord will be visible from anywhere one walks.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Jerusalem — capital of the Earth</span><span class="bullet-desc">Out of Zion shall go forth the law, and the word of the LORD from Jerusalem. All nations will go to Jerusalem to learn from the God of Israel. <span class="hl">The capital of the Earth will be Jerusalem, where the Lord dwells to rule the nations</span> (Micah 4:2).</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Dead Sea Comes to Life (Ezekiel 47:8–11)</div>
+      <div class="scripture">
+        <span class="scripture-ref">Ezekiel 47:8–10</span>
+        <p>"These waters flow toward the eastern region, go down into the Arabah, and go toward the sea. When they reach the sea, the waters are healed. And it shall be that every living thing that moves, wherever the rivers go, will live; there will be a very great multitude of fish."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Why the Dead Sea is dead</span><span class="bullet-desc">Its salt level is so high that no fish can survive. Boats flip over due to the high density of the water. It only produces minerals extracted from salt deposits.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Miraculous transformation</span><span class="bullet-desc">The river flowing from Mount Zion will transform the Dead Sea into fresh water, possibly in a miraculous and instantaneous way. <span class="hl">The Dead Sea comes to life</span> — a beautiful millennial picture of God’s grace that gives life to the dead.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Abundant and specialized fishing</span><span class="bullet-desc">There will be so much variety of fish that fishermen will specialize in their capture, from En Gedi to Eneglaim. The low marshy areas will remain as testimony of the change from salty to fresh.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VII: SIN AND GOVERNMENT -->
+<section class="section" id="toc-7">
+  <div class="section-header">
+    <div class="section-num">XVIII</div>
+    <h3 class="section-title">Sin in the Millennium and Christ’s Perfect Government</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Sin Exists But Does Not Develop</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Thinking differently for the Kingdom</span><span class="bullet-desc">Today we have imperfect laws, imperfect judges, and little justice applied correctly. We must think differently for the Kingdom: a perfect, omniscient, and omnipotent judge. <span class="hl">No one gets away with anything.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Sin without external consequences</span><span class="bullet-desc">There will be sin in the hearts of individuals with natural bodies, but <span class="hl">it will not be able to manifest</span> to produce any harm. The slightest intention or thought of evil will be known immediately by the Lord, who will react to prevent it.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Rod of iron</span><span class="bullet-desc">God promised that the world will live with a peace and joy that cannot be disturbed, because the sin around does not impact people’s lives. That is what it means that the Lord <span class="hl">rules with a rod of iron</span> (Psalm 2:6–9).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Omniscient and Instant Government</div>
+      <div class="scripture">
+        <span class="scripture-ref">Isaiah 65:24</span>
+        <p>"It shall come to pass that before they call, I will answer; and while they are still speaking, I will hear."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Frictionless communication</span><span class="bullet-desc">Anything happening anywhere on the planet, the Lord will know. We will have instant communication with Him to react to any eventuality or need.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">No war — Micah 4:3</span><span class="bullet-desc">Instruments of war will be eliminated and the art of war will be forgotten. <em>"Nation shall not lift up sword against nation, neither shall they learn war anymore."</em> Swords will be beaten into plowshares and spears into pruning hooks.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Psalm 2:6–9</span>
+        <p>"Yet I have set My King on My holy hill of Zion… Ask of Me, and I will give You the nations for Your inheritance, and the ends of the earth for Your possession. You shall break them with a rod of iron; You shall dash them to pieces like a potter’s vessel. Now therefore, be wise, O kings; be instructed, you judges of the earth."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIII: GOVERNMENT STRUCTURE -->
+<section class="section" id="toc-8">
+  <div class="section-header">
+    <div class="section-num">XIX</div>
+    <h3 class="section-title">The Structure of the Kingdom Government</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Hierarchy of the Kingdom Government</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">① Christ Jesus — King of Kings</div>
+          <div class="timeline-desc">Jesus presides over the entire government structure from the temple in Jerusalem, the highest mountain on earth. “The government will be upon His shoulder” (Isaiah 9:6–7). The Father remains separate in heaven until Revelation 21.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">② David — Prince of Israel</div>
+          <div class="timeline-desc">David resurrects and returns to rule the land of Israel under Jesus’ authority. He is called prince because Jesus is King. (Jeremiah 30:8–9; Ezekiel 34:23–24)</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">③ The Twelve Apostles — over the twelve tribes</div>
+          <div class="timeline-desc">“You who have followed Me will also sit on twelve thrones, judging the twelve tribes of Israel” (Matthew 19:28). All under David, who is the prince of Israel. Matthias replaces Judas.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">④ Other O.T. Saints — additional rulers over Israel</div>
+          <div class="timeline-desc">Other great saints of the O.T. rewarded with positions of honor for their service will rule over different parts of Israel. The tribes will exist in their land and will have additional representation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">⑤ Church Saints — over the Gentile nations</div>
+          <div class="timeline-desc">The saints of the Church will rule the Gentile nations scattered throughout the world (Revelation 20:4). You and I fulfill that need for governmental representation.</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">A Perfect Bureaucracy</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Perfect because its officers are perfect</span><span class="bullet-desc">In this bureaucracy (in its good meaning), the rulers are not elected by the people but by the ruler. The government carries out its orders to perfection. <span class="hl">If the government is perfect, its officers must be perfect</span> — and they are, being made of glorified saints.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Divided into Jewish and Gentile government</span><span class="bullet-desc">There is a Jewish government over Israel and a Gentile government over the Gentile nations. They are not equal: Israel will be the highest nation on earth and all other nations will serve Israel.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Rewards of Government — Jesus’ Parables</div>
+      <div class="scripture">
+        <span class="scripture-ref">2 Corinthians 5:9–10</span>
+        <p>"Therefore we make it our aim, whether present or absent, to be well pleasing to Him. For we must all appear before the judgment seat of Christ, that each one may receive the things done in the body, according to what he has done, whether good or bad."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Parable of the Minas (Luke 19)</span><span class="bullet-desc">One mina equals 100 days of work. Jesus rewards faithfulness with the opportunity to <span class="hl">rule over cities</span>. Greater faithfulness, greater governmental responsibility.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Parable of the Talents (Matthew 25:14)</span><span class="bullet-desc">One talent equals 16.5 years of work. Being faithful in little, one enters the kingdom with the opportunity to be faithful in much: greater responsibility in the leadership of the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A desirable reward</span><span class="bullet-desc">Although we already have a high position in the government of the Kingdom, Jesus presents it as a desirable reward. We should aspire to please Him now and also in the Kingdom.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Israel — The Supreme Nation of the Kingdom</div>
+      <div class="scripture">
+        <span class="scripture-ref">Deuteronomy 28:1–2 / Isaiah 14:1–2</span>
+        <p>"Now it shall come to pass, if you diligently obey the voice of the LORD your God… that the LORD your God will set you high above all nations of the earth." / "The peoples shall take them and bring them to their place, and the house of Israel shall possess them as male and female servants in the land of the LORD."</p>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Reversal of history</span><span class="bullet-desc">This is a complete reversal of Israel’s historical position since the Lord began to discipline the nation for its sin. Israel, which saw so many rule over it in the past, <span class="hl">will now rule over the world.</span></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord will set Israel above</span><span class="bullet-desc">In honor and position, because it is where Jesus dwells and because He chose them as His people. Serving the people of God, in a completely different world, will be an enjoyable privilege and joy in the promised environment of the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Next question</span><span class="bullet-desc">The existence of government implies there will be disobedience. And disobedience implies sin. The question that will be answered in the next class: <span class="hl">how and why will sin exist in the Kingdom?</span></span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER -->
+<div class="divider">✦</div>
+
+<!-- FINAL SUMMARY -->
+<div class="summary-box">
+  <em>The Millennial Kingdom is not a vague utopia or a diffuse spiritual concept: it is a real place on this same earth, renewed by the supernatural power of God, where sin exists but never prospers, nature obeys man, the earth produces without effort, and Jerusalem — on the highest mountain in the world — is the capital of all humanity. The concept of the Kingdom progresses from Promise to Proposal, to Program, and finally to this Place. A government of perfect glorified saints headed by Christ, with David as prince and the apostles over the tribes, guarantees that no sin will have room to grow. And we — the saints of the Church — will be part of that eternal government, ruling the Gentile nations with the wisdom Christ gives us.</em>
+</div>
+
+<!-- FOOTNOTE -->
+<footer>
+  Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br>
+  Art by <strong>Pat Marvenko Smith</strong> © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a><br>
+  <span style="color:var(--text-muted);font-size:12px;">The biblical interpretations and conclusions presented are based on the original VBVMI teaching used with permission. The author’s views do not necessarily represent those of VBVMI, its directors, or staff.</span>
+</footer>
+
+</div><!-- /wrapper -->
+
+<script>
+document.querySelectorAll('.section').forEach((sec, i) => {
+  sec.style.animationDelay = (0.08 + i * 0.08) + 's';
+});
+</script>
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

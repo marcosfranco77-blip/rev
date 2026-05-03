@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 05 · Chapters 15–16</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 8%,  rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 22%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 56% 5%,  rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 18%, rgba(255,255,255,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 33%, rgba(201,168,76,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 8%  67%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 44% 81%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67% 55%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 72%, rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 91%, rgba(255,255,255,.5) 0%, transparent 100%);
+}
+
+/* WRAPPER */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+/* HEADER */
+header {
+  background: radial-gradient(ellipse at 50% 0%, rgba(139,26,26,.45) 0%, rgba(10,8,6,0) 70%);
+  text-align: center;
+  padding: 64px 24px 48px;
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.ornament-line {
+  flex: 1;
+  max-width: 160px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim));
+}
+.ornament-line.right {
+  background: linear-gradient(to left, transparent, var(--gold-dim));
+}
+.ornament-text {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 52px;
+  animation: fadeUp .6s ease both;
+}
+.section:nth-child(1)  { animation-delay: .00s; }
+.section:nth-child(2)  { animation-delay: .08s; }
+.section:nth-child(3)  { animation-delay: .16s; }
+.section:nth-child(4)  { animation-delay: .24s; }
+.section:nth-child(5)  { animation-delay: .32s; }
+.section:nth-child(6)  { animation-delay: .40s; }
+.section:nth-child(7)  { animation-delay: .48s; }
+.section:nth-child(8)  { animation-delay: .56s; }
+.section:nth-child(9)  { animation-delay: .64s; }
+.section:nth-child(10) { animation-delay: .72s; }
+.section:nth-child(11) { animation-delay: .80s; }
+.section:nth-child(12) { animation-delay: .88s; }
+.section:nth-child(13) { animation-delay: .96s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+/* CARD */
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+
+/* BULLET LIST */
+ul.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+
+.bullet-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.bullet-content {}
+
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE BOX */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 32px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+.scripture::before {
+  content: '"';
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  display: block;
+}
+.scripture-text {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* HIGHLIGHT */
+.hl {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201,168,76,.5);
+}
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--sky-light);
+  letter-spacing: 1.2px;
+  margin-bottom: 10px;
+}
+
+/* TWO COL COMPARE */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 12px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.styled-table td {
+  color: var(--text-dim);
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 48px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+}
+.divider-sym {
+  color: var(--gold-dim);
+  font-size: 14px;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+/* FOOTNOTE */
+footer {
+  border-top: 1px solid rgba(201,168,76,.12);
+  padding-top: 24px;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.9;
+}
+footer a {
+  color: var(--gold-dim);
+  text-decoration: none;
+}
+footer a:hover { color: var(--gold); }
+
+p.card-body {
+  font-size: 17px;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.wrapper {
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">Current Situation: The Midpoint of the Tribulation</span></a>
+<a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">Transition to the End: What Comes Next?</span></a>
+<a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">Chapter 15: The Great and Marvelous Sign — The Seven Angels</span></a>
+<a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">The Sea of Glass and the Singing Martyrs</span></a>
+<a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Two Songs of Moses — Prophecy and Fulfillment</span></a>
+<a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">The Tabernacle in Heaven — The Glory of God Made Visible</span></a>
+<a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">The Temple Filled with Smoke — A Period "Without" Grace</span></a>
+<a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">Chapter 16: The Seven Bowls of Wrath — Bowls 1 to 5</span></a>
+<a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">Theological Significance of the Bowls — A Preview of Hell and the Exodus Parallel</span></a>
+<a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">The Battle of Armageddon — Introduction and Stages</span></a>
+<a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">The Sixth Bowl — The Euphrates Dries Up and Armageddon Stage I</span></a>
+<a href="#sec-XII" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">Warning to the Believer During the Tribulation</span></a>
+<a href="#sec-XIII" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">The Seventh Bowl — "It Is Done" and the Fall of Babylon</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide contents">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show contents">&#8250;</button>
+
+
+<div class="starfield"></div>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <span class="ornament-text">Verse by Verse Ministry International</span>
+    <div class="ornament-line right"></div>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 05 · Chapters 15 – 16</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapters covered</span>
+      <span class="meta-value">Revelation 15 – 16</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main themes</span>
+      <span class="meta-value">The Seven Bowls · The Battle of Armageddon</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Historical period</span>
+      <span class="meta-value">End of the 7-Year Tribulation</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ SECCIÓN I ═══════════════════════════ -->
+<div class="section" id="sec-I">
+  <div class="section-header">
+    <div class="section-num">I</div>
+    <h2 class="section-title">Current Situation: The Midpoint of the Tribulation</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">State of the World as Revelation 15 Begins</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan indwells the Antichrist</span><span class="bullet-desc">Satan has resurrected the Antichrist and indwells his body. The world celebrates him for having stopped the judgments with the death of the Two Witnesses.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Antichrist dominates the world</span><span class="bullet-desc">With Satan's power he governs the planet, being worshiped as the messiah and savior of the world.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The False Prophet and the new religion</span><span class="bullet-desc">Satan has raised up a false prophet to lead the world in a single religion that worships the Antichrist; a supernatural image is installed in the Jewish temple.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The mark of the beast</span><span class="bullet-desc">Everyone is called to worship the new god of the world. Those who refuse cannot buy or sell and, when found, are beheaded (Rev. 20:4).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Groups that Resist</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">①</span><div class="bullet-content"><span class="bullet-label">Believers in Jesus (Jews and Gentiles)</span><span class="bullet-desc">They persevere in faith even under threat of beheading.</span></div></li>
+        <li><span class="bullet-icon">②</span><div class="bullet-content"><span class="bullet-label">Devout Jews faithful to Yahweh</span><span class="bullet-desc">They remain faithful to the God of Israel, especially under persecution in Jerusalem.</span></div></li>
+        <li><span class="bullet-icon">③</span><div class="bullet-content"><span class="bullet-label">Refugees in Petra / Bozrah</span><span class="bullet-desc">Some are safe in Petra; others are martyred and enter heaven to rest and await their resurrection in the kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The unbelieving world</span><span class="bullet-desc">They enjoy an uneasy peace for most of the second half of the Tribulation. The Seal and Trumpet judgments were already completed in the first 3½ years; what remains is the seventh trumpet: the bowls.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN II ═══════════════════════════ -->
+<div class="section" id="sec-II">
+  <div class="section-header">
+    <div class="section-num">II</div>
+    <h2 class="section-title">Transition to the End: What Comes Next?</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">John's Narrative Jump</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The text jumps to the end</span><span class="bullet-desc">Since the Bowl judgments are the next step, the text of Revelation jumps from the midpoint to a point near the <span class="hl">end of the seven years</span>. The Bible does not describe more of that intermediate period because perhaps there is nothing more to say.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Chapter 15 as a bridge</span><span class="bullet-desc">Chapter 15 leads us along that path beginning with another sign in heaven.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">How much time remains?</span><span class="bullet-desc">The bowls and the coming of Christ are separated by <span class="hl">weeks or days</span>, not months or years. These are the final events before the Lord's return to end the 7 years of tribulation and the <span class="hl">Gentile age</span>.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Great Tribulation — Timeline</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">Years 1–3½ (First half)</div>
+          <div class="timeline-desc">Seal and Trumpet judgments. The first 3½ years are completed.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Midpoint — Mid-Trib</div>
+          <div class="timeline-desc">Antichrist resurrected, false prophet, image in the temple, the mark, massive persecution.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Final weeks of the Tribulation</div>
+          <div class="timeline-desc">The seven Bowl judgments. John jumps directly to this point in Ch. 15.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Final days — Second Coming</div>
+          <div class="timeline-desc">The Battle of Armageddon (5 stages) concludes with the return of Christ.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN III ═══════════════════════════ -->
+<div class="section" id="sec-III">
+  <div class="section-header">
+    <div class="section-num">III</div>
+    <h2 class="section-title">Chapter 15: The Great and Marvelous Sign — The Seven Angels</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 15:1</span>
+        <span class="scripture-text">Then I saw another sign in heaven, great and marvelous: seven angels having the seven last plagues, for in them the wrath of God is complete.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Seven Bowls as the End of the Old Covenant</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Last judgments of the Tribulation</span><span class="bullet-desc">The seven angels hold the seven bowls: the last judgments of the Tribulation and the last of God's judgments required by the <span class="hl">Old Covenant</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Daniel's 70th Week</span><span class="bullet-desc">The Tribulation period is a consequence of the terms of the Covenant between the Lord and Israel. As Gabriel told Daniel: <em>"Seventy weeks are determined for your people and for your holy city"</em> (Dan. 9:24). The last seven years are designated for Israel (not for the Church).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">A Judgment to Refine Israel</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Protection for believers in Bozrah</span><span class="bullet-desc">These judgments <span class="hl">are not directed at believers</span>. The Lord provides protection to believing Jews in Bozrah. This distinction affirms that the Rapture occurs <em>before</em> the Tribulation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The refining fire</span><span class="bullet-desc">For unbelieving Israel, the outpouring of God's wrath refines and purifies them, as Zechariah 13:7–9 describes: two-thirds will be cut off; the third part will remain and be refined as silver, tested as gold until they confess: <em>"The LORD is my God."</em></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A deferred judgment</span><span class="bullet-desc">Since Isaiah 49, God declared His purpose: to defer His wrath to purify Israel in the furnace of affliction, for the sake of His name. He is finally issuing the judgment He has long been postponing.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN IV ═══════════════════════════ -->
+<div class="section" id="sec-IV">
+  <div class="section-header">
+    <div class="section-num">IV</div>
+    <h2 class="section-title">The Sea of Glass and the Singing Martyrs</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 15:2–4</span>
+        <span class="scripture-text">And I saw something like a sea of glass mingled with fire, and those who have the victory over the beast, over his image and over his mark and over the number of his name, standing on the sea of glass, having harps of God. They sing the song of Moses, the servant of God, and the song of the Lamb…</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Martyrs of the Tribulation</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The sea of glass mingled with fire</span><span class="bullet-desc">An otherworldly setting where those who were martyred during the Tribulation stand. Their death is called a <span class="hl">"victory,"</span> because it transfers them from the influence of the beast to the Lord's domain.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">They overcame the enemy through death</span><span class="bullet-desc">They died without yielding to the enemy's demands, they overcame the mark of the beast because they never loved their physical life more than the Lord. Jesus said that whoever seeks to save his life will lose it, and whoever loses it will gain it.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Song of the Lamb — For Believers</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Message of the song</span><span class="bullet-desc">It declares that Jesus is the <span class="hl">righteous King of the nations</span>, who will be worshiped at the end of the Tribulation and at His return will reign over them. It emphasizes everything that has been anticipated.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A hope for the persecuted believer</span><span class="bullet-desc">This sign gives the Tribulation believer something to hold on to. The enemy's forces will tear families apart and execute children, but the believer's confidence is in knowing that he will overcome through death and that Christ will return soon.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN V ═══════════════════════════ -->
+<div class="section" id="sec-V">
+  <div class="section-header">
+    <div class="section-num">V</div>
+    <h2 class="section-title">The Two Songs of Moses — Prophecy and Fulfillment</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">First Song — Deuteronomy 32</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Prophetic warning as Moses dies</span><span class="bullet-desc">As Moses is about to die, he warns Israel that in the future they will become unfaithful, will worship other gods, and will disregard the Rock who saved them.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Day of vengeance and affliction</span><span class="bullet-desc">The Lord will bring calamities upon His people, humbling them to break their rebellious hearts. Deut. 32:35: <em>"Vengeance is Mine, and recompense; their foot shall slip in due time; for the day of their calamity is at hand."</em></span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Final fulfillment in the Tribulation</span><span class="bullet-desc">This song is clearly prophetic and its final fulfillment is found in the events of the Tribulation. The Lord judges His people according to their covenants.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Second Song — Exodus 15</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The crossing of the Red Sea</span><span class="bullet-desc">Moses leads the people in a song of praise after the Lord closes the Red Sea over Pharaoh's army. Israel escapes from slavery, fleeing through the wilderness from a determined enemy.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A picture of the final rescue</span><span class="bullet-desc">The Exodus is a picture of what will happen in the Tribulation: through miraculous judgments, the Lord brings Israel to Himself so they may dwell safely in the promised land. The Lord rescues them when things seem darkest.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Purpose of Both Songs — Two Audiences</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">🎵 Song of the Lamb → Believers</div>
+          <p class="bullet-desc">Believers are told to eagerly await the Lord's coming and reign at the end of the Bowl judgments. Their confidence rests in Christ's soon return to reign.</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">🎵 Song of Moses → Orthodox Jews</div>
+          <p class="bullet-desc">It gives hope to the Jews of the Tribulation, especially the Orthodox Jew who does not yet believe in Jesus. It reminds them that these events are not outside God's control and that blessing will also come after the atonement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN VI ═══════════════════════════ -->
+<div class="section" id="sec-VI">
+  <div class="section-header">
+    <div class="section-num">VI</div>
+    <h2 class="section-title">The Tabernacle in Heaven — The Glory of God Made Visible</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 15:5–7</span>
+        <span class="scripture-text">After these things I looked, and behold, the temple of the tabernacle of the testimony in heaven was opened… And out of the temple came the seven angels having the seven plagues, clothed in pure bright linen, and having their chests girded with golden bands.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Heavenly Tabernacle</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The true tabernacle</span><span class="bullet-desc">In heaven exists the true tabernacle, of which Moses' tabernacle was a copy (Heb. 9:23–24). In the innermost chamber, the Most Holy Place, is the ark and above it the mercy seat where the glory of God rests.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan and the cherubim</span><span class="bullet-desc">Ezekiel 28 tells us that Satan was one of the cherubim whose role was to guard the mercy seat in the heavenly tabernacle. The Shekinah glory rests there.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The glory departed in 605 B.C.</span><span class="bullet-desc">Just before the Babylonian invasion of Israel, the Shekinah glory of God departed from the temple. It has not returned since. It will not return until the Kingdom begins and is established in the temple (Ezekiel 43).</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Meaning of Opening the Tabernacle</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Announcement of the imminent return</span><span class="bullet-desc">The opening of the tabernacle means: <span class="hl">"My return is about to happen."</span> The visible glory of God — Jesus — is about to return to the earth. It announces His long-awaited return.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Ezekiel prophesied it</span><span class="bullet-desc">Ezek. 43:5–9: The glory of the Lord will fill the house. That is the place of His throne where He will dwell among the children of Israel forever. The next time the glory returns to the temple will be with the beginning of the Millennium.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The bowls emerge from the temple</span><span class="bullet-desc">With that, the angels with the seven bowls come out of the temple. The wrath of God, described as something that is <em>stored or accumulated</em> in a bowl (Romans 2:5), will now be poured out in full measure.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN VII ═══════════════════════════ -->
+<div class="section" id="sec-VII">
+  <div class="section-header">
+    <div class="section-num">VII</div>
+    <h2 class="section-title">The Temple Filled with Smoke — A Period "Without" Grace</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 15:8</span>
+        <span class="scripture-text">The temple was filled with smoke from the glory of God and from His power, and no one was able to enter the temple till the seven plagues of the seven angels were completed.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Access to the Temple Blocked</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Who enters the temple?</span><span class="bullet-desc">Under the Law, only priests could enter the temple. Only the High Priest could enter the Most Holy Place. In heaven, <span class="hl">there is only one High Priest: Jesus</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Jesus cannot intercede</span><span class="bullet-desc">The indication is that the Father has <em>prevented</em> Jesus from entering the temple until the end of the Bowl judgments. If Jesus cannot enter the temple, He cannot go before the Father to intercede. If He cannot intercede, grace cannot be offered.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">No new faith during the bowls</span><span class="bullet-desc">This is yet another indication that <span class="hl">new faith on earth is not possible</span> until the end of the Bowl judgments. It is a period without Christ's active mediation.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Transition to the End of the Tribulation</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Chapter 15: a transitional chapter</span><span class="bullet-desc">With chapter 15 complete, it takes us beyond the midpoint of the Tribulation and tells us what the second half will look like. With Chapter 16 we move into the final weeks.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Overlapping events</span><span class="bullet-desc">Just like the midpoint, the end of the seven years involves a complex set of overlapping events. Charts and diagrams will be used to improve understanding throughout the study.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN VIII ═══════════════════════════ -->
+<div class="section" id="sec-VIII">
+  <div class="section-header">
+    <div class="section-num">VIII</div>
+    <h2 class="section-title">Chapter 16: The Seven Bowls of Wrath — Bowls 1 to 5</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 16:1–11</span>
+        <span class="scripture-text">Then I heard a loud voice from the temple saying to the seven angels, "Go and pour out the bowls of the wrath of God on the earth."</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The First Five Bowls</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><div class="bullet-content"><span class="bullet-label">Bowl #1 — Foul sores</span><span class="bullet-desc">Foul and loathsome sores on all who have the mark of the beast. They break open the flesh in unimaginable ways — comparable to the scourging of Jesus' body.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div class="bullet-content"><span class="bullet-label">Bowl #2 — The seas turn to blood</span><span class="bullet-desc">All marine life dies. The seas become blood as of a dead man. The blood would coagulate and become putrid. End of navigation and collapse of the water cycle.</span></div></li>
+        <li><span class="bullet-icon">❸</span><div class="bullet-content"><span class="bullet-label">Bowl #3 — Rivers and springs turn to blood</span><span class="bullet-desc">Every freshwater source turns to blood. The angel declares that the world deserves to be without water because they shed the blood of saints and prophets. How long can someone survive without water? <span class="hl">Only a few days</span> — which confirms that the bowls occur at the <em>end</em> of the 7 years.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Bowls 4 and 5 — Heat and Darkness</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❹</span><div class="bullet-content"><span class="bullet-label">Bowl #4 — The sun scorches men</span><span class="bullet-desc">The sun suddenly increases in intensity to the point of scorching men with fire. No rain (seas turned to blood), no freshwater sources, and now a scorching sun. The heat would increase the rate of decomposition of dead animals.</span></div></li>
+        <li><span class="bullet-icon">❺</span><div class="bullet-content"><span class="bullet-label">Bowl #5 — Darkness over the beast's throne</span><span class="bullet-desc">The Antichrist's kingdom is covered in darkness so intense it causes unbearable pain. It is not simply the absence of physical light — it is <span class="hl">spiritual darkness</span>. Similar to how the Father withdrew His presence from Jesus on the cross; the world is left at the mercy of spiritual forces.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The world's response: blasphemy</span><span class="bullet-desc">In verses 9 and 11: men continue to blaspheme God without repentance. The sinful nature of an unbeliever is eternal; therefore their rebellion will also be. And for the same reason, the punishment of an unbeliever must be eternal.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN IX ═══════════════════════════ -->
+<div class="section" id="sec-IX">
+  <div class="section-header">
+    <div class="section-num">IX</div>
+    <h2 class="section-title">Theological Significance of the Bowls — A Preview of Hell and the Exodus Parallel</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">A Preview of Hell</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The pattern of the bowls</span><span class="bullet-desc">Scorching heat, darkness, no water, no relief, at the mercy of the enemy, no respite from physical torment. The world is experiencing a <span class="hl">preview of hell</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Hell is the wrath of God poured out</span><span class="bullet-desc">Hell itself is a place that continuously experiences the outpouring of God's wrath. It makes sense that wrath poured out on earth would feel similar.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The wrath Jesus took for us</span><span class="bullet-desc">The wrath of God — His absence and what that absence produces — was meant for us. But it was Jesus who experienced it for us on the cross. In exchange, we receive salvation and eternal life.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Exodus Parallel</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Liberation, not destruction</span><span class="bullet-desc">In the Exodus, Israel was captive in Egypt and the Lord used judgments to free them. Here again, Israel is captive to the Antichrist, and the Lord pours out judgment to free His people, <span class="hl">not to destroy them</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Bowls 1, 2, 3, and 5 have parallels in the Exodus</span><span class="bullet-desc">The connection is intentional: it reminds us that these judgments ultimately lead the nation to a good outcome. The Exodus judgments brought freedom and entrance into the Promised Land; these will bring Israel into the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Purpose of the first five judgments</span><span class="bullet-desc">They are a systematic delivery of hell to earth in preparation for the Lord's return. They serve as plagues (echoing the Exodus), and as the backdrop for the events of chapters 17, 18, and 19.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN X ═══════════════════════════ -->
+<div class="section" id="sec-X">
+  <div class="section-header">
+    <div class="section-num">X</div>
+    <h2 class="section-title">The Battle of Armageddon — Introduction and Stages</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">What Is the Battle of Armageddon</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Not just a single battle</span><span class="bullet-desc">The Battle of Armageddon is not just a military confrontation, but <span class="hl">a series of events spanning days and weeks</span>. It takes place in different locations and involves many places, groups, and figures.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Five stages</span><span class="bullet-desc">This war brings the Tribulation to an end and leads to the Second Coming of Christ. The first two stages are set in motion by the two final Bowl judgments (the sixth and the seventh).</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Details in the O.T.</span><span class="bullet-desc">Revelation gives a general summary; the crucial aspects are found in the Old Testament prophets. The descriptions are spread throughout Rev. 16–19, which bring resolution to the great themes of Scripture from Genesis.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Babylon at the Center</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The most important enemy</span><span class="bullet-desc">In particular, God judges and eliminates the enemy and his most important influence upon humanity: <span class="hl">Babylon</span>. It is a mysterious and complex theme that requires careful explanation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Relationship between the bowls and Armageddon</span><span class="bullet-desc">The first five bowls gave the world a sense of urgency. The sixth bowl gave the opportunity by drying up the Euphrates River. The two final judgments launch the war that ends everything.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN XI ═══════════════════════════ -->
+<div class="section" id="sec-XI">
+  <div class="section-header">
+    <div class="section-num">XI</div>
+    <h2 class="section-title">The Sixth Bowl — The Euphrates Dries Up and Armageddon Stage I</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 16:12–16</span>
+        <span class="scripture-text">Then the sixth angel poured out his bowl on the great river Euphrates, and its water was dried up, so that the way of the kings from the east might be prepared. And I saw three unclean spirits like frogs coming out of the mouth of the dragon, out of the mouth of the beast, and out of the mouth of the false prophet… to gather them to the battle of that great day of God Almighty. And they gathered them together to the place called in Hebrew, Armageddon.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Euphrates River Dried Up</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The main river of Mesopotamia</span><span class="bullet-desc">The Euphrates River runs near the ancient city of Babylon, in present-day Iraq. It had already been turned to blood; drying up this river that is now blood is a distinct judgment.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Antichrist's seven kings</span><span class="bullet-desc">The Tribulation begins with ten kings in power, which become seven when the Antichrist rises. The river is dried up to prepare a way for <span class="hl">these seven kings</span> to travel from east to west toward Israel.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Why is drying the river a judgment?</span><span class="bullet-desc">It is a judgment because it sets in motion a war that ultimately brings death to all unbelievers and the defeat of Satan and the Antichrist. The Lord is moving the pieces as on a chessboard.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Unclean Spirits and Har-Megiddo</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Three spirits like frogs</span><span class="bullet-desc">From the dragon, the beast, and the false prophet come three unclean spirits (demons), described as frogs, which is an O.T. symbol for an unclean spirit. They go to the kings of the whole earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Jezreel Valley</span><span class="bullet-desc"><span class="hl">Har-Megiddo</span> = "har" (hill or mountain in Hebrew) + Megiddo (a city in northern Israel in the Jezreel Valley). Armageddon in English. The armies will gather here to prepare for the great war against God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Satan's plan</span><span class="bullet-desc">Satan determines that he must prepare to destroy Christ at His return. Using the influence of the Antichrist and the False Prophet, he calls the world to fight as one against Christ. He points to the desperate state of the world as the only hope for survival.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Strategy: If He Destroys the Jews, Jesus Cannot Return</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Attack on Jerusalem</span><span class="bullet-desc">The Antichrist's forces gather in northern Israel for a massive assault on the Lord's city. The enemy moves his forces to the Valley of Armageddon as a staging area, but the real battle will take place in Jerusalem.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The goal: make Christ's return impossible</span><span class="bullet-desc">By destroying the Jews remaining in Jerusalem, he hopes to make Christ's return impossible. What they do not know is that Christ is <span class="hl">gathering them all in one place to destroy them all at once</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Armageddon Stage I</span><span class="bullet-desc">The movement of the Antichrist's forces from his capital city (Babylon, east of the Euphrates) toward Israel (to the west). The drying of the river confirms that Babylon is his headquarters.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN XII ═══════════════════════════ -->
+<div class="section" id="sec-XII">
+  <div class="section-header">
+    <div class="section-num">XII</div>
+    <h2 class="section-title">Warning to the Believer During the Tribulation</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 16:15</span>
+        <span class="scripture-text">"Behold, I am coming as a thief. Blessed is he who watches, and keeps his garments, lest he walk naked and they see his shame."</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">For the Believer in the Tribulation</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The coming is expected and nearly datable</span><span class="bullet-desc">For those who believe during the Tribulation, the Lord's coming is expected and its date is practically known. But for the unbelieving world, it will come as a <span class="hl">thief in the night</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Parallel to the letter to Laodicea (Rev. 3)</span><span class="bullet-desc">Earlier in Revelation 3, the Lord warned the church about the Rapture: it would come unexpectedly and only believers would be received into heaven. Jesus told the unbelievers in the church to be ready since they would not know the hour of His coming.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The same problem, a different moment</span><span class="bullet-desc">Likewise, the world will not recognize that the Second Coming of Jesus is imminent. Therefore they must know and believe before that day arrives. It is the same problem at a different moment. The call is the same: believe in Me, while today is still called "today."</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Time of Jacob's Trouble</div>
+      <div class="scripture">
+        <span class="scripture-ref">Jeremiah 30:7</span>
+        <span class="scripture-text">Alas! For that day is great, so that none is like it; and it is the time of Jacob's trouble, but he shall be saved out of it.</span>
+      </div>
+      <p class="card-body" style="margin-top:10px;">God is pouring out His wrath in final judgments before the Second Coming. Six of the seven judgments have already come. The first five produced destruction so devastating that life is practically impossible, so the end must come quickly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SECCIÓN XIII ═══════════════════════════ -->
+<div class="section" id="sec-XIII">
+  <div class="section-header">
+    <div class="section-num">XIII</div>
+    <h2 class="section-title">The Seventh Bowl — "It Is Done" and the Fall of Babylon</h2>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 16:17–21</span>
+        <span class="scripture-text">Then the seventh angel poured out his bowl into the air, and a loud voice came out of the temple of heaven, from the throne, saying, "It is done!" And there were noises and thunderings and lightnings; and there was a great earthquake… Now the great city was divided into three parts, and the cities of the nations fell. And great Babylon was remembered before God… And great hail from heaven fell upon men, each hailstone about the weight of a talent.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">The Bowl Poured into the Air</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The atmosphere as an ocean</span><span class="bullet-desc">The final judgment is poured into the air — the atmosphere of our earth is an ocean that surrounds the planet. Just as the previous judgments were poured into bodies of water, this one is poured into the great body of air. Like ink in a pool: God's wrath goes <span class="hl">everywhere on earth</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">An unprecedented earthquake</span><span class="bullet-desc">An earthquake that produces unique destruction unlike any ever seen. The damage must be on par with Noah's flood, except without water. Mountains and islands (which are mountaintops rising from the sea) sink into the earth's crust.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">A hailstorm of 100-pound stones</span><span class="bullet-desc">The Bible speaks of hail as stones falling from the sky. God destroys the world with 100-pound rocks, resulting in the <span class="hl">complete destruction</span> of anything made by man. People recognize this is God's work but blaspheme His name in response.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">"It Is Done" — Fulfilled</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">God's wrath is complete</span><span class="bullet-desc">The Greek word for "done" can also mean "fulfilled." The wrath of God and His purposes in the Tribulation come to an end with this final bowl. As promised in Rev. 15:1: in these plagues the wrath of God is complete.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Parallel with the cross</span><span class="bullet-desc">When Jesus completed the work of redemption, He declared it was also finished: John 19:30: <em>"It is finished."</em> On the cross, Jesus took the wrath of God upon Himself for our sake. Once Jesus received that wrath, He declared that God's wrath against the elect was over.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Upon Whom God's Wrath Is Poured</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Wrath for sin: a just measure</span><span class="bullet-desc">All the sins of all people throughout all of history produced a measure of God's wrath. This wrath is poured out in two ways: on Jesus at the cross (for those who will be saved), or on each one who rejects Jesus.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Not one drop more or less</span><span class="bullet-desc">God knew from the beginning all who would be saved and decreed an exact and just judgment upon Christ. Not one drop more or less of wrath was poured out on Jesus. Both sentences were just because they come from a just judgment.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Free will and sovereignty</span><span class="bullet-desc">This does not suggest that God decided who would be saved or not — it is a personal choice arising from free will. But it does suggest that God <span class="hl">knows the end from the beginning</span> (John 3:36).</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Great City Split in Three — Jerusalem or Babylon?</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The term "great city" only in Revelation</span><span class="bullet-desc">The term "great city" appears in <span class="hl">only eight verses in all of Scripture</span>, all in Revelation, and in every case it refers to the same place: <strong>Babylon</strong>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The reference in Rev. 11:8</span><span class="bullet-desc">In Rev. 11:8 Jerusalem was described by four names: "the great city," Sodom, Egypt, and the place where Jesus was crucified. Only the fourth tells us clearly that it is Jerusalem; the first three are comparative — Jerusalem is <em>like</em> Babylon, <em>like</em> Sodom, <em>like</em> Egypt in its sin.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Conclusion: it is always Babylon</span><span class="bullet-desc">The term "great city" is always a reference to <span class="hl">Babylon</span>, which will now become the center of the story in chapters 17 and 18.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Purpose of the Seventh Bowl: Removing the Gentile Cities</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">All the Gentile cities fall</span><span class="bullet-desc">The Greek word "ethnos" (nations) can also be translated as Gentiles. Every Gentile city anywhere on earth is eliminated.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">Only Jerusalem remains</span><span class="bullet-desc">Only Jerusalem has been excluded from these judgments. Since Jerusalem sits on a mountain and that mountain remains, <span class="hl">Jerusalem stands intact</span> and rises above all other cities — literally the highest point on all the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord has made very clear which city He favors</span><span class="bullet-desc">At the end of all the judgments, only one city rises above all others: the city of God. The stage is set for the final battle between good and evil, which will end this age.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Next Step: The Fall of Babylon</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The most important judgment of the Tribulation</span><span class="bullet-desc">The final judgment focuses on the fall of a great city — Babylon — and that fall is the <span class="hl">most important event</span> of the Tribulation. It is so important that it is explained in greater detail in chapters 17 and 18.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div class="bullet-content"><span class="bullet-label">The Lord as chess master</span><span class="bullet-desc">The Lord is directing the enemy's actions like pieces on a chessboard, bringing everything to its appointed end. The fall of Babylon is the next stage of the Battle of Armageddon.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ DIVIDER ═══════════════════════════ -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-sym">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ═══════════════════════════ RESUMEN FINAL ═══════════════════════════ -->
+<div class="summary-box">
+  Chapters 15 and 16 of Revelation transport us to the threshold of the end: heaven opens to reveal the glory of God ready to break into history, the martyrs sing their victory from the other side, and the final Bowl judgments transform the earth into a foretaste of hell, while Satan — desperate and aware that his time is running out — moves his pieces toward Israel believing he can thwart Christ's return. But it is the Lord Himself who directs those pieces, gathering His enemies in one place to destroy them together. With the heavenly cry <em>"It is done,"</em> God's wrath against sin reaches its just end — just as it was declared finished on the cross — and only Jerusalem remains standing, elevated above all the cities of the world, signaling that the King of kings is about to claim His throne.
+</div>
+
+<!-- ═══════════════════════════ FOOTNOTE ═══════════════════════════ -->
+<footer>
+  Based on the original teaching of Verse By Verse Ministry International (VBVMI) · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br>
+  Art by Pat Marvenko Smith © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a>
+</footer>
+
+</div><!-- /wrapper -->
+
+<script>
+(function(){
+  const sidebar   = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn   = document.getElementById('toc-show');
+  const pageWrap  = document.querySelector('.wrapper');
+
+  function getSidebarWidth() {
+    return window.innerWidth <= 600 ? 0 :
+           window.innerWidth <= 900 ? 240 : 270;
+  }
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    pageWrap.style.marginLeft = getSidebarWidth() + 'px';
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    pageWrap.style.marginLeft = '0px';
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

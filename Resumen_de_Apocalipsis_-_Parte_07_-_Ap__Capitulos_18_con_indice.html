@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study of the Book of Revelation — Part 07 · Chapter 18</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(201,168,76,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 72%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 9%,  rgba(201,168,76,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 44%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 83%, rgba(201,168,76,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 57%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67% 29%, rgba(201,168,76,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 91%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 8%  62%, rgba(201,168,76,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 15%, rgba(255,255,255,0.3) 0%, transparent 100%);
+}
+
+/* HEADER */
+header {
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(ellipse at 50% 0%, rgba(139,26,26,0.35) 0%, rgba(10,8,6,0) 70%),
+              linear-gradient(to bottom, rgba(18,14,9,0.95), rgba(10,8,6,1));
+  text-align: center;
+  padding: 70px 40px 60px;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+
+.header-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.header-ornament .line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim));
+}
+.header-ornament .line.right {
+  background: linear-gradient(to left, transparent, var(--gold-dim));
+}
+.header-ornament span {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 30px rgba(201,168,76,0.2);
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.meta-item {
+  text-align: center;
+}
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* MAIN CONTENT */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.section:nth-child(1)  { animation-delay: 0.08s; }
+.section:nth-child(2)  { animation-delay: 0.16s; }
+.section:nth-child(3)  { animation-delay: 0.24s; }
+.section:nth-child(4)  { animation-delay: 0.32s; }
+.section:nth-child(5)  { animation-delay: 0.40s; }
+.section:nth-child(6)  { animation-delay: 0.48s; }
+.section:nth-child(7)  { animation-delay: 0.56s; }
+.section:nth-child(8)  { animation-delay: 0.64s; }
+.section:nth-child(9)  { animation-delay: 0.72s; }
+.section:nth-child(10) { animation-delay: 0.80s; }
+.section:nth-child(11) { animation-delay: 0.88s; }
+.section:nth-child(12) { animation-delay: 0.96s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.section-number {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+
+/* BULLETS */
+ul.bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+
+.bullet-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--gold);
+}
+.bullet-body { flex: 1; }
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 2px;
+}
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 34px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.scripture::before {
+  content: '\201C';
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,0.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+.scripture p {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* TIMELINE */
+.timeline { display: flex; flex-direction: column; gap: 0; padding-left: 20px; border-left: 1px solid; border-image: linear-gradient(to bottom, var(--gold), transparent) 1; }
+.timeline-item { position: relative; padding: 0 0 22px 28px; }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 7px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201,168,76,0.5);
+}
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--sky-light);
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+/* TABLE */
+.styled-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(201,168,76,.2);
+}
+.styled-table td {
+  font-size: 16px;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+.styled-table tr:last-child td { border-bottom: none; }
+
+/* TWO-COL panels */
+.two-col-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 50px 0;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
+}
+.divider-sym { color: var(--gold-dim); font-size: 14px; }
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.summary-box p {
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.85;
+}
+
+/* FOOTNOTE */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 30px 30px 50px;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+footer p {
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+footer a:hover { color: var(--gold); }
+
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+  .two-col-compare { grid-template-columns: 1fr; }
+  .meta-bar { gap: 20px; }
+  main { padding: 40px 16px; }
+  header { padding: 50px 20px 40px; }
+}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-open .page-wrap {
+  margin-left: 270px;
+}
+body.toc-closed .page-wrap {
+  margin-left: 0;
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+  body.toc-open .page-wrap { margin-left: 240px; }
+}
+@media (max-width: 600px) {
+  body.toc-open .page-wrap { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+<div class="toc-header">
+<div class="toc-ornament-line"></div>
+<span class="toc-label">Contents</span>
+<div class="toc-ornament-line"></div>
+</div>
+<div class="toc-links">
+<a class="toc-item" href="#sec-I"><span class="toc-num">I</span><span class="toc-title">The Seventh Bowl and the Domino Effect of Babylon</span></a>
+<a class="toc-item" href="#sec-II"><span class="toc-num">II</span><span class="toc-title">The Historical Pattern: Daniel 2 and the Times of the Gentiles</span></a>
+<a class="toc-item" href="#sec-III"><span class="toc-num">III</span><span class="toc-title">Spiritual Babylon: The False Religions of the World</span></a>
+<a class="toc-item" href="#sec-IV"><span class="toc-num">IV</span><span class="toc-title">The Destruction of All False Religions into One</span></a>
+<a class="toc-item" href="#sec-V"><span class="toc-num">V</span><span class="toc-title">Overview of Chapters 16, 17, and 18</span></a>
+<a class="toc-item" href="#sec-VI"><span class="toc-num">VI</span><span class="toc-title">The Angel Announces: Babylon Has Fallen (Rev. 18:1-3)</span></a>
+<a class="toc-item" href="#sec-VII"><span class="toc-num">VII</span><span class="toc-title">The Three Reasons for Destruction (Rev. 18:3)</span></a>
+<a class="toc-item" href="#sec-VIII"><span class="toc-num">VIII</span><span class="toc-title">God Calls His People to Come Out of Babylon (Rev. 18:4-8)</span></a>
+<a class="toc-item" href="#sec-IX"><span class="toc-num">IX</span><span class="toc-title">The Destruction of Babylon in Two Phases</span></a>
+<a class="toc-item" href="#sec-X"><span class="toc-num">X</span><span class="toc-title">The Northern Nations: Identifying the Attackers</span></a>
+<a class="toc-item" href="#sec-XI"><span class="toc-num">XI</span><span class="toc-title">The Phases of the Battle of Armageddon and the Fall of Babylon</span></a>
+<a class="toc-item" href="#sec-XII"><span class="toc-num">XII</span><span class="toc-title">The Laments and the Final Destruction of Babylon (Rev. 18:9-24)</span></a>
+</div>
+<button id="toc-toggle" title="Hide Contents">‹</button>
+</nav>
+<button id="toc-show" title="Show Contents">›</button>
+<div aria-hidden="true" class="starfield"></div>
+<div class="page-wrap">
+<!-- HEADER -->
+<header>
+<div class="header-ornament">
+<span class="line"></span>
+<span>Verse by Verse Ministry International</span>
+<span class="line right"></span>
+</div>
+<h1>Study of the Book of Revelation</h1>
+<h2>Part 07 · Chapter 18</h2>
+<div class="meta-bar">
+<div class="meta-item">
+<span class="meta-label">Chapter covered</span>
+<span class="meta-value">Revelation 18</span>
+</div>
+<div class="meta-item">
+<span class="meta-label">Pages covered</span>
+<span class="meta-value">32 pages</span>
+</div>
+<div class="meta-item">
+<span class="meta-label">Main topic</span>
+<span class="meta-value">Destruction of Babylon</span>
+</div>
+</div>
+</header>
+<main>
+<!-- SECCIÓN I -->
+<section class="section" id="sec-I">
+<div class="section-header">
+<div class="section-number">I</div>
+<h3 class="section-title">The Seventh Bowl and the Domino Effect of Babylon</h3>
+</div>
+<div class="cards">
+<div class="card">
+<div class="card-title">The Seventh Bowl: Progressive Development</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Not a Single Moment</span>
+<span class="bullet-desc">The seventh bowl unfolds slowly across chapters 16, 17, and 18, culminating in the destruction of Babylon. It is not a single instant, but a domino sequence of events that unfold over days and weeks.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Dominoes Placed by God</span>
+<span class="bullet-desc">Some dominoes were placed by God in the earlier bowl judgments. When everything is ready, God places His finger, toppling the first piece and setting off the seventh and final judgment.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Devastating Hail and Earthquake</span>
+<span class="bullet-desc">When the bowl judgments began, they started with an unimaginably destructive hailstorm and earthquake, leveling every mountain and island except the one on which Jerusalem stands.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">The Two Remaining Cities</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Jerusalem and Babylon</span>
+<span class="bullet-desc">The only cities mentioned are Jerusalem (which remains on the highest mountain) and the great city of Babylon, which will be completely destroyed last of all.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Babylon Rebuilt during the Tribulation</span>
+<span class="bullet-desc">Today Babylon is an ancient ruin, but during the Tribulation the city will have risen again to its former glory. The Antichrist will make that city — or some new version of it — his world capital.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Seat of World Power</span>
+<span class="bullet-desc">As in ancient times, Babylon will once again become the seat of world power and the chief adversary of God's people.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN II -->
+<section class="section" id="sec-II">
+<div class="section-header">
+<div class="section-number">II</div>
+<h3 class="section-title">The Historical Pattern: Daniel 2 and the Times of the Gentiles</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">Nebuchadnezzar's Statue — God's Plan Revealed</div>
+<div class="scripture">
+<span class="scripture-ref">Daniel 2 — The Statue and the Times of the Gentiles</span>
+<p>In Daniel 2, the Lord gave Nebuchadnezzar a dream so that Daniel could interpret the statue representing a long era of history called the Times of the Gentiles, beginning when Israel would fall under Gentile authority.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">❶</span>
+<div class="bullet-body">
+<span class="bullet-label">The Head: Nebuchadnezzar of Babylon</span>
+<span class="bullet-desc">The beginning of the period corresponded to the head of the statue, representing the king of Babylon, Nebuchadnezzar — the first to conquer Israel and rule the world.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">❷</span>
+<div class="bullet-body">
+<span class="bullet-label">The End: Mirror of the Beginning</span>
+<span class="bullet-desc">The end of the statue represents Gentile authority over Israel at the end of the age. The end will look very much like the beginning: it began and ends with one man ruling the world with absolute authority.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">❸</span>
+<div class="bullet-body">
+<span class="bullet-label">Divine Message: The Adversary Exposed</span>
+<span class="bullet-desc">Just as it begins with the seat of world power centered in Babylon, so it will end. This is more than coincidence — it is God sending a message about the true adversary of His people, exposing him openly.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">Satan and His Power Base in Babylon</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Enemy's Earthly Throne</span>
+<span class="bullet-desc">Satan has always been our true enemy, and like any enemy, he has a power base and a place for his throne on earth. That place is Babylon... Mesopotamia.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Demonic Expansion Contained</span>
+<span class="bullet-desc">As the population spread, demonic forces spread as well. During the Tribulation, the Lord has been narrowing that expansion, closing the circle until only the area of Mesopotamia remains exposed for judgment.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Final Cleansing before the Second Coming</span>
+<span class="bullet-desc">In the final stages of the Tribulation, the Lord brings down the enemy's stronghold. The bowl judgments are the final series of blows to accomplish that goal, so that when the Lord comes, the cleansing is nearly complete.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">The Two Phases of the Plan of Destruction</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">①</span>
+<div class="bullet-body">
+<span class="bullet-label">Spiritual Phase (Chapter 17)</span>
+<span class="bullet-desc">The first phase studied in Chapter 17: the destruction of Spiritual Babylon — the system of false religions that Satan has created and promoted among the nations.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">②</span>
+<div class="bullet-body">
+<span class="bullet-label">Geographic Phase (Chapter 18)</span>
+<span class="bullet-desc">The second phase: the destruction of Physical Babylon — the Antichrist's capital city, the subject of numerous Old Testament prophecies in Isaiah, Jeremiah, and Ezekiel.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN III -->
+<section class="section" id="sec-III">
+<div class="section-header">
+<div class="section-number">III</div>
+<h3 class="section-title">Spiritual Babylon: The False Religions of the World</h3>
+</div>
+<div class="cards">
+<div class="card">
+<div class="card-title">The Nature of Spiritual Babylon</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Origin in Babel</span>
+<span class="bullet-desc">Spiritual Babylon takes the form of false religious systems. That false kingdom began, not coincidentally, in Babel with the tower — the first false religion recorded in history — and continues to this day.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">One Color, Countless Shades</span>
+<span class="bullet-desc">There are countless false religions on earth, but in reality they are only shades of the same color — all are Satan's inventions to distract humanity and lead it away from the truth of the Gospel.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">99% Truth Is 100% Lie</span>
+<span class="bullet-desc">Satan also moves among outwardly Christian religions, establishing differences in denominations. Examples: Mormonism, Jehovah's Witnesses, deviations of the Catholic Church — they speak of Jesus but do not have the Gospel.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">Those Who Are Transferred into the Kingdom of God</div>
+<div class="scripture">
+<span class="scripture-ref">Colossians 1:12-14</span>
+<p>He has delivered us from the power of darkness and conveyed us into the kingdom of the Son of His love, in whom we have redemption through His blood, the forgiveness of sins.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Transfer by Faith</span>
+<span class="bullet-desc">Those who come to the light and believe in Jesus are transferred by faith from Satan's kingdom into the true Kingdom. Collectively, all false religions form an alternative kingdom in opposition to God's Kingdom for Christ.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card full">
+<div class="card-title">The Harlot on the Seven Heads — Revelation 17 as Background</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Woman Riding the Beast</span>
+<span class="bullet-desc">The woman riding a beast with seven heads describes how the rulers of the Times of the Gentiles support Satan's kingdom. She is the mother of all harlots — the origin of all false worship — and rides the beast representing world rulers.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Mileposts toward the End</span>
+<span class="bullet-desc">The seven heads serve as mileposts marking the passage of time. By John's day, only one world leader had not yet appeared: the Antichrist. After his appearance, Satan's kingdom will come to its end.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Victims of Deception</span>
+<span class="bullet-desc">False religion ensnares: generations of humanity under false claims; Israel worshiping idols during the Times of the Gentiles; saints persecuted during the Church age. World centers of influence — Hollywood, Las Vegas, Greek philosophical thought, modern science divorced from the Bible — all contribute to the deception.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN IV -->
+<section class="section" id="sec-IV">
+<div class="section-header">
+<div class="section-number">IV</div>
+<h3 class="section-title">The Destruction of All False Religions into One</h3>
+</div>
+<div class="cards">
+<div class="card">
+<div class="card-title">Consolidation into Exclusive Worship of the Antichrist</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 17:16</span>
+<p>And the ten horns which you saw on the beast, these will hate the harlot, make her desolate and naked, eat her flesh and burn her with fire.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">At the Midpoint of the Tribulation</span>
+<span class="bullet-desc">At the midpoint, all objects and houses of false worship are destroyed, as the world is directed to worship the Antichrist alone. It is easier to destroy when condensed into a monolithic religion at the coming of Christ.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Ordered by God</span>
+<span class="bullet-desc">God ordains it all: He puts it in the hearts of world leaders to give their allegiance to the Beast, until the words of God are fulfilled (Rev. 17:17). God's sovereignty is fully active even in the enemy's plans.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">God's Plan, Not the Enemy's</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">A Radical Shift in Perspective</span>
+<span class="bullet-desc">The global unification of religions, governments, and armies is not the enemy's plan to establish his kingdom. In reality, it is God's plan to destroy Satan's kingdom, exposing it clearly and unmistakably before the eyes of the world.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">All Enemies Gathered under One</span>
+<span class="bullet-desc">God has gathered all the enemies of Jesus under one: all evil, all opposition, religions, governments, peoples, and armies — preparing the way of Jesus so that at His coming He finds them all under His footstool.</span>
+</div>
+</li>
+</ul>
+<div class="scripture" style="margin-top:14px;">
+<span class="scripture-ref">Hebrews 10:12-14</span>
+<p>But this Man, after He had offered one sacrifice for sins forever, sat down at the right hand of God, from that time waiting till His enemies are made His footstool.</p>
+</div>
+</div>
+<div class="card full">
+<div class="card-title">Whom Is the World Waiting For?</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Wrong Focus of Many Believers</span>
+<span class="bullet-desc">Many believers are focused on waiting for the Antichrist: who he is, how to recognize him, what his plans are. Unbelievers are focused on pre-establishing the Antichrist's kingdom.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Our Focus: Jesus</span>
+<span class="bullet-desc">Our focus is on Jesus. It is He who plans, executes, and determines the times and events. He is the one the world should focus on and wait for. As David said in Psalm 110:1 and Mark cited in 12:36.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">What Each Person Has Decided</span>
+<span class="bullet-desc">All evil and opposition has been exposed and unified under one. Each person has decided their own destiny. The world has chosen its own government and a false god. All its enemies wait gathered in one place for their destruction. Israel, which was an enemy, has repented.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN V -->
+<section class="section" id="sec-V">
+<div class="section-header">
+<div class="section-number">V</div>
+<h3 class="section-title">Overview of Chapters 16, 17, and 18</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">Structural Map of the Three Chapters</div>
+<div class="timeline">
+<div class="timeline-item">
+<span class="timeline-period">Capítulo 16 — Las Copas</span>
+<span class="timeline-desc">Dios actuando desde la primera copa consecutivamente hasta la séptima, correspondiente a la Ira de Dios. Es el telón de fondo de todos los eventos siguientes.</span>
+</div>
+<div class="timeline-item">
+<span class="timeline-period">Capítulo 17 — Babilonia Espiritual (Paréntesis histórico)</span>
+<span class="timeline-desc">Una interrupción que sale de la secuencia de copas para ir hacia atrás en la historia, revelando la Babilonia espiritual desde el principio, montada de gobernante a gobernante (cabezas→montes→reyes), pasando por el punto medio de la Tribulación. Termina en una sola falsa religión dirigida por el falso profeta hacia la adoración del Anticristo. Por eso al inicio del capítulo 17 se le dijo a Juan: <em>"Ven acá, y te mostraré la sentencia contra la gran ramera."</em></span>
+</div>
+<div class="timeline-item">
+<span class="timeline-period">Capítulo 18 — Babilonia Geográfica</span>
+<span class="timeline-desc">Regresa de la historia para describir lo que pasa en el cielo y después lo que sucederá en la tierra, mostrando lo que los juicios de las copas hicieron a la Gran Ciudad de Babilonia. El capítulo comienza con <em>"Después de estas cosas"</em> — en griego una relación de causa y efecto.</span>
+</div>
+</div>
+<div class="scripture" style="margin-top:18px;">
+<span class="scripture-ref">Revelation 18:3</span>
+<p>For all the nations have drunk of the wine of the wrath of her fornication, the kings of the earth have committed fornication with her, and the merchants of the earth have become rich through the abundance of her luxury.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN VI -->
+<section class="section" id="sec-VI">
+<div class="section-header">
+<div class="section-number">VI</div>
+<h3 class="section-title">The Angel Announces: Babylon Has Fallen (Rev. 18:1-3)</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">The Heavenly Announcement of the Fall</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 18:1-3</span>
+<p>After these things I saw another angel coming down from heaven, having great authority, and the earth was illuminated with his glory. And he cried mightily with a loud voice, saying, "Babylon the great is fallen, is fallen, and has become a dwelling place of demons, a prison for every foul spirit, and a cage for every unclean and hated bird!"</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">An Angel Descends</span>
+<span class="bullet-desc">The direction of movement is from heaven to earth. His great authority indicates the importance of the mission. He declares twice, for emphasis, that Babylon has fallen. What follows is the fulfillment of Old Testament prophecies about Babylon (Isaiah, Jeremiah, Ezekiel).</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Dwelling Place of Demons Forever</span>
+<span class="bullet-desc">The city will be so devastated that it will remain uninhabited forever. The only things left in that place are the demons confined there during the Kingdom. The foul spirits and scavenging birds represent that only dead things will inhabit that place.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Animals in Isaiah = Image of Demons</span>
+<span class="bullet-desc">Animals such as goats and birds of prey associated with sorcery in Isaiah are an image of demons — a typical pattern in Scripture. Only the demonic realm will exist in that place after the destruction, an unclean, unhallowed, and uninhabited place during the Kingdom.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card full">
+<div class="card-title">Old Testament Prophecies about the Final Destruction</div>
+<div class="two-col-compare">
+<div class="info-panel">
+<div class="info-panel-title">Isaiah 13:19-22 — Permanent Result</div>
+<p style="font-size:15px; color:var(--text-dim); line-height:1.7;">And Babylon, the glory of kingdoms, the beauty of the Chaldeans' pride, will be as when God overthrew Sodom and Gomorrah. It will never be inhabited, nor will it be settled from generation to generation; nor will the Arabian pitch tents there, nor will the shepherds make their sheepfolds there. But wild beasts of the desert will lie there, and their houses will be full of owls.</p>
+</div>
+<div class="info-panel">
+<div class="info-panel-title">Jeremiah 51:35-37 — God's Vengeance</div>
+<p style="font-size:15px; color:var(--text-dim); line-height:1.7;">"The violence done to me and my flesh be upon Babylon," the inhabitant of Zion will say; and "My blood be upon the inhabitants of Chaldea!" Jerusalem will say. Therefore thus says the Lord: "Behold, I will plead your case and take vengeance for you." She will become a heap of ruins, a dwelling place for jackals, an object of horror and hissing, without inhabitant.</p>
+</div>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Does Not Refer to the Medo-Persian Conquest</span>
+<span class="bullet-desc">These prophecies exclude the Medo-Persian conquest of Babylon, which was a bloodless affair. The city remained inhabited. Cyrus the Great simply diverted the Euphrates, marched along the riverbed, and entered without a fight. Therefore, they must refer to a future time not yet fulfilled.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN VII -->
+<section class="section" id="sec-VII">
+<div class="section-header">
+<div class="section-number">VII</div>
+<h3 class="section-title">The Three Reasons for Destruction (Rev. 18:3)</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">The Three Charges against Babylon the Great</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">❶</span>
+<div class="bullet-body">
+<span class="bullet-label">Reason #1 — Corrupt Immoral Influence</span>
+<span class="bullet-desc">The nations have been made drunk by her immorality. This first charge refers to the corrupting influence of the geographic city on the world — specifically the worldwide worship of the Antichrist, promoted from Babylon as its capital.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">❷</span>
+<div class="bullet-body">
+<span class="bullet-label">Reason #2 — Seat of Corrupt Power</span>
+<span class="bullet-desc">The kings of the earth have committed acts of immorality with Babylon. The city controls all political and military authority, making all kings fulfill the Antichrist's orders (see Rev. 17:13). It is the seat of corrupt power over all global authority.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">❸</span>
+<div class="bullet-body">
+<span class="bullet-label">Reason #3 — Oppression and Global Economic Control</span>
+<span class="bullet-desc">The merchants of the world have profited from the Antichrist's rule. Since the Antichrist regulates all commerce with the mark of the Beast, his city becomes incredibly wealthy, turning its riches and financial control into another means of oppressing and controlling people.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN VIII -->
+<section class="section" id="sec-VIII">
+<div class="section-header">
+<div class="section-number">VIII</div>
+<h3 class="section-title">God Calls His People to Come Out of Babylon (Rev. 18:4-8)</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">The Heavenly Call — Rev. 18:4-8</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 18:4-8</span>
+<p>And I heard another voice from heaven saying, "Come out of her, my people, lest you share in her sins, and lest you receive of her plagues... Therefore her plagues will come in one day — death and mourning and famine. And she will be utterly burned with fire, for strong is the Lord God who judges her."</p>
+</div>
+</div>
+<div class="card">
+<div class="card-title">God's Consistent Pattern: Separating His Own</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Biblical Principle of Protection</span>
+<span class="bullet-desc">There is a principle in the Bible: when God pours out judgment, He protects those who are His. God prevents His judgment from falling on the wrong ones. He always distinguishes between those who are His and those who are not.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Lot and Sodom</span>
+<span class="bullet-desc">The Lord brought Lot and his family out before the coming judgment on Sodom.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Church and the Tribulation</span>
+<span class="bullet-desc">He removes the Church from the earth before the coming judgment of the Tribulation (the Rapture).</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Tribulation Believers and Babylon</span>
+<span class="bullet-desc">He calls Tribulation believers to leave the city before judgment falls on Babylon. Only those who hear and believe the word of God will respond to the call to flee.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">The Jews of Babylon Flee to Jerusalem</div>
+<div class="scripture">
+<span class="scripture-ref">Jeremiah 51:5-9 — Old Testament Confirmation</span>
+<p>Flee from the midst of Babylon, and every one save his life! Do not be cut off in her iniquity, for this is the time of the Lord's vengeance.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Only Those without the Mark Will Flee</span>
+<span class="bullet-desc">The Jews still living in Babylon, and anyone who has not taken the mark of the Beast, will flee upon hearing God's warning. Similar to what Christ said about Jerusalem in the Olivet Discourse.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Destination: Jerusalem</span>
+<span class="bullet-desc">By departing, they will save their lives and have the opportunity for salvation. Where do they go? To the only other remaining city on earth: Jerusalem. Upon arriving, they share the news that Babylon is being destroyed.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Only Messengers — No Communications</span>
+<span class="bullet-desc">The news arriving only by messenger reminds us that the world is so devastated that all other communications are gone.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card full">
+<div class="card-title">Babylon: The Origin of All the World's Evil</div>
+<div class="scripture">
+<span class="scripture-ref">Psalm 137:1-9 — The Psalmist Asks God to Remember</span>
+<p>By the rivers of Babylon, there we sat down, yea, we wept when we remembered Zion. Remember, O Lord, against the sons of Edom the day of Jerusalem. O daughter of Babylon, who are to be destroyed, happy the one who repays you as you have served us!</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Babylon: Origin and Spread of Evil</span>
+<span class="bullet-desc">Babylon is the place where all this evil originated and from which it spread throughout the world, propagating through time. What began with a tower evolved to rise up across the entire world.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Beyond the Geographic Location</span>
+<span class="bullet-desc">The influence is truly the key point, but it is centered in a geographic location. It is not merely the place — it is Satan being in that place and his influence through it. That is why it must be definitively destroyed.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The True and Final Destruction</span>
+<span class="bullet-desc">Historically, the Persians simply became Babylon when they conquered it without bloodshed. The true destruction awaits the Tribulation, when the Lord destroys it once and for all.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN IX -->
+<section class="section" id="sec-IX">
+<div class="section-header">
+<div class="section-number">IX</div>
+<h3 class="section-title">The Destruction of Babylon in Two Phases</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">Structure of the Physical Destruction — Two Parts Orchestrated by God</div>
+<div class="two-col-compare">
+<div class="info-panel">
+<div class="info-panel-title">Phase 1 — At the Hands of Men</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Target: the Citizens</span>
+<span class="bullet-desc">An invading army from the north, sent by God, attacks and destroys the city's inhabitants. All citizens are killed.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Biblical Source</span>
+<span class="bullet-desc">Described in detail in Isaiah 13 and Jeremiah 50-51. Revelation 18 only summarizes the result.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="info-panel">
+<div class="info-panel-title">Phase 2 — God's Supernatural Judgment</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Target: the Structures</span>
+<span class="bullet-desc">Carried out by God alone in a supernatural manner. Part of the outpouring of the seventh bowl (Chapter 16). It destroys the city itself.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Result</span>
+<span class="bullet-desc">The city divided into three parts (Rev. 16:19) and reduced to permanent ruins, completely uninhabited forever.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card full">
+<div class="card-title">The Prophet Isaiah — Destruction at the Hands of Men (Isa. 13:1-5)</div>
+<div class="scripture">
+<span class="scripture-ref">Isaiah 13:1-5</span>
+<p>I have commanded My sanctified ones; I have also called My mighty ones for My anger — those who rejoice in My exaltation... The Lord of hosts musters the army for battle. They come from a far country, from the end of heaven — the Lord and His weapons of indignation, to destroy the whole land.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The "Consecrated" — qadash in Hebrew</span>
+<span class="bullet-desc">The word for "consecrated" is qadash in Hebrew — it means holy, but can also simply mean "set apart" or "designated for God's purpose," not necessarily holy. They can be pagan armies designated by God to execute His judgment.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Numerous Nations Gathered</span>
+<span class="bullet-desc">God's call is followed by the sound of an army of many nations gathered from a far country, as instruments of God's indignation, to destroy the whole land of Babylon.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN X -->
+<section class="section" id="sec-X">
+<div class="section-header">
+<div class="section-number">X</div>
+<h3 class="section-title">The Northern Nations: Identifying the Attackers</h3>
+</div>
+<div class="cards">
+<div class="card">
+<div class="card-title">Jeremiah Identifies the Invading Army</div>
+<div class="scripture">
+<span class="scripture-ref">Jeremiah 51:27-28</span>
+<p>Set up a banner in the land, blow the trumpet among the nations... call together against her the kingdoms of Ararat, Minni, and Ashkenaz... Prepare against her the nations, with the kings of the Medes, its governors and all its rulers.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Ararat → Turkey</span>
+<span class="bullet-desc">One of the northern nations identified by Jeremiah for the time of the Tribulation.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Minni → Armenia</span>
+<span class="bullet-desc">A region to the north of Babylon.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Ashkenaz → Southern Russia / Black Sea</span>
+<span class="bullet-desc">Another northern kingdom designated by God.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Medes → Iran (Persia)</span>
+<span class="bullet-desc">They also participate. Today to the north of Babylon: Iran, Turkey, Armenia, and Russia — possibly united into a common kingdom.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">An Attack on Leb Kamai — Heart of the Adversaries</div>
+<div class="scripture">
+<span class="scripture-ref">Jeremiah 51:1 — Destroyer from the North</span>
+<p>Behold, I will raise up against Babylon, against those who dwell in Leb Kamai, a destroying wind.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Leb Kamai — "Heart of My Adversaries"</span>
+<span class="bullet-desc">An ancient term for Chaldea or Mesopotamia. It conveys that Mesopotamia is "the heart, or the source, of all God's adversaries" — similar to "mother of harlots" — and that corrupting source will be destroyed.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Hand-to-Hand Combat</span>
+<span class="bullet-desc">The invading army attacks the people using hand-to-hand combat and simple weapons. All citizens of the city are killed — no one inhabits the city again.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Not the Medo-Persian Conquest</span>
+<span class="bullet-desc">The Medo-Persian conquest was bloodless. This describes the destruction of Babylon during the Tribulation: the earth trembles, all citizens fall. That earthquake did not occur during the ancient invasion either.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN XI -->
+<section class="section" id="sec-XI">
+<div class="section-header">
+<div class="section-number">XI</div>
+<h3 class="section-title">The Phases of the Battle of Armageddon and the Fall of Babylon</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">Review of the Armageddon Sequence</div>
+<div class="timeline">
+<div class="timeline-item">
+<span class="timeline-period">FASE 1 — Sexta Copa: El Éufrates se Seca</span>
+<span class="timeline-desc">El secamiento del Éufrates hizo posible que los ejércitos del Anticristo abandonaran Babilonia para participar en la gran guerra. Se reúnen en el norte de Israel, en el <span class="hl">valle de Jezreel</span>, en preparación para invadir Jerusalén.</span>
+</div>
+<div class="timeline-item">
+<span class="timeline-period">FASE 2 — La Destrucción de Babilonia Indefensa</span>
+<span class="timeline-desc">Al salir, el Anticristo dejó Babilonia indefensa. Los reyes del norte se vuelven contra él (Ap. 17:17 — "solo hasta que se cumplan las palabras de Dios"). Atacan y destruyen Babilonia. Estos son probablemente los mismos reyes que luego se muestran de luto. Babilonia, desprotegida, se convierte en blanco fácil.</span>
+</div>
+<div class="timeline-item">
+<span class="timeline-period">Destrucción Sobrenatural — Séptima Copa</span>
+<span class="timeline-desc">Después del ataque humano, el Señor destruye completamente la ciudad de manera sobrenatural (Capítulo 16), dividiéndola en tres partes (Ap. 16:19). La ciudad arde y todo en ella es devastado.</span>
+</div>
+<div class="timeline-item">
+<span class="timeline-period">FASE 3 — Preparación para la Segunda Venida (Capítulo 19)</span>
+<span class="timeline-desc">El Anticristo, acorralado sin ciudad y sin opciones, solo puede avanzar hacia Jerusalén — la única ciudad que queda en pie. El Señor lo instó a dejar su ciudad desprotegida y ahora lo dirige hacia su destrucción final.</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Why Attack the Antichrist?</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 17:17 — The Sovereignty of God</span>
+<p>For God has put it into their hearts to fulfill His purpose, to be of one mind, and to give their kingdom to the beast, until the words of God are fulfilled.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Change of Loyalty Ordered by God</span>
+<span class="bullet-desc">The phrase "until the words of God are fulfilled" suggests the kings will change their minds at some point. They follow only until the moment of fulfillment of Isaiah 13 and Jeremiah 50-51.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Human Motivation, Divine Purpose</span>
+<span class="bullet-desc">The kings attempt a coup to overthrow the Antichrist by seizing the city for themselves. But in reality, God is using them to accomplish His will in destroying the city and its people.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">Jeremiah Confirms Both Judgments</div>
+<div class="scripture">
+<span class="scripture-ref">Jeremiah 51:28-29</span>
+<p>Prepare against her the nations, with the kings of the Medes... The land trembles and sorrow is in it, for every purpose of the Lord shall be performed against Babylon, to make the land of Babylon a desolation without inhabitant.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Army + the Supernatural Earthquake</span>
+<span class="bullet-desc">Jeremiah describes the nations rising against Babylon while the earth trembles — both judgments in one prophecy. The earthquake did not occur during the Medo-Persian invasion, but as a result of a Tribulation judgment.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECCIÓN XII -->
+<section class="section" id="sec-XII">
+<div class="section-header">
+<div class="section-number">XII</div>
+<h3 class="section-title">The Laments and the Final Destruction of Babylon (Rev. 18:9-24)</h3>
+</div>
+<div class="cards">
+<div class="card full">
+<div class="card-title">Three Groups That Mourn (Rev. 18:9-19)</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 18:9-11</span>
+<p>The kings of the earth who committed fornication and lived luxuriously with her will weep and lament for her, when they see the smoke of her burning, standing at a distance for fear of her torment, saying, "Alas, alas, that great city Babylon, that mighty city! For in one hour your judgment has come." And the merchants of the earth will weep and mourn over her, for no one buys their merchandise anymore.</p>
+</div>
+<div class="two-col-compare" style="margin-top:16px;">
+<div class="info-panel">
+<div class="info-panel-title">The Three Groups of Verse 3 Mourning</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Verse 9 — The Kings</span>
+<span class="bullet-desc">They mourn the loss of their important city and the political power it controlled.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Verse 11 — The Merchants</span>
+<span class="bullet-desc">They lament the loss of commerce and wealth. No one buys anymore: gold, silver, precious stones, pearls, fine linen, silk, scarlet, ivory, wood, copper, iron, marble, spices, incense, wine, wheat, livestock, slaves, and souls of men.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Verses 15-17 — The Working Class</span>
+<span class="bullet-desc">Pilots, navigators, sailors, those who work at sea — all who profited from the city — mourn from afar.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="info-panel">
+<div class="info-panel-title">Characteristics of the Destruction</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">In One Hour — Said Three Times</span>
+<span class="bullet-desc">The destruction comes very quickly. Three times it says it comes "in one hour." This is the description of God's supernatural judgment, not of the first invasion of the armies.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Standing at a Distance in Fear</span>
+<span class="bullet-desc">The kings, merchants, and workers are described as standing at a distance because they fear her torment — whether because they were part of the invasion or because they fled from it.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card full">
+<div class="card-title">The Final Eulogy of Babylon — Rev. 18:21-24</div>
+<div class="scripture">
+<span class="scripture-ref">Revelation 18:21-24</span>
+<p>Then a mighty angel took up a stone like a great millstone and threw it into the sea, saying, "Thus with violence the great city Babylon shall be thrown down, and shall not be found anymore. The sound of harpists, musicians, flutists, and trumpeters shall not be heard in you anymore... A lamp shall not shine in you anymore... for your merchants were the great men of the earth, for by your sorcery all the nations were deceived. And in her was found the blood of prophets and saints, and of all who were slain on the earth."</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Image of the Millstone</span>
+<span class="bullet-desc">An angel takes a great millstone and throws it into the sea — a great stone sinks quickly and is never found again. This is the image the Lord wants His people to have of Babylon's future.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Eternal Silence — Everything Ceases</span>
+<span class="bullet-desc">Never again will there be heard: music, craftsmen, millstones, lamps, or the voices of bride and groom. All life and activity has ceased forever.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Origin of All Evil</span>
+<span class="bullet-desc">The final verse demonstrates that Babylon was behind every scene bringing destruction and death to all the earth. It is the origin of all the world's evil and the enemy's center of power — in her was found the blood of prophets, saints, and all who were slain.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Enemy Completely Defeated and Forgotten</span>
+<span class="bullet-desc">The enemy and all his power and work on earth will be completely defeated and forgotten. And that day is coming soon.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">The Antichrist Cornered — End of Chapter 18</div>
+<div class="scripture">
+<span class="scripture-ref">Jeremiah 51:31 and 50:43</span>
+<p>One runner will run to meet another, and one messenger to meet another, to show the king of Babylon that his city is taken on all sides. The king of Babylon has heard the report about them, and his hands grow feeble; anguish has taken hold of him, pangs as of a woman in childbirth.</p>
+</div>
+<ul class="bullets" style="margin-top:14px;">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">The Antichrist Anguished in Agony</span>
+<span class="bullet-desc">Messenger after messenger transmits the news of his city's fall. When the Antichrist hears it, he is in anguish and agony. His hands grow feeble with grief.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">No Options: Must Attack Jerusalem</span>
+<span class="bullet-desc">He and his armies have no choice but to attack Jerusalem, because Jerusalem is the last city standing on all the earth. Destroying the Jews is the enemy's last hope of saving himself.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">God Is Moving Him toward His Destruction</span>
+<span class="bullet-desc">The Lord prompted him to leave his city undefended, and now has left him no reason to return. The Lord is narrowing the available world, leaving the Antichrist cornered and right where He wants him.</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-title">What Comes Next: Chapter 19</div>
+<ul class="bullets">
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">Second Stage Completed</span>
+<span class="bullet-desc">The second stage of the Battle of Armageddon is complete. Stage three sets the stage for the Lord's return in Chapter 19.</span>
+</div>
+</li>
+<li>
+<span class="bullet-icon">✦</span>
+<div class="bullet-body">
+<span class="bullet-label">3rd and 4th Battle of Armageddon</span>
+<span class="bullet-desc">Next, in Chapter 19, the third and fourth battles of Armageddon are described, culminating in the Second Coming of Christ.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- DIVIDER -->
+<div class="divider">
+<span class="divider-sym">✦</span>
+</div>
+<!-- RESUMEN FINAL -->
+<div class="summary-box">
+<p>El Capítulo 18 del Apocalipsis revela el colapso de Babilonia, la capital del Anticristo y sede milenaria del poder satánico — no como un accidente histórico, sino como el cumplimiento soberano de las profecías de Isaías y Jeremías. Dios orquesta meticulosamente cada ficha de dominó: la ciudad que comenzó la rebelión contra Él en Babel es la misma que cae en dos fases bajo su juicio — primero a manos de ejércitos que Él mismo dirige desde el norte, y luego destruida sobrenaturalmente en una sola hora, para nunca más ser hallada. Su mensaje es claro: el verdadero adversario de su pueblo ha sido expuesto, juzgado y vencido, y el escenario final para el glorioso regreso de Jesucristo está completamente listo.</p>
+</div>
+</main>
+<!-- FOOTNOTE -->
+<footer>
+<p>
+    Basado en la enseñanza original de <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://vbvmi.org" target="_blank">vbvmi.org</a><br/>
+    Arte de Pat Marvenko Smith © 1992 · <a href="http://revelationillustrated.com" target="_blank">revelationillustrated.com</a>
+</p>
+</footer>
+</div><!-- /.page-wrap -->
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>

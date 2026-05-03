@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation — Part 01 · Chapters 1–4</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(201,168,76,.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 67%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 56% 23%, rgba(201,168,76,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 45%, rgba(255,255,255,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 12%, rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 7% 88%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 43% 91%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 78%, rgba(255,255,255,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 54%, rgba(201,168,76,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 87% 72%, rgba(255,255,255,.6) 0%, transparent 100%);
+}
+
+/* LAYOUT */
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  text-align: center;
+  padding: 64px 32px 56px;
+  margin-bottom: 48px;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,26,26,.38) 0%, transparent 70%);
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(139,26,26,.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ornament-line {
+  flex: 1;
+  max-width: 140px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 30px rgba(201,168,76,.25);
+}
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  text-align: center;
+}
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 56px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp .6s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(201,168,76,.15);
+}
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 14px;
+}
+
+/* BULLETS */
+ul.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+.bullet-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gold);
+}
+.bullet-body {}
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+}
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE BOX */
+.scripture {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 28px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.scripture::before {
+  content: '\201C';
+  position: absolute;
+  top: -4px;
+  left: 10px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.scripture-text {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* HIGHLIGHT */
+.hl { color: var(--gold-light); font-weight: 600; }
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(180deg, var(--gold-dim), transparent);
+}
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 6px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px rgba(201,168,76,.5);
+}
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+}
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  color: var(--sky-light);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* STYLED TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+.styled-table td {
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+}
+
+/* TWO COL inside full card */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 48px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.divider-sym {
+  color: var(--gold-dim);
+  font-size: 14px;
+}
+
+/* SUMMARY */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.summary-box p {
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* FOOTNOTE */
+footer {
+  border-top: 1px solid rgba(201,168,76,.12);
+  padding-top: 24px;
+  text-align: center;
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+footer a { color: var(--gold-dim); text-decoration: none; }
+
+/* STAGGER DELAYS */
+.section:nth-child(1)  { animation-delay: .05s; }
+.section:nth-child(2)  { animation-delay: .13s; }
+.section:nth-child(3)  { animation-delay: .21s; }
+.section:nth-child(4)  { animation-delay: .29s; }
+.section:nth-child(5)  { animation-delay: .37s; }
+.section:nth-child(6)  { animation-delay: .45s; }
+.section:nth-child(7)  { animation-delay: .53s; }
+.section:nth-child(8)  { animation-delay: .61s; }
+.section:nth-child(9)  { animation-delay: .69s; }
+.section:nth-child(10) { animation-delay: .77s; }
+.section:nth-child(11) { animation-delay: .85s; }
+.section:nth-child(12) { animation-delay: .93s; }
+.section:nth-child(13) { animation-delay: 1.01s; }
+.section:nth-child(14) { animation-delay: 1.09s; }
+.section:nth-child(15) { animation-delay: 1.17s; }
+.section:nth-child(16) { animation-delay: 1.25s; }
+
+p.body-text { font-size: 17px; color: var(--text-dim); line-height: 1.78; margin-bottom: 10px; }
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+body.toc-open .page-wrap {
+  margin-left: 270px;
+  max-width: calc(1100px + 270px);
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-closed .page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+  body.toc-open .page-wrap { margin-left: 240px; }
+}
+@media (max-width: 600px) {
+  body.toc-open .page-wrap { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Index</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">The Revelation of Jesus Christ — Introduction and Chain of Custody</span></a>
+<a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">Greeting to the Seven Churches — The Three Descriptions of Jesus</span></a>
+<a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">A Vision of the Son of Man — The Eternal Appearance of Christ</span></a>
+<a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">Outline of the Book of Revelation</span></a>
+<a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Seven Letters — To Whom Were They Addressed and When?</span></a>
+<a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">Letter to Laodicea — The Church of Our Age</span></a>
+<a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">The Great Apostasy — The Shift in Thinking</span></a>
+<a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">The Present Age, the Age to Come, and the Last Days</span></a>
+<a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">The Times of the Gentiles — Its Beginning, Duration, and End</span></a>
+<a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">The Four Gentile Kingdoms — Daniel 2 and Daniel 7</span></a>
+<a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">The Old Covenant, Its Blessings, Curses, and the Door of Salvation</span></a>
+<a href="#sec-XII" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">The 70 Weeks of Daniel — The Timeline of Israel's Salvation</span></a>
+<a href="#sec-XIII" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">Signs of the End of the Times of the Gentiles</span></a>
+<a href="#sec-XIV" class="toc-item"><span class="toc-num">XIV</span><span class="toc-title">The Olivet Discourse — Matthew 24 and Luke 21</span></a>
+<a href="#sec-XV" class="toc-item"><span class="toc-num">XV</span><span class="toc-title">The Rapture — The Resurrection of the Church and the Jewish Wedding Tradition</span></a>
+<a href="#sec-XVI" class="toc-item"><span class="toc-num">XVI</span><span class="toc-title">The Heavenly Worship — Revelation Chapter 4 (After the Rapture)</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+<div class="starfield"></div>
+<div class="page-wrap">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<header>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    Verse by Verse Ministry International
+    <div class="ornament-line"></div>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 01 &middot; Chapters 1 – 4</h2>
+  <div class="meta-row">
+    <div class="meta-item">
+      <span class="meta-label">Chapters covered</span>
+      <span class="meta-value">Revelation 1 – 4</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pages covered</span>
+      <span class="meta-value">91 páginas</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main historical period</span>
+      <span class="meta-value">Church Age — From Pentecost to the Rapture</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════ SECCIÓN I ══════════════════════════ -->
+<div class="section" id="sec-I">
+  <div class="section-header">
+    <div class="section-num">I</div>
+    <h3 class="section-title">The Revelation of Jesus Christ — Introduction and Chain of Custody</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">What Is the Book of Revelation?</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The only prophetic book with a direct divine author</span><span class="bullet-desc">No other book of the Bible declares itself to be the direct revelation of Jesus Christ himself. In Greek, "Apocalypsis" means revelation.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Verified chain of custody</span><span class="bullet-desc">The revelation comes from the <span class="hl">Father → Jesus Christ → Angel → Apostle John → the Church</span>. It certifies the authenticity of the content, guaranteeing it is the unadulterated original — critically important given the proliferation of false teachers of the era.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Addressed to the servants, not to the world</span><span class="bullet-desc">The letter is not addressed to the world at large as a witness, but <span class="hl">specifically to the church of Christ</span>.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">John saw, he did not narrate</span><span class="bullet-desc">John did not write an interpretation of what he heard; he faithfully recorded what was <span class="hl">shown to him visually</span>, so that we might interpret it.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Unique Blessing of Revelation</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 1:3</span>
+        <span class="scripture-text">Blessed is he who reads and those who hear the words of this prophecy, and keep those things which are written in it; for the time is near.</span>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Promised reward</span><span class="bullet-desc">It is the only book of the Bible that expressly promises a reward to those who read and hear it — deeper understanding of God's plans and character, peace, discernment, and a desire to study further.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Total understanding not required</span><span class="bullet-desc">The blessing is for those who <span class="hl">read and hear with a heart open to the Holy Spirit</span>, regardless of their level of theological knowledge. It does not say "for those who understand."</span></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN II ══════════════════════════ -->
+<div class="section" id="sec-II">
+  <div class="section-header">
+    <div class="section-num">II</div>
+    <h3 class="section-title">Greeting to the Seven Churches — The Three Descriptions of Jesus</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Three Periods of Christ's Ministry</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">He who was — Pre-incarnation Period</span><span class="bullet-desc">Witness to the existence of God through creation. (Col 1:16: <em>all things were created through him and for him</em>)</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">He who is — After his incarnation</span><span class="bullet-desc">His death and resurrection in glory. He is the <span class="hl">firstborn from the dead</span>, head of the church. (Col 1:18)</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">He who is to come — Second Coming</span><span class="bullet-desc">He will reign on earth as promised. The book of Revelation takes us from the end of the current period through a <span class="hl">7-year period</span>, and then into the Millennium.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Attributes of Christ in the Greeting (Rev. 1:4–8)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Faithful witness</span><span class="bullet-desc">Firstborn from the dead and ruler of the kings of the earth.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Made us kings and priests</span><span class="bullet-desc">Through his blood that washed us from our sins. Rev. 1:5–6.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Visible Second Coming</span><span class="bullet-desc"><em>Behold, he is coming with the clouds, and every eye will see him</em> — including those who pierced him (Rev. 1:7).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Alpha and the Omega</span><span class="bullet-desc">Beginning and end. The Almighty who is, who was, and who is to come. (Rev. 1:8)</span></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN III ══════════════════════════ -->
+<div class="section" id="sec-III">
+  <div class="section-header">
+    <div class="section-num">III</div>
+    <h3 class="section-title">A Vision of the Son of Man — The Eternal Appearance of Christ</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Description of the Vision (Rev. 1:12–18)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Seven golden lampstands</span><span class="bullet-desc">In the midst of them stood one like the Son of Man.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Head and hair white as snow</span><span class="bullet-desc">They symbolize <span class="hl">purity and eternal holiness</span>.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Eyes like a flame of fire</span><span class="bullet-desc">Absolute discernment.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Feet like burnished bronze</span><span class="bullet-desc">Judgment against the unjust.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Voice like the sound of many waters</span><span class="bullet-desc">Irresistible authority.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Sharp two-edged sword from his mouth</span><span class="bullet-desc">His Word destroys the wicked (Isa 11:4: <em>he will strike the earth with the rod of his mouth</em>).</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Theological Significance of the Vision</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Temporary appearance vs. eternal appearance</span><span class="bullet-desc">During his first coming Jesus had a temporary appearance (Phil 2:6–8: <em>he emptied himself, taking the form of a servant</em>). Now he appears as who he truly is.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">King of kings in all his majesty</span><span class="bullet-desc">Righteousness (loins), Faithfulness (belt), Purity (white robes), Priesthood and Kingship (robes), Light of truth (face shining).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Consistency with Daniel and Isaiah</span><span class="bullet-desc">The vision is identical to Dan 10:4–6 and Isa 11:1–5 — confirming the coherence of Scripture.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">John's reaction</span><span class="bullet-desc"><em>I fell at his feet as though dead.</em> Christ revives him with his right hand: <em>Fear not; I am the first and the last.</em> (Rev. 1:17)</span></span></li>
+      </ul>
+      <div class="scripture" style="margin-top:14px;">
+        <span class="scripture-ref">Revelation 19:11–16</span>
+        <span class="scripture-text">He who sat on him was called Faithful and True... Out of His mouth goes a sharp sword... And He has on His robe and on His thigh a name written: KING OF KINGS AND LORD OF LORDS.</span>
+      </div>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Mystery of the Seven Stars and the Seven Lampstands (Rev. 1:19–20)</div>
+      <div class="two-col">
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Seven stars = angels of the seven churches</span><span class="bullet-desc">Messengers under the authority of Christ (he holds them in his hand), dedicated to the service of those who are heirs of salvation. (Heb 1:14)</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Seven lampstands = the seven churches</span><span class="bullet-desc">The churches illuminate the truth by reaching into the darkness — the Great Commission. (Phil 2:15: <em>you shine as lights in the world</em>)</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The number seven = totality</span><span class="bullet-desc">The 7 letters were written to 7 churches, even though there were more at the time (Rome, Corinth, Galatia, Colossae, Thessalonica, Jerusalem, etc.). The biblical 7 represents completeness, everything — the finished work of God.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Structure of the book revealed</span><span class="bullet-desc">Rev. 1:19 establishes the threefold outline: (1) things that John saw, (2) things that are, (3) things that are to take place after this.</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN IV ══════════════════════════ -->
+<div class="section" id="sec-IV">
+  <div class="section-header">
+    <div class="section-num">IV</div>
+    <h3 class="section-title">Outline of the Book of Revelation</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">The Three Fundamental Parts</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Part</th>
+            <th>Chapters</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="hl">Things that John saw</span></td>
+            <td>Chapter 1</td>
+            <td>The vision of Jesus as King in all his glory and power — never before seen this way. Jesus will not return as he came the first time.</td>
+          </tr>
+          <tr>
+            <td><span class="hl">Things that are</span></td>
+            <td>Chapters 2–3</td>
+            <td>The 7 letters dictated by Jesus to the 7 churches that existed at that time. They last until the things that are to come begin.</td>
+          </tr>
+          <tr>
+            <td><span class="hl">Things that are to take place after this</span></td>
+            <td>Chapters 4–22</td>
+            <td>Rev. 4:1: "Come up here, and I will show you what must take place after this." It encompasses the Tribulation, the Millennium, and eternity.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN V ══════════════════════════ -->
+<div class="section" id="sec-V">
+  <div class="section-header">
+    <div class="section-num">V</div>
+    <h3 class="section-title">The Seven Letters — To Whom Were They Addressed and When?</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Two Key Conclusions</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Conclusion #1: Totality of the churches</span><span class="bullet-desc">The letters describe 7 universal characteristics manifested in 7 main churches. The biblical 7 = totality. Therefore, they are addressed to <span class="hl">the entire Church of Christ</span> of that era.</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">Conclusion #2: All historical periods</span><span class="bullet-desc">The letters are written in <span class="hl">clockwise order</span> — suggesting time. From the beginning of the church (Pentecost) to the end of the church age, including the present church. (Identified ~150 years ago from a historical perspective)</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Rules of Biblical Interpretation</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Literal</span><span class="bullet-desc">Specific and historical. If the simplest and most straightforward interpretation makes common sense, do not seek another.</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">Universal</span><span class="bullet-desc">General and timeless. Applicable to any era, including the present.</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">Prophetic</span><span class="bullet-desc">Symbolic and speaks of future events. <em>**All three must be used and in that order.**</em></span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Seven Historical Periods of the Church</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">Ephesus — 30–100 AD · Apostolic Church</div>
+          <div class="timeline-desc">With the death of the last apostle, the Ephesus period came to a close.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Smyrna — 100–313 AD · Persecuted Church</div>
+          <div class="timeline-desc">Roman Persecution — 2nd and 3rd centuries.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Pergamos — 313–600 AD · Church of the Roman Empire</div>
+          <div class="timeline-desc">Constantine ends the persecution and makes Christianity official. The church marries the state (<em>Pergamos = marriage</em>). The Roman Empire ends in 600 AD.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Thyatira — 600–1517 AD · Roman Catholic Church</div>
+          <div class="timeline-desc">Dominance of the Roman Catholic Church for nearly a millennium.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Sardis — 1517–1648 AD · Reformation of the Church</div>
+          <div class="timeline-desc">The Protestant Reformation challenges the dominance of Catholicism.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Philadelphia — 1648–1900 AD · Missionary Church</div>
+          <div class="timeline-desc">The church carries the gospel throughout all the earth.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Laodicea — 1900–...AD · Present-Day Church</div>
+          <div class="timeline-desc">The present era. Growing apostasy, spiritual lukewarmness, material focus. <em>** The years are approximate and their precision is irrelevant.</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN VI ══════════════════════════ -->
+<div class="section" id="sec-VI">
+  <div class="section-header">
+    <div class="section-num">VI</div>
+    <h3 class="section-title">Letter to Laodicea — The Church of Our Age</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The City of Laodicea — Historical Context</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Meaning of the name</span><span class="bullet-desc"><span class="hl">"People who rule or are governed by their own judgment"</span> — an independent democratic mindset.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Administrative, banking, and commercial center</span><span class="bullet-desc">The wealthiest, most prosperous, and highly independent city. After the earthquake of 60 AD it refused imperial aid and rebuilt itself by its own means. It held the title of "free city."</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Lukewarm and sulfurous water</span><span class="bullet-desc">It received water from two cities: one cold (mountain/snow) and one hot (thermal spring). Combined they produce lukewarm, sulfurous water that causes nausea — a perfect metaphor for spiritual lukewarmness.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Known for linen, black wool, eye salve, and banking</span><span class="bullet-desc">Jesus uses these three elements as direct metaphors in his letter.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Christ's Diagnosis of Laodicea (Rev. 3:14–22)</div>
+      <div class="scripture">
+        <span class="scripture-ref">Revelation 3:17</span>
+        <span class="scripture-text">Because you say, "I am rich, have become wealthy, and have need of nothing" — and do not know that you are wretched, miserable, poor, blind, and naked —</span>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Refined gold</span><span class="bullet-desc">True spiritual riches vs. material impurity. It lacks the riches of Christ.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">White garments</span><span class="bullet-desc">To cover the shame of spiritual nakedness — they are not clothed with the garments of Christ.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Eye salve</span><span class="bullet-desc">To see spiritually. The church suffers from total spiritual blindness.</span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Visible Church vs. Invisible Church — Hot, Cold, and Lukewarm</div>
+      <div class="two-col">
+        <div class="info-panel">
+          <div class="info-panel-title">Visible vs. Invisible Church</div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Visible</span><span class="bullet-desc">The entire congregation, including true believers and unbelievers.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Invisible</span><span class="bullet-desc">Those who truly know the Lord — born again by the Holy Spirit. This circle <span class="hl">shrinks in the last times</span>. No place in Scripture sends us to inspect others; only to examine our own hearts.</span></span></li>
+          </ul>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">The Danger of the Lukewarm State</div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Hot (believer)</span><span class="bullet-desc">Recognizes his condition and can be reached.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Cold (unbeliever)</span><span class="bullet-desc">At least recognizes his unbelief — can repent.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Lukewarm (the danger)</span><span class="bullet-desc"><em>"Would that you were cold or hot."</em> The lukewarm claims to be on one side but is really on the other. <span class="hl">He does not recognize what he truly is</span> — that is the danger. (Matt 7:21)</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN VII ══════════════════════════ -->
+<div class="section" id="sec-VII">
+  <div class="section-header">
+    <div class="section-num">VII</div>
+    <h3 class="section-title">The Great Apostasy — The Shift in Thinking</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Apostasy in the Churches</div>
+      <div class="scripture">
+        <span class="scripture-ref">2 Thessalonians 2:3</span>
+        <span class="scripture-text">Let no one deceive you by any means; for that Day will not come unless the falling away comes first, and the man of sin is revealed, the son of perdition.</span>
+      </div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Characteristics of the apostate church</span><span class="bullet-desc">The gospel is not preached. No call is made to the lost. No conviction of sin is brought. They do not expect the Second Coming of Christ. The prosperity gospel is preached. They regulate the marriage union.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Spiritual independence and democracy</span><span class="bullet-desc">167 of 195 countries are democratic — a global mindset that has reached the church. Everyone creates their own truths. Prone to placing their will above God's.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Individual cultural transformation through AI</span><span class="bullet-desc">Social media and fake news influence collective thinking. AI individually adjusts content for each person, gradually shifting their thinking from point A to B to C, <span class="hl">transforming their worldview</span> and rewriting the Bible.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Character of Men in the Last Days</div>
+      <div class="scripture">
+        <span class="scripture-ref">2 Timothy 3:1–5</span>
+        <span class="scripture-text">But know this, that in the last days perilous times will come: For men will be lovers of themselves, lovers of money, boasters, proud, blasphemers, disobedient to parents, unthankful, unholy, unloving, unforgiving, slanderers, without self-control, brutal, despisers of good, traitors, headstrong, haughty, lovers of pleasure rather than lovers of God, having a form of godliness but denying its power.</span>
+      </div>
+      <p class="body-text" style="margin-top:10px;">This character description precisely matches what is seen in today's news and on social media.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN VIII ══════════════════════════ -->
+<div class="section" id="sec-VIII">
+  <div class="section-header">
+    <div class="section-num">VIII</div>
+    <h3 class="section-title">The Present Age, the Age to Come, and the Last Days</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Definitions of Time</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Age / Era</span><span class="bullet-desc">A prolonged but <span class="hl">finite</span> time within God's great plan. It is not eternal — it has a definite beginning and end.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Present age</span><span class="bullet-desc">The current period that will come to an end to give way to another. By faith, we have already received the promise of eternal life. Once in our eternal body, we will take possession of what was promised. (Mark 10:30)</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Age to come</span><span class="bullet-desc">The next age — it will begin when the present age ends. It includes the Millennium and the new creation.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Last days</span><span class="bullet-desc">The final period of the present age. Paul already declared himself to be in the last days in the 1st century (Heb 1:2). That is, the "last days" have lasted 2,000 years — the entire church period is within them.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Present Age Is Larger Than the Church Age</div>
+      <div class="info-panel">
+        <div class="info-panel-title">Conceptual Key</div>
+        <p class="body-text">The Present Age began <span class="hl">long before</span> the church period. When the church began, they were already in the last days of the present age. This implies that God's plan is not <em>primarily</em> about the church — the plan began earlier with Israel and will conclude with Israel. For us as the church, it is everything; but in the grand scheme, the plan revolves around the redemption of Israel and the establishment of the promised kingdom.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN IX ══════════════════════════ -->
+<div class="section" id="sec-IX">
+  <div class="section-header">
+    <div class="section-num">IX</div>
+    <h3 class="section-title">The Times of the Gentiles — Its Beginning, Duration, and End</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">What Defines the Times of the Gentiles? (Luke 21:24)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Sword</span><span class="bullet-desc">Israel being militarily defeated by Gentile nations.</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">Captives</span><span class="bullet-desc">Israel scattered among all the nations of the world.</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">Trampled</span><span class="bullet-desc">The city of Jerusalem trampled upon and invaded by Gentile nations.</span></span></li>
+      </ul>
+      <div class="scripture" style="margin-top:14px;">
+        <span class="scripture-ref">Luke 21:24</span>
+        <span class="scripture-text">And Jerusalem will be trampled by Gentiles until the times of the Gentiles are fulfilled.</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Beginning and Duration of the Age</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Beginning</span><span class="bullet-desc">When Nebuchadnezzar invaded Israel, took Jerusalem, and carried the people captive to Babylon. Described in Daniel 2 and 7.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The clock synchronized with Israel</span><span class="bullet-desc">Rom 11:25: <em>a partial hardening has happened to Israel until the fullness of the Gentiles has come in.</em></span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Duration</span><span class="bullet-desc">It continues as long as the 3 conditions (sword, captives, trampled) remain in effect. It ends with the Second Coming of Christ.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Why does it exist?</span><span class="bullet-desc">It was the punishment upon Israel as a consequence of disobedience to the Old Covenant — the fulfillment of the <span class="hl">Old Covenant curses</span> (Leviticus 26).</span></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN X ══════════════════════════ -->
+<div class="section" id="sec-X">
+  <div class="section-header">
+    <div class="section-num">X</div>
+    <h3 class="section-title">The Four Gentile Kingdoms — Daniel 2 and Daniel 7</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Statue of Nebuchadnezzar's Dream (Daniel 2)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Head of gold — Babylon</span><span class="bullet-desc">God gave Babylon the power to be the mightiest nation on earth. (Dan 2:37–38)</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">Chest and arms of silver — Medo-Persia</span><span class="bullet-desc">Inferior in majesty but broader territorially.</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">Belly and thighs of bronze — Greece</span><span class="bullet-desc">The empire of Alexander the Great, swift as a leopard. At his death, divided among 4 generals — 2 to the east and 2 to the west (legs). The east-west division persists to this day.</span></span></li>
+        <li><span class="bullet-icon">❹</span><span class="bullet-body"><span class="bullet-label">Legs of iron, feet of iron and clay — Rome and its successors</span><span class="bullet-desc">Subdivided (not monolithic). Strong and weak human alliances — as iron does not mix with clay. It has evolved into <span class="hl">Imperialist Democratic Alliances</span>.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Four Beasts of Daniel 7 — The Nature of Each Kingdom</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Winged lion — Babylon</span><span class="bullet-desc">Historical symbol of Babylon. Its wings were plucked — it lost its power.</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">Bear — Medo-Persia</span><span class="bullet-desc">Brute force. It devoured Babylon, Media, and Persia (three ribs).</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">Leopard with 4 wings and 4 heads — Greece</span><span class="bullet-desc">The speed of Alexander the Great. The 4 generals who inherited the kingdom = 4 heads.</span></span></li>
+        <li><span class="bullet-icon">❹</span><span class="bullet-body"><span class="bullet-label">Terrifying beast without precedent — Rome/Current Empire</span><span class="bullet-desc">Daniel found no animal to compare it to. Iron teeth, 10 horns + 1 little horn. <span class="hl">It ends with 10+1 world kingdoms</span> at the Second Coming of Christ.</span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Fourth Kingdom — From the Roman Empire to the Present</div>
+      <div class="two-col">
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Roman Empire</span><span class="bullet-desc">It stretched from Scotland to India, from Africa to all of Europe. Its unified form disappeared between 600–700 AD.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Holy Roman Empire</span><span class="bullet-desc">Founded on December 25, 800 AD, dissolved on August 6, 1806 (1,000 years). Divided into hundreds of entities: kings, dukes, counts, bishops, abbots — all called "princes."</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Continues fulfilling the 4 requirements</span><span class="bullet-desc">The Western bloc (EU, USA, NATO, and the Middle East) remains: (1) a Gentile kingdom, (2) the dominant world power, (3) in possession of Babylon (Iraq), (4) occupying Jerusalem.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The end of the fourth kingdom</span><span class="bullet-desc">A <span class="hl">stone cut without hands</span> (Christ at his Second Coming) will destroy the entire statue and become a great mountain that fills all the earth — the eternal Kingdom of God. (Dan 2:44–45)</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XI ══════════════════════════ -->
+<div class="section" id="sec-XI">
+  <div class="section-header">
+    <div class="section-num">XI</div>
+    <h3 class="section-title">The Old Covenant, Its Blessings, Curses, and the Door of Salvation</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The National Covenant of Israel (Deuteronomy 29)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">A group covenant, not individual</span><span class="bullet-desc">All Israel entered into covenant with God: heads of tribes, elders, officers, men, children, women, and foreigners — at every level of society.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Includes future generations</span><span class="bullet-desc">Not only with those present but with "those who are not here today" — all generations from Abraham.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Lake Superior analogy</span><span class="bullet-desc">It is the same lake with the same body of water, even though each year it is composed of completely different molecules. God made the covenant with the entire group descended from Abraham, not with isolated individuals.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Blessings and Curses of the Covenant (Leviticus 26)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">If they obey</span><span class="bullet-desc">Rain in its season, fruitful land, prosperity, peace — blessings in the kingdom. (Lev 26:3–4)</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">If they disobey</span><span class="bullet-desc">Terror, wasting disease, fever, seed destroyed by enemies, defeat in battle. If a single Israelite breaks a single law, the entire nation receives the consequences — a very binding covenant.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Times of the Gentiles = curses in action</span><span class="bullet-desc">The dispersion of Israel, the loss of the temple, and Gentile dominion are the literal fulfillment of the Old Covenant curses.</span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Door of Salvation for Breaking the Law (Leviticus 26:40–45)</div>
+      <div class="two-col">
+        <div>
+          <div class="scripture">
+            <span class="scripture-ref">Leviticus 26:40–42</span>
+            <span class="scripture-text">But if they confess their iniquity and the iniquity of their fathers, with their unfaithfulness in which they were unfaithful to Me... then I will remember My covenant with Jacob, and My covenant with Isaac and My covenant with Abraham I will remember.</span>
+          </div>
+        </div>
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">National confession required</span><span class="bullet-desc">The entire nation must confess its sin and that of its fathers for crucifying the Lord (<em>unfaithfulness = unjust resolution</em>).</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Result of the confession</span><span class="bullet-desc">God will set aside the Old Covenant to bless them on the basis of the Abrahamic Covenant — salvation by faith, not by law.</span></span></li>
+            <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Individual salvation already available</span><span class="bullet-desc">Every Jew who individually comes to faith in Christ exits the Old Covenant just like any Gentile — saved solely by faith (Rom 10:12–13).</span></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XII ══════════════════════════ -->
+<div class="section" id="sec-XII">
+  <div class="section-header">
+    <div class="section-num">XII</div>
+    <h3 class="section-title">The 70 Weeks of Daniel — The Timeline of Israel's Salvation</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Daniel's Error and the Correction of the Angel Gabriel</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Daniel's error</span><span class="bullet-desc">At the end of the 70 years of captivity in Babylon, Daniel mistakenly believed that: (a) those 70 years represented the total punishment for sin, and (b) that he could make the confession individually on behalf of the entire nation.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The reality</span><span class="bullet-desc">The 70 years corresponded to the disobedience of not letting the land rest every seventh year (Lev 25:2–4; Jer 25:11). An individual confession could not substitute for a national one.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">70 weeks of years</span><span class="bullet-desc">The angel corrects: they are 70 weeks <em>of years</em>. The Jews group in sevens (as we group in dozens). 70 × 7 = <span class="hl">490 years</span>.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Purpose of the 70 Weeks (Daniel 9:24)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">To finish the transgression</span><span class="bullet-desc">The rejection of the Messiah must be acknowledged and confessed.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">To make an end of sin</span><span class="bullet-desc">The era of national disobedience will come to an end.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">To bring in everlasting righteousness</span><span class="bullet-desc">The millennial kingdom under the Messiah — Jesus reigning over Israel.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">To seal up vision and prophecy</span><span class="bullet-desc">Everything prophesied concerning Israel will be completely fulfilled.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">To anoint the Most Holy</span><span class="bullet-desc">Christ will reign in the Temple during the Millennium.</span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Timeline of the 70 Weeks — Where We Are Today</div>
+      <table class="styled-table">
+        <thead>
+          <tr><th>Segment</th><th>Duration</th><th>Event</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="hl">7 weeks</span></td><td>49 years</td><td>From the decree of King Cyrus to restore Jerusalem (Ezra 1) until the walls were completed — troublesome times.</td></tr>
+          <tr><td><span class="hl">62 weeks</span></td><td>434 years</td><td>Until the coming of Messiah the Prince. Running total: 69 weeks = 483 years.</td></tr>
+          <tr><td><span class="hl">PAUSE</span></td><td>~2,000 years</td><td>Begins with the crucifixion of the Messiah. The Church Age is this pause, like a soccer match stopped with 2 minutes remaining. The clock will restart when the fullness of the Gentiles has come in.</td></tr>
+          <tr><td><span class="hl">1 week</span></td><td>7 years</td><td>The Tribulation — week #70. Confirmation of the covenant with Israel gives it its start. At the midpoint the sacrifice ceases and the great tribulation begins.</td></tr>
+        </tbody>
+      </table>
+      <div class="info-panel" style="margin-top:14px;">
+        <div class="info-panel-title">Two Comings — Two Natures</div>
+        <div class="two-col">
+          <div>
+            <ul class="bullets">
+              <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Rapture — imminent</span><span class="bullet-desc">Nothing precedes it except the complete coming in of the Gentiles. Only the Father knows the day. Therefore we must be ready <em>at all times</em>.</span></span></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="bullets">
+              <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The Second Coming — calculable</span><span class="bullet-desc">Exactly 7 years after the signing of the treaty. Whoever discerns the start of week #70 will know the exact day 7 years in advance.</span></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XIII ══════════════════════════ -->
+<div class="section" id="sec-XIII">
+  <div class="section-header">
+    <div class="section-num">XIII</div>
+    <h3 class="section-title">Signs of the End of the Times of the Gentiles</h3>
+  </div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Nine Transition Signs (From the Church Period to the Tribulation)</div>
+      <div class="two-col">
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Wars and uprisings (Matt 24, Luke 21)</span><span class="bullet-desc">WWI: 88% of nations involved, 22M deaths. WWII: 95% of nations, 66M deaths. Fulfilled ✅</span></span></li>
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Increase in famines</span><span class="bullet-desc">China: 45M deaths in the late 20th century. 2007–2008: 147M suffering hunger globally. Fulfilled ✅</span></span></li>
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Increase in earthquakes</span><span class="bullet-desc">Oklahoma: from 60 earthquakes in 2009 to 1,047 in 2014. Fulfilled ✅</span></span></li>
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Apostasy of the Church (Rev 3, 1 Tim 4:1–3)</span><span class="bullet-desc">Laodicea — the present-day church in a lukewarm state. Fulfilled ✅</span></span></li>
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Return of Israel to its land (Ezek 20:34, 22:15)</span><span class="bullet-desc">Scattered since 70 AD. Israel was reborn as a nation <span class="hl">in a single day in 1948</span>. Fulfilled ✅</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">?</span><span class="bullet-body"><span class="bullet-label">Resurrection of the Church — The Rapture (Rev 4, 2 Thess 2)</span><span class="bullet-desc">Pending ❓</span></span></li>
+            <li><span class="bullet-icon">?</span><span class="bullet-body"><span class="bullet-label">10 kings ruling before the #11 (Dan 2 and 7)</span><span class="bullet-desc">The rise of the Antichrist — pending ❓</span></span></li>
+            <li><span class="bullet-icon">?</span><span class="bullet-body"><span class="bullet-label">Return of the prophet Elijah (Malachi 4:5)</span><span class="bullet-desc">To return Israel to Orthodoxy and the sacrifices — pending ❓</span></span></li>
+            <li><span class="bullet-icon">?</span><span class="bullet-body"><span class="bullet-label">Confirmation of the Covenant with Israel (Dan 9:27)</span><span class="bullet-desc">Initiates the Tribulation and the start of sacrifices in the Temple — pending ❓</span></span></li>
+          </ul>
+          <div class="info-panel" style="margin-top:12px;">
+            <div class="info-panel-title">Birth Pains (Greek: Odín)</div>
+            <p class="body-text">The signs increase in: (1) painful intensity, (2) frequency, (3) severity. They are associated with the <span class="hl">birth of the Kingdom</span>. First-century Jewish writings (Zohar Chadash, Bereshit Rabbah) confirm that "nation against nation" was the rabbinic idiom for the signs of the Messiah.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XIV ══════════════════════════ -->
+<div class="section" id="sec-XIV">
+  <div class="section-header">
+    <div class="section-num">XIV</div>
+    <h3 class="section-title">The Olivet Discourse — Matthew 24 and Luke 21</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Four Questions and the Additional Topic</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">A</span><span class="bullet-body"><span class="bullet-label">What are NOT signs of the end?</span><span class="bullet-desc">False christs, rumors of wars, wars and uprisings — but the end is not yet. (Matt 24:4–6; Luke 21:8–9)</span></span></li>
+        <li><span class="bullet-icon">B</span><span class="bullet-body"><span class="bullet-label">What are the signs of the end of the age?</span><span class="bullet-desc">Beginning of birth pains: nations against nations, famines, earthquakes, pestilences, terror, and signs in the heavens. (Matt 24:7–8; Luke 21:10–11)</span></span></li>
+        <li><span class="bullet-icon">C</span><span class="bullet-body"><span class="bullet-label">When will the destruction of the Temple take place?</span><span class="bullet-desc">Only in Luke 21:12–24. Fulfilled in 70 AD under Titus. A warning to flee when Jerusalem is surrounded by armies.</span></span></li>
+        <li><span class="bullet-icon">D</span><span class="bullet-body"><span class="bullet-label">What are the signs of your coming?</span><span class="bullet-desc">The Tribulation precedes the Second Coming. False christs with signs, the abomination of desolation, the unprecedented great tribulation, cosmic signs. (Matt 24:9–31; Luke 21:25–28)</span></span></li>
+        <li><span class="bullet-icon">E</span><span class="bullet-body"><span class="bullet-label">Warning and Resurrection of the Church (Rapture)</span><span class="bullet-desc">As in the days of Noah. Two in the field, one taken and the other left. Watch, because you do not know the hour. (Matt 24:32–44; Luke 21:28–36)</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Coming of the Lord vs. The Day of the Lord</div>
+      <div class="two-col" style="gap:10px;">
+        <div class="info-panel">
+          <div class="info-panel-title">😊 The Coming of the Lord (Rapture)</div>
+          <p class="body-text">A joyous day for the church. It can happen at any moment. <em>"The Lord himself... will descend from heaven; and the dead in Christ will rise first. Then... we will be caught up in the clouds to meet the Lord in the air."</em> (1 Thess 4:16–17). Judgment for reward, not condemnation (2 Cor 5:10).</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-panel-title">😟 The Day of the Lord (Tribulation)</div>
+          <p class="body-text">A grievous day for unbelievers. Also called: Great Day of the Lord (Mal 4:5), Tribulation (Deut 4:30), Time of Jacob's Trouble (Jer 30:7), The Indignation (Dan 11:36), Day of Darkness (Joel 2:2). These are the 7 years of Daniel's 70th week.</p>
+        </div>
+      </div>
+      <div class="scripture" style="margin-top:12px;">
+        <span class="scripture-ref">2 Thessalonians 2:1–3</span>
+        <span class="scripture-text">Now, brethren, concerning the coming of our Lord Jesus Christ and our gathering together to Him... that Day will not come unless the falling away comes first, and the man of sin is revealed, the son of perdition.</span>
+      </div>
+    </div>
+    <div class="card full">
+      <div class="card-title">Order of Events Established by Paul (2 Thessalonians 2)</div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">① Apostasy of the Church</div>
+          <div class="timeline-desc">The church of Laodicea in its lukewarm and apostate state. Already underway.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">② The Coming of the Lord and our gathering to Him (possibly simultaneous with ③)</div>
+          <div class="timeline-desc">The Holy Spirit, who dwells in the church, is "taken out of the way" along with his bride. This allows the Antichrist to be revealed.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">③ Manifestation of the Antichrist</div>
+          <div class="timeline-desc">The little horn of Daniel 7 — the "man of lawlessness, son of destruction" who sits in the temple, claiming to be God.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">④ The Day of the Lord — The Tribulation (Week #70)</div>
+          <div class="timeline-desc">The 7 years determined for the people of Israel (Dan 9:27). The church is not destined for wrath (1 Thess 5:9).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">⑤ The Second Coming of Christ</div>
+          <div class="timeline-desc">Exactly 7 years after the start of the Tribulation. Christ comes with his heavenly armies (the church clothed in white linen, Rev 19:14). He destroys the fourth kingdom. He establishes the Millennium.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XV ══════════════════════════ -->
+<div class="section" id="sec-XV">
+  <div class="section-header">
+    <div class="section-num">XV</div>
+    <h3 class="section-title">The Rapture — The Resurrection of the Church and the Jewish Wedding Tradition</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Why Is the Church Removed Before the Tribulation?</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">❶</span><span class="bullet-body"><span class="bullet-label">Week #70 is for Israel</span><span class="bullet-desc">Specifically appointed to deal with Israel's unbelief. (Dan 9:24)</span></span></li>
+        <li><span class="bullet-icon">❷</span><span class="bullet-body"><span class="bullet-label">The bride is not destined for wrath</span><span class="bullet-desc"><em>For God has not destined us for wrath, but for obtaining salvation.</em> (1 Thess 5:9)</span></span></li>
+        <li><span class="bullet-icon">❸</span><span class="bullet-body"><span class="bullet-label">The house is ready</span><span class="bullet-desc">John 14:2–3: <em>I go to prepare a place for you... I will come again and receive you to myself.</em> The Father decides when the house is ready.</span></span></li>
+        <li><span class="bullet-icon">❹</span><span class="bullet-body"><span class="bullet-label">The fullness of the Gentiles has come in</span><span class="bullet-desc">Rom 11:25: Israel will have hardening <em>until the fullness of the Gentiles has come in.</em></span></span></li>
+        <li><span class="bullet-icon">❺</span><span class="bullet-body"><span class="bullet-label">The entire bride is taken at the same time</span><span class="bullet-desc">In <span class="hl">a moment, in the twinkling of an eye</span> (1 Cor 15:52). It does not happen in stages.</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Jewish Wedding Tradition — Metaphor for the Rapture (Genesis 24)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The father seeks a bride for the son</span><span class="bullet-desc">The Father prepares everything. The son (groom) begins construction of the addition to the father's house — what he inherits.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The son does not know the day of his wedding</span><span class="bullet-desc">Because the <span class="hl">Father decides when the house is ready</span>. (Matt 24:36: <em>but of that day and hour no one knows, but the Father alone</em>)</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The groom goes to fetch the bride</span><span class="bullet-desc">The bride does not know the day — she must be ready at all times. The groom takes her to his home.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">7 days of honeymoon</span><span class="bullet-desc">Corresponds to the 7 years of the Tribulation. The bride (church) is with the groom (Christ) in heaven during those 7 years.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">They return together after 7 days</span><span class="bullet-desc">The church returns with Christ at his Second Coming (Rev 19:14). The Marriage of the Lamb! (Rev 19:9)</span></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SECCIÓN XVI ══════════════════════════ -->
+<div class="section" id="sec-XVI">
+  <div class="section-header">
+    <div class="section-num">XVI</div>
+    <h3 class="section-title">The Heavenly Worship — Revelation Chapter 4 (After the Rapture)</h3>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Heavenly Throne Scene (Rev. 4:1–11)</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">"After these things"</span><span class="bullet-desc">Rev. 4:1 begins immediately after chaps. 2–3 (the church age). The church is not mentioned again until chap. 19:9 (the Marriage of the Lamb).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">24 elders on thrones</span><span class="bullet-desc">The first time "elders" appear in a vision of God — suggesting they were not there before. Human leaders (12 = government; 24 = totality of government). Seated on thrones of authority (Luke 22:30; Rev 20:4).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Clothed in white garments</span><span class="bullet-desc">Clothed in righteousness by faith (Gal 3:27; Rev 3:5; Rev 19:8 — fine linen = the righteous acts of the saints).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Golden crowns on their heads</span><span class="bullet-desc"><em>Stephanos</em> crowns — earned by service to Christ, not by royal birth. (2 Tim 4:8; 1 Cor 9:25)</span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Evidence That Chapter 4 Occurs After the Rapture</div>
+      <ul class="bullets">
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">7 lamps = Seven Spirits of God</span><span class="bullet-desc">The number 7 = the Holy Spirit in his full completeness — <span class="hl">100% of his presence in heaven</span>, not on earth with the church. Isaiah describes the 7 characteristics of the Spirit (Isa 11:2).</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">Jesus promised to remain</span><span class="bullet-desc">Matt 28:20: <em>Lo, I am with you always, even to the end of the age.</em> If the Holy Spirit is 100% in heaven, the church cannot remain on earth.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The elders have bodies</span><span class="bullet-desc">They have physical crowns, they are seated and clothed with robes — they must have <span class="hl">eternal spiritual bodies</span>, implying they have experienced the resurrection.</span></span></li>
+        <li><span class="bullet-icon">✦</span><span class="bullet-body"><span class="bullet-label">The mystery of lawlessness can be manifested</span><span class="bullet-desc">2 Thess 2:7: <em>he who now restrains will do so until he is taken out of the way.</em> When the church is removed, the Antichrist can be revealed.</span></span></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Summary: The Complete Final Sequence</div>
+      <div class="two-col">
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">✓</span><span class="bullet-body"><span class="bullet-label">Already fulfilled</span><span class="bullet-desc">Rumors and world wars ✅ · Increase in earthquakes ✅ · Increase in famines ✅ · Apostasy of the Church ✅ · Return of Israel to its land ✅</span></span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="bullets">
+            <li><span class="bullet-icon">?</span><span class="bullet-body"><span class="bullet-label">Yet to be fulfilled</span><span class="bullet-desc">Resurrection of the Church (Rapture) ❓ · Rise of 10 world rulers ❓ · Return of Elijah ❓ · Signing of the Covenant with Israel (initiates the Tribulation) ❓</span></span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="scripture" style="margin-top:16px;">
+        <span class="scripture-ref">Luke 21:36</span>
+        <span class="scripture-text">Watch therefore, and pray always that you may be counted worthy to escape all these things that will come to pass, and to stand before the Son of Man.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DIVIDER -->
+<div class="divider">
+  <div class="divider-line"></div>
+  <span class="divider-sym">✦</span>
+  <div class="divider-line"></div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary-box">
+  <p>The book of Revelation is not a message of terror but of <em>hope and certainty</em>. Through its opening chapters we understand that Jesus, who presented himself in all his eternal glory to John, sovereignly governs human history. The Times of the Gentiles — the long period of Gentile dominion over Israel — is not a historical accident but the precise fulfillment of the Old Covenant curses, designed by God's mercy so that, through the pause of the Church Age, <em>the full number of the Gentiles may come in</em> and then all Israel be saved. The Rapture is imminent. The Tribulation is coming for Israel. The Eternal Kingdom is inevitable. And the focus of the bride of Christ must not be the coming judgment, but to prepare for <em>the coming of the Bridegroom</em>, who will come at an hour we do not expect.</p>
+</div>
+
+<!-- FOOTNOTE -->
+<footer>
+  <p>Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · vbvmi.org</p>
+  <p>The interpretations and conclusions presented are based on VBVMI with authorization. The author's views do not necessarily represent those of VBVMI.</p>
+  <p>Art by <strong>Pat Marvenko Smith</strong> © 1992 · revelationillustrated.com</p>
+  <p style="margin-top:8px;font-size:12px;">May be copied and distributed in its original, unedited form, including this copyright notice, without charge for its distribution.</p>
+</footer>
+
+</div><!-- end page-wrap -->
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

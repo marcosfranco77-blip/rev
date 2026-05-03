@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study of the Book of Revelation · Part 04 · Chapters 13–14</title>
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--gold-dim:#8A6A2A;--crimson:#8B1A1A;--crimson-light:#C0392B;--deep:#0A0806;--dark:#120E09;--mid:#1E1710;--text:#E8DCC8;--text-dim:#A89878;--text-muted:#6A5840;--sky:#4A7FA8;--sky-light:#7AB0D4;--f-display:'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;--f-heading:'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;--f-body:'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background-color:var(--deep);color:var(--text);font-family:var(--f-body);font-size:19px;line-height:1.8;min-height:100vh;position:relative;overflow-x:hidden}
+.starfield{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(1px 1px at 13% 9%,rgba(201,168,76,.5) 0%,transparent 100%),radial-gradient(1px 1px at 29% 23%,rgba(255,255,255,.4) 0%,transparent 100%),radial-gradient(1px 1px at 46% 6%,rgba(201,168,76,.3) 0%,transparent 100%),radial-gradient(1px 1px at 68% 19%,rgba(255,255,255,.5) 0%,transparent 100%),radial-gradient(1px 1px at 85% 10%,rgba(201,168,76,.6) 0%,transparent 100%),radial-gradient(1px 1px at 4% 46%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 90% 39%,rgba(201,168,76,.4) 0%,transparent 100%),radial-gradient(1px 1px at 56% 73%,rgba(255,255,255,.3) 0%,transparent 100%),radial-gradient(1px 1px at 32% 89%,rgba(201,168,76,.4) 0%,transparent 100%),radial-gradient(1px 1px at 77% 96%,rgba(255,255,255,.5) 0%,transparent 100%)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.section{animation:fadeUp .7s ease both}
+.section:nth-child(1){animation-delay:.00s}.section:nth-child(2){animation-delay:.08s}.section:nth-child(3){animation-delay:.16s}.section:nth-child(4){animation-delay:.24s}.section:nth-child(5){animation-delay:.32s}.section:nth-child(6){animation-delay:.40s}.section:nth-child(7){animation-delay:.48s}.section:nth-child(8){animation-delay:.56s}.section:nth-child(9){animation-delay:.64s}.section:nth-child(10){animation-delay:.72s}.section:nth-child(11){animation-delay:.80s}.section:nth-child(12){animation-delay:.88s}.section:nth-child(13){animation-delay:.96s}.section:nth-child(14){animation-delay:1.04s}
+header{position:relative;z-index:1;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(139,26,26,.35) 0%,rgba(10,8,6,0) 70%),linear-gradient(180deg,var(--dark) 0%,var(--deep) 100%);border-bottom:1px solid rgba(201,168,76,.2);padding:60px 40px 50px;text-align:center}
+.header-ornament{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;font-family:var(--f-heading);font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted)}
+.header-ornament::before,.header-ornament::after{content:'';flex:1;max-width:120px;height:1px}
+.header-ornament::before{background:linear-gradient(90deg,transparent,var(--gold-dim))}
+.header-ornament::after{background:linear-gradient(90deg,var(--gold-dim),transparent)}
+header h1{font-family:var(--f-display);font-size:clamp(28px,5vw,54px);font-weight:900;color:var(--gold-light);letter-spacing:-1px;line-height:1.1;margin-bottom:12px;text-shadow:0 2px 30px rgba(201,168,76,.25)}
+header h2{font-family:var(--f-heading);font-size:clamp(15px,2.5vw,21px);font-weight:400;text-transform:uppercase;letter-spacing:4px;color:var(--text-dim);margin-bottom:36px}
+.meta-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.meta-item{text-align:center}
+.meta-label{font-family:var(--f-heading);font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);display:block;margin-bottom:4px}
+.meta-value{font-family:var(--f-heading);font-size:15px;color:var(--gold);font-weight:600}
+main{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:50px 32px 80px}
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:16px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid rgba(201,168,76,.12)}
+.section-number{border:1px solid var(--crimson);border-radius:50%;min-width:30px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--crimson-light);font-family:var(--f-heading);font-size:12px;flex-shrink:0}
+.section-title{font-family:var(--f-heading);font-size:clamp(17px,2.5vw,23px);font-weight:700;color:var(--gold-light)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start}
+@media(max-width:780px){.cards{grid-template-columns:1fr}header{padding:40px 20px 36px}main{padding:32px 16px 60px}.meta-row{gap:20px}}
+.card{background:linear-gradient(135deg,rgba(30,23,16,.95) 0%,rgba(22,14,8,.95) 100%);border:1px solid rgba(201,168,76,.15);border-left:3px solid var(--gold-dim);border-radius:4px;padding:20px 24px;transition:border-color .3s,transform .2s}
+.card:hover{border-left-color:var(--gold);transform:translateX(3px)}
+.card.full{grid-column:1/-1}
+.card-title{font-family:var(--f-heading);font-size:15px;font-weight:700;text-transform:uppercase;color:var(--gold);letter-spacing:1.2px;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(201,168,76,.1)}
+.bullet-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.bullet-list li{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:3px}
+.bullet-icon{font-size:15px;line-height:1.6;flex-shrink:0;color:var(--gold)}
+.bullet-label{font-family:var(--f-heading);font-size:14px;font-weight:700;color:var(--gold-light);display:block;margin-bottom:2px}
+.bullet-desc{font-size:16px;color:var(--text-dim);line-height:1.72}
+.scripture-box{position:relative;background:linear-gradient(135deg,rgba(139,26,26,.12) 0%,rgba(10,8,6,.8) 100%);border:1px solid rgba(139,26,26,.3);border-left:4px solid var(--crimson);border-radius:4px;padding:18px 22px 18px 32px;overflow:hidden}
+.scripture-box::before{content:'\201C';position:absolute;top:-8px;left:10px;font-size:56px;color:rgba(139,26,26,.3);font-family:Georgia,serif;line-height:1}
+.scripture-ref{font-family:var(--f-heading);font-size:12px;text-transform:uppercase;color:var(--crimson-light);letter-spacing:1.5px;display:block;margin-bottom:8px}
+.scripture-text{font-style:italic;font-size:16px;color:var(--text);line-height:1.75}
+.timeline{position:relative;padding-left:24px;display:flex;flex-direction:column;gap:16px}
+.timeline::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,var(--gold-dim),transparent)}
+.timeline-item{position:relative;padding:10px 14px;background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.1);border-radius:3px}
+.timeline-item::before{content:'';position:absolute;left:-20px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(201,168,76,.5)}
+.timeline-period{font-family:var(--f-heading);font-size:14px;color:var(--gold);font-weight:700;display:block;margin-bottom:3px}
+.timeline-desc{font-size:16px;color:var(--text-dim)}
+.info-panel{background:linear-gradient(135deg,rgba(74,127,168,.08) 0%,rgba(10,8,6,.9) 100%);border:1px solid rgba(74,127,168,.2);border-radius:4px;padding:16px 20px}
+.info-panel-title{font-family:var(--f-heading);font-size:12px;text-transform:uppercase;color:var(--sky-light);letter-spacing:1.5px;margin-bottom:10px;display:block}
+.styled-table{width:100%;border-collapse:collapse;margin-top:4px}
+.styled-table th{font-family:var(--f-heading);font-size:12px;text-transform:uppercase;color:var(--gold);background:rgba(201,168,76,.05);padding:10px 14px;text-align:left;letter-spacing:1px;border-bottom:1px solid rgba(201,168,76,.15)}
+.styled-table td{font-size:16px;color:var(--text-dim);padding:10px 14px;border-bottom:1px solid rgba(201,168,76,.08);vertical-align:top}
+.styled-table tr:last-child td{border-bottom:none}
+.hl{color:var(--gold-light);font-weight:600}
+.mb14{margin-bottom:14px}
+.divider{display:flex;align-items:center;gap:20px;margin:50px 0 40px;color:var(--gold-dim);font-size:18px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent)}
+.summary-box{background:linear-gradient(135deg,rgba(201,168,76,.07) 0%,rgba(10,8,6,.95) 100%);border:1px solid rgba(201,168,76,.25);border-radius:6px;padding:26px 30px;text-align:center}
+.summary-box p{font-size:18px;font-style:italic;color:var(--text);line-height:1.85}
+footer{position:relative;z-index:1;border-top:1px solid rgba(201,168,76,.1);padding:28px 40px;text-align:center;font-family:var(--f-heading);font-size:13px;color:var(--text-muted);line-height:1.9}
+footer a{color:var(--gold-dim);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.page-wrap {
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">The Beast from the Sea — The Antichrist Identified (Rev. 13:1–2)</span></a>
+<a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">Death and Resurrection of the Antichrist — The Great Counterfeit</span></a>
+<a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">Authority over the World for 42 Months (Rev. 13:5–10)</span></a>
+<a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">The Second Beast — The False Prophet (Rev. 13:11–14)</span></a>
+<a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Image of the Antichrist and the Mark 666 (Rev. 13:14–18)</span></a>
+<a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">The Five Groups of the Tribulation — The Final Division</span></a>
+<a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">The 144,000 on Mount Zion — In Heaven (Rev. 14:1–5)</span></a>
+<a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">The End of Human Evangelism — The Three Angels (Rev. 14:6–13)</span></a>
+<a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">Blessed Are Those Who Die in the Lord — Perseverance (Rev. 14:12–13)</span></a>
+<a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">The Two Harvests — Believers and Unbelievers (Rev. 14:14–20)</span></a>
+<a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">Mid-Trib Summary and Review of All Judgments</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide contents">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show contents">&#8250;</button>
+
+<div class="starfield" aria-hidden="true"></div>
+
+<div class="page-wrap">
+
+<header>
+  <div class="header-ornament">Verse by Verse Ministry International</div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>Part 04 · Chapters 13 – 14</h2>
+  <div class="meta-row">
+    <div class="meta-item"><span class="meta-label">Chapters covered</span><span class="meta-value">Revelation 13 – 14</span></div>
+    <div class="meta-item"><span class="meta-label">Main period</span><span class="meta-value">Mid-Trib → Second Half of the Tribulation</span></div>
+    <div class="meta-item"><span class="meta-label">Central themes</span><span class="meta-value">The Antichrist · The Mark 666 · The 144,000 Martyrs · The End of Evangelism</span></div>
+  </div>
+</header>
+
+<main>
+
+<!-- I. LA BESTIA DEL MAR -->
+<section class="section" id="sec-I">
+  <div class="section-header"><div class="section-number">I</div><h2 class="section-title">The Beast from the Sea — The Antichrist Identified (Rev. 13:1–2)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Beast and the Dragon</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:1–2</span>
+        <span class="scripture-text">I saw a beast rising up out of the sea, having seven heads and ten horns… Now the beast which I saw was like a leopard, his feet were like the feet of a bear, and his mouth like the mouth of a lion. The dragon gave him his power, his throne, and great authority.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Dragon = Satan</span><span class="bullet-desc">As we saw in Rev. 12:3, he pursues and kills all who are aligned with God. Now he does it at a new level — through the Antichrist — for he has been cast down to the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Beast = the Antichrist</span><span class="bullet-desc">This is the same beast from Rev. 11:7 that killed the Two Witnesses. He was also seen in Rev. 6 under another name: the rider of the four horses. He was not called "the beast" before because he had not yet reached the level of power he obtains at mid-trib.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Rising from the sea</span><span class="bullet-desc">Under the rules of interpretation, the answer is found in Daniel 7: a beast rising from the sea is defined as a Gentile nation or a Gentile ruler rising to power.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Resemblance to the 4 Beasts of Daniel 7</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Daniel 7:3–8</span>
+        <span class="scripture-text">Four great beasts came up from the sea… The first was like a lion [= Babylon]. The second was like a bear [= Medo-Persia]. The third was like a leopard [= Greece]. A fourth beast, dreadful and terrible, with ten horns [= Rome and its successors].</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The embodiment of the Gentile Age</span><span class="bullet-desc">The beast of Rev. 13 bears traits of <span class="hl">all</span> of Daniel's beasts: the lion, the bear, the leopard, and the fourth beast. He is the embodiment of the Gentile Age presented in Daniel's dream — all four beasts now real in a single person.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The last and most powerful</span><span class="bullet-desc">Just as the age began with Nebuchadnezzar, it will end with the Beast. This man inherits and succeeds all previous kingdoms. He is the final world leader of this age.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Crowns on the horns vs. heads</span><span class="bullet-desc">Satan (Rev. 12:3) wears crowns on his heads; the Beast wears them on his horns. The arrangement is different — and so is the meaning. The transfer of power will be explained in Rev. 17.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Antichrist — Description from Daniel 11:36–39</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Daniel 11:36–39</span>
+        <span class="scripture-text">"Then the king shall do according to his own will: he shall exalt and magnify himself above every god… He shall regard neither the God of his fathers nor the desire of women, nor regard any god; for he shall exalt himself above them all. But in their place he shall honor a god of fortresses."</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">No regard for any god</span><span class="bullet-desc">He magnifies himself above every known god — including the God of his fathers. He does not regard the desire of women (the human longing for bonds). He only honors "the god of fortresses" — Satan.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Divides the land</span><span class="bullet-desc">He acts against the strongest fortresses with a foreign god. He advances his glory and gives his followers rule over many, distributing the land as a reward.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Isaiah's warning</span><span class="bullet-desc">Is. 28:15: the Israelites who sign the covenant with the Antichrist do so convinced he will protect them. Is. 28:18: "Your covenant with death will be annulled." The covenant they made with Satan will be turned against them.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- II. MUERTE Y RESURRECCIÓN DEL ANTICRISTO -->
+<section class="section" id="sec-II">
+  <div class="section-header"><div class="section-number">II</div><h2 class="section-title">Death and Resurrection of the Antichrist — The Great Counterfeit</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Fatal Wound Healed (Rev. 13:3)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:3</span>
+        <span class="scripture-text">And I saw one of his heads as if it had been mortally wounded, and his deadly wound was healed. And all the world marveled and followed the beast.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">An unsustainable wound</span><span class="bullet-desc">The Greek word used for the deadly wound is the same word used for Jesus in Rev. 5:6 — "as though slain." And "was healed" in Greek is <span class="hl">sphazo</span>: resurrected.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Who killed him?</span><span class="bullet-desc">It is not specified, but possibly the three kings who refused to submit (Dan. 7:8). They succeed in killing him, but he is resurrected and then eliminates them, leaving only seven kings.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Who raises him?</span><span class="bullet-desc">It is not God. Satan indwells the Antichrist, bringing him back to life and giving him his power, his throne, and great authority. (Rev. 13:2)</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Satan Takes Full Control</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">2 Thessalonians 2:8–9</span>
+        <span class="scripture-text">And then the lawless one will be revealed, whom the Lord will consume with the breath of His mouth… The coming of the lawless one is according to the working of Satan, with all power, signs, and lying wonders.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">All power except God's</span><span class="bullet-desc">"All power" — every power apart from the power of God. With the resurrection, Satan seizes the opportunity to bring every unbelieving human being under his control.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">A man with the power of Satan</span><span class="bullet-desc">From this point on the Beast is a man in a physical sense, but with Satan's power within. He is more powerful than any other man in history.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Worship of the dragon through the beast</span><span class="bullet-desc">The world worships the Beast and also the dragon. How do they see the dragon? They do not see him directly — they see the resurrected man. Just as we worship the Father through Jesus, the world will worship Satan through the Beast.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Satan manifests physically</span><span class="bullet-desc">Confined to the earth, he has taken up residence in the body of the Antichrist. This earth is his domain. He has manifested physically and leads the world to worship him.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Antichrist in the Temple — The Abomination of Desolation</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">2 Thessalonians 2:3–4</span>
+        <span class="scripture-text">…the man of sin is revealed, the son of perdition, who opposes and exalts himself above all that is called God or that is worshiped, so that he sits as God in the temple of God, showing himself that he is God.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">He declares himself the Messiah — not another god</span><span class="bullet-desc">He does not declare himself a Buddha, Mohammed, or another god. He sits in the seat of the God of the Jews, on the mercy seat of the Temple, declaring himself to be the Christ, the Messiah. Satan knows there is only one true God — and that is who he is counterfeiting.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Jesus vs. Satan — the parallel</span><span class="bullet-desc">Just as Jesus manifested as a man at the first coming and will return as King (the second Person of the Deity), Satan initially manifests through the Antichrist as a man, and at mid-Tribulation manifests as "god."</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">He will bring an end to sacrifice</span><span class="bullet-desc">Dan. 9:27 — In the middle of the week (mid-trib) he will bring an end to sacrifice and offering. He will enter the Temple, expel the Jews, put an end to Judaism and all other religions. The Temple is desecrated and turned into a center of worship for the Antichrist.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">He is celebrated as Savior</span><span class="bullet-desc">The world celebrates him at mid-trib as the risen Christ and the savior of the world — because he put an end to the "terror" of the judgments the world associated with the Two Witnesses.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- III. AUTORIDAD PARA 42 MESES -->
+<section class="section" id="sec-III">
+  <div class="section-header"><div class="section-number">III</div><h2 class="section-title">Authority over the World for 42 Months (Rev. 13:5–10)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">He Was Granted to Make War Against the Saints</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:5–8</span>
+        <span class="scripture-text">And he was given a mouth speaking great things and blasphemies, and he was given authority to continue for forty-two months… It was granted to him to make war with the saints and to overcome them. And authority was given him over every tribe, tongue, and nation. All who dwell on the earth will worship him, whose names have not been written in the Book of Life.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">42 months = 3½ years</span><span class="bullet-desc">The classic time reference: from mid-trib until the end of the Tribulation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Blasphemy</span><span class="bullet-desc">The greatest of blasphemies: attributing the works of God to himself by taking the place of God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">War against the saints</span><span class="bullet-desc">Anyone who denies that he is God is hunted down to be killed. In Rev. 12 we saw that Satan went against the rest who were not protected in Petra, using the Antichrist and the world as his agents.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Turn in Persecution</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">First half</span><span class="bullet-desc">The judgments fall on unbelievers. God sealed His own, preserved Israel, the Temple, and its operation.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Second half — complete reversal</span><span class="bullet-desc">Persecution comes upon the believers — now from Satan. The wicked are protected by Satan. The righteous are persecuted by Satan. Until the Bowl judgments arrive, unbelievers live relatively well.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Book of Life</span><span class="bullet-desc">Those who worship the Beast do not have their name in the Book. Those written in the Book since the foundation of the earth will not worship the Beast.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Destiny of the Saints — Perseverance (Rev. 13:9–10)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:9–10</span>
+        <span class="scripture-text">If anyone has an ear, let him hear. He who leads into captivity shall go into captivity; he who kills with the sword must be killed with the sword. Here is the patience and the faith of the saints.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">There will be no resistance</span><span class="bullet-desc">If a saint attempts to fight against the Antichrist, he is destined to die in the fight. There will be no resistance to the Antichrist's power during the time God has designated for his rule. This is what the "Left Behind" films misrepresent.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Absolute control permitted by God</span><span class="bullet-desc">God has allowed him to have absolute control over the world for 3½ years. Nothing the saints can do will prevent his reign.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The patience of the saints</span><span class="bullet-desc">It means understanding and accepting what is coming. The believer who enters mid-trib must understand that he will likely be a martyr — and that this is the outcome designated by God. It is confirmed later: it is better to die than to live through what is coming.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The end of evangelism</span><span class="bullet-desc">From the moment someone worships the Beast, they are no longer savable. The Book of Life is sealed. This moment becomes a dividing point not only in the timeline but of all humanity.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- IV. EL FALSO PROFETA -->
+<section class="section" id="sec-IV">
+  <div class="section-header"><div class="section-number">IV</div><h2 class="section-title">The Second Beast — The False Prophet (Rev. 13:11–14)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Description and Identity</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:11–13</span>
+        <span class="scripture-text">Then I saw another beast coming up out of the earth, and he had two horns like a lamb and spoke like a dragon. And he exercises all the authority of the first beast in his presence… He performs great signs, so that he even makes fire come down from heaven.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Two horns like a lamb</span><span class="bullet-desc">The lamb is used as an image of Christ — the prophet sent to be sacrificed. He appears to be like Christ, a prophet of God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Mouth of a dragon</span><span class="bullet-desc">He speaks for Satan. He is the spokesman of the Antichrist's god. This is why he is called the <span class="hl">False Prophet</span>.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Only in the Antichrist's presence</span><span class="bullet-desc">He exercises the Antichrist's authority only in his presence (v.12). This has profound implications about the limitations of Satan.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Limitations of Satan</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Satan is not omnipresent</span><span class="bullet-desc">He is a created being — not God. He can only be in one place at a time. He currently dwells in the body of the Antichrist, so he can only be where the Antichrist is.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The False Prophet depends on his presence</span><span class="bullet-desc">He cannot perform miracles except in the Antichrist's presence, so that Satan can intervene directly.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Limited by time and space</span><span class="bullet-desc">Satan has great power, but being bound to the physical body of the Antichrist, he is limited. This shows the fundamental difference between Satan and God.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- V. LA IMAGEN Y LA MARCA 666 -->
+<section class="section" id="sec-V">
+  <div class="section-header"><div class="section-number">V</div><h2 class="section-title">The Image of the Antichrist and the Mark 666 (Rev. 13:14–18)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Image — The Abomination of Desolation</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:14–15</span>
+        <span class="scripture-text">…telling those who dwell on the earth to make an image to the beast who was wounded by the sword and lived. He was granted power to give breath to the image of the beast, that the image of the beast should both speak and cause as many as would not worship the image of the beast to be killed.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">An animated image</span><span class="bullet-desc">This image has some kind of breath. It may involve demonic activity. Satan, the father of lies, will have no problem producing whatever deception is necessary.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The abomination of desolation</span><span class="bullet-desc">Daniel 12:11 confirms it: from the moment the image is set up in the Temple, on the mercy seat, the count of 1,260+30 days begins. The image on the mercy seat is the abomination of desolation spoken of by Daniel and Jesus (Matt. 24:15).</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Satan's classic counterfeit</span><span class="bullet-desc">Icons, statues, relics. This is why at the beginning of the Ten Commandments God forbids setting up such things. The image in the Temple directs worship toward the creature rather than the Creator — just as Satan has always done.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Three requirements of the False Prophet</span><span class="bullet-desc">(1) Worship the Antichrist. (2) Receive the mark. (3) Those who refuse cannot buy or sell. The choice is: believe or die. There is no middle ground, no agnostics, no indifferent.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Number 666 — Its Deep Meaning</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 13:18</span>
+        <span class="scripture-text">Here is wisdom. Let him who has understanding calculate the number of the beast, for it is the number of a man: His number is 666.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Hebrew numerical system</span><span class="bullet-desc">Jews assign numerical values to each letter of the Hebrew alphabet (1–10 for the first 10, 20–100 for the next 10, 100–400 for the last). Yeshua HaMashiach (Jesus the Messiah) = 749 (7, 7×7).</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">6 = fallen, sinful man</span><span class="bullet-desc">In the Bible, the number 6 represents fallen man. 66 (double) = magnify. 666 (triple) = the greatest of all.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The greatest sinner</span><span class="bullet-desc">666 means: <span class="hl">the greatest of all sinners</span> who ever lived — because he is indwelt by Satan. It does not relate to a specific name but to the nature of the being.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">A coded message for the Jews</span><span class="bullet-desc">Only Jews will be able to perform the calculation (translating the Antichrist's name into Hebrew). It is a coded message delivered to unbelieving Jews not in Petra — for that specific moment, as a warning. Not before.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">The False Trinity — The Greatest Counterfeit in History</div>
+      <table class="styled-table">
+        <thead><tr><th>The True Trinity</th><th>The False Trinity</th><th>Method of Counterfeiting</th></tr></thead>
+        <tbody>
+          <tr><td>The Father — the invisible God over all</td><td>The Dragon — Satan, the invisible god of the world</td><td>The power that acts but is never seen directly</td></tr>
+          <tr><td>The Son — Christ, who rose and receives worship</td><td>The Beast — the Antichrist, center of world worship</td><td>Dies and rises, convincing the world he is the Messiah</td></tr>
+          <tr><td>The Holy Spirit — leads the world to know and worship Jesus; seals believers</td><td>The False Prophet — displays signs and wonders</td><td>Directs the entire world to worship the Antichrist</td></tr>
+        </tbody>
+      </table>
+      <div class="info-panel" style="margin-top:14px">
+        <span class="info-panel-title">The principle of the lie</span>
+        <span class="bullet-desc">A lie cannot exist unless there is a truth it opposes. That is the principle of counterfeiting. At mid-trib, the world is faced with choosing between the false trinity or the true one — and everyone must make that decision one way or another.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VI. LOS 5 GRUPOS -->
+<section class="section" id="sec-VI">
+  <div class="section-header"><div class="section-number">VI</div><h2 class="section-title">The Five Groups of the Tribulation — The Final Division</h2></div>
+  <div class="cards">
+    <div class="card full">
+      <div class="card-title">Classification of All Human Beings at Mid-Trib</div>
+      <table class="styled-table">
+        <thead><tr><th>Group</th><th>Who they are</th><th>Mark?</th><th>Destiny</th></tr></thead>
+        <tbody>
+          <tr><td><span class="hl">① Blue</span> — Believing Remnant</td><td>Jews who believe in Jesus and fled to Petra</td><td>No</td><td>Protected in Petra for 3½ years. The only group that escapes persecution.</td></tr>
+          <tr><td><span class="hl">② Yellow</span> — Believing Gentiles</td><td>Those converted to Christ during the Tribulation, not in Petra</td><td>No</td><td>Severe persecution. Many (if not most) will be martyred. A few will survive.</td></tr>
+          <tr><td><span class="hl">③ Purple</span> — Orthodox Jews</td><td>Devout Jews who keep the law of Moses but do not believe in Jesus</td><td>No</td><td>They reject the mark. Many will die, some will survive.</td></tr>
+          <tr><td><span class="hl">④ Green</span> — The 144,000</td><td>The sealed evangelists from all the tribes of Israel</td><td>No</td><td>100% will be martyred at mid-trib. None will survive. They are the firstfruits to God.</td></tr>
+          <tr><td><span class="hl">⑤ Black</span> — Those who accept the mark</td><td>All who align with the Antichrist</td><td>Yes</td><td>Not persecuted now. But they are left with no hope of salvation — eternally condemned.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">The Only Two Options</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">❶</span><div><span class="bullet-label">Worship the Beast and live</span><span class="bullet-desc">Only to be eternally condemned. A temporary life bought at the price of eternal damnation.</span></div></li>
+        <li><span class="bullet-icon">❷</span><div><span class="bullet-label">Worship Jesus and die</span><span class="bullet-desc">To have eternal life. Physical death is the price of eternal salvation — an infinitely favorable exchange.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">There is no third option</span><span class="bullet-desc">There is no room for the undecided, agnostics, or those "not interested in that matter." The world will be completely polarized. The number of undecided rapidly falls to zero.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Summary of What Satan Did at Mid-Trib</div>
+      <div class="timeline">
+        <div class="timeline-item"><span class="timeline-period">Cast out of Heaven</span><span class="timeline-desc">He loses access to the throne of God. He descends to the earth with great wrath.</span></div>
+        <div class="timeline-item"><span class="timeline-period">Attacks the Remnant</span><span class="timeline-desc">Believing Israel flees to Petra and is protected by God.</span></div>
+        <div class="timeline-item"><span class="timeline-period">Orchestrates the death and resurrection of the Antichrist</span><span class="timeline-desc">Kills the three kings and the Two Witnesses. The world celebrates him as savior.</span></div>
+        <div class="timeline-item"><span class="timeline-period">Enters the Temple and declares himself God</span><span class="timeline-desc">Puts an end to Judaism and all religions.</span></div>
+        <div class="timeline-item"><span class="timeline-period">Raises the False Prophet</span><span class="timeline-desc">Places the image in the Temple. Institutes the Mark of the Beast 666. Kills all who resist.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VII. LOS 144,000 EN EL MONTE DE SIÓN -->
+<section class="section" id="sec-VII">
+  <div class="section-header"><div class="section-number">VII</div><h2 class="section-title">The 144,000 on Mount Zion — In Heaven (Rev. 14:1–5)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">Are They on Earth or in Heaven?</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:1–3</span>
+        <span class="scripture-text">The Lamb standing on Mount Zion, and with Him one hundred and forty-four thousand… They sang as it were a new song before the throne, before the four living creatures, and the elders; and no one could learn that song except the hundred and forty-four thousand.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">They are not in Jerusalem</span><span class="bullet-desc">If Jesus were standing in Jerusalem, the Antichrist would not still be alive. According to Daniel, Jesus does not return until the end.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The heavenly Mount Zion</span><span class="bullet-desc">Heb. 12:22: "you have come to Mount Zion and to the city of the living God, the heavenly Jerusalem." At this point, Zion is the glory of God on the throne — which will eventually be revealed on the earth during the Kingdom.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">They are clearly in Heaven</span><span class="bullet-desc">They sing before the throne. Only they know that unique song. They were redeemed (purchased, ransomed) from among those on earth. Jesus will come <span class="hl">from</span> Zion — not to Zion. (Rom. 11:26)</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Characteristics of the 144,000 (Rev. 14:4–5)</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Virgins — men</span><span class="bullet-desc">They were not defiled with women. They were set apart from marriage to devote themselves completely to serving Jesus.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Firstfruits to God</span><span class="bullet-desc">They are the first "complete group" to enter Heaven during the Tribulation. The best fruit is gathered first — they are the most mature, the most obedient, the finest martyrs.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">They follow the Lamb wherever He goes</span><span class="bullet-desc">Obedient and resolute in their task. They obediently followed Jesus wherever He asked them to go and did whatever He asked them to do.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">No lie in their mouth</span><span class="bullet-desc">A powerful testimony. They lived at the level of Paul and the apostles in holiness, though they were not sinless.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Why Did They Die If They Were Sealed?</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 7:2–3</span>
+        <span class="scripture-text">"Do not harm the earth, the sea, or the trees till we have sealed the servants of our God on their foreheads."</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The seal protected them from God's judgments</span><span class="bullet-desc">They were sealed to protect them from supernatural disasters — just as God protected Israel in Goshen during the Exodus plagues. The judgments did not affect them no matter where they traveled.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The seal was removed at mid-trib</span><span class="bullet-desc">At the midpoint of the Tribulation the sealing ends. The time has come for evangelism to conclude and for all destinies to be fixed. Human evangelism is over.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">An example of martyrdom</span><span class="bullet-desc">Through their example, the saints will be encouraged to know that death is nothing to fear. They are the model of obedient martyrdom. As an added grace, the Lord allowed them to be the first martyrs, removed before the worst begins.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VIII. EL FIN DEL EVANGELISMO -->
+<section class="section" id="sec-VIII">
+  <div class="section-header"><div class="section-number">VIII</div><h2 class="section-title">The End of Human Evangelism — The Three Angels (Rev. 14:6–13)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The First Angel — The Last Gospel (Rev. 14:6–7)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:6–7</span>
+        <span class="scripture-text">Then I saw another angel flying in the midst of heaven, having the everlasting gospel to preach to those who dwell on the earth — to every nation, tribe, tongue, and people — saying with a loud voice, "Fear God and give glory to Him, for the hour of His judgment has come."</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The everlasting gospel</span><span class="bullet-desc">The same message as always. There has only ever been one way to be saved, one plan of salvation, one message to be believed — from Adam and Eve to the apostles: the righteous shall live by faith in the promises of God.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">From human messengers to angels</span><span class="bullet-desc">God elevates the proclamation of the gospel to the heavenly realm. If the lesser (men) were not heard, perhaps the greater (angels) will be heard.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The window is closing</span><span class="bullet-desc">The angel declares that the hour of judgment has come. "Hour" in this context = a brief period of time. "Fear God" — not the Antichrist, not physical death. This is God's final presentation of the Gospel. (Fulfillment of Matt. 24:14)</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">To the most remote places</span><span class="bullet-desc">All those whom God intends to reach will be reached one way or another. No one was excluded. Evangelism has never depended and will never depend on human beings — God has all the power He needs to save whom He desires.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Second and Third Angels (Rev. 14:8–11)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:8–11</span>
+        <span class="scripture-text">"Babylon is fallen, is fallen…" "If anyone worships the beast and his image, and receives his mark… he himself shall also drink of the wine of the wrath of God… and he shall be tormented with fire and brimstone… And the smoke of their torment ascends forever and ever."</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The second angel</span><span class="bullet-desc">He speaks of Babylon — the Antichrist and his kingdom. He warns that this satanic kingdom that has risen will fall. It will not prevail. Chapters 17 and 18 will be devoted entirely to Babylon.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The third angel</span><span class="bullet-desc">He warns that whoever takes part in that kingdom will be tormented eternally. <span class="hl">There is no opportunity for salvation</span> anymore. No more evangelists or churches teaching the truth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Hell is real and eternal</span><span class="bullet-desc">Fire and brimstone, day and night without end and without rest. They are not freed from sin — each day is one more day of sins. The state never ends; neither does the suffering. Those who preach there is no hell contribute to a great deception. Jesus Himself taught about hell.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Destinies sealed</span><span class="bullet-desc">The destiny of every person is sealed at mid-trib — with one pending exception that will be studied later.</span></div></li>
+      </ul>
+    </div>
+    <div class="card full">
+      <div class="card-title">Summary of the Three Angels</div>
+      <div class="timeline">
+        <div class="timeline-item"><span class="timeline-period">1st Angel — The Everlasting Gospel</span><span class="timeline-desc">Preaches the gospel of the kingdom one last time to every nation, tribe, tongue, and people. God's final presentation before the return of Christ.</span></div>
+        <div class="timeline-item"><span class="timeline-period">2nd Angel — The Fall of Babylon</span><span class="timeline-desc">Declares that the Antichrist's kingdom is satanic and will not prevail. A foretaste of the judgment coming in Rev. 17–18.</span></div>
+        <div class="timeline-item"><span class="timeline-period">3rd Angel — Eternal Condemnation</span><span class="timeline-desc">Warns of the eternal consequences of joining the Beast's kingdom. The message of salvation must include hell.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IX. BIENAVENTURADOS LOS QUE MUEREN EN EL SEÑOR -->
+<section class="section" id="sec-IX">
+  <div class="section-header"><div class="section-number">IX</div><h2 class="section-title">Blessed Are Those Who Die in the Lord — Perseverance (Rev. 14:12–13)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">The Blessing of the Martyr</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:12–13</span>
+        <span class="scripture-text">Here is the patience of the saints… Then I heard a voice from heaven saying to me, "Write: 'Blessed are the dead who die in the Lord from now on.' " "Yes," says the Spirit, "that they may rest from their labors, and their works follow them."</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Hope today vs. hope in Rev. 14</span><span class="bullet-desc"><span class="hl">Today:</span> our hope is the resurrection and eternal life. <span class="hl">In Rev. 14:</span> dying is a good thing — it avoids the persecution and the coming judgments. Death is not the enemy.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The 180° testimony</span><span class="bullet-desc">Today, death takes me away from continuing to witness for Christ. In Rev. 14, death brings me closer to giving a good witness for Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The 1,000-year reign</span><span class="bullet-desc">Rev. 20:4 — Those who did not worship the beast and were beheaded will live and reign with Christ for a thousand years. The saved who die during the Tribulation also receive their reward of reigning.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The saved who do NOT die</span><span class="bullet-desc">Those who survive until the Second Coming of Christ, with their mortal bodies, will not reign but will be governed. Christ's government cannot include people with sinful mortal bodies. They will ultimately be resurrected and receive their reward. <span class="hl">Knowing this is perseverance.</span></span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">The Last Opportunity — Who Remains to Be Saved?</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The outlook at mid-trib</span><span class="bullet-desc">The martyrdom of the 144,000 is proof that the time for knowing the truth has come to an end. The time for sharing the faith and persuading people to believe is over.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Practically no one left to evangelize</span><span class="bullet-desc">Those who believed are already saved. Those who did not have accepted the mark — unsavable. Except for a specific group of Orthodox Jews who have not yet decided.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">False prophets and teachers</span><span class="bullet-desc">2 Pet. 2:1–3 warns: there will be false teachers who will introduce destructive heresies, deny the Lord, and exploit believers with deceptive words. Their condemnation does not linger.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- X. LAS DOS COSECHAS -->
+<section class="section" id="sec-X">
+  <div class="section-header"><div class="section-number">X</div><h2 class="section-title">The Two Harvests — Believers and Unbelievers (Rev. 14:14–20)</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">First Harvest — The Believers (Rev. 14:14–16)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:14–16</span>
+        <span class="scripture-text">Behold, a white cloud, and on the cloud sat One like the Son of Man, having on His head a golden crown, and in His hand a sharp sickle… and the earth was reaped.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Son of Man or an angel?</span><span class="bullet-desc">It appears to be Jesus, but the details suggest it is an archangel: he wears a <span class="hl">stephanos</span> (a crown of achievement, not royalty), and another angel gives him the order to reap. No angel gives orders to Jesus.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The reaping = harvest of believers</span><span class="bullet-desc">Classic biblical imagery for believers. It begins at mid-trib and lasts through the entire second half — a period of high mortality among believers. God gathers His harvest as believers die.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Angels as reapers</span><span class="bullet-desc">Matt. 24:31 — "He will send His angels with a great sound of a trumpet, and they will gather together His elect." God uses His angels as messengers and as reapers. Jesus Himself is not a direct reaper.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Second Harvest — The Unbelievers (Rev. 14:17–20)</div>
+      <div class="scripture-box mb14">
+        <span class="scripture-ref">Revelation 14:19–20</span>
+        <span class="scripture-text">So the angel thrust his sickle into the earth and gathered the vine of the earth, and threw it into the great winepress of the wrath of God. And the winepress was trampled outside the city, and blood came out of the winepress, up to the horses' bridles, for one thousand six hundred furlongs.</span>
+      </div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The grape harvest = unbelievers</span><span class="bullet-desc">The winepress (where the grapes are trodden) is classic biblical imagery for unbelievers going to judgment.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Different timings</span><span class="bullet-desc">The harvest of believers occurs during the second half (high persecution). The grape harvest of unbelievers occurs at the <span class="hl">end</span> of the Tribulation with the Bowl judgments and the coming of Christ.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Blood up to the horses' bridles</span><span class="bullet-desc">The Kidron Valley. To create a lake of blood 4.5" deep over 200 miles × half a mile would require an impossible quantity. Most likely: in an instant, the mass death of that entire army produces a tsunami or wave of blood that surges through the valley. This will be studied in detail in the Bowl judgments.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- XI. RESUMEN Y REPASO DE JUICIOS -->
+<section class="section" id="sec-XI">
+  <div class="section-header"><div class="section-number">XI</div><h2 class="section-title">Mid-Trib Summary and Review of All Judgments</h2></div>
+  <div class="cards">
+    <div class="card">
+      <div class="card-title">What We Studied at Mid-Trib — Synthesis</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Temple and the Two Witnesses</span><span class="bullet-desc">The Temple has been in operation. The Two Witnesses die and are resurrected.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The two signs in heaven</span><span class="bullet-desc">The woman (Israel) and the dragon (Satan). The enemy is confined to the earth.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The protected Remnant</span><span class="bullet-desc">Believing Israel ends up protected in Petra for 3½ years.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The Antichrist and the False Prophet</span><span class="bullet-desc">They pursue an economic and police state that provides temporary peace to unbelievers, bringing great persecution upon believers and Jews.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">The 144,000 martyrs</span><span class="bullet-desc">They are completely martyred at mid-trib.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">End of human evangelism</span><span class="bullet-desc">An angel preaches the Gospel from heaven. The harvest and the grape harvest are announced.</span></div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Review of the Three Series of Judgments</div>
+      <div class="timeline">
+        <div class="timeline-item"><span class="timeline-period">7 Seals → contain the 7 Trumpets</span><span class="timeline-desc">They initiate the Tribulation. They occur during the first half. They cannot begin without the signing of the covenant.</span></div>
+        <div class="timeline-item"><span class="timeline-period">7 Trumpets → the 7th contains the 7 Bowls</span><span class="timeline-desc">The first 6 occur in the first half. The seventh sounds at mid-trib, announcing the Bowls.</span></div>
+        <div class="timeline-item"><span class="timeline-period">7 Bowls — the Great Tribulation</span><span class="timeline-desc">Following mid-trib. They develop the multiple stages that make up the Battle of Armageddon. They come at the end of the 7 years, not at the start of the second half.</span></div>
+      </div>
+      <div class="info-panel" style="margin-top:14px">
+        <span class="info-panel-title">When exactly does each judgment occur?</span>
+        <span class="bullet-desc">We only know the relative positioning or order within the 7 years, not the exact month or year. This was based on the sequence of the chapters of Revelation. The position of the Bowls within the second half will be answered when we reach the final judgments.</span>
+      </div>
+    </div>
+    <div class="card full">
+      <div class="card-title">The Last 3½ Years — What They Look Like</div>
+      <ul class="bullet-list">
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">At the close of mid-trib</span><span class="bullet-desc">The last of the 144,000 die and enter heaven. Human evangelism has concluded.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">For believers</span><span class="bullet-desc">New believers are continuously martyred. Those who survive do so under severe persecution.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">For unbelievers</span><span class="bullet-desc">There is relative peace for those who accepted the mark. The Antichrist and the False Prophet maintain order and a functioning economic system for them.</span></div></li>
+        <li><span class="bullet-icon">✦</span><div><span class="bullet-label">Until the Bowls arrive</span><span class="bullet-desc">Everything is reversed at the end: the Bowl judgments fall specifically on unbelievers. The situation of believers improves while that of unbelievers becomes catastrophic.</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>✦</span></div>
+
+<div class="summary-box">
+  <p>Chapters 13 and 14 reveal the climax of the satanic counterfeit: the Antichrist resurrected as the false Messiah, the False Prophet as the false Holy Spirit, and Satan as the invisible false Father — an evil trinity designed to deceive the entire world. At mid-trib, all of humanity is irrevocably divided: those who worship the Beast and live only to be condemned, and those who worship Jesus and die to have eternal life. Human evangelism ends and God Himself preaches the last gospel from heaven. <em>Blessed are those who die in the Lord — for their works follow them, and they will reign with Christ for a thousand years.</em></p>
+</div>
+
+</main>
+
+<footer>
+  Based on the original teaching of <strong>Verse By Verse Ministry International (VBVMI)</strong> · <a href="http://www.vbvmi.org" target="_blank">vbvmi.org</a><br>
+  Art by <strong>Pat Marvenko Smith</strong> © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a><br>
+  <em>Free-use document — may be copied and distributed in its original form for non-profit purposes.</em>
+</footer>
+
+</div><!-- /.page-wrap -->
+
+<script>
+(function(){
+  const sidebar   = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn   = document.getElementById('toc-show');
+  const pageWrap  = document.querySelector('.page-wrap');
+
+  function getSidebarWidth() {
+    return window.innerWidth <= 600 ? 0 :
+           window.innerWidth <= 900 ? 240 : 270;
+  }
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    pageWrap.style.marginLeft = getSidebarWidth() + 'px';
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    pageWrap.style.marginLeft = '0px';
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>

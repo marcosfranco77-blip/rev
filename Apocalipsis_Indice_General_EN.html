@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Index — Study of the Book of Revelation</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --gold-faint:   rgba(201,168,76,0.08);
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --border:       rgba(201,168,76,0.15);
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--deep);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 17px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.starfield {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(201,168,76,.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 20%, rgba(201,168,76,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 42%, rgba(255,255,255,.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(201,168,76,.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  85%, rgba(255,255,255,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 90%, rgba(201,168,76,.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 63% 75%, rgba(255,255,255,.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 52%, rgba(201,168,76,.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,.5) 0%, transparent 100%);
+}
+.page-wrap {
+  position: relative; z-index: 1;
+  max-width: 900px; margin: 0 auto; padding: 0 24px 80px;
+}
+header {
+  text-align: center;
+  padding: 64px 32px 52px;
+  margin-bottom: 48px;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(139,26,26,.32) 0%, transparent 70%);
+}
+.ornament {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-bottom: 22px;
+  font-family: var(--f-heading); font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted);
+}
+.ornament-line {
+  flex: 1; max-width: 120px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(26px, 5vw, 52px);
+  font-weight: 900; color: var(--gold-light);
+  line-height: 1.15; margin-bottom: 10px;
+  text-shadow: 0 2px 30px rgba(201,168,76,.2);
+}
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(13px, 2vw, 18px);
+  text-transform: uppercase; letter-spacing: 2.5px;
+  color: var(--text-dim); font-weight: 400; margin-bottom: 32px;
+}
+.stats-row {
+  display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-value {
+  font-family: var(--f-display); font-size: 28px;
+  color: var(--gold); display: block; line-height: 1; margin-bottom: 4px;
+}
+.stat-label {
+  font-family: var(--f-heading); font-size: 11px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted);
+}
+.controls {
+  display: flex; justify-content: flex-end; gap: 10px; margin-bottom: 20px;
+}
+.ctrl-btn {
+  background: rgba(201,168,76,.08);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-family: var(--f-heading); font-size: 12px; letter-spacing: 1px;
+  padding: 6px 16px; border-radius: 3px; cursor: pointer; transition: all .2s;
+}
+.ctrl-btn:hover {
+  background: rgba(201,168,76,.15); color: var(--gold-light);
+  border-color: rgba(201,168,76,.3);
+}
+.parts-grid { display: flex; flex-direction: column; gap: 10px; }
+.part-card {
+  background: linear-gradient(135deg, var(--mid) 0%, var(--dark) 100%);
+  border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+  transition: border-color .25s;
+}
+.part-card:hover { border-color: rgba(201,168,76,.3); }
+.part-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 13px 16px; cursor: pointer; user-select: none;
+}
+.part-badge {
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; min-width: 46px; height: 46px;
+  border: 1px solid var(--crimson); border-radius: 4px;
+  flex-shrink: 0; background: rgba(139,26,26,.12);
+}
+.part-label {
+  font-family: var(--f-heading); font-size: 9px;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); line-height: 1;
+}
+.part-number {
+  font-family: var(--f-display); font-size: 20px;
+  color: var(--crimson-light); line-height: 1.1; font-weight: 700;
+}
+.part-meta { flex: 1; min-width: 0; }
+.part-caps {
+  font-family: var(--f-heading); font-size: 15px;
+  color: var(--gold); font-weight: 600; transition: color .2s;
+}
+.part-header:hover .part-caps { color: var(--gold-light); }
+.part-count {
+  font-family: var(--f-heading); font-size: 11px;
+  color: var(--text-muted); letter-spacing: 1px; margin-top: 2px;
+}
+.open-btn {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center;
+  padding: 5px 13px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 3px;
+  color: var(--gold);
+  font-family: var(--f-heading);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.open-btn:hover {
+  background: rgba(201,168,76,.22);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+.part-toggle {
+  background: none; border: none; color: var(--gold-dim);
+  font-size: 18px; cursor: pointer; padding: 4px 4px;
+  transition: transform .3s, color .2s; flex-shrink: 0; line-height: 1;
+}
+.part-toggle.open { transform: rotate(180deg); color: var(--gold); }
+
+/* DESCRIPTION */
+.part-desc {
+  padding: 0 18px 14px 76px;
+  font-family: var(--f-body);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(201,168,76,.07);
+  font-style: italic;
+}
+
+.topics-list {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s cubic-bezier(.4,0,.2,1);
+}
+.topics-list.open {
+  max-height: 2000px;
+  border-top: 1px solid var(--border);
+}
+.topic-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 8px 22px; border-bottom: 1px solid rgba(201,168,76,.06);
+  transition: background .15s;
+}
+.topic-item:last-child { border-bottom: none; }
+.topic-item:hover { background: var(--gold-faint); }
+.topic-num {
+  flex-shrink: 0; font-family: var(--f-heading);
+  font-size: 11px; color: var(--crimson-light);
+  min-width: 26px; padding-top: 2px;
+}
+.topic-title {
+  font-family: var(--f-body); font-size: 14px;
+  color: var(--text-dim); line-height: 1.45;
+}
+footer {
+  text-align: center; padding: 48px 0 32px;
+  font-family: var(--f-heading); font-size: 12px;
+  letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;
+}
+.footer-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+  margin: 0 auto 18px;
+}
+@media (max-width: 600px) {
+  .stats-row { gap: 24px; }
+  .part-caps { font-size: 13px; }
+  .open-btn { font-size: 11px; padding: 4px 10px; }
+  .part-desc { padding-left: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="starfield"></div>
+<div class="page-wrap">
+
+<header>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    Verse by Verse Ministry International
+    <div class="ornament-line"></div>
+  </div>
+  <h1>Study of the Book of Revelation</h1>
+  <h2>General Index of the 17 Parts</h2>
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-value">17</span>
+      <span class="stat-label">Parts</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">22</span>
+      <span class="stat-label">Chapters</span>
+    </div>
+    <div class="stat">
+      <span class="stat-value">199</span>
+      <span class="stat-label">Topics</span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">Expand All</button>
+  <button class="ctrl-btn" onclick="collapseAll()">Collapse All</button>
+</div>
+
+<div class="parts-grid">
+
+    <div class="part-card" id="parte-01">
+      <div class="part-header" onclick="togglePart('topics-01', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">01</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 1–4</div>
+          <div class="part-count">16 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_01_-_Ap__Capitulos_1_-_4_con_indice.html" title="Open Part 01" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expand/Collapse">▾</button>
+      </div>
+      <div class="part-desc">Introduction to the book and its prophetic structure. Covers the seven letters, the vision of the glorified Christ, the context of the Times of the Gentiles, Daniel's 70 Weeks, the signs of the end, the Rapture, and the heavenly worship of chapter 4.</div>
+      <div class="topics-list" id="topics-01">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">The Revelation of Jesus Christ — Introduction and Chain of Custody</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">Greeting to the Seven Churches — The Three Descriptions of Jesus</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">A Vision of the Son of Man — The Eternal Appearance of Christ</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">Outline of the Book of Revelation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Seven Letters — To Whom Were They Addressed and When?</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">Letter to Laodicea — The Church of Our Age</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The Great Apostasy — The Shift in Thinking</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Present Age, the Age to Come, and the Last Days</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Times of the Gentiles — Its Beginning, Duration, and End</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Four Gentile Kingdoms — Daniel 2 and Daniel 7</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Old Covenant, Its Blessings, Curses, and the Door of Salvation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The 70 Weeks of Daniel — The Timeline of Israel's Salvation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">Signs of the End of the Times of the Gentiles</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">The Olivet Discourse — Matthew 24 and Luke 21</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">The Rapture — The Resurrection of the Church and the Jewish Wedding Tradition</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">The Heavenly Worship — Revelation Chapter 4 (After the Rapture)</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-02">
+      <div class="part-header" onclick="togglePart('topics-02', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">02</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 5–9</div>
+          <div class="part-count">15 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_02_-_Ap__Capitulos_5_-_9_con_indice.html" title="Open Part 02" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The first six seals and the first six trumpets: the four horsemen, the martyrs, the 144,000, the great multitude, and the devastating judgments upon the earth during the first half of the Tribulation.</div>
+      <div class="topics-list" id="topics-02">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">General Structure of the Book of Revelation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Beginning of the Tribulation — The Antichrist's Covenant</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The Scroll and the Lamb — Revelation Chapter 5</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">Who Is the Antichrist</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The First Four Seals — The Four Horsemen</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">Fifth Seal — Saints and Martyrs of the Tribulation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Sixth Seal — Supernatural Calamities</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The 144,000 Sealed — Chapter 7</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Great Multitude Clothed in White Robes</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Seventh Seal — Prelude to the 7 Trumpets</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The First Four Trumpets — Devastation of the Earth</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">Warning Before the Last Three Trumpets — The Woes</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">Fifth Trumpet (First Woe) — The Locusts from the Abyss</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">Sixth Trumpet (Second Woe) — The Army of 200 Million</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">Situation at the End of the First Half — Toward the Mid-Trib</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-03">
+      <div class="part-header" onclick="togglePart('topics-03', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">03</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 10–12</div>
+          <div class="part-count">12 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_03_-_Ap__Capitulos_10_-_12_con_indice.html" title="Open Part 03" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The exact midpoint of the Tribulation (Mid-Trib): the third temple, the Two Witnesses, the seventh trumpet, the battle in heaven and the casting out of Satan, with Israel supernaturally sheltered in Petra.</div>
+      <div class="topics-list" id="topics-03">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Current Situation at the Start of the Mid-Trib</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Angel with the Little Scroll — Chapter 10</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The 1,290 Days — The Midpoint Defined with Precision</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Third Temple — Chapter 11</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Two Witnesses — Ministry, Identity, and Purpose</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">Death, Disgrace, and Resurrection of the Two Witnesses</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The Seventh Trumpet — Proclamation of Victory (Rev. 11:15–19)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Woman and the Dragon — Chapter 12</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Fourth Empire Evolves into the Fourth Beast — Daniel 7</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Battle in Heaven — Satan Cast Out Forever</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Remnant of Israel — Supernatural Protection in Petra</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Rest of the Offspring — Those Who Were Left Behind</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-04">
+      <div class="part-header" onclick="togglePart('topics-04', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">04</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 13–14</div>
+          <div class="part-count">11 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_04_-_Ap__Capitulos_13_-_14_con_indice.html" title="Open Part 04" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The second half of the Tribulation: the Antichrist, the False Prophet, the mark 666, the five tribulation groups, the 144,000 in heaven, the three angels, and the two final harvests.</div>
+      <div class="topics-list" id="topics-04">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">The Beast from the Sea — The Antichrist Identified (Rev. 13:1–2)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">Death and Resurrection of the Antichrist — The Great Counterfeit</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">Authority over the World for 42 Months (Rev. 13:5–10)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Second Beast — The False Prophet (Rev. 13:11–14)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Image of the Antichrist and the Mark 666 (Rev. 13:14–18)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Five Groups of the Tribulation — The Final Division</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The 144,000 on Mount Zion — In Heaven (Rev. 14:1–5)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The End of Human Evangelism — The Three Angels (Rev. 14:6–13)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">Blessed Are Those Who Die in the Lord — Perseverance (Rev. 14:12–13)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Two Harvests — Believers and Unbelievers (Rev. 14:14–20)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">Mid-Trib Summary and Review of All Judgments</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-05">
+      <div class="part-header" onclick="togglePart('topics-05', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">05</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 15–16</div>
+          <div class="part-count">13 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_05_-_Ap__Capitulos_15_-_16__con_indice.html" title="Open Part 05" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The seven bowls of God's wrath (chapters 15–16): the songs of heaven, the heavenly tabernacle, the plagues paralleling the Exodus, the introduction to Armageddon, and the announced fall of Babylon.</div>
+      <div class="topics-list" id="topics-05">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Current Situation: The Midpoint of the Tribulation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">Transition to the End: What Comes Next?</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">Chapter 15: The Great and Marvelous Sign — The Seven Angels</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Sea of Glass and the Singing Martyrs</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Two Songs of Moses — Prophecy and Fulfillment</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Tabernacle in Heaven — The Glory of God Made Visible</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The Temple Filled with Smoke — A Period "Without" Grace</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">Chapter 16: The Seven Bowls of Wrath — Bowls 1 through 5</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">Theological Significance of the Bowls — Preview of Hell and Parallel with the Exodus</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The War of Armageddon — Introduction and Stages</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Sixth Bowl — The Euphrates Dries Up and Armageddon Stage I</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">Warning to the Believer During the Tribulation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">The Seventh Bowl — "It Is Done" and the Fall of Babylon</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-06">
+      <div class="part-header" onclick="togglePart('topics-06', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">06</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 16–17</div>
+          <div class="part-count">12 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_06_-_Ap__Capitulos_16_-_17_con_indice.html" title="Open Part 06" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">In-depth analysis of Babylon in its five historical and spiritual dimensions. Chapter 17: the Great Harlot, her relationship with the Antichrist, the seven Gentile kings, and her ultimate destruction.</div>
+      <div class="topics-list" id="topics-06">
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">Babylon and the Redemption of Christ — The Two Great Themes of the Bible</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">Babylon Dimension 1 — House of Sin: The Home of Satan</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">Babylon Dimension 2 — Source of All Idolatry: The Tower of Babel</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVII</span>
+                <span class="topic-title">Babylon Dimension 3 — First Gentile Kingdom to Conquer Israel and Jerusalem</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVIII</span>
+                <span class="topic-title">Babylon Dimension 4 — Headquarters of the Antichrist in the Last Days</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIX</span>
+                <span class="topic-title">Babylon Dimension 5 — Symbol of All False Religions</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XX</span>
+                <span class="topic-title">The Cardinal Directions as Spiritual Symbol — East vs. West</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXI</span>
+                <span class="topic-title">Chapter 17: The Judgment of Spiritual Babylon — The Great Harlot</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXII</span>
+                <span class="topic-title">The Harlot Rides the Beast — Babylon and the Antichrist United</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXIII</span>
+                <span class="topic-title">The Seven Heads — Seven Mountains, Seven Kings: The Times of the Gentiles</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXIV</span>
+                <span class="topic-title">The Seven Historical Kings Who Controlled Babylon and Jerusalem</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXV</span>
+                <span class="topic-title">Destruction of the Harlot — The End of Spiritual Babylon</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-07">
+      <div class="part-header" onclick="togglePart('topics-07', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">07</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 18</div>
+          <div class="part-count">12 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_07_-_Ap__Capitulos_18_con_indice.html" title="Open Part 07" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The fall of commercial and religious Babylon (chapter 18): God's call for his people to come out, the laments of kings and merchants, the two phases of her destruction, and the northern nations as agents of judgment.</div>
+      <div class="topics-list" id="topics-07">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">The Seventh Bowl and the Domino Effect of Babylon</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Historical Pattern: Daniel 2 and the Times of the Gentiles</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">Spiritual Babylon: The False Religions of the World</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Destruction of All False Religions into One</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">Perspective of Chapters 16, 17, and 18</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Angel Announces: Babylon Has Fallen (Rev. 18:1–3)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The Three Reasons for Destruction (Rev. 18:3)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">God Calls His People to Come Out of Babylon (Rev. 18:4–8)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Destruction of Babylon in Two Phases</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Nations of the North: Identification of the Attackers</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Phases of the War of Armageddon and the Fall of Babylon</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Laments and the Final Destruction of Babylon (Rev. 18:9–24)</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-08">
+      <div class="part-header" onclick="togglePart('topics-08', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">08</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 19A</div>
+          <div class="part-count">13 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_08_-_Ap__Capitulos_19A_con_indice.html" title="Open Part 08" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The Marriage of the Lamb and the return of Christ (chapter 19, first part): heavenly praise, the siege of Jerusalem, the Antichrist's movements according to Daniel 11, and the prophetic context of Stage III of Armageddon.</div>
+      <div class="topics-list" id="topics-08">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Overview: The Tribulation and Its Three Major Periods</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">Situation at the Start of Chapter 19: The Antichrist Cornered</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">Praises in Heaven: Hallelujah! (Rev. 19:1–5)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Marriage of the Lamb (Rev. 19:6–9)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Jewish Wedding as a Metaphor for the Rapture and the Second Coming</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">John Worships the Angel: The Correction (Rev. 19:10)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Review of Stages I and II — The Background</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Antichrist According to Daniel 11: His Character and Movements</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">Stage III: The Antichrist's Forces in Bozrah and Jerusalem</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Siege of Jerusalem: Old Testament Prophets Give the Details</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">Zechariah: God's Plan to Press Israel (Zech. 13–12)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Siege of Assyria: Historical Image of the Tribulation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">What Is Coming: Why Satan Wants to Destroy All the Jews</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-09">
+      <div class="part-header" onclick="togglePart('topics-09', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">09</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 19B</div>
+          <div class="part-count">13 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_09_-_Ap__Capitulos_19B_con_indice.html" title="Open Part 09" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The theological purpose of the Tribulation and the triggering cause of the Second Coming: the national confession of Israel. Zechariah 14, the psalms of repentance, Hosea, and the cosmic perspective of Christ's return.</div>
+      <div class="topics-list" id="topics-09">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Introduction: The War of Armageddon as a Series of Events</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Purpose of the Tribulation: Six Reasons Given by Daniel</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The Mosaic Covenant: The Consequences of Non-Compliance</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">Grace in the Midst of Judgment: Israel's Disobedience as an Opportunity for the Gentiles</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Triggering Cause of the Second Coming: The National Confession of Israel</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Situation at the End of the Tribulation: The Complete Picture</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Zechariah 14: What Happens Inside Jerusalem</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Outpouring of the Holy Spirit and the National Confession (Zechariah 12:10)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Psalms of Repentance of Israel at the End of the Tribulation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">Hosea: The Exact Timeline of the Final Battle and the Return</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Second Coming of Christ: Revelation 19:11–16</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Earthly Perspective of the Return: The Cosmic Blackout</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">Closing and Perspective: What Comes Next</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-10">
+      <div class="part-header" onclick="togglePart('topics-10', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">10</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 19C</div>
+          <div class="part-count">11 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_10_-_Ap__Capitulos_19C_con_indice.html" title="Open Part 10" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The final stages of Armageddon: Christ destroys the armies at Bozrah, advances toward Jerusalem, slays the Antichrist and the False Prophet, and sends them to the lake of fire. The 75-day interval and the entry into the Millennium.</div>
+      <div class="topics-list" id="topics-10">
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">Current Situation at the Start of the Lesson: Israel Has Cried Out, Jesus Descends</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">Typology: Joseph and His Brothers — A Perfect Picture of Christ and Israel</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">Stage IV of Armageddon: Jesus Destroys the Armies at Bozrah (Isaiah 34)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVII</span>
+                <span class="topic-title">The Lord Returns from Bozrah toward Jerusalem: Isaiah 63 — The Prophet's Perspective</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVIII</span>
+                <span class="topic-title">The Journey from Bozrah to Jerusalem: Natural or Supernatural?</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIX</span>
+                <span class="topic-title">Stage V of Armageddon: Jesus Arrives at the Mount of Olives and Defends Jerusalem (Zechariah 14)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XX</span>
+                <span class="topic-title">The Death of the Antichrist: The Sword from the Mouth of Christ (Habakkuk 3 · 2 Thessalonians 2)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXI</span>
+                <span class="topic-title">The Aftermath of the Battle — The "Blood Tsunami" and the Great Supper of God (Revelation 19:17–21)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXII</span>
+                <span class="topic-title">The Surviving Groups at the End of the War</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXIII</span>
+                <span class="topic-title">The Fate of the Instigators: The Antichrist and the False Prophet</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXIV</span>
+                <span class="topic-title">What Comes Next: The 75-Day Interval and the Millennium</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-11">
+      <div class="part-header" onclick="togglePart('topics-11', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">11</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 20A</div>
+          <div class="part-count">11 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_11_-_Ap__Capitulos_20A_con_indice.html" title="Open Part 11" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The 75-day interval between the Tribulation and the Millennium: the 30 days of restoration, the 45 days of judgment, the five groups entering the kingdom, the two resurrections, and the sheep and goat judgment of Matthew 25.</div>
+      <div class="topics-list" id="topics-11">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Global Perspective: The Interval Between the Tribulation and the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">Daniel's Timeline: Prophetic Anchors</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The First Period: 30 Days of Earth Restoration</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Second Period: 45 Days of Judgment and Blessing</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Five Groups of Kingdom Citizens</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">Group #2: Resurrection of the Old Testament Saints</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Group #3: Resurrection of the Tribulation Martyr Saints</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">Group #4: Living Jews at Christ's Return — Will They Be Resurrected?</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The First and the Second Resurrection</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">Group #5: The Living Gentiles — Sheep and Goats (Matthew 25)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">Entry into the Kingdom: Children Born During the Millennium</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-12">
+      <div class="part-header" onclick="togglePart('topics-12', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">12</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 20B</div>
+          <div class="part-count">8 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_12_-_Ap__Capitulos_20B_con_indice.html" title="Open Part 12" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The nature of the Millennial Kingdom: restoration of creation, harmony among the animals, reversal of the agricultural curse, geography of the kingdom, and the presence of sin under Christ's perfect rule.</div>
+      <div class="topics-list" id="topics-12">
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Beginning of the Kingdom: What Revelation Says (and Does Not Say)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">The Progressive Concept of the Kingdom: Four Stages</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">Changes in Creation: The Consequences of Adam's Sin</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">The Animals in the Kingdom: Restoration of Original Harmony</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">The Earth Will Produce: Reversal of the Agricultural Curse</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVII</span>
+                <span class="topic-title">Borders and Geography of the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVIII</span>
+                <span class="topic-title">Sin in the Millennium and the Perfect Rule of Christ</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIX</span>
+                <span class="topic-title">The Structure of Kingdom Government</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-13">
+      <div class="part-header" onclick="togglePart('topics-13', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">13</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 20C</div>
+          <div class="part-count">11 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_13_-_Ap__Capitulos_20C_con_indice.html" title="Open Part 13" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">Daily life in the Millennium: rule with a rod of iron, residual death, the Shekinah glory in the temple, faith as the only means of salvation, the role of the Gentiles, and the great silences of Scripture.</div>
+      <div class="topics-list" id="topics-13">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Summary: Creation, the Earth, and Government in the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Five Groups of Believers Entering the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">Sin Contained: Rule with a Rod of Iron</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">Death in the Kingdom — Analysis of Isaiah 65:20</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">How Is Unbelief Possible with Christ Ruling?</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Shekinah Glory of God Returns to the Temple</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Faith: The Sole and Permanent Means of Salvation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Quality of Daily Life in the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">Jerusalem Covered by the Glory: Isaiah 4</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Life and Function of the Gentiles in the Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Great Silences — What the Scriptures Do Not Reveal</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-14">
+      <div class="part-header" onclick="togglePart('topics-14', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">14</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 20D</div>
+          <div class="part-count">8 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_14_-_Ap__Capitulos_20D_con_indice.html" title="Open Part 14" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">Ezekiel's Millennial Temple: its architecture, the restored priesthood, the feasts reduced to two, and the theological basis for the return of sacrifices as a retrospective memorial, not atonement.</div>
+      <div class="topics-list" id="topics-14">
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">Introduction to the Millennial Temple — Ezekiel as Guide</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">Architectural Tour: The Dimensions of the Millennial Temple</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">Christ in the Temple: The Departure and the Glorious Return</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">The Feasts of the Kingdom — From Seven to Two</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">The Priesthood in the Kingdom — Levites, Sons of Zadok, and Gentiles</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVII</span>
+                <span class="topic-title">Why Do the Sacrifices Return? — Theological Basis</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVIII</span>
+                <span class="topic-title">The Sacrifices of the Church Today — The Body as Temple</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIX</span>
+                <span class="topic-title">The Sacrifices in the Kingdom — Ezekiel 43</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-15">
+      <div class="part-header" onclick="togglePart('topics-15', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">15</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 20E</div>
+          <div class="part-count">11 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_15_-_Ap__Capitulos_20E_con_indice.html" title="Open Part 15" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The final war at the end of the Millennium: Satan released, Gog and Magog (Ezekiel 38–39), the identity of the attackers, their supernatural destruction, and a detailed comparison with Revelation 20.</div>
+      <div class="topics-list" id="topics-15">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Context: Kingdom Timeline</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The Text of Revelation 20 — The Final War</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The Role of Satan: Why He Was Bound and Released</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The True Purpose of the 1,000-Year Kingdom</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">Ezekiel 38–39: Framework and Structure</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">Identity of Gog and Magog (Ezekiel 38:1–8)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">Details of the Invasion (Ezekiel 38:9–16)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">The Purpose of the Invasion: God Demonstrates His Covenant Faithfulness</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">The Supernatural Destruction and Its Consequences (Ezekiel 39)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">The Final Sacrifice: Inversion of Creational Order (Ezekiel 39:17–21)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">Comparative Table: Ezekiel 38–39 vs. Revelation 20</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-16">
+      <div class="part-header" onclick="togglePart('topics-16', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">16</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 21</div>
+          <div class="part-count">10 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_16_-_Ap__Capitulos_21_con_indice.html" title="Open Part 16" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">The end of history and the threshold of eternity: the second resurrection, the Great White Throne, the lake of fire, the new heavens and the new earth, and the New Jerusalem descending from heaven.</div>
+      <div class="topics-list" id="topics-16">
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Final Interval: 7 Unique Years in History</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIII</span>
+                <span class="topic-title">The Lake of Fire and Sulfur</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIV</span>
+                <span class="topic-title">The Second Resurrection</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XV</span>
+                <span class="topic-title">Journey of Souls According to Their Era</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVI</span>
+                <span class="topic-title">The Great White Throne Judgment (Revelation 20:11–15)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVII</span>
+                <span class="topic-title">The Unfolding of the Judgment — The Open Books</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XVIII</span>
+                <span class="topic-title">The Next Age: Eternity and Progressive Revelation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XIX</span>
+                <span class="topic-title">The New Heavens and the New Earth — Revelation 21:1–8</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XX</span>
+                <span class="topic-title">The New Jerusalem — The City That Descends</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XXI</span>
+                <span class="topic-title">The Call to Salvation — Revelation 21:8</span>
+              </div>
+      </div>
+    </div>
+    <div class="part-card" id="parte-17">
+      <div class="part-header" onclick="togglePart('topics-17', this)">
+        <div class="part-badge">
+          <span class="part-label">Part</span>
+          <span class="part-number">17</span>
+        </div>
+        <div class="part-meta">
+          <div class="part-caps">Revelation 22</div>
+          <div class="part-count">12 topics</div>
+        </div>
+        <a class="open-btn" href="Resumen_de_Apocalipsis_-_Parte_17_-_Ap__Capitulos_22_con_indice.html" title="Open Part 17" onclick="event.stopPropagation()">Open ↗</a>
+        <button class="part-toggle" title="Expandir/Colapsar">▾</button>
+      </div>
+      <div class="part-desc">Eternity in the New Jerusalem: its dimensions, its inhabitants, the absence of a temple, of night, and of the curse, the river of life, the tree of life, and Christ's final words closing the canon of Scripture.</div>
+      <div class="topics-list" id="topics-17">
+              <div class="topic-item">
+                <span class="topic-num">I</span>
+                <span class="topic-title">Introduction: The New Heavens and the New Earth (NH&NE)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">II</span>
+                <span class="topic-title">The New Jerusalem: First Glimpse and the Bride of Christ</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">III</span>
+                <span class="topic-title">The Twelve Tribes and the Twelve Apostles: Eternal Memorial</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IV</span>
+                <span class="topic-title">The Measurements of the City: Extraordinary Dimensions</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">V</span>
+                <span class="topic-title">The Inhabitants and the Glory of the City (Rev. 21:22–27)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VI</span>
+                <span class="topic-title">The Design of the First Creation: Why Seas, Night, and Sun Existed</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VII</span>
+                <span class="topic-title">The River of the Water of Life and the Tree of Life (Rev. 22:1–5)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">VIII</span>
+                <span class="topic-title">No Curse: Perfect Life in the Presence of God</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">IX</span>
+                <span class="topic-title">Comparative Table: First Creation vs. New Creation</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">X</span>
+                <span class="topic-title">Predestination, the Purpose of Creation, and the Complete Character of God</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XI</span>
+                <span class="topic-title">The Epilogue: Christ's Final Words to John (Rev. 22:6–15)</span>
+              </div>
+              <div class="topic-item">
+                <span class="topic-num">XII</span>
+                <span class="topic-title">The Final Call: To Believers, to Unbelievers, and the Warning about the Scriptures</span>
+              </div>
+      </div>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-line"></div>
+  Verse by Verse Ministry International
+</footer>
+
+</div>
+<script>
+(function() {
+  window.togglePart = function(targetId, header) {
+    var topics = document.getElementById(targetId);
+    var btn = header.querySelector('.part-toggle');
+    var isOpen = topics.classList.contains('open');
+    topics.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+  };
+  window.expandAll = function() {
+    document.querySelectorAll('.topics-list').forEach(function(t) { t.classList.add('open'); });
+    document.querySelectorAll('.part-toggle').forEach(function(b) { b.classList.add('open'); });
+  };
+  window.collapseAll = function() {
+    document.querySelectorAll('.topics-list').forEach(function(t) { t.classList.remove('open'); });
+    document.querySelectorAll('.part-toggle').forEach(function(b) { b.classList.remove('open'); });
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revelation Study — Part 09 · Chapter 19B</title>
+<style>
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8C96A;
+  --gold-dim:     #8A6A2A;
+  --crimson:      #8B1A1A;
+  --crimson-light:#C0392B;
+  --deep:         #0A0806;
+  --dark:         #120E09;
+  --mid:          #1E1710;
+  --mid2:         #2A2118;
+  --panel:        #160E08;
+  --text:         #E8DCC8;
+  --text-dim:     #A89878;
+  --text-muted:   #6A5840;
+  --sky:          #4A7FA8;
+  --sky-light:    #7AB0D4;
+  --glow:         rgba(201,168,76,0.15);
+
+  --f-display: 'Didot','Bodoni MT','Bodoni 72','Playfair Display','Palatino Linotype',Georgia,'Times New Roman',serif;
+  --f-heading: 'Palatino Linotype','Palatino','Book Antiqua','Garamond',Georgia,serif;
+  --f-body:    'Garamond','Adobe Garamond Pro','EB Garamond','Palatino Linotype','Palatino',Georgia,serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #0A0806;
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 19px;
+  line-height: 1.8;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* STARFIELD */
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, rgba(201,168,76,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 34% 7%,  rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 56% 23%, rgba(201,168,76,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 11%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 91% 41%, rgba(201,168,76,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 23% 55%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 67% 72%, rgba(201,168,76,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 88%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 8%  92%, rgba(201,168,76,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 82% 63%, rgba(255,255,255,0.45) 0%, transparent 100%);
+}
+
+/* HEADER */
+header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 70px 40px 60px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(100,10,10,0.55) 0%, transparent 70%);
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(139,26,26,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.ornament-line {
+  flex: 1;
+  max-width: 180px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+}
+
+.ornament-text {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+header h1 {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 5vw, 54px);
+  font-weight: 900;
+  color: var(--gold-light);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 30px rgba(201,168,76,0.2);
+}
+
+header h2 {
+  font-family: var(--f-heading);
+  font-size: clamp(15px, 2.5vw, 21px);
+  text-transform: uppercase;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+
+.meta-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-label {
+  font-family: var(--f-heading);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* MAIN */
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 60px 28px 80px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-num {
+  border: 1px solid var(--crimson);
+  border-radius: 50%;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--crimson-light);
+  font-size: 12px;
+  font-family: var(--f-heading);
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-family: var(--f-heading);
+  font-size: clamp(17px, 2.5vw, 23px);
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+/* CARDS GRID */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .cards { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(30,23,16,.95) 0%, rgba(22,14,8,.95) 100%);
+  border: 1px solid rgba(201,168,76,.15);
+  border-left: 3px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color .3s, transform .2s;
+}
+
+.card:hover {
+  border-left-color: var(--gold);
+  transform: translateX(3px);
+}
+
+.card.full {
+  grid-column: 1 / -1;
+}
+
+.card-title {
+  font-family: var(--f-heading);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+/* BULLET LIST */
+ul.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+ul.bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  background: rgba(201,168,76,.04);
+  border: 1px solid rgba(201,168,76,.1);
+  border-radius: 3px;
+}
+
+.bullet-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1.6;
+}
+
+.bullet-body {}
+
+.bullet-label {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.bullet-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.72;
+}
+
+/* SCRIPTURE BOX */
+.scripture-box {
+  background: linear-gradient(135deg, rgba(139,26,26,.12) 0%, rgba(10,8,6,.8) 100%);
+  border: 1px solid rgba(139,26,26,.3);
+  border-left: 4px solid var(--crimson);
+  border-radius: 4px;
+  padding: 18px 22px 18px 44px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.scripture-box::before {
+  content: '\201C';
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  font-size: 56px;
+  color: rgba(139,26,26,.3);
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.scripture-ref {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--crimson-light);
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.8px;
+}
+
+.scripture-text {
+  font-style: italic;
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+/* TIMELINE */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 7px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(201,168,76,0.5);
+}
+
+.timeline-period {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.timeline-desc {
+  font-size: 16px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* INFO PANEL */
+.info-panel {
+  background: linear-gradient(135deg, rgba(74,127,168,.08) 0%, rgba(10,8,6,.9) 100%);
+  border: 1px solid rgba(74,127,168,.2);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.info-panel-title {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--sky-light);
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* TWO COL INFO */
+.two-col-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .two-col-info { grid-template-columns: 1fr; }
+}
+
+/* TABLE */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.styled-table th {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.05);
+  padding: 10px 14px;
+  text-align: left;
+  letter-spacing: 0.8px;
+}
+
+.styled-table td {
+  font-size: 16px;
+  color: var(--text-dim);
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(201,168,76,.08);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.styled-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* HIGHLIGHT */
+.hl {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* DIVIDER */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 56px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,168,76,.3), transparent);
+}
+
+.divider-sym {
+  color: var(--gold-dim);
+  font-size: 16px;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  background: linear-gradient(135deg, rgba(201,168,76,.07) 0%, rgba(10,8,6,.95) 100%);
+  border: 1px solid rgba(201,168,76,.25);
+  border-radius: 6px;
+  padding: 26px 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.summary-box p {
+  font-size: 18px;
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.85;
+}
+
+/* FOOTNOTE */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 32px 28px 48px;
+  border-top: 1px solid rgba(201,168,76,.1);
+}
+
+footer p {
+  font-family: var(--f-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.9;
+}
+
+footer a {
+  color: var(--gold-dim);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--gold);
+}
+
+/* STAGGERED ANIMATION DELAYS */
+.section:nth-child(1)  { animation-delay: 0.08s; }
+.section:nth-child(2)  { animation-delay: 0.16s; }
+.section:nth-child(3)  { animation-delay: 0.24s; }
+.section:nth-child(4)  { animation-delay: 0.32s; }
+.section:nth-child(5)  { animation-delay: 0.40s; }
+.section:nth-child(6)  { animation-delay: 0.48s; }
+.section:nth-child(7)  { animation-delay: 0.56s; }
+.section:nth-child(8)  { animation-delay: 0.64s; }
+.section:nth-child(9)  { animation-delay: 0.72s; }
+.section:nth-child(10) { animation-delay: 0.80s; }
+.section:nth-child(11) { animation-delay: 0.88s; }
+.section:nth-child(12) { animation-delay: 0.96s; }
+
+/* ═══ SIDEBAR TOC ═══ */
+#sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f0a06 0%, #1a1208 100%);
+  border-right: 1px solid rgba(201,168,76,.18);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 4px 0 32px rgba(0,0,0,.6);
+}
+#sidebar-toc.hidden { transform: translateX(-100%); }
+.toc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 18px 16px;
+  border-bottom: 1px solid rgba(201,168,76,.12);
+  flex-shrink: 0;
+}
+.toc-ornament-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,.4), transparent);
+}
+.toc-label {
+  font-family: var(--f-heading);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  white-space: nowrap;
+}
+.toc-links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,168,76,.2) transparent;
+}
+.toc-links::-webkit-scrollbar { width: 4px; }
+.toc-links::-webkit-scrollbar-thumb { background: rgba(201,168,76,.2); border-radius: 2px; }
+.toc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 18px;
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--f-body);
+  font-size: 13px;
+  line-height: 1.4;
+  border-left: 2px solid transparent;
+  transition: all .2s ease;
+}
+.toc-item:hover {
+  color: var(--gold-light);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.06);
+}
+.toc-item.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,.1);
+}
+.toc-num {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: var(--f-heading);
+  color: var(--crimson-light);
+  padding-top: 1px;
+  min-width: 22px;
+}
+.toc-title { flex: 1; }
+#toc-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 12px;
+  background: rgba(201,168,76,.1);
+  border: 1px solid rgba(201,168,76,.25);
+  color: var(--gold);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  line-height: 1;
+}
+#toc-toggle:hover { background: rgba(201,168,76,.2); }
+#toc-show {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 999;
+  background: rgba(10,8,6,.9);
+  border: 1px solid rgba(201,168,76,.3);
+  border-left: none;
+  color: var(--gold);
+  border-radius: 0 6px 6px 0;
+  width: 22px;
+  height: 54px;
+  cursor: pointer;
+  font-size: 18px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#toc-show:hover { background: rgba(201,168,76,.15); }
+.page-wrap {
+  margin-left: 0;
+  transition: margin-left .35s cubic-bezier(.4,0,.2,1);
+}
+body.toc-open .page-wrap {
+  margin-left: 270px;
+}
+body.toc-closed .page-wrap {
+  margin-left: 0;
+}
+@media (max-width: 900px) {
+  #sidebar-toc { width: 240px; }
+  body.toc-open .page-wrap { margin-left: 240px; }
+}
+@media (max-width: 600px) {
+  body.toc-open .page-wrap { margin-left: 0; }
+}
+
+</style>
+</head>
+<body>
+<!-- SIDEBAR TOC -->
+<nav id="sidebar-toc">
+  <div class="toc-header">
+    <div class="toc-ornament-line"></div>
+    <span class="toc-label">Table of Contents</span>
+    <div class="toc-ornament-line"></div>
+  </div>
+  <div class="toc-links">
+    <a href="#sec-I" class="toc-item"><span class="toc-num">I</span><span class="toc-title">Introduction: The Battle of Armageddon as a Series of Events</span></a>
+<a href="#sec-II" class="toc-item"><span class="toc-num">II</span><span class="toc-title">The Purpose of the Tribulation: Six Reasons Given by Daniel</span></a>
+<a href="#sec-III" class="toc-item"><span class="toc-num">III</span><span class="toc-title">The Mosaic Covenant: The Consequences of Breaking It</span></a>
+<a href="#sec-IV" class="toc-item"><span class="toc-num">IV</span><span class="toc-title">Grace in the Midst of Judgment: Israel’s Disobedience as an Opportunity for the Gentiles</span></a>
+<a href="#sec-V" class="toc-item"><span class="toc-num">V</span><span class="toc-title">The Triggering Cause of the Second Coming: Israel’s National Confession</span></a>
+<a href="#sec-VI" class="toc-item"><span class="toc-num">VI</span><span class="toc-title">The Situation at the End of the Tribulation: The Full Panorama</span></a>
+<a href="#sec-VII" class="toc-item"><span class="toc-num">VII</span><span class="toc-title">Zechariah 14: What Happens Inside Jerusalem</span></a>
+<a href="#sec-VIII" class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">The Outpouring of the Holy Spirit and the National Confession (Zechariah 12:10)</span></a>
+<a href="#sec-IX" class="toc-item"><span class="toc-num">IX</span><span class="toc-title">The Psalms of Israel’s Repentance at the End of the Tribulation</span></a>
+<a href="#sec-X" class="toc-item"><span class="toc-num">X</span><span class="toc-title">Hosea: The Exact Chronology of the Final Battle and the Return</span></a>
+<a href="#sec-XI" class="toc-item"><span class="toc-num">XI</span><span class="toc-title">The Second Coming of Christ: Revelation 19:11-16</span></a>
+<a href="#sec-XII" class="toc-item"><span class="toc-num">XII</span><span class="toc-title">The Earthly Perspective of the Return: The Cosmic Blackout</span></a>
+<a href="#sec-XIII" class="toc-item"><span class="toc-num">XIII</span><span class="toc-title">Conclusion and Outlook: What Comes Next</span></a>
+
+  </div>
+  <button id="toc-toggle" title="Hide index">&#8249;</button>
+</nav>
+<button id="toc-show" title="Show index">&#8250;</button>
+
+
+<div class="starfield"></div>
+
+<div class="page-wrap">
+<!-- HEADER -->
+<header>
+  <div class="ornament">
+    <div class="ornament-line"></div>
+    <span class="ornament-text">Verse by Verse Ministry International</span>
+    <div class="ornament-line"></div>
+  </div>
+  <h1>Revelation Study</h1>
+  <h2>Part 09 · Chapter 19B</h2>
+  <div class="meta-bar">
+    <div class="meta-item">
+      <span class="meta-label">Chapters Covered</span>
+      <span class="meta-value">Revelation 19 (continued)</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Pages Covered</span>
+      <span class="meta-value">28 pages</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Main Historical Period</span>
+      <span class="meta-value">Battle of Armageddon · Stages IV and V</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- I -->
+  <section class="section" id="sec-I">
+    <div class="section-header">
+      <div class="section-num">I</div>
+      <h3 class="section-title">Introduction: The Battle of Armageddon as a Series of Events</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Nature of the War</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Not a single moment</span>
+              <span class="bullet-desc">The Battle of Armageddon — called in the Bible <span class="hl">"the war of the great day of God"</span> — does not occur in a single instant, but is a series of events that take place over days and weeks.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Conclusion of the Tribulation</span>
+              <span class="bullet-desc">This war concludes the seven-year Tribulation. At its climax, Jesus returns to put an end to the Antichrist’s rule.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Revelation 19 is a summary</span>
+              <span class="bullet-desc">Chapter 19 summarizes the Lord’s return, omitting many details already described in previous Old Testament books. To understand them, it is necessary to step outside the Book of Revelation and consult the Old Testament prophecies.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Chain triggered by the seventh bowl</span>
+              <span class="bullet-desc">The final bowl judgments triggered a chain of events like dominoes that initiates the war and moves it through its <span class="hl">five stages</span> until the end.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Current State at the Start of This Lesson</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✓</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Stage I — studied</span>
+              <span class="bullet-desc">The sixth bowl dried up the Euphrates River to draw the Antichrist and his forces from Babylon westward, camping in the Valley of Jezreel preparing to invade Jerusalem.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Stage II — studied</span>
+              <span class="bullet-desc">Two of the seven kings under the Antichrist rebelled and invaded Babylon. The seventh bowl destroyed both the city and the invaders, forcing the Antichrist to advance against Jerusalem.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Stage III — studied</span>
+              <span class="bullet-desc">The Antichrist moves his forces south through the central valleys to the Shephelah, then advances eastward surrounding and besieging Jerusalem. The war returns to a medieval style (horses, swords, ramps) due to the rudimentary level of technology during the Tribulation.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Second front: Petra</span>
+              <span class="bullet-desc">The Antichrist also opens a second front by sending what remains of his forces from Babylon toward Petra (Bozrah), where the Lord protects the remnant of Israel during the last 3.5 years of the Tribulation.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- II -->
+  <section class="section" id="sec-II">
+    <div class="section-header">
+      <div class="section-num">II</div>
+      <h3 class="section-title">The Purpose of the Tribulation: Six Reasons Given by Daniel</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">Daniel 9:24 — The Six Goals of the Seventy Weeks</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Daniel 9:24</span>
+          <span class="scripture-text">"Seventy weeks are determined For your people and for your holy city, To finish the transgression, To make an end of sins, To make reconciliation for iniquity, To bring in everlasting righteousness, To seal up vision and prophecy, And to anoint the Most Holy."</span>
+        </div>
+        <ul class="bullets" style="margin-top:14px;">
+          <li>
+            <span class="bullet-icon">❶</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To finish the transgression (injustice)</span>
+              <span class="bullet-desc">The era of Israel’s disobedience comes to its definitive end.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❷</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To make an end of sins</span>
+              <span class="bullet-desc">The sin of the nation is completely resolved.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❸</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To make reconciliation for iniquity</span>
+              <span class="bullet-desc">Christ’s atoning work is fully applied to the nation.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❹</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To bring in everlasting righteousness</span>
+              <span class="bullet-desc">The beginning of eternal righteousness, the Messianic Kingdom.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❺</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To seal up vision and prophecy</span>
+              <span class="bullet-desc">The definitive fulfillment of all Old Testament prophecies.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">❻</span>
+            <div class="bullet-body">
+              <span class="bullet-label">To anoint the Most Holy</span>
+              <span class="bullet-desc">The formal installation of Christ as King over Israel and the nations.</span>
+            </div>
+          </li>
+        </ul>
+        <p style="margin-top:14px; font-size:16px; color:var(--text-dim);">In summary: <span class="hl">the Tribulation brings saving faith to all Israel and causes the nation to return to the Lord</span>, placing the nation in an incredibly difficult situation after seven years of intense testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- III -->
+  <section class="section" id="sec-III">
+    <div class="section-header">
+      <div class="section-num">III</div>
+      <h3 class="section-title">The Mosaic Covenant: The Consequences of Breaking It</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">A Multigenerational Covenant</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">National and hereditary covenant</span>
+              <span class="bullet-desc">When Israel entered the Mosaic Covenant before entering the Promised Land, Moses made it clear that this arrangement was not only for the Jews of the desert but for <span class="hl">all their descendants</span>. Deuteronomy 29:14-15.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The individual and the nation go together</span>
+              <span class="bullet-desc">"As the individual goes, so goes the nation; and as the nation goes, so goes the individual." The requirements and consequences apply equally to every person until the covenant is fulfilled.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The root of bitterness</span>
+              <span class="bullet-desc">Moses warned against any person whose heart turns away from the Lord to serve other gods, for that would produce "gall and wormwood" (adversity and bitterness) for the entire nation. Deuteronomy 29:18.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">How the Covenant Is Fulfilled</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">①</span>
+            <div class="bullet-body">
+              <span class="bullet-label">For the individual: faith in Christ</span>
+              <span class="bullet-desc">An individual Jew is freed from the Law when he puts his faith in Jesus Christ, who fully fulfilled it in His own life, on behalf of the believer, and paid the death penalty as the consequence of sin. Thus he enters a <span class="hl">new and better covenant</span>.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">②</span>
+            <div class="bullet-body">
+              <span class="bullet-label">For the nation: collective confession</span>
+              <span class="bullet-desc">The Old Covenant requires that <span class="hl">the entire nation</span> make the confession, together, without exceptions. As a nation, the only way out is the fulfillment of the law; but for the individual, the way out is Jesus.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">③</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Jesus did not remove the Law</span>
+              <span class="bullet-desc">That is why Jesus said He "did not come to remove the Law." The rest of the nation that did not come to personal faith remains subject to the Law and its punishments. Romans 7:4-6 explains that we are free from it only through the death and resurrection of Christ.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <div class="card-title">The Curses of the Covenant — Described in Deuteronomy 29</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Deuteronomy 29:22-25</span>
+          <span class="scripture-text">The coming generation of your children who rise up after you, and the foreigner who comes from a far land, would say, when they see the plagues of that land and the sicknesses which the LORD has laid on it: 'The whole land is brimstone, salt, and burning; it is not sown, nor does it bear, nor does any grass grow there, like the overthrow of Sodom and Gomorrah, Admah, and Zeboim, which the LORD overthrew in His anger and His wrath.' All nations would say, 'Why has the LORD done so to this land? What does the heat of this great anger mean?' Then people would say: 'Because they have forsaken the covenant of the LORD God of their fathers...'</span>
+        </div>
+        <p style="margin-top:12px; font-size:16px; color:var(--text-dim);">These judgments described in Deuteronomy have never been experienced in Israel to this day. They are a description of the devastation that will come during the <span class="hl">Day of the Lord</span>, the seven-year Tribulation. The curses are severe, but they evidence the grace of God because they lead toward the good: the salvation of Israel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IV -->
+  <section class="section" id="sec-IV">
+    <div class="section-header">
+      <div class="section-num">IV</div>
+      <h3 class="section-title">Grace in the Midst of Judgment: Israel’s Disobedience as an Opportunity for the Gentiles</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Israel set aside temporarily</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Romans 11:7-8, 11</span>
+          <span class="scripture-text">What then? Israel has not obtained what it seeks; but the elect have obtained it, and the rest were blinded. Just as it is written: "God has given them a spirit of stupor, Eyes that they should not see And ears that they should not hear, To this very day." ... I say then, have they stumbled that they should fall? Certainly not! But through their fall, to provoke them to jealousy, salvation has come to the Gentiles.</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Church Age made possible because of Israel</span>
+              <span class="bullet-desc">The Lord sets aside His people for a time so that salvation is available to the Gentiles. The period of the Church Age is possible precisely because of the temporary hardening of Israel.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Judgment leads to Israel’s repentance</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Lord will use judgment as an instrument</span>
+              <span class="bullet-desc">The period of Israel’s judgment will bring the nation back to the Lord, as indicated by Daniel and Zechariah. In their trial, the nation will cry out to the Lord and He will hear them.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The condition for Christ’s return</span>
+              <span class="bullet-desc">Jesus established that this must happen <span class="hl">before</span> He is willing to return to His people and give them the Kingdom. Luke 13:34-35: "you shall see Me no more till you say, 'Blessed is He who comes in the name of the LORD!'"</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- V -->
+  <section class="section" id="sec-V">
+    <div class="section-header">
+      <div class="section-num">V</div>
+      <h3 class="section-title">The Triggering Cause of the Second Coming: Israel’s National Confession</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">What Jesus Requires</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Luke 13:34-35</span>
+          <span class="scripture-text">"O Jerusalem, Jerusalem, the one who kills the prophets and stones those who are sent to her! How often I wanted to gather your children together, as a hen gathers her brood under her wings, but you were not willing! See! Your house is left to you desolate; and assuredly, I say to you, you shall not see Me until the time comes when you say, 'Blessed is He who comes in the name of the Lord!'"</span>
+        </div>
+        <p style="margin-top:12px; font-size:16px; color:var(--text-dim);">Jesus established the <span class="hl">terms of His second coming</span>: Israel must cry out for Him as their Messiah. When they call Him, He will return as He promised. Beyond the gospel reaching every corner of the world, the <span class="hl">true trigger</span> is Israel’s national confession.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">The "escape hatch" in Leviticus 26</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Leviticus 26:40-42</span>
+          <span class="scripture-text">"But if they confess their iniquity and the iniquity of their fathers, with their unfaithfulness in which they were unfaithful to Me... then I will remember My covenant with Jacob, and My covenant with Isaac and My covenant with Abraham I will remember..."</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">①</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Personal confession</span>
+              <span class="bullet-desc">Each Jew must confess his own sin and his need of a Savior — just like any believer. This is sufficient for individual salvation.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">②</span>
+            <div class="bullet-body">
+              <span class="bullet-label">National confession of the sin of the ancestors</span>
+              <span class="bullet-desc">This future generation must confess that <span class="hl">their ancestors crucified Jesus at His first coming</span>, that the Messiah already came and was rejected. The entire nation will repent of having rejected Him.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <div class="card-title">Romans 11 — All Israel Will Be Saved</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Romans 11:25-27</span>
+          <span class="scripture-text">For I do not desire, brethren, that you should be ignorant of this mystery, lest you should be wise in your own opinion, that blindness in part has happened to Israel until the fullness of the Gentiles has come in. And so all Israel will be saved, as it is written: "The Deliverer will come out of Zion, And He will turn away ungodliness from Jacob; For this is My covenant with them, When I take away their sins."</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The heavenly Zion</span>
+              <span class="bullet-desc">The "Zion" mentioned in Romans 11:26 is the heavenly Zion — a reference to the <span class="hl">Second Coming of Christ</span> from heaven, not the earthly Zion.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The old covenant referred to in Romans 11:27</span>
+              <span class="bullet-desc">It refers to the Mosaic Covenant, not Abraham’s. The Abrahamic Covenant promises the Kingdom; the Mosaic establishes the condition of confession that releases its fulfillment. When the nation confesses, the Lord will remember the covenant with Abraham and establish the Kingdom.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">He who endures to the end</span>
+              <span class="bullet-desc">Matthew 24:13 — This is the only moment in history in which <span class="hl">"staying alive"</span> guarantees salvation if one is Jewish: only at the last moment, when Israel is about to be destroyed and only a third remains, do they come to confess Christ by the power of the Holy Spirit.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VI -->
+  <section class="section" id="sec-VI">
+    <div class="section-header">
+      <div class="section-num">VI</div>
+      <h3 class="section-title">The Situation at the End of the Tribulation: The Full Panorama</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">Snapshot of the Situation</div>
+        <div class="two-col-info">
+          <div class="info-panel">
+            <div class="info-panel-title">✅ What Is Still Standing</div>
+            <ul class="bullets">
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-desc">Jesus in heaven with His bride (the Church) ready to return.</span>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-desc">The believing Jews in Petra, alive and protected by the Lord, waiting for His return.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="info-panel">
+            <div class="info-panel-title">⚠ What Is in Crisis</div>
+            <ul class="bullets">
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-desc">Babylon gone; the rest of the world in ruins; food and water scarce.</span>
+                </div>
+              </li>
+              <li>
+                <span class="bullet-icon">✦</span>
+                <div class="bullet-body">
+                  <span class="bullet-desc">The unbelieving Jews in Jerusalem pleading with God for rescue while the Antichrist surrounds and attacks them.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-size:16px; color:var(--text-dim);">The only thing missing is for the unbelieving Jews in Jerusalem to obey the Lord’s demand to declare Him Messiah. The moment they say <span class="hl">"Blessed is He who comes in the name of the Lord!"</span>, Jesus will hear them and return to save them all (Luke 13:34-35).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VII -->
+  <section class="section" id="sec-VII">
+    <div class="section-header">
+      <div class="section-num">VII</div>
+      <h3 class="section-title">Zechariah 14: What Happens Inside Jerusalem</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">The Final Siege According to Zechariah</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Zechariah 14:1-2</span>
+          <span class="scripture-text">Behold, the day of the LORD is coming, And your spoil will be divided in your midst. For I will gather all the nations to battle against Jerusalem; The city shall be taken, The houses rifled, And the women ravished. Half of the city shall go into captivity, But the remnant of the people shall not be cut off from the city.</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Unfulfilled prophecy until now</span>
+              <span class="bullet-desc">The gathering of all the nations of the earth against Jerusalem has never happened before — it is prophecy yet to be fulfilled, describing <span class="hl">Stage III of the Battle of Armageddon</span>.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Partial victory of the Antichrist</span>
+              <span class="bullet-desc">The walls fall, half the city is exiled and the women are assaulted. God intervenes to prevent total conquest, keeping a remnant under extreme pressure.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">God’s Trap for the Antichrist</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Zechariah 12:2-3</span>
+          <span class="scripture-text">"Behold, I will make Jerusalem a cup of drunkenness to all the surrounding peoples, when they lay siege against Judah and Jerusalem. And it shall happen in that day that I will make Jerusalem a very heavy stone for all peoples; all who would heave it away will surely be cut in pieces, though all nations of the earth are gathered against it."</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The partial victory is preparation for total defeat</span>
+              <span class="bullet-desc">The Lord has set a trap for the Antichrist: He draws him to besiege the city and allows initial success only to prepare his total defeat. The extreme pressure on the city will create the conditions for collective repentance.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The Lord defends what remains</span>
+              <span class="bullet-desc">Zechariah 12:8-9: "In that day the LORD will defend the inhabitants of Jerusalem... In that day I will make the governors of Judah like a firepan in the woodpile..." The Lord will seek to destroy all the nations that come against the city.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIII -->
+  <section class="section" id="sec-VIII">
+    <div class="section-header">
+      <div class="section-num">VIII</div>
+      <h3 class="section-title">The Outpouring of the Holy Spirit and the National Confession (Zechariah 12:10)</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">The Climactic Moment</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The city seems lost</span>
+              <span class="bullet-desc">If no Jews remained, there would be no one to invoke Jesus — the condition for His return. Theoretically, if Israel is destroyed, Jesus would not return a second time. <span class="hl">That is why the enemy has opposed Israel from the beginning:</span> Israel was the key to the first coming and also to the second.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The turning point begins with the Spirit</span>
+              <span class="bullet-desc">As with all works of salvation, the Lord moves first. When the nation appears on the brink of annihilation, God sends His Spirit.</span>
+            </div>
+          </li>
+        </ul>
+        <div class="scripture-box" style="margin-top:12px;">
+          <span class="scripture-ref">Zechariah 12:10</span>
+          <span class="scripture-text">"And I will pour on the house of David and on the inhabitants of Jerusalem the Spirit of grace and supplication; then they will look on Me whom they pierced. Yes, they will mourn for Him as one mourns for his only son, And grieve for Him as one grieves for a firstborn."</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">On Whom and How It Occurs</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Two target groups</span>
+              <span class="bullet-desc"><span class="hl">The house of David</span> (the ruling class of Israel) and <span class="hl">the inhabitants of Jerusalem</span> still alive in the city — the remaining group that was not exiled.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Instant recognition</span>
+              <span class="bullet-desc">The effect of the arrival of the Spirit is an instant recognition that <span class="hl">Jesus is the Messiah</span>. They look on the One they pierced and mourn for Him as for an only son.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Recognition does not bring initial joy</span>
+              <span class="bullet-desc">Belief does not result in immediate joy, because the Spirit also reveals that Israel killed their Messiah. The Jews assume it is too late, that they lost the opportunity. They think: <span class="hl">"We killed Him. Why would He save us now?"</span></span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">It is not a group experience</span>
+              <span class="bullet-desc">This happens while each family is isolated. It is not the result of conventional evangelism. Each Jew is convicted <span class="hl">individually and simultaneously</span> by the Spirit.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <div class="card-title">Four Groups That Represent the Entire Spectrum of Israel (Zechariah 12:11-14)</div>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Group</th>
+              <th>Representation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="hl">House of David</span></td>
+              <td>The ruling class, the governors of the nation</td>
+            </tr>
+            <tr>
+              <td><span class="hl">House of Nathan</span></td>
+              <td>The prophets, the spokesmen of God</td>
+            </tr>
+            <tr>
+              <td><span class="hl">House of Levi</span></td>
+              <td>The priests, the religious ministers</td>
+            </tr>
+            <tr>
+              <td><span class="hl">Family of Shimei</span></td>
+              <td>The common Jews, the ordinary people</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top:12px; font-size:16px; color:var(--text-dim);">The great and the small, the learned and the unlearned, the privileged and the common — all are coming to the <span class="hl">same faith in Jesus</span>. All the families that remain in the city weep and confess, each one separately, independently.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IX -->
+  <section class="section" id="sec-IX">
+    <div class="section-header">
+      <div class="section-num">IX</div>
+      <h3 class="section-title">The Psalms of Israel’s Repentance at the End of the Tribulation</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Psalm 79: The Repentant Voice of the Nation</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Psalm 79:1-13 (key fragment)</span>
+          <span class="scripture-text">O God, the nations have come into Your inheritance; Your holy temple they have defiled; They have laid Jerusalem in heaps... Do not remember against us the iniquities of our forefathers; Let Your tender mercies come speedily to meet us... Help us, O God of our salvation, For the glory of Your name; And deliver us, and provide atonement for our sins, For Your name’s sake.</span>
+        </div>
+        <p style="margin-top:12px; font-size:16px; color:var(--text-dim);">Psalm 79 captures the <span class="hl">repentant voice of the nation at the precise moment</span> when the Antichrist presses his attack against the city. It is the cry of the besieged people who recognize their sin and seek divine mercy.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Psalm 80: The Climax of the Confession</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Psalm 80:14-19 (NKJV)</span>
+          <span class="scripture-text">Return, we beseech You, O God of hosts; Look down from heaven and see, And visit this vine And the vineyard which Your right hand has planted, And the branch that You made strong for Yourself. ... Let Your hand be upon the man of Your right hand, Upon the son of man whom You made strong for Yourself. Then we will not turn back from You; Revive us, and we will call upon Your name. Restore us, O LORD God of hosts; Cause Your face to shine, And we shall be saved!</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">They invoke the Son of God</span>
+              <span class="bullet-desc">In poetic language they invoke the "man of Your right hand" — the Branch of Jesse, Jesus (Isaiah 11:1). They recognize that He was "burned with fire and cut down" — reference to the rejection of the Messiah at His first coming.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">They ask for a second chance</span>
+              <span class="bullet-desc">"Send Him again" — they ask that the hand of the Lord be upon the Son of God. They promise that if the Lord revives them, <span class="hl">they will not turn their back on Him again</span> and will call upon His name, just as Jesus required.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <div class="card-title">The Culminating Moment: Not the Return, but the Call</div>
+        <p style="font-size:17px; color:var(--text-dim); line-height:1.8;">The <span class="hl">culminating moment of Jesus’ second coming is not His return</span>, but the <span class="hl">call to Jesus</span> that precipitates His return from heaven, after Israel’s repentance. There is a sense of mourning, but also hope of receiving a second chance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- X -->
+  <section class="section" id="sec-X">
+    <div class="section-header">
+      <div class="section-num">X</div>
+      <h3 class="section-title">Hosea: The Exact Chronology of the Final Battle and the Return</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Hosea’s Confirmation: Three Days</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Hosea 6:1-3</span>
+          <span class="scripture-text">"Come, and let us return to the LORD; For He has torn, but He will heal us; He has stricken, but He will bind us up. After two days He will revive us; On the third day He will raise us up, That we may live in His sight. Let us know, Let us pursue the knowledge of the LORD. His going forth is established as the morning; He will come to us like the rain, Like the latter and former rain to the earth."</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Chronology of the Three Days</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-period">Days 1 and 2</div>
+            <div class="timeline-desc">The final battle in Jerusalem. The Antichrist attacks the city. Half of the Jews are killed and the women assaulted (Zechariah). The Spirit is poured out; Israel recognizes their Messiah.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">End of day 2 — Beginning of day 3</div>
+            <div class="timeline-desc">The repentant nation cries out to Christ collectively. Israel invokes the name of the Lord as Jesus required (Matthew 24:13). The last third of the city survives until the third day.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">Day 3</div>
+            <div class="timeline-desc">The Spirit is poured out on the survivors; the nation responds. <span class="hl">Jesus returns</span>. God raises them up and they will live in His sight. The Lord comes "like rain that waters the earth" — an image of the grace of God.</div>
+          </div>
+        </div>
+        <p style="margin-top:14px; font-size:16px; color:var(--text-dim);">Hosea speaks of the final battle in Jerusalem: the war lasts three days and it is <span class="hl">Jesus who ends it</span>. He who endures to the end will be saved (Matthew 24:13).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- XI -->
+  <section class="section" id="sec-XI">
+    <div class="section-header">
+      <div class="section-num">XI</div>
+      <h3 class="section-title">The Second Coming of Christ: Revelation 19:11-16</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">The Rider on the White Horse</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Revelation 19:11-16</span>
+          <span class="scripture-text">Now I saw heaven opened, and behold, a white horse. And He who sat on him was called Faithful and True, and in righteousness He judges and makes war. His eyes were like a flame of fire, and on His head were many crowns. He had a name written that no one knew except Himself. He was clothed with a robe dipped in blood, and His name is called The Word of God. And the armies in heaven, clothed in fine linen, white and clean, followed Him on white horses. Now out of His mouth goes a sharp sword, that with it He should strike the nations. And He Himself will rule them with a rod of iron. He Himself treads the winepress of the fierceness and wrath of Almighty God. And He has on His robe and on His thigh a name written: KING OF KINGS AND LORD OF LORDS.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Description of Christ at His Return</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Glorified form</span>
+              <span class="bullet-desc">Jesus appears in the glorified form He had before and after His time on earth — the same image described in Chapter 1 of Revelation. Eyes like a flame of fire; <span class="hl">His earthly image was the exception, not the norm.</span></span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Many crowns</span>
+              <span class="bullet-desc">They reflect His natural right to rule all nations, in contrast to the limited crowns of the Dragon and the Beast.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">An unknown name</span>
+              <span class="bullet-desc">He has a name that no one knows yet. This suggests that the name "Yeshua" will not be the final name He will bear in the Kingdom. In the end, all controversy about how to call Jesus <span class="hl">will be meaningless.</span> Jesus will continue to be known as the Word of God, but He will bear a new name.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Robe dipped in blood</span>
+              <span class="bullet-desc">The blood no longer represents His redeeming blood of the first coming, but <span class="hl">the blood of judgment</span> that He applies at His second coming (Revelation 19:15).</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">White horse</span>
+              <span class="bullet-desc">Symbol of ruling. The Antichrist also appeared on a white horse (false ruler), but now the <span class="hl">true King</span> appears to replace the false one.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">The Armies That Follow Him</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The saints of the Church</span>
+              <span class="bullet-desc">The heavenly armies clothed in <span class="hl">fine linen, white and clean</span> — previously we saw the saints of the Church dressed this way. It is us, the believers, the army that follows Jesus. We will not fight, but we will be present.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">The army of angels</span>
+              <span class="bullet-desc">Matthew 16:27 — "the Son of Man will come in the glory of His Father with His angels." A second army of angels accompanies Christ at His return.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Certainty of participation</span>
+              <span class="bullet-desc">"We cannot say with certainty what we will do tomorrow, but we can be sure by our faith that we will be there on a future day." We are reading about an event in which <span class="hl">we have the assurance of participating.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card full">
+        <div class="card-title">First Coming vs. Second Coming — Fundamental Contrast</div>
+        <div class="two-col-info">
+          <div class="info-panel">
+            <div class="info-panel-title">First Coming</div>
+            <ul class="bullets">
+              <li><span class="bullet-icon">✓</span><div class="bullet-body"><span class="bullet-desc">He came to preach salvation.</span></div></li>
+              <li><span class="bullet-icon">✓</span><div class="bullet-body"><span class="bullet-desc">He showed mercy and forgiveness.</span></div></li>
+              <li><span class="bullet-icon">✓</span><div class="bullet-body"><span class="bullet-desc">He did not come to judge.</span></div></li>
+              <li><span class="bullet-icon">✓</span><div class="bullet-body"><span class="bullet-desc">Redeeming blood on His garment.</span></div></li>
+            </ul>
+          </div>
+          <div class="info-panel">
+            <div class="info-panel-title">Second Coming</div>
+            <ul class="bullets">
+              <li><span class="bullet-icon">✦</span><div class="bullet-body"><span class="bullet-desc">He comes for judgment and to rule.</span></div></li>
+              <li><span class="bullet-icon">✦</span><div class="bullet-body"><span class="bullet-desc">He brings a sword and treads the winepress of wrath.</span></div></li>
+              <li><span class="bullet-icon">✦</span><div class="bullet-body"><span class="bullet-desc">He will rule with a rod of iron.</span></div></li>
+              <li><span class="bullet-icon">✦</span><div class="bullet-body"><span class="bullet-desc">Blood of judgment on His garment.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- XII -->
+  <section class="section" id="sec-XII">
+    <div class="section-header">
+      <div class="section-num">XII</div>
+      <h3 class="section-title">The Earthly Perspective of the Return: The Cosmic Blackout</h3>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Cosmic Disturbances — Matthew 24</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Matthew 24:29-30</span>
+          <span class="scripture-text">"Immediately after the tribulation of those days the sun will be darkened, and the moon will not give its light; the stars will fall from heaven, and the powers of the heavens will be shaken. Then the sign of the Son of Man will appear in heaven, and then all the tribes of the earth will mourn, and they will see the Son of Man coming on the clouds of heaven with power and great glory."</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">The Total Blackout of the Universe</div>
+        <div class="scripture-box">
+          <span class="scripture-ref">Zechariah 14:6-7</span>
+          <span class="scripture-text">It shall come to pass in that day That there will be no light; The lights will diminish. It shall be one day Which is known to the LORD— Neither day nor night. But at evening time it shall happen That it will be light.</span>
+        </div>
+        <ul class="bullets" style="margin-top:12px;">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Absolute darkness</span>
+              <span class="bullet-desc">There is a <span class="hl">total blackout of the Universe</span>, leaving the earth in complete and absolute darkness. Every source of light — sun, moon, stars — ceases to give its light.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Christ: the only source of light</span>
+              <span class="bullet-desc">In the midst of total blackout, the window to heaven opens and the Lord comes on the clouds. At that moment, <span class="hl">the Lord Himself is the only source of light in the entire Universe.</span> Everyone will see Him.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">No one will miss His coming</span>
+              <span class="bullet-desc">That is why Jesus warned not to follow anyone who claimed to be the Messiah. When He returns, there will be nothing else to see except Him. The effect: the nations will see Him and mourn, knowing that their Judge has returned.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- XIII -->
+  <section class="section" id="sec-XIII">
+    <div class="section-header">
+      <div class="section-num">XIII</div>
+      <h3 class="section-title">Conclusion and Outlook: What Comes Next</h3>
+    </div>
+    <div class="cards">
+      <div class="card full">
+        <div class="card-title">Closing Point of This Lesson</div>
+        <ul class="bullets">
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Jesus in the air, returning</span>
+              <span class="bullet-desc">The lesson ends with Jesus in the air, returning to save Israel. The study continues with <span class="hl">Stages IV and V of the Battle of Armageddon</span>, which will be battles carried out by Jesus Himself.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">Result of stages IV and V</span>
+              <span class="bullet-desc">The complete end of the Antichrist and his forces, and the end of the seven-year Tribulation.</span>
+            </div>
+          </li>
+          <li>
+            <span class="bullet-icon">✦</span>
+            <div class="bullet-body">
+              <span class="bullet-label">What follows the Lord’s return</span>
+              <span class="bullet-desc">After the war, the study of the Tribulation comes to an end and transitions to the events after the Lord’s return, including <span class="hl">some of the most fascinating prophecies in the entire Bible.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-sym">✦</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-box">
+    <p>This lesson reveals that the Second Coming of Christ is not a unilateral act, but God’s sovereign response to the cry of His people. Israel, brought to the extreme limit of its existence by the Battle of Armageddon, experiences the outpouring of the Holy Spirit and collectively confesses Jesus as Messiah — fulfilling the conditions of the Mosaic Covenant established in Leviticus 26. Only then does the Lord, Faithful and True, open the heavens, extinguish every source of light in the universe and descend as the only light, at the head of His armies, to establish His eternal Kingdom.</p>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    Based on the original teaching of <a href="http://vbvmi.org" target="_blank">Verse By Verse Ministry International (VBVMI)</a><br>
+    Art by Pat Marvenko Smith © 1992 · <a href="http://www.revelationillustrated.com" target="_blank">revelationillustrated.com</a>
+  </p>
+</footer>
+</div><!-- /.page-wrap -->
+
+
+<script>
+(function(){
+  const sidebar = document.getElementById('sidebar-toc');
+  const toggleBtn = document.getElementById('toc-toggle');
+  const showBtn = document.getElementById('toc-show');
+  function openToc() {
+    sidebar.classList.remove('hidden');
+    showBtn.style.display = 'none';
+    document.body.classList.add('toc-open');
+    document.body.classList.remove('toc-closed');
+  }
+  function closeToc() {
+    sidebar.classList.add('hidden');
+    showBtn.style.display = 'flex';
+    document.body.classList.remove('toc-open');
+    document.body.classList.add('toc-closed');
+  }
+  toggleBtn.addEventListener('click', closeToc);
+  showBtn.addEventListener('click', openToc);
+  openToc();
+  const items = document.querySelectorAll('.toc-item');
+  const sections = Array.from(items).map(a => document.querySelector(a.getAttribute('href')));
+  function onScroll() {
+    let current = 0;
+    sections.forEach((sec, i) => {
+      if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+    });
+    items.forEach((a, i) => a.classList.toggle('active', i === current));
+    const active = items[current];
+    if (active) active.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+
+</body>
+</html>
