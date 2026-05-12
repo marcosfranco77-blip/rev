@@ -725,6 +725,9 @@ p.body-text {
 }
 body.toc-open .page-wrap  { margin-left: 270px; }
 body.toc-closed .page-wrap { margin-left: 0; }
+body.toc-open .wrapper  { margin-left: 270px; }
+body.toc-closed .wrapper { margin-left: 0; }
+.wrapper { transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
 
 /* ── HAMBURGER BUTTON (mobile only) ── */
 #hamburger {
@@ -777,6 +780,7 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 @media (max-width: 900px) {
   #sidebar-toc { width: 240px; }
   body.toc-open .page-wrap { margin-left: 240px; }
+  body.toc-open .wrapper { margin-left: 240px; }
 }
 
 /* ── MOBILE: hamburger takes over ── */

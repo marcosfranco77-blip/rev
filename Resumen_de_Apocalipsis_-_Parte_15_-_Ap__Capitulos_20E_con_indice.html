@@ -725,6 +725,9 @@ p.body-text {
 }
 body.toc-open .page-wrap  { margin-left: 270px; }
 body.toc-closed .page-wrap { margin-left: 0; }
+body.toc-open .ornament  { margin-left: 270px; }
+body.toc-closed .ornament { margin-left: 0; }
+.ornament { transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
 body.toc-open header  { margin-left: 270px; }
 body.toc-closed header { margin-left: 0; }
 header { transition: margin-left .35s cubic-bezier(.4,0,.2,1); }
@@ -780,6 +783,7 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 @media (max-width: 900px) {
   #sidebar-toc { width: 240px; }
   body.toc-open .page-wrap { margin-left: 240px; }
+  body.toc-open .ornament { margin-left: 240px; }
   body.toc-open header { margin-left: 240px; }
 }
 

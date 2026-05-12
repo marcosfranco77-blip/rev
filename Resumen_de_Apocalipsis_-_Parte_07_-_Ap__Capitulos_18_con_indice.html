@@ -563,7 +563,7 @@ p.body-text {
 }
 .toc-back-btn svg { flex-shrink: 0; }
 
-/* Top bar inside sidebar — close-X + back button side by side */
+/* Top bar inside sidebar — holds close-X + back button side by side */
 .toc-top-bar {
   display: none;
   align-items: center;
@@ -719,9 +719,10 @@ p.body-text {
 }
 #toc-show:hover { background: var(--gold-bg); }
 
-/* Suppress transition on initial load */
 body.no-transition .page-wrap,
-body.no-transition #sidebar-toc { transition: none !important; }
+body.no-transition #sidebar-toc {
+  transition: none !important;
+}
 
 /* ── CONTENT AREA: slides left/right, fixed width (no reflow) ── */
 #content-wrapper { display: contents; }
@@ -825,21 +826,6 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 <body>
 <!-- SIDEBAR TOC -->
 <nav id="sidebar-toc">
-  <!-- Mobile top bar: close-X left, back button right -->
-  <div class="toc-top-bar">
-    <button class="toc-close-inner" id="toc-close-inner" title="Close">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="index.html" class="toc-back-btn" style="flex:1;">
-      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Main Menu
-    </a>
-  </div>
-  <!-- Desktop back button (hidden on mobile) -->
-  <a href="index.html" class="toc-back-btn toc-back-btn-desktop" style="margin:12px 14px 4px;">
-    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Main Menu
-  </a>
 <div class="toc-header">
 <div class="toc-ornament-line"></div>
 <span class="toc-label">Contents</span>
@@ -1876,6 +1862,7 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   overlay.addEventListener('click', handleOverlay);
 
   // Close when tapping a TOC link on mobile
+  // Delay closeToc so the layout shift doesn't disrupt the scroll position
   document.querySelectorAll('.toc-item').forEach(function(a) {
     a.addEventListener('click', function(e) {
       if (!isMobile()) return;
@@ -1900,7 +1887,8 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
     }
   });
 
-  // Initial state: open on desktop with NO transition (avoids flash)
+  // Initial state: always start CLOSED; open only on desktop
+  // Disable transition during init so page-wrap jumps to final position instantly
   closeToc();
   if (!isMobile()) {
     document.body.classList.add('no-transition');
