@@ -535,6 +535,75 @@ p.body-text {
 }
 #sidebar-toc.hidden { transform: translateX(-100%); }
 
+.toc-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--crimson-bg);
+  border: 1px solid var(--crimson-border);
+  border-radius: 6px;
+  color: var(--crimson);
+  font-family: var(--f-heading);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  white-space: nowrap;
+}
+.toc-back-btn:hover {
+  border-color: var(--crimson);
+  color: var(--crimson-light);
+}
+.toc-back-btn svg { flex-shrink: 0; }
+
+/* Top bar inside sidebar — holds close-X + back button side by side */
+.toc-top-bar {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(135deg, #D4E6F0 0%, var(--bg-sidebar) 100%);
+  flex-shrink: 0;
+}
+.toc-close-inner {
+  background: var(--surface);
+  border: 2px solid var(--gold-dim);
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  flex-shrink: 0;
+  transition: background .2s;
+}
+.toc-close-inner:hover { background: var(--gold-bg); }
+.toc-close-inner span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all .25s ease;
+}
+.toc-close-inner span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.toc-close-inner span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.toc-close-inner span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hide external hamburger on mobile when sidebar open */
+@media (max-width: 600px) {
+  body.toc-open #hamburger { display: none; }
+}
+
 .toc-header {
   display: flex;
   align-items: center;
@@ -718,6 +787,11 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   #toc-toggle { display: none !important; }
   #toc-overlay { display: block; }
 
+  /* Show in-sidebar top bar on mobile */
+  .toc-top-bar { display: flex; }
+  /* Hide desktop back button on mobile */
+  .toc-back-btn-desktop { display: none; }
+
   /* Sidebar overlays content — no push */
   body.toc-open #content-wrapper,
   body.toc-closed #content-wrapper { padding-left: 0; }
@@ -744,6 +818,21 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 <body>
 <!-- SIDEBAR TOC -->
 <nav id="sidebar-toc">
+  <!-- Mobile top bar: close-X left, back button right -->
+  <div class="toc-top-bar">
+    <button class="toc-close-inner" id="toc-close-inner" title="Close">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="toc-back-btn" style="flex:1;">
+      <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Main Menu
+    </a>
+  </div>
+  <!-- Desktop back button (hidden on mobile) -->
+  <a href="index.html" class="toc-back-btn toc-back-btn-desktop" style="margin:12px 14px 4px;">
+    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 2L4 6.5L8 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Main Menu
+  </a>
   <div class="toc-header">
     <div class="toc-ornament-line"></div>
     <span class="toc-label">Index</span>
@@ -1439,11 +1528,12 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
 
 <script>
 (function(){
-  var sidebar   = document.getElementById('sidebar-toc');
-  var toggleBtn = document.getElementById('toc-toggle');
-  var showBtn   = document.getElementById('toc-show');
-  var hamburger = document.getElementById('hamburger');
-  var overlay   = document.getElementById('toc-overlay');
+  var sidebar    = document.getElementById('sidebar-toc');
+  var toggleBtn  = document.getElementById('toc-toggle');
+  var showBtn    = document.getElementById('toc-show');
+  var hamburger  = document.getElementById('hamburger');
+  var closeInner = document.getElementById('toc-close-inner');
+  var overlay    = document.getElementById('toc-overlay');
   var isOpen    = false;
 
   function isMobile() { return window.innerWidth <= 600; }
@@ -1481,6 +1571,10 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   hamburger.addEventListener('touchend', handleHamburger, { passive: false });
   hamburger.addEventListener('click', handleHamburger);
 
+  // Inner close button (mobile top bar)
+  closeInner.addEventListener('touchend', handleHamburger, { passive: false });
+  closeInner.addEventListener('click', handleHamburger);
+
   // Close when tapping overlay
   function handleOverlay(e) {
     e.preventDefault();
@@ -1490,9 +1584,20 @@ body.toc-open #hamburger span:nth-child(3) { transform: translateY(-7px) rotate(
   overlay.addEventListener('click', handleOverlay);
 
   // Close when tapping a TOC link on mobile
+  // Delay closeToc so the layout shift doesn't disrupt the scroll position
   document.querySelectorAll('.toc-item').forEach(function(a) {
-    a.addEventListener('click', function() {
-      if (isMobile()) closeToc();
+    a.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      e.preventDefault();
+      var targetId = a.getAttribute('href');
+      var target   = document.querySelector(targetId);
+      closeToc();
+      setTimeout(function() {
+        if (target) {
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 16;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      }, 380);
     });
   });
 
